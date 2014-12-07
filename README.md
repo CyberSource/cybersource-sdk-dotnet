@@ -8,6 +8,7 @@ This is the temporary private repo for the Cybs .Net SDK
 ##Requirements
 
 .NET 4.0 or later
+
 Visual Studio 2012 or later
 
 ##Prerequisites
