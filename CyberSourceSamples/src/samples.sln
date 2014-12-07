@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NVPSample", "nvp\NVPSample.csproj", "{B9CF0875-A892-4D4A-9F85-9D5B3F641C71}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SoapSample", "soap\SoapSample.csproj", "{E9FF33D2-3FBC-4887-A6C8-0575DC4888BC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XmlSample", "xml\XmlSample.csproj", "{F1888CEB-BD9D-4090-BD3D-E525354881A3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B9CF0875-A892-4D4A-9F85-9D5B3F641C71}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B9CF0875-A892-4D4A-9F85-9D5B3F641C71}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B9CF0875-A892-4D4A-9F85-9D5B3F641C71}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B9CF0875-A892-4D4A-9F85-9D5B3F641C71}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E9FF33D2-3FBC-4887-A6C8-0575DC4888BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E9FF33D2-3FBC-4887-A6C8-0575DC4888BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E9FF33D2-3FBC-4887-A6C8-0575DC4888BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E9FF33D2-3FBC-4887-A6C8-0575DC4888BC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F1888CEB-BD9D-4090-BD3D-E525354881A3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F1888CEB-BD9D-4090-BD3D-E525354881A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F1888CEB-BD9D-4090-BD3D-E525354881A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F1888CEB-BD9D-4090-BD3D-E525354881A3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
