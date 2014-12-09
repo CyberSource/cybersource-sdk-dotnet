@@ -4,16 +4,9 @@ VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{D9409C5F-01D5-40CF-BF48-1F75957FEB21}"
 	ProjectSection(SolutionItems) = preProject
-		..\..\security\ApacheLicense.txt = ..\..\security\ApacheLicense.txt
 		app.config = app.config
-		changes.txt = changes.txt
-		..\checkout.bat = ..\checkout.bat
 		license.rtf = license.rtf
-		..\src\base\Logger.cs = ..\src\base\Logger.cs
-		..\ProjectNotes.txt = ..\ProjectNotes.txt
-		readme.rtf = readme.rtf
 		sample.xml = sample.xml
-		..\setupdev.bat = ..\setupdev.bat
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CyberSource.Base", "Cybersource\base\CyberSource.Base.csproj", "{6EC4A1FB-44CE-4326-92A5-88A1ECC615BD}"
