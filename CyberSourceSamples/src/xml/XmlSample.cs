@@ -26,7 +26,7 @@ namespace CyberSource.Samples
 				XmlDocument reply = XmlClient.RunTransaction(request);
 				SaveOrderState();
 				ProcessReply( reply, cybsNamespace );
-			}
+            }
 			catch (FaultException fe)
 			{
                 //A custom exception created by the Cybersource Client from 
@@ -48,6 +48,8 @@ namespace CyberSource.Samples
                 SaveOrderState();
                 HandleException(e);
             }
+            Console.WriteLine("Press Return to end...");
+            Console.ReadLine();
 		}
 
 		private static void SaveOrderState()
