@@ -15,22 +15,22 @@ namespace Test
             RemoveIndices("_0");
             RemoveIndices("0_0");
             RemoveIndices("_0_");
-            RemoveIndices("0_Ever");
-            RemoveIndices("01_Ever");
-            RemoveIndices("012_Ever");
-            RemoveIndices("Ever_2_Aragon");
-            RemoveIndices("Ever_23_Aragon");
-            RemoveIndices("Ever_234_Aragon");
-            RemoveIndices("Olano_5");
-            RemoveIndices("Olano_56");
-            RemoveIndices("Olano_567");
-            RemoveIndices("Olano_890_");
-            RemoveIndices("1_Ever_2_Aragon_3_Olano_4");
-            RemoveIndices("12_Ever_34_Aragon_56_Olano_78");
-            RemoveIndices("123_Ever_456_Aragon_789_Olano_456");
-            RemoveIndices("Ever_Aragon_Olano");
-            RemoveIndices("EverAragonOlano");
-            RemoveIndices("Olano123_");
+            RemoveIndices("0_Dev");
+            RemoveIndices("01_Dev");
+            RemoveIndices("012_Dev");
+            RemoveIndices("Dev_2_CyberSource");
+            RemoveIndices("Dev_23_CyberSource");
+            RemoveIndices("Dev_234_CyberSource");
+            RemoveIndices("Developer_5");
+            RemoveIndices("Developer_56");
+            RemoveIndices("Developer_567");
+            RemoveIndices("Developer_890_");
+            RemoveIndices("1_Dev_2_CyberSource_3_Developer_4");
+            RemoveIndices("12_Dev_34_CyberSource_56_Developer_78");
+            RemoveIndices("123_Dev_456_CyberSource_789_Developer_456");
+            RemoveIndices("Dev_CyberSource_dontnet");
+            RemoveIndices("CyberSourceDeveloper");
+            RemoveIndices("Developer123_");
         }
 
         private static void RemoveIndices(string input)
