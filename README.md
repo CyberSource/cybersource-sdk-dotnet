@@ -37,7 +37,7 @@ Refer to our Developer's Guide for details <http://www.cybersource.com/developer
 
 1. Copy samples.xml from cybersource-sdk-dotnet directory to cybersource-sdk-dotnet\CyberSourceSamples\bin
 
-2. Update following properties in XmlSample.exe.config
+2. Update following properties in XmlSample.exe.config (remember to update app.config to keep these values when rebuilding).
 	
 	a. cybs.merchantID
 	
