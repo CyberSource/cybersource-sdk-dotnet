@@ -125,6 +125,9 @@ namespace CyberSource.Samples
                 SaveOrderState();
                 HandleException(e);
             }
+
+            Console.WriteLine("Press Return to end...");
+            Console.ReadLine();
 		}
 
 		private static void SaveOrderState()
