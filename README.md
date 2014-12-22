@@ -23,7 +23,7 @@ A CyberSource Evaluation account. Sign up here:  <http://www.cybersource.com/reg
 Transaction Security Keys
 
 * Create security keys in the Enterprise Business Center (ebctest) after you've created your Merchant Admin account. 
-Refer to our Developer's Guide for details <http://www.cybersource.com/developers/integration_methods/simple_order_and_soap_toolkit_api/soap_api/html>
+Refer to our Developer's Guide for details <http://apps.cybersource.com/library/documentation/dev_guides/security_keys/creating_and_using_security_keys.pdf> under Simple Order API Security Keys to generate .P12 key.
 
 ##Installing the SDK 
 
