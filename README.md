@@ -3,6 +3,8 @@ cybersource-sdk-dotnet
 
 This is the temporary private repo for the Cybs .Net SDK
 
+Supports Cybersource API version 1.109.
+
 ======================
 
 ##Requirements
@@ -48,6 +50,49 @@ Refer to our Developer's Guide for details <http://www.cybersource.com/developer
 	d. cybs.proxyURL
 
 3. Run XmlSample.exe.
+
+## Working with other versions of Cybersource API
+
+The version of the CyberSource Web Services API supported by the clients is indicated at the top of this README.  
+To be able to communicate with a other versions:
+
+* If you are using the Name-Value Pair (NVP) or the SOAP client,
+
+    1. Load src\CyberSource.Clients.sln in Visual Studio.
+
+    2.  
+        a. Find the “Service References” folder in the solution Explorer
+	
+        b. Right click on “NVPServiceReference” and select “Configure Service Reference”
+	
+        c. Update the “Address” field with New WSDL URL. You should normally only need to update the version number at the end.
+	
+        d. Repeat for steps B and C for “SoapServiceReference” (also in the Service References folder)
+
+    3. Build the Release configuration.
+
+    4. Save a copy of the original CyberSource.Clients.dll and replace it with the one just built.
+
+
+* If you are using the XML client,
+
+    There is no need to update the client. Simply start using the new namespace URI in your input XML documents.
+    The client will automatically pick it up and use the specified version.
+
+## SUPPORT FOR MULTIPLE MERCHANTS
+
+Except for cybs.merchantID and the cybs.proxy* settings, all other config setting keys may be prefixed with the merchant id to tell the client that it is only applicable to that merchant id.  
+Keys without any merchant prefix will be used in the absence of the corresponding merchant-specific one.
+
+For example:
+
+	<add key="cybs.merchant123.sendToProduction" value="false"/>
+	<add key="cybs.sendToProduction" value="true"/>
+
+All requests for merchant123 will go to the test server, all other requests will go to the production server.
+
+Alternatively, you can pre-create and cache a CyberSource.Clients.Configuration object for each merchant and pass the appropriate one to the RunTransaction() method.
+
 
 ##Documentation
 
