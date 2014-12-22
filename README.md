@@ -79,6 +79,21 @@ To be able to communicate with a other versions:
     There is no need to update the client. Simply start using the new namespace URI in your input XML documents.
     The client will automatically pick it up and use the specified version.
 
+## SUPPORT FOR MULTIPLE MERCHANTS
+
+Except for cybs.merchantID and the cybs.proxy* settings, all other config setting keys may be prefixed with the merchant id to tell the client that it is only applicable to that merchant id.  
+Keys without any merchant prefix will be used in the absence of the corresponding merchant-specific one.
+
+For example:
+
+	<add key="cybs.merchant123.sendToProduction" value="false"/>
+	<add key="cybs.sendToProduction" value="true"/>
+
+All requests for merchant123 will go to the test server, all other requests will go to the production server.
+
+Alternatively, you can pre-create and cache a CyberSource.Clients.Configuration object for each merchant and pass the appropriate one to the RunTransaction() method.
+
+
 ##Documentation
 
 For more information about CyberSource services, see <http://www.cybersource.com/developers/documentation>
