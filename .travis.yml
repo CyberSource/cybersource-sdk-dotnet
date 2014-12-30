@@ -1,5 +1,5 @@
 language:
-    c
+	c
 
 install:
     - sudo apt-get install mono-devel mono-gmcs nunit-console
@@ -12,4 +12,3 @@ script:
 	- xbuild ./CyberSourceSamples/src/nvp/NVPSample.csproj
 	- xbuild ./CyberSourceSamples/src/soap/SoapSample.csproj
 	- xbuild ./CyberSourceSamples/src/xml/XmlSample.csproj
-	
