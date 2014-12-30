@@ -6,8 +6,8 @@
 	<title>CyberSource Corporation</title>
     <authors>CyberSource Corporation</authors>
     <owners>CyberSource Corporation</owners>
-    <licenseUrl>https://github.com/AuthorizeNet/cybersource-sdk-dotnet/blob/future/LICENSE</licenseUrl>
-    <projectUrl>https://github.com/AuthorizeNet/cybersource-sdk-dotnet/</projectUrl>
+    <licenseUrl>https://github.com/CyberSource/cybersource-sdk-dotnet/blob/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/CyberSource/cybersource-sdk-dotnet/</projectUrl>
     <iconUrl>http://www.cybersource.com/resources/images/global/logo-cybersource.png</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>SDK for integrating with CyberSource Payments, contains clients for NVP, Soap, and XML</description>
