@@ -1,14 +1,14 @@
 language:
-	c
+    c
 
 install:
     - sudo apt-get install mono-devel mono-gmcs nunit-console
 
 script:
-    - xbuild ./CyberSource/Base/CyberSource.Base.csproj
-    - xbuild ./CyberSource/Client/CyberSource.Clients.csproj
-	- xbuild ./CyberSourceTests/BaseTest/BaseTest.csproj
-	- xbuild ./CyberSourceTests/MTTest/MTTest.csproj
-	- xbuild ./CyberSourceSamples/src/nvp/NVPSample.csproj
-	- xbuild ./CyberSourceSamples/src/soap/SoapSample.csproj
-	- xbuild ./CyberSourceSamples/src/xml/XmlSample.csproj
+   - xbuild ./CyberSource/Base/CyberSource.Base.csproj
+   - xbuild ./CyberSource/Client/CyberSource.Clients.csproj
+   - xbuild ./CyberSourceTests/BaseTest/BaseTest.csproj
+   - xbuild ./CyberSourceTests/MTTest/MTTest.csproj
+   - xbuild ./CyberSourceSamples/src/nvp/NVPSample.csproj
+   - xbuild ./CyberSourceSamples/src/soap/SoapSample.csproj
+   - xbuild ./CyberSourceSamples/src/xml/XmlSample.csproj
