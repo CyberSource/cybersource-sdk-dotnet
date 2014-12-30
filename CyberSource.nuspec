@@ -16,5 +16,8 @@
   </metadata>
       <files>
         <file src="CyberSource\bin\CyberSource.Clients.dll" target="lib\CyberSource.Clients.dll" />
+		<file src="CyberSource\bin\CyberSource.Clients.dll.config" target="lib\CyberSource.Clients.dll.config" />
+		<file src="CyberSource\bin\CyberSource.Base.dll" target="lib\CyberSource.Base.dll" />
+		<file src="CyberSource\bin\CyberSource.Clients.xml" target="lib\CyberSource.Clients.xml" />
     </files>
 </package>
