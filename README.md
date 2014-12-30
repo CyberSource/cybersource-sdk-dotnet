@@ -1,9 +1,11 @@
 cybersource-sdk-dotnet
 ======================
 
-This is the temporary private repo for the Cybs .Net SDK
+.Net SDK for the CyberSource Simple Order API
 
-Supports Cybersource API version 1.109.
+[![Build Status](https://travis-ci.org/CyberSource/cybersource-sdk-dotnet.png?branch=master)]
+(https://travis-ci.org/CyberSource/cybersource-sdk-dotnet)
+
 
 ======================
 
