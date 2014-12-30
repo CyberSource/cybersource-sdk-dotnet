@@ -2,7 +2,7 @@ language:
     c
 
 install:
-    - sudo apt-get install mono-devel mono-gmcs nunit-console
+    - sudo apt-get install mono-devel mono-dmcs nunit-console
 
 script:
    - xbuild ./CyberSource/Base/CyberSource.Base.csproj
