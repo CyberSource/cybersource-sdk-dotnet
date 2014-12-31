@@ -7,7 +7,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		sample.xml = sample.xml
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CyberSourceBase", "Cybersource\base\CyberSourceBase.csproj", "{6EC4A1FB-44CE-4326-92A5-88A1ECC615BD}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CyberSourceBase", "CyberSource\base\CyberSourceBase.csproj", "{6EC4A1FB-44CE-4326-92A5-88A1ECC615BD}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BaseTest", "CyberSourceTests\BaseTest\BaseTest.csproj", "{F47D95C8-8CB6-495C-B2EB-09DAEC073355}"
 EndProject
