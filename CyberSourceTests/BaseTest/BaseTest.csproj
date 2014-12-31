@@ -112,7 +112,7 @@
     <None Include="app.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Cybersource\Base\CyberSourceBase.csproj">
+    <ProjectReference Include="..\..\CyberSource\Base\CyberSourceBase.csproj">
       <Project>{6ec4a1fb-44ce-4326-92a5-88a1ecc615bd}</Project>
       <Name>CyberSourceBase</Name>
     </ProjectReference>
