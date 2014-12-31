@@ -111,9 +111,9 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\CyberSource\Client\CyberSource.Clients.csproj">
+    <ProjectReference Include="..\..\CyberSource\Client\CyberSourceClients.csproj">
       <Project>{e8400f49-3b8c-4b9f-b7a4-10a7960065e3}</Project>
-      <Name>CyberSource.Clients</Name>
+      <Name>CyberSourceClients</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

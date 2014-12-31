@@ -112,9 +112,9 @@
     <None Include="app.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Cybersource\base\CyberSource.Base.csproj">
+    <ProjectReference Include="..\..\Cybersource\base\CyberSourceBase.csproj">
       <Project>{6ec4a1fb-44ce-4326-92a5-88a1ecc615bd}</Project>
-      <Name>CyberSource.Base</Name>
+      <Name>CyberSourceBase</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

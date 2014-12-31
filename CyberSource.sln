@@ -1,7 +1,5 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.31101.0
-MinimumVisualStudioVersion = 10.0.40219.1
+# Visual Studio 2012
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{D9409C5F-01D5-40CF-BF48-1F75957FEB21}"
 	ProjectSection(SolutionItems) = preProject
 		app.config = app.config
@@ -9,11 +7,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		sample.xml = sample.xml
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CyberSource.Base", "Cybersource\base\CyberSource.Base.csproj", "{6EC4A1FB-44CE-4326-92A5-88A1ECC615BD}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CyberSourceBase", "Cybersource\base\CyberSourceBase.csproj", "{6EC4A1FB-44CE-4326-92A5-88A1ECC615BD}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BaseTest", "CyberSourceTests\BaseTest\BaseTest.csproj", "{F47D95C8-8CB6-495C-B2EB-09DAEC073355}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CyberSource.Clients", "CyberSource\Client\CyberSource.Clients.csproj", "{E8400F49-3B8C-4B9F-B7A4-10A7960065E3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CyberSourceClients", "CyberSource\Client\CyberSourceClients.csproj", "{E8400F49-3B8C-4B9F-B7A4-10A7960065E3}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MTTest", "CyberSourceTests\MTTest\MTTest.csproj", "{D1AA5F75-A926-405A-8F97-84042044C06A}"
 EndProject
