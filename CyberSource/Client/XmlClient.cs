@@ -16,7 +16,7 @@ namespace CyberSource.Clients
     /// </summary>
     public class XmlClient : BaseClient
     {
-   
+
         private const string SOAP_ENVELOPE =
            "<soap:Envelope xmlns:ds=\"http://www.w3.org/2000/09/xmldsig#/\" xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:wsse=\"http://schemas.xmlsoap.org/ws/2002/04/secext\">" +
            "<soap:Header><wsse:Security></wsse:Security><wsse:BinarySecurityToken EncodingType=\"wsse:Base64Binary\" Id=\"X509Token\" ValueType=\"wsse:X509v3\"></wsse:BinarySecurityToken></soap:Header>" +
@@ -70,14 +70,14 @@ namespace CyberSource.Clients
                 DetermineEffectiveMerchantID(ref config, request, nspace);
                 SetVersionInformation(request, nspace);
                 logger = PrepareLog(config);
-                
+
                 if (string.IsNullOrEmpty(nspace))
                 {
                     throw new ApplicationException(
                         REQUEST_MESSAGE + " is missing in the XML document.");
                 }
 
-                
+
                 SetConnectionLimit(config);
 
                 if (logger != null)
@@ -90,7 +90,25 @@ namespace CyberSource.Clients
 
                 //Get the X509 cert and sign the SOAP Body    
                 string keyFilePath = Path.Combine(config.KeysDirectory, config.EffectiveKeyFilename);
-                X509Certificate2 cert = new X509Certificate2(keyFilePath, config.EffectivePassword, X509KeyStorageFlags.Exportable | X509KeyStorageFlags.PersistKeySet);
+
+                // CHANGES TO SUPPORT SHA256 Certificate (Dated: 29 Jan 2016)
+                // Have changed the way certificate are fetched from the .p12 file
+                // Iterating over the certificates now and considering the one with matching Merchant ID
+
+                X509Certificate2 cert = null;
+
+                X509Certificate2Collection collection = new X509Certificate2Collection();
+                collection.Import(keyFilePath, config.EffectivePassword, X509KeyStorageFlags.Exportable | X509KeyStorageFlags.PersistKeySet);
+
+                foreach (X509Certificate2 iterateCert in collection)
+                {
+                    if (iterateCert.Subject.Contains(config.MerchantID))
+                    {
+                        cert = iterateCert;
+                        break;
+                    }
+                }
+
                 SignDocument(cert, doc);
 
                 // convert the document into an array of bytes using the
@@ -209,7 +227,7 @@ namespace CyberSource.Clients
 
         private static void SignDocument(X509Certificate2 cert, XmlDocument doc)
         {
-            
+
             //Create reference to #MsgBody which is the ID of the SOAP Body (only signing the Body)
             Reference reference = new Reference("#MsgBody");
 
@@ -221,10 +239,22 @@ namespace CyberSource.Clients
             //Create a signedXML object from doc, add reference and private key, then generate the signature
             SignedXml signedXML = new SignedXml(doc);
             signedXML.AddReference(reference);
-            
+
             RSACryptoServiceProvider rsaKey = (RSACryptoServiceProvider)cert.PrivateKey;
             signedXML.SigningKey = rsaKey;
-            
+
+            // CHANGES TO SUPPORT SHA256 Certificate (Dated: 29 Jan 2016)
+            // Changes so that client signs the request with SHA256
+
+            var cn14Transform = new XmlDsigExcC14NTransform();
+            string referenceDigestMethod = "http://www.w3.org/2001/04/xmlenc#sha256";
+
+            reference.AddTransform(cn14Transform);
+            reference.DigestMethod = referenceDigestMethod;
+            signedXML.AddReference(reference);
+
+            KeyedHashAlgorithm kha = KeyedHashAlgorithm.Create("RSA-SHA256");
+
             // Compute the signature.
             signedXML.ComputeSignature();
 
