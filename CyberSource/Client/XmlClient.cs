@@ -90,7 +90,21 @@ namespace CyberSource.Clients
 
                 //Get the X509 cert and sign the SOAP Body    
                 string keyFilePath = Path.Combine(config.KeysDirectory, config.EffectiveKeyFilename);
-                X509Certificate2 cert = new X509Certificate2(keyFilePath, config.EffectivePassword, X509KeyStorageFlags.Exportable | X509KeyStorageFlags.PersistKeySet);
+
+                X509Certificate2 cert = null;
+
+                X509Certificate2Collection collection = new X509Certificate2Collection();
+                collection.Import(keyFilePath, config.EffectivePassword, X509KeyStorageFlags.Exportable | X509KeyStorageFlags.PersistKeySet);
+
+                foreach (X509Certificate2 cert1 in collection)
+                {
+                    if (cert1.Subject.Contains(config.MerchantID))
+                    {
+                        cert = cert1;
+                        break;
+                    }
+                }
+                
                 SignDocument(cert, doc);
 
                 // convert the document into an array of bytes using the
@@ -224,6 +238,17 @@ namespace CyberSource.Clients
             
             RSACryptoServiceProvider rsaKey = (RSACryptoServiceProvider)cert.PrivateKey;
             signedXML.SigningKey = rsaKey;
+
+            // Changes done to support SHA2 - START ===================
+            var cn14Transform = new XmlDsigExcC14NTransform();
+
+            string referenceDigestMethod = "http://www.w3.org/2001/04/xmlenc#sha256";
+            reference.AddTransform(cn14Transform);
+            reference.DigestMethod = referenceDigestMethod;
+            signedXML.AddReference(reference);
+
+            KeyedHashAlgorithm kha = KeyedHashAlgorithm.Create("RSA-SHA256");
+            // Changes done to support SHA2 - END ===================
             
             // Compute the signature.
             signedXML.ComputeSignature();
