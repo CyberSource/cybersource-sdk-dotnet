@@ -38,7 +38,26 @@ namespace CyberSource.Clients
         private const string PROXY_URL = "proxyURL";
         private const string PROXY_USER = "proxyUser";
         private const string PROXY_PASSWORD = "proxyPassword";
-        private const string BASIC_AUTH = "Basic";
+        protected const string BASIC_AUTH = "Basic";
+
+        protected static Uri ProxyUri
+        {
+            get
+            {
+                var proxyURL = AppSettings.GetSetting(null, PROXY_URL);
+                return !string.IsNullOrEmpty(proxyURL) ? new Uri(proxyURL) : null;
+            }
+        }
+
+        protected static string ProxyUser
+        {
+            get { return AppSettings.GetSetting(null, PROXY_USER); }
+        }
+
+        protected static string ProxyPassword
+        {
+            get { return AppSettings.GetSetting(null, PROXY_PASSWORD); }
+        }
 
 		static BaseClient()
 		{
@@ -49,25 +68,18 @@ namespace CyberSource.Clients
         {
             // if a proxyURL is specified in the configuration file,
             // create a WebProxy object for later use.
-            string proxyURL = AppSettings.GetSetting(null, PROXY_URL);
-            if (proxyURL != null)
+            if (ProxyUri != null)
             {
-                mProxy = new WebProxy(proxyURL);
+                mProxy = new WebProxy(ProxyUri);
 
                 // if a proxyUser is specified in the configuration file,
                 // set up the proxy object's Credentials.
-                string proxyUser
-                    = AppSettings.GetSetting(null, PROXY_USER);
-                if (proxyUser != null)
+                if (ProxyUser != null)
                 {
-                    string proxyPassword
-                        = AppSettings.GetSetting(null, PROXY_PASSWORD);
-
-                    NetworkCredential credential
-                        = new NetworkCredential(proxyUser, proxyPassword);
+                    NetworkCredential credential = new NetworkCredential(ProxyUser, ProxyPassword);
 
                     CredentialCache cache = new CredentialCache();
-                    cache.Add(new Uri(proxyURL), BASIC_AUTH, credential);
+                    cache.Add(ProxyUri, BASIC_AUTH, credential);
                     mProxy.Credentials = cache;
                 }
             }
@@ -311,8 +323,7 @@ namespace CyberSource.Clients
 
             //Use custom encoder to strip unsigned timestamp in response
             CustomTextMessageBindingElement textBindingElement = new CustomTextMessageBindingElement();
-
-
+            
             //Setup https transport 
             HttpsTransportBindingElement httpsTransport = new HttpsTransportBindingElement();
             httpsTransport.RequireClientCertificate = true;
@@ -323,8 +334,8 @@ namespace CyberSource.Clients
             //Setup Proxy if needed
             if (mProxy != null)
             {
-                WebRequest.DefaultWebProxy = mProxy;
-                httpsTransport.UseDefaultWebProxy = true;
+                httpsTransport.ProxyAuthenticationScheme = AuthenticationSchemes.Basic;
+                httpsTransport.ProxyAddress = mProxy.Address;
             }
 
 

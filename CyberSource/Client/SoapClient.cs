@@ -1,9 +1,11 @@
 using System;
+using System.Configuration;
 using System.IO;
 using System.Net;
 using System.Security.Cryptography.X509Certificates;
 using System.ServiceModel;
 using System.ServiceModel.Channels;
+using System.ServiceModel.Security;
 using CyberSource.Base;
 using CyberSource.Clients.SoapServiceReference;
 
@@ -68,8 +70,15 @@ namespace CyberSource.Clients
                 EndpointAddress endpointAddress = new EndpointAddress( new Uri(config.EffectiveServerURL), EndpointIdentity.CreateDnsIdentity(config.EffectivePassword), headers );
                 
                 //Get instance of service
-                using( proc = new TransactionProcessorClient(currentBinding, endpointAddress)){
-                
+                using( proc = new TransactionProcessorClient(currentBinding, endpointAddress)) {
+
+                    // Set proxy Basic auth credentials
+                    if (ProxyUser != null)
+                    {
+                        proc.ClientCredentials.UserName.Password = ProxyPassword;
+                        proc.ClientCredentials.UserName.UserName = ProxyUser;
+                    }
+
                     //Set protection level to sign only
                     proc.Endpoint.Contract.ProtectionLevel = System.Net.Security.ProtectionLevel.Sign;
 
