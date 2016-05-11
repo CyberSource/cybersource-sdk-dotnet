@@ -6,6 +6,7 @@ using System.ServiceModel;
 using System.ServiceModel.Channels;
 using CyberSource.Base;
 using CyberSource.Clients.SoapServiceReference;
+using System.Xml;
 
 
 namespace CyberSource.Clients
@@ -85,7 +86,21 @@ namespace CyberSource.Clients
                     proc.ClientCredentials.ServiceCertificate.DefaultCertificate = proc.ClientCredentials.ClientCertificate.Certificate;
 
                     // send request now
-				    return( proc.runTransaction( requestMessage ) );
+                    // Changes for NGT-3035
+                    XmlNode req = SerializeObjectToXmlNode(requestMessage);
+                    if (logger != null)
+                    {
+                        logger.LogRequest(req, config.Demo);
+                    }                   
+                    
+                    ReplyMessage reply = proc.runTransaction(requestMessage);
+                    XmlNode rep = SerializeObjectToXmlNode(reply);
+                    if (logger != null)
+                    {
+                        logger.LogRequest(rep, config.Demo);
+                    }  
+                   
+                    return (reply);
                 }
 			}
 		    catch (Exception e)
@@ -107,6 +122,35 @@ namespace CyberSource.Clients
                     proc.Close();
                 }
             }
+        }
+
+        // Changes for NGT-3035
+        private static XmlNode SerializeObjectToXmlNode(Object obj)
+        {
+            if (obj == null)
+                throw new ArgumentNullException("Argument cannot be null");
+
+            XmlNode resultNode = null;
+            System.Xml.Serialization.XmlSerializer xmlSerializer = new System.Xml.Serialization.XmlSerializer(obj.GetType());
+            System.Xml.Serialization.XmlSerializerNamespaces ns = new System.Xml.Serialization.XmlSerializerNamespaces();
+            ns.Add("", "");
+            using (MemoryStream memoryStream = new MemoryStream())
+            {
+                try
+                {
+                    xmlSerializer.Serialize(memoryStream, obj, ns);
+                }
+                catch (InvalidOperationException)
+                {
+                    return null;
+                }
+                memoryStream.Position = 0;
+                XmlDocument doc = new XmlDocument();
+                doc.Load(memoryStream);
+                resultNode = doc.DocumentElement;
+            }
+
+            return resultNode;
         }
 
      
