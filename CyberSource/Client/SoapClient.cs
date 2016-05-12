@@ -97,7 +97,7 @@ namespace CyberSource.Clients
                     XmlNode rep = SerializeObjectToXmlNode(reply);
                     if (logger != null)
                     {
-                        logger.LogRequest(rep, config.Demo);
+                        logger.LogReply(rep, config.Demo);
                     }  
                    
                     return (reply);
