@@ -262,7 +262,7 @@ namespace CyberSource.Base
         private const string UNDERSCORE = "_";
 
         // CyberSource "root" fields
-        private const string CYBS_ROOT_FIELDS = "requestMessage replyMessage nvpRequest nvpReply";
+        private const string CYBS_ROOT_FIELDS = "requestMessage replyMessage nvpRequest nvpReply RequestMessage ReplyMessage";
 
         // parentName must be null.  This is a recursive method.
         // The recursive calls will pass non-NULL strings to said
