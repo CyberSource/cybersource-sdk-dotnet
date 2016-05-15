@@ -33,7 +33,7 @@ namespace CyberSource.Clients
 
         /// <summary>
         /// Default maximum size (in MB) for the log file.
-        /// </summary>
+        /// </summary>ics2ws
         public const int DEFAULT_LOG_MAXIMUM_SIZE = 10;
 
         /// <summary>
@@ -41,9 +41,9 @@ namespace CyberSource.Clients
         /// </summary>
         public const int DEFAULT_TIMEOUT = 130;
 
-        private const string TEST_URL = "https://ics2wstest.ic3.com/commerce/1.x/transactionProcessor";
-        private const string PROD_URL = "https://ics2ws.ic3.com/commerce/1.x/transactionProcessor";
-        private const string PROD_HOST = "ics2ws.ic3.com";
+        private const string TEST_URL = "https://ics2wstesta.ic3.com/commerce/1.x/transactionProcessor";
+        private const string PROD_URL = "https://ics2wsa.ic3.com/commerce/1.x/transactionProcessor";
+        private const string PROD_HOST = "ics2wsa.ic3.com";
         
         private const string P12_EXTENSION = ".p12";
 
@@ -252,7 +252,7 @@ namespace CyberSource.Clients
         /// When true, the request and reply is dumped to the console
         /// (i.e. via Console.WriteLine).  Please note that this property
         /// has no effect if sendToProduction is true or serverURL
-        /// is pointing to ics2ws.ic3.com.
+        /// is pointing to ics2wsa.ic3.com.
         /// </summary>
         public bool Demo
         {

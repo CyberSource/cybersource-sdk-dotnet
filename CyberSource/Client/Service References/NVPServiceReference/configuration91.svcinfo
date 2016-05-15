@@ -221,10 +221,10 @@
     </bindingConfiguration>
   </bindingConfigurations>
   <endpoints>
-    <endpoint name="portNVP" contract="NVPServiceReference.INVPTransactionProcessor" bindingType="basicHttpBinding" address="https://ics2wstest.ic3.com/commerce/1.x/transactionProcessor" bindingConfiguration="INVPTransactionProcessor">
+    <endpoint name="portNVP" contract="NVPServiceReference.INVPTransactionProcessor" bindingType="basicHttpBinding" address="https://ics2wstesta.ic3.com/commerce/1.x/transactionProcessor" bindingConfiguration="INVPTransactionProcessor">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>https://ics2wstest.ic3.com/commerce/1.x/transactionProcessor</serializedValue>
+          <serializedValue>https://ics2wstesta.ic3.com/commerce/1.x/transactionProcessor</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
