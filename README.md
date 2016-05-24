@@ -3,6 +3,12 @@ cybersource-sdk-dotnet
 
 .Net SDK for the CyberSource Simple Order API
 
+Moojjoo - Cybersoure is switching over on June 30, 2016 their API to utilize Akamai Content Deliver Network (CDN) - https://support.cybersource.com/cybskb/index?page=content&id=C1683&actp=LIST
+
+Also you can download and review for yourself form my GitHub Branch - https://github.com/moojjoo/cybersource-sdk-dotnet/tree/AkamaiSureRoute
+
+Moojjoo Nuget package - https://www.nuget.org/packages/UnofficialCyberSourceByMoojjoo/1.0.0
+
 ##Package 
 To install the cybersource-sdk-dotnet from package,Run the following command in the 'NuGet Package Manager Console'.
 
