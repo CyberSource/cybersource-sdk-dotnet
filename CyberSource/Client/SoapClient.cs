@@ -83,7 +83,20 @@ namespace CyberSource.Clients
                     proc.ClientCredentials.ClientCertificate.Certificate = new X509Certificate2(keyFilePath,config.EffectivePassword, X509KeyStorageFlags.Exportable | X509KeyStorageFlags.PersistKeySet);
 
                     proc.ClientCredentials.ServiceCertificate.Authentication.CertificateValidationMode = System.ServiceModel.Security.X509CertificateValidationMode.None;
-                    proc.ClientCredentials.ServiceCertificate.DefaultCertificate = proc.ClientCredentials.ClientCertificate.Certificate;
+
+                    // Changes for SHA2 certificates support
+                    X509Certificate2Collection collection = new X509Certificate2Collection();
+                    collection.Import(keyFilePath, config.EffectivePassword, X509KeyStorageFlags.Exportable | X509KeyStorageFlags.PersistKeySet);
+
+                    foreach (X509Certificate2 cert1 in collection)
+                    {
+                        if (cert1.Subject.Contains(config.MerchantID))
+                        {
+                            proc.ClientCredentials.ClientCertificate.Certificate = cert1;
+                            proc.ClientCredentials.ServiceCertificate.DefaultCertificate = cert1;
+                            break;
+                        }
+                    }
 
                     // send request now
                     // Changes for NGT-3035
