@@ -65,7 +65,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <DocumentationFile>bin\CyberSource.Clients.XML</DocumentationFile>
     <DebugType>full</DebugType>
-    <PlatformTarget>AnyCPU</PlatformTarget>
+    <PlatformTarget>x86</PlatformTarget>
     <CodeAnalysisLogFile>..\lib\CyberSource.Clients.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
     <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
     <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
@@ -84,7 +84,7 @@
     <DocumentationFile>..\bin\CyberSource.Clients.XML</DocumentationFile>
     <Optimize>true</Optimize>
     <DebugType>pdbonly</DebugType>
-    <PlatformTarget>AnyCPU</PlatformTarget>
+    <PlatformTarget>x86</PlatformTarget>
     <CodeAnalysisLogFile>..\lib\CyberSource.Clients.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
     <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
     <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
@@ -128,10 +128,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
-    <None Include="Service References\NVPServiceReference\CyberSourceTransaction_1.xsd">
+    <None Include="Service References\NVPServiceReference\CyberSourceTransaction_11.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\NVPServiceReference\NVPCyberSourceTransactionWS.wsdl" />
+    <None Include="Service References\NVPServiceReference\NVPCyberSourceTransactionWS1.wsdl" />
     <None Include="Service References\SoapServiceReference\CyberSource.Clients.SoapServiceReference.ReplyMessage.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
