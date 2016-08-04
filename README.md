@@ -1,4 +1,4 @@
-cybersource-sdk-dotnet
+﻿cybersource-sdk-dotnet
 ======================
 
 .Net SDK for the CyberSource Simple Order API
@@ -49,6 +49,7 @@ Refer to our Developer's Guide for details <http://apps.cybersource.com/library/
 	c. cybs.logDirectory
 	
 	d. cybs.proxyURL
+	
 
 3. Run XmlSample.exe.
 
@@ -94,6 +95,10 @@ All requests for merchant123 will go to the test server, all other requests will
 
 Alternatively, you can pre-create and cache a CyberSource.Clients.Configuration object for each merchant and pass the appropriate one to the RunTransaction() method.
 
+##Support for akamai
+
+1) Set sendToAkamai config parameter with toggle value "true/false" to turn on/off routing requests through Akamai to Cybersource. By default, it is set to true.
+2) "serverURL" config parameter will take precedence over sendToProduction and sendToAkamai config parameters. By default the "serverURL" configuration is commented out.
 
 ##Documentation
 
