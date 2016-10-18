@@ -334,7 +334,11 @@ namespace CyberSource.Clients
             //Setup Proxy if needed
             if (mProxy != null)
             {
-                httpsTransport.ProxyAuthenticationScheme = AuthenticationSchemes.Basic;
+                httpsTransport.ProxyAuthenticationScheme = AuthenticationSchemes.Anonymous;
+                if (ProxyUser != null)
+                {
+                    httpsTransport.ProxyAuthenticationScheme = AuthenticationSchemes.Basic;
+                }
                 httpsTransport.ProxyAddress = mProxy.Address;
             }
 
