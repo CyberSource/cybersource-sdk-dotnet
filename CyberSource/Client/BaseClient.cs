@@ -236,6 +236,8 @@ namespace CyberSource.Clients
                 if (logger != null)
                 {
                     logger.LogTransactionStart(config.LogString);
+                    //Printing Effective server URL in the logs while log instance is created in individual client.
+                    logger.Log(Logger.LogType.CONFIG, "effectiveServerURL=" + config.EffectiveServerURL);
                 }
             }
             return (logger);
