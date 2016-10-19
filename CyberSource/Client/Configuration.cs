@@ -26,6 +26,7 @@ namespace CyberSource.Clients
         internal const string DEMO = "demo";
         internal const string CONNECTION_LIMIT = "connectionLimit";
         internal const string SEND_TO_AKAMAI = "sendToAkamai";
+        internal const string EFFECTIVE_SERVER_URL = "effectiveServerURL";
 
         /// <summary>
         /// Default log file name.
@@ -328,6 +329,11 @@ namespace CyberSource.Clients
                 if (connectionLimit != -1)
                 {
                     buf += NVP_SEPARATOR + CONNECTION_LIMIT + NV_SEPARATOR + connectionLimit;
+                }
+
+                if (EffectiveServerURL != null)
+                {
+                    buf += NVP_SEPARATOR + EFFECTIVE_SERVER_URL + NV_SEPARATOR + EffectiveServerURL;
                 }
 
                 return (buf);
