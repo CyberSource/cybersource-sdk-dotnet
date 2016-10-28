@@ -15,7 +15,7 @@ namespace CyberSource.Clients
         /// <summary>
         /// Version of this client.
         /// </summary>
-        public const string CLIENT_LIBRARY_VERSION = "1.0.0";
+        public const string CLIENT_LIBRARY_VERSION = "1.0.1";
 
         /// <summary>
         /// Proxy object that is initialized during start-up, if needed.
@@ -175,6 +175,12 @@ namespace CyberSource.Clients
                     = AppSettings.GetSetting(
                         merchantID, Configuration.CYBERSOURCE_URL);
             }
+
+            //See if akamai flag has been set or not which eventually gives effective server URL
+            boolVal
+                = AppSettings.GetBoolSetting(
+                    merchantID, Configuration.SEND_TO_AKAMAI);
+            if (boolVal != -1) config.SendToAkamai = (boolVal == 1);
 
             config.KeyFilename
                 = AppSettings.GetSetting(
