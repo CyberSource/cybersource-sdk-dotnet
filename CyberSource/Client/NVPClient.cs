@@ -61,7 +61,7 @@ namespace CyberSource.Clients
                 SetConnectionLimit(config);
 
                 //Setup custom binding with HTTPS + Body Signing 
-                CustomBinding currentBinding = getWCFCustomBinding();
+                CustomBinding currentBinding = getWCFCustomBinding(config);
 
                 //Setup endpoint Address with dns identity
                 AddressHeaderCollection headers = new AddressHeaderCollection();
@@ -71,8 +71,8 @@ namespace CyberSource.Clients
                 using (proc = new NVPTransactionProcessorClient(currentBinding, endpointAddress))
                 {
 
-                    //Set protection level to sign only
-                    proc.Endpoint.Contract.ProtectionLevel = System.Net.Security.ProtectionLevel.Sign;
+                    //Set protection level to sign
+                        proc.Endpoint.Contract.ProtectionLevel = System.Net.Security.ProtectionLevel.Sign;
 
                     // set the timeout
                     TimeSpan timeOut = new TimeSpan(0, 0, 0, config.Timeout, 0);
@@ -95,6 +95,21 @@ namespace CyberSource.Clients
                             proc.ClientCredentials.ClientCertificate.Certificate = cert1;
                             proc.ClientCredentials.ServiceCertificate.DefaultCertificate = cert1;
                             break;
+                        }
+                    }
+
+                    if (config.UseSignedAndEncrypted)
+                    {
+                        foreach (X509Certificate2 cert2 in collection)
+                        {
+                            //Console.WriteLine(cert1.Subject);
+                            if (cert2.Subject.Contains(CYBERSOURCE_PUBLIC_KEY))
+                            {
+                                //Set protection level to sign & encrypt only
+                                proc.Endpoint.Contract.ProtectionLevel = System.Net.Security.ProtectionLevel.EncryptAndSign;
+                                proc.ClientCredentials.ServiceCertificate.DefaultCertificate = cert2;
+                                break;
+                            }
                         }
                     }
 

@@ -4,6 +4,7 @@ using System.Net;
 using System.ServiceModel;
 using System.Xml.Serialization;
 using System.ServiceModel.Channels;
+using System.ServiceModel.Security.Tokens;
 
 namespace CyberSource.Clients
 {
@@ -39,6 +40,9 @@ namespace CyberSource.Clients
         private const string PROXY_USER = "proxyUser";
         private const string PROXY_PASSWORD = "proxyPassword";
         private const string BASIC_AUTH = "Basic";
+
+        public const string CYBERSOURCE_PUBLIC_KEY = "CyberSource_SJC_US";
+        public const string X509_CLAIMTYPE = "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/x500distinguishedname";
 
 		static BaseClient()
 		{
@@ -211,6 +215,12 @@ namespace CyberSource.Clients
                 = AppSettings.GetIntSetting(
                     merchantID, Configuration.CONNECTION_LIMIT);
 
+            // Encryption enable flag
+            boolVal
+               = AppSettings.GetBoolSetting(
+                   merchantID, Configuration.USE_SIGNED_AND_ENCRYPTED);
+            if (boolVal != -1) config.UseSignedAndEncrypted = (boolVal == 1);
+
             return (config);
         }
 
@@ -303,7 +313,7 @@ namespace CyberSource.Clients
         /// Returns a custom wcf binding that will create a SOAP request 
         /// compatible with the Simple Order API Service
         /// </summary>
-        protected static CustomBinding getWCFCustomBinding()
+        protected static CustomBinding getWCFCustomBinding(Configuration config)
         {
             //Setup custom binding with HTTPS + Body Signing 
             CustomBinding currentBinding = new CustomBinding();
@@ -314,6 +324,15 @@ namespace CyberSource.Clients
             asec.IncludeTimestamp = false;
             asec.EnableUnsecuredResponse = true;
             asec.SecurityHeaderLayout = SecurityHeaderLayout.Lax;
+
+            if (config.UseSignedAndEncrypted)
+            {
+                asec.LocalClientSettings.IdentityVerifier = new CustomeIdentityVerifier();
+                asec.RecipientTokenParameters = new System.ServiceModel.Security.Tokens.X509SecurityTokenParameters { InclusionMode = SecurityTokenInclusionMode.Once };
+                asec.MessageProtectionOrder = System.ServiceModel.Security.MessageProtectionOrder.SignBeforeEncrypt;
+                asec.EndpointSupportingTokenParameters.SignedEncrypted.Add(new System.ServiceModel.Security.Tokens.X509SecurityTokenParameters());
+                asec.SetKeyDerivation(false);
+            }
 
             //Use custom encoder to strip unsigned timestamp in response
             CustomTextMessageBindingElement textBindingElement = new CustomTextMessageBindingElement();
