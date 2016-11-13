@@ -257,7 +257,7 @@ namespace CyberSource.Clients
 
             KeyedHashAlgorithm kha = KeyedHashAlgorithm.Create("RSA-SHA256");
 
-            signedXML.ComputeSignature(kha);
+            signedXML.ComputeSignature();
             XmlElement xmlDigitalSignature = signedXML.GetXml();
 
             doc.DocumentElement.FirstChild.FirstChild.AppendChild(doc.ImportNode(xmlDigitalSignature, true));
