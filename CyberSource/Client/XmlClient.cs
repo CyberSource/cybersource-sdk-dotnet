@@ -255,7 +255,9 @@ namespace CyberSource.Clients
             reference.DigestMethod = referenceDigestMethod;
             signedXML.AddReference(reference);
 
-            signedXML.ComputeSignature();
+            KeyedHashAlgorithm kha = KeyedHashAlgorithm.Create("RSA-SHA256");
+
+            signedXML.ComputeSignature(kha);
             XmlElement xmlDigitalSignature = signedXML.GetXml();
 
             doc.DocumentElement.FirstChild.FirstChild.AppendChild(doc.ImportNode(xmlDigitalSignature, true));
