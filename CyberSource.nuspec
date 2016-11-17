@@ -2,7 +2,7 @@
 <package >
   <metadata>
     <id>CyberSource</id>
-    <version>1.1.0.0</version>
+    <version>1.4.0</version>
 	<title>CyberSource Corporation</title>
     <authors>CyberSource Corporation</authors>
     <owners>CyberSource Corporation</owners>
@@ -12,7 +12,7 @@
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>SDK for integrating with CyberSource Payments, contains clients for NVP, Soap, and XML</description>
     <releaseNotes>SDK version for .NET 4</releaseNotes>
-    <copyright>Copyright 2014</copyright>
+    <copyright>Copyright 2016</copyright>
   </metadata>
       <files>
         <file src="CyberSource\bin\CyberSource.Clients.dll" target="lib\CyberSource.Clients.dll" />
