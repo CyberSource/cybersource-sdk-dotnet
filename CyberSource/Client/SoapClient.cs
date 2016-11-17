@@ -61,7 +61,7 @@ namespace CyberSource.Clients
                 SetConnectionLimit(config);
 
 
-                CustomBinding currentBinding = getWCFCustomBinding();
+                CustomBinding currentBinding = getWCFCustomBinding(config);
 
 
                 //Setup endpoint Address with dns identity
@@ -71,7 +71,7 @@ namespace CyberSource.Clients
                 //Get instance of service
                 using( proc = new TransactionProcessorClient(currentBinding, endpointAddress)){
                 
-                    //Set protection level to sign only
+                    //Set protection level to sign & encrypt only
                     proc.Endpoint.Contract.ProtectionLevel = System.Net.Security.ProtectionLevel.Sign;
 
                     // set the timeout
@@ -95,6 +95,21 @@ namespace CyberSource.Clients
                             proc.ClientCredentials.ClientCertificate.Certificate = cert1;
                             proc.ClientCredentials.ServiceCertificate.DefaultCertificate = cert1;
                             break;
+                        }
+                    }
+
+                    if (config.UseSignedAndEncrypted)
+                    {
+                        foreach (X509Certificate2 cert2 in collection)
+                        {
+                            //Console.WriteLine(cert1.Subject);
+                            if (cert2.Subject.Contains(CYBERSOURCE_PUBLIC_KEY))
+                            {
+                                //Set protection level to sign & encrypt only
+                                proc.Endpoint.Contract.ProtectionLevel = System.Net.Security.ProtectionLevel.EncryptAndSign;
+                                proc.ClientCredentials.ServiceCertificate.DefaultCertificate = cert2;
+                                break;
+                            }
                         }
                     }
 
@@ -200,7 +215,7 @@ namespace CyberSource.Clients
 			requestMessage.clientLibrary = ".NET Soap";
 			requestMessage.clientLibraryVersion = CLIENT_LIBRARY_VERSION;
 			requestMessage.clientEnvironment = mEnvironmentInfo;
-			requestMessage.clientSecurityLibraryVersion =".Net 1.0.0";
+			requestMessage.clientSecurityLibraryVersion =".Net 1.4.0";
 		}
 	}
 }

@@ -27,6 +27,7 @@ namespace CyberSource.Clients
         internal const string CONNECTION_LIMIT = "connectionLimit";
         internal const string SEND_TO_AKAMAI = "sendToAkamai";
         internal const string EFFECTIVE_SERVER_URL = "effectiveServerURL";
+        internal const string USE_SIGNED_AND_ENCRYPTED = "useSignAndEncrypted";
 
         /// <summary>
         /// Default log file name.
@@ -68,6 +69,7 @@ namespace CyberSource.Clients
         private bool demo = false;
         private bool sendToAkamai = true;
         private int connectionLimit = -1;
+        private bool useSignedAndEncrypted = false;
 
         private bool isSendToProductionSet = false;
 
@@ -405,6 +407,12 @@ namespace CyberSource.Clients
                 throw new ApplicationException(
                     "CONFIGURATION OR CODE BUG:  merchantID is missing!");
             }
+        }
+
+        public bool UseSignedAndEncrypted
+        {
+            get { return useSignedAndEncrypted; }
+            set { useSignedAndEncrypted = value; }
         }
     }
 }
