@@ -80,7 +80,7 @@ namespace CyberSource.Clients
 
 
                     string keyFilePath = Path.Combine(config.KeysDirectory, config.EffectiveKeyFilename);
-                    proc.ClientCredentials.ClientCertificate.Certificate = new X509Certificate2(keyFilePath, config.EffectivePassword, X509KeyStorageFlags.Exportable | X509KeyStorageFlags.PersistKeySet);
+                    proc.ClientCredentials.ClientCertificate.Certificate = new X509Certificate2(keyFilePath, config.EffectivePassword, X509KeyStorageFlags.MachineKeySet | X509KeyStorageFlags.Exportable | X509KeyStorageFlags.PersistKeySet);
 
                     proc.ClientCredentials.ServiceCertificate.Authentication.CertificateValidationMode = System.ServiceModel.Security.X509CertificateValidationMode.None;
 
