@@ -1,8 +1,2 @@
-language:
-    csharp
-
-install:
-    - sudo apt-get install mono-devel mono-dmcs nunit-console
-
-script:
-   - xbuild ./CyberSource.sln
+language: csharp
+solution: CyberSource.sln
