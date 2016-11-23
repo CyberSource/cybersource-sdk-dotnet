@@ -12,7 +12,14 @@ namespace CyberSource.Samples
 		static void Main(string[] args)
 		{
 			XmlDocument request = new XmlDocument();
-			request.Load( args.Length == 1 ? args[0] : "sample.xml" );
+
+            // Fix for Xml external entity injection violation in fortify report
+            XmlReaderSettings settings = new XmlReaderSettings();
+            settings.DtdProcessing = DtdProcessing.Prohibit;
+            settings.XmlResolver = null;
+            XmlReader reader = XmlReader.Create("sample.xml", settings);
+
+            request.Load(reader);
             string cybsNamespace = XmlClient.GetRequestNamespace(request);
             if (cybsNamespace == null)
             {

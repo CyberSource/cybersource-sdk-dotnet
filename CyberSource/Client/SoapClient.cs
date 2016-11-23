@@ -174,7 +174,14 @@ namespace CyberSource.Clients
                 }
                 memoryStream.Position = 0;
                 XmlDocument doc = new XmlDocument();
-                doc.Load(memoryStream);
+
+                // Fix for Xml external entity injection violation in fortify report
+                XmlReaderSettings settings = new XmlReaderSettings();
+                settings.DtdProcessing = DtdProcessing.Prohibit;
+                settings.XmlResolver = null;
+                XmlReader reader = XmlReader.Create(memoryStream, settings);
+                doc.Load(reader);
+
                 resultNode = doc.DocumentElement;
             }
 
