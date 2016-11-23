@@ -1,5 +1,8 @@
-﻿cybersource-sdk-dotnet
+# cybersource-sdk-dotnet
 ======================
+
+[![Build Status](https://travis-ci.org/ashchand/cybersource-sdk-dotnet.svg?branch=future)]
+(https://travis-ci.org/ashchand/cybersource-sdk-dotnet)
 
 .Net SDK for the CyberSource Simple Order API
 
