@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<requestMessage xmlns="urn:schemas-cybersource-com:transaction-data-1.86">
+    <merchantID>merchantId</merchantID>
+    <merchantReferenceCode>ABC123</merchantReferenceCode>
+    <purchaseTotals>
+        <currency>usd</currency>
+        <grandTotalAmount>75.00</grandTotalAmount>
+    </purchaseTotals>
+    <pos>
+        <entryMode>contact</entryMode>
+        <cardPresent>Y</cardPresent>
+        <terminalCapability>4</terminalCapability>
+        <trackData>%B4111111111111111^SMITH/BETTY^16121200123456789012**XXX******?*;
+        4111111111111111=16121200XXXX00000000?*</trackData>
+    </pos>
+    <ccAuthService run="true">
+        <commerceIndicator>retail</commerceIndicator>
+    </ccAuthService>
+    <emvRequest>
+        <combinedTags>9F3303204000950500000000009F3704518823719F100706011103A000009F260
+        81E1756ED0E2134E29F36020015820200009C01009F1A0208409A030006219F0206000000002
+        0005F2A0208409F0306000000000000</combinedTags>
+        <cardSequenceNumber>001</cardSequenceNumber>
+    </emvRequest>
+</requestMessage>

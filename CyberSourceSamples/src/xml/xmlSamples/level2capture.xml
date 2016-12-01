@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<requestMessage
+    xmlns="urn:schemas-cybersource-com:transaction-data-1.129">
+    <merchantID >merchantId</merchantID>
+    <merchantReferenceCode >your_merchant_reference_code</merchantReferenceCode>
+    
+    <invoiceHeader>
+        <merchantVATRegistrationNumber>GB-123445555</merchantVATRegistrationNumber>
+        <summaryCommodityCode>SUMM</summaryCommodityCode>
+        <supplierOrderReference>456456346</supplierOrderReference>
+    </invoiceHeader>
+    <item id="0">
+        <unitPrice>1.99</unitPrice>
+        <quantity>5</quantity>
+        <taxAmount>1.00</taxAmount>
+        <nationalTax>0.01</nationalTax>
+        <taxRate>0.05</taxRate>
+        <totalAmount>9.95</totalAmount>
+        <commodityCode>2222</commodityCode>
+        <alternateTaxRate>xxxx</alternateTaxRate>
+    </item>
+    <purchaseTotals >
+        <currency>USD</currency>
+    </purchaseTotals>
+
+    <ccCaptureService run="true">
+        <authRequestID>authRequestID></authRequestID>
+    </ccCaptureService>
+</requestMessage>
+
