@@ -1,0 +1,6 @@
+"merchantReferenceCode","your_merchant_reference_code"
+"purchaseTotals_currency","USD"
+"item_0_unitPrice","12.34"
+"item_1_unitPrice","56.78"
+"ccAuthReversalService_run","true"
+"ccAuthReversalService_authRequestID","authreqId"
