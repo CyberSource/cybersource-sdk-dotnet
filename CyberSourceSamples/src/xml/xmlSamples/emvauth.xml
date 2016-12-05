@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <requestMessage xmlns="urn:schemas-cybersource-com:transaction-data-1.86">
-    <merchantID>merchantId</merchantID>
+    <merchantID>your_merchant_id</merchantID>
     <merchantReferenceCode>ABC123</merchantReferenceCode>
     <purchaseTotals>
         <currency>usd</currency>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <requestMessage
 	xmlns:ns2="urn:schemas-cybersource-com:transaction-data-1.129">
-    <ns2:merchantID>merchantID</ns2:merchant>
+    <ns2:merchantID>your_merchant_id</ns2:merchant>
 	<ns2:merchantReferenceCode>your_merchant_reference_code</ns2:merchantReferenceCode>
 	<ns2:billTo>
 		<ns2:firstName>John</ns2:firstName>
