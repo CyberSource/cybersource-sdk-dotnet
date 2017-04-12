@@ -1,5 +1,4 @@
-Cybersource .NET SDK
-======================
+# CyberSource .NET SDK
 This is the .NET SDK for the CyberSource Simple Order API
 
 ## Package 
