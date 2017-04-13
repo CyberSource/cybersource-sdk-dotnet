@@ -30,7 +30,7 @@ Refer to our [Developer Guide](http://apps.cybersource.com/library/documentation
   - cybs.keysDirectory
   - cybs.logDirectory
   - cybs.proxyURL
-- Run `XmlSample.exe.
+- Run `XmlSample.exe`.
 
 ## Working with other versions of Cybersource API
 The version of the CyberSource Web Services API supported by the clients is indicated at the top of this README. To be able to communicate with a other versions:
@@ -43,7 +43,7 @@ The version of the CyberSource Web Services API supported by the clients is indi
   - Save a copy of the original CyberSource.Clients.dll and replace it with the one just built.
 - If you are using the XML client, there is no need to update the client. Simply start using the new namespace URI in your input XML documents. The client will automatically pick it up and use the specified version.
 
-## SUPPORT FOR MULTIPLE MERCHANTS
+## Support for Multiple Merchants
 Except for cybs.merchantID and the cybs.proxy* settings, all other config setting keys may be prefixed with the merchant id to tell the client that it is only applicable to that merchant id. Keys without any merchant prefix will be used in the absence of the corresponding merchant-specific one. For example:
 ```xml
 <add key="cybs.merchant123.sendToProduction" value="false"/>
@@ -53,8 +53,7 @@ All requests for merchant123 will go to the test server, all other requests will
 
 Alternatively, you can pre-create and cache a CyberSource.Clients.Configuration object for each merchant and pass the appropriate one to the RunTransaction() method.
 
-## Support for akamai
-
+## Support for Akamai
 - Set `sendToAkamai` config parameter with toggle value "true/false" to turn on/off routing requests through Akamai to Cybersource. By default, it is set to true.
 - `serverURL` config parameter will take precedence over `sendToProduction` and `sendToAkamai` config parameters. By default the `serverURL` configuration is commented out.
 
