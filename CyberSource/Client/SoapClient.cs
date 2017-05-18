@@ -8,6 +8,7 @@ using System.ServiceModel.Channels;
 using System.ServiceModel.Security;
 using CyberSource.Base;
 using CyberSource.Clients.SoapServiceReference;
+using System.Xml;
 
 
 namespace CyberSource.Clients
@@ -62,7 +63,7 @@ namespace CyberSource.Clients
                 SetConnectionLimit(config);
 
 
-                CustomBinding currentBinding = getWCFCustomBinding();
+                CustomBinding currentBinding = getWCFCustomBinding(config);
 
 
                 //Setup endpoint Address with dns identity
@@ -79,7 +80,7 @@ namespace CyberSource.Clients
                         proc.ClientCredentials.UserName.UserName = ProxyUser;
                     }
 
-                    //Set protection level to sign only
+                    //Set protection level to sign & encrypt only
                     proc.Endpoint.Contract.ProtectionLevel = System.Net.Security.ProtectionLevel.Sign;
 
                     // set the timeout
@@ -91,10 +92,52 @@ namespace CyberSource.Clients
                     proc.ClientCredentials.ClientCertificate.Certificate = new X509Certificate2(keyFilePath,config.EffectivePassword, X509KeyStorageFlags.Exportable | X509KeyStorageFlags.PersistKeySet);
 
                     proc.ClientCredentials.ServiceCertificate.Authentication.CertificateValidationMode = System.ServiceModel.Security.X509CertificateValidationMode.None;
-                    proc.ClientCredentials.ServiceCertificate.DefaultCertificate = proc.ClientCredentials.ClientCertificate.Certificate;
+
+                    // Changes for SHA2 certificates support
+                    X509Certificate2Collection collection = new X509Certificate2Collection();
+                    collection.Import(keyFilePath, config.EffectivePassword, X509KeyStorageFlags.Exportable | X509KeyStorageFlags.PersistKeySet);
+
+                    foreach (X509Certificate2 cert1 in collection)
+                    {
+                        if (cert1.Subject.Contains(config.MerchantID))
+                        {
+                            proc.ClientCredentials.ClientCertificate.Certificate = cert1;
+                            proc.ClientCredentials.ServiceCertificate.DefaultCertificate = cert1;
+                            break;
+                        }
+                    }
+
+                    if (config.UseSignedAndEncrypted)
+                    {
+                        foreach (X509Certificate2 cert2 in collection)
+                        {
+                            //Console.WriteLine(cert1.Subject);
+                            if (cert2.Subject.Contains(CYBERSOURCE_PUBLIC_KEY))
+                            {
+                                //Set protection level to sign & encrypt only
+                                proc.Endpoint.Contract.ProtectionLevel = System.Net.Security.ProtectionLevel.EncryptAndSign;
+                                proc.ClientCredentials.ServiceCertificate.DefaultCertificate = cert2;
+                                break;
+                            }
+                        }
+                    }
 
                     // send request now
-				    return( proc.runTransaction( requestMessage ) );
+                    // Changes for NGT-3035
+                    XmlNode req = SerializeObjectToXmlNode(requestMessage);
+                    if (logger != null)
+                    {
+                        logger.LogRequest(req, config.Demo);
+                    }                   
+                    
+                    ReplyMessage reply = proc.runTransaction(requestMessage);
+                    XmlNode rep = SerializeObjectToXmlNode(reply);
+                    if (logger != null)
+                    {
+                        logger.LogReply(rep, config.Demo);
+                    }  
+                   
+                    return (reply);
                 }
 			}
 		    catch (Exception e)
@@ -116,6 +159,35 @@ namespace CyberSource.Clients
                     proc.Close();
                 }
             }
+        }
+
+        // Changes for NGT-3035
+        private static XmlNode SerializeObjectToXmlNode(Object obj)
+        {
+            if (obj == null)
+                throw new ArgumentNullException("Argument cannot be null");
+
+            XmlNode resultNode = null;
+            System.Xml.Serialization.XmlSerializer xmlSerializer = new System.Xml.Serialization.XmlSerializer(obj.GetType());
+            System.Xml.Serialization.XmlSerializerNamespaces ns = new System.Xml.Serialization.XmlSerializerNamespaces();
+            ns.Add("", "");
+            using (MemoryStream memoryStream = new MemoryStream())
+            {
+                try
+                {
+                    xmlSerializer.Serialize(memoryStream, obj, ns);
+                }
+                catch (InvalidOperationException)
+                {
+                    return null;
+                }
+                memoryStream.Position = 0;
+                XmlDocument doc = new XmlDocument();
+                doc.Load(memoryStream);
+                resultNode = doc.DocumentElement;
+            }
+
+            return resultNode;
         }
 
      
@@ -152,7 +224,7 @@ namespace CyberSource.Clients
 			requestMessage.clientLibrary = ".NET Soap";
 			requestMessage.clientLibraryVersion = CLIENT_LIBRARY_VERSION;
 			requestMessage.clientEnvironment = mEnvironmentInfo;
-			requestMessage.clientSecurityLibraryVersion =".Net 1.0.0";
+			requestMessage.clientSecurityLibraryVersion =".Net 1.4.0";
 		}
 	}
 }

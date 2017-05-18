@@ -25,6 +25,9 @@ namespace CyberSource.Clients
         internal const string TIMEOUT = "timeout";
         internal const string DEMO = "demo";
         internal const string CONNECTION_LIMIT = "connectionLimit";
+        internal const string SEND_TO_AKAMAI = "sendToAkamai";
+        internal const string EFFECTIVE_SERVER_URL = "effectiveServerURL";
+        internal const string USE_SIGNED_AND_ENCRYPTED = "useSignAndEncrypted";
 
         /// <summary>
         /// Default log file name.
@@ -43,6 +46,8 @@ namespace CyberSource.Clients
 
         private const string TEST_URL = "https://ics2wstest.ic3.com/commerce/1.x/transactionProcessor";
         private const string PROD_URL = "https://ics2ws.ic3.com/commerce/1.x/transactionProcessor";
+        private const string AKAMAI_TEST_URL = "https://ics2wstesta.ic3.com/commerce/1.x/transactionProcessor";
+        private const string AKAMAI_PROD_URL = "https://ics2wsa.ic3.com/commerce/1.x/transactionProcessor";
         private const string PROD_HOST = "ics2ws.ic3.com";
         
         private const string P12_EXTENSION = ".p12";
@@ -62,7 +67,9 @@ namespace CyberSource.Clients
         private int logMaximumSize = -1;
         private int timeout = -1;
         private bool demo = false;
+        private bool sendToAkamai = true;
         private int connectionLimit = -1;
+        private bool useSignedAndEncrypted = false;
 
         private bool isSendToProductionSet = false;
 
@@ -107,6 +114,16 @@ namespace CyberSource.Clients
         {
             get { return sendToProduction; }
             set { sendToProduction = value; isSendToProductionSet = true; }
+        }
+
+        /// <summary>
+        /// Corresponds to [cybs.][merchantID].sendToAkamai 
+        /// This flag decides if the transaction will go via akamai or not.
+        /// </summary>
+        public bool SendToAkamai
+        {
+            get { return sendToAkamai; }
+            set { sendToAkamai = value; }
         }
 
         /// <summary>
@@ -316,6 +333,11 @@ namespace CyberSource.Clients
                     buf += NVP_SEPARATOR + CONNECTION_LIMIT + NV_SEPARATOR + connectionLimit;
                 }
 
+                if (EffectiveServerURL != null)
+                {
+                    buf += NVP_SEPARATOR + EFFECTIVE_SERVER_URL + NV_SEPARATOR + EffectiveServerURL;
+                }
+
                 return (buf);
             }
         }
@@ -334,7 +356,12 @@ namespace CyberSource.Clients
                     throw new ApplicationException(
                         "CONFIGURATION BUG:  sendToProduction or serverURL must be specified!");
                 }
-                return (sendToProduction ? PROD_URL : TEST_URL);                
+                if (sendToProduction)
+                {
+                    return (sendToAkamai ? AKAMAI_PROD_URL:PROD_URL);
+                }
+
+                return (sendToAkamai ? AKAMAI_TEST_URL:TEST_URL);
             }
         }
 
@@ -380,6 +407,12 @@ namespace CyberSource.Clients
                 throw new ApplicationException(
                     "CONFIGURATION OR CODE BUG:  merchantID is missing!");
             }
+        }
+
+        public bool UseSignedAndEncrypted
+        {
+            get { return useSignedAndEncrypted; }
+            set { useSignedAndEncrypted = value; }
         }
     }
 }
