@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<requestMessage
+	xmlns:ns2="urn:schemas-cybersource-com:transaction-data-1.129">
+    <ns2:merchantID>your_merchant_id</ns2:merchant>
+	<ns2:merchantReferenceCode>your_merchant_reference_code</ns2:merchantReferenceCode>
+	<ns2:billTo>
+		<ns2:firstName>John</ns2:firstName>
+		<ns2:lastName>Doe</ns2:lastName>
+		<ns2:street1>1295 Charleston Road</ns2:street1>
+		<ns2:city>Mountain View</ns2:city>
+		<ns2:state>CA</ns2:state>
+		<ns2:postalCode>94043</ns2:postalCode>
+		<ns2:country>US</ns2:country>
+		<ns2:phoneNumber>650-965-6000</ns2:phoneNumber>
+		<ns2:email>nobody@cybersource.com</ns2:email>
+		<ns2:ipAddress>10.7.7.7</ns2:ipAddress>
+	</ns2:billTo>
+	<ns2:shipTo>
+		<ns2:firstName>Jane</ns2:firstName>
+		<ns2:lastName>Doe</ns2:lastName>
+		<ns2:street1>100 Elm Street</ns2:street1>
+		<ns2:city>San Mateo</ns2:city>
+		<ns2:state>CA</ns2:state>
+		<ns2:postalCode>94401</ns2:postalCode>
+		<ns2:country>US</ns2:country>
+	</ns2:shipTo>
+	<ns2:item id="0">
+		<ns2:unitPrice>1234</ns2:unitPrice>
+	</ns2:item>
+	<ns2:item id="1">
+		<ns2:unitPrice>5678</ns2:unitPrice>
+	</ns2:item>
+	<ns2:purchaseTotals>
+		<ns2:currency>USD</ns2:currency>
+	</ns2:purchaseTotals>
+	<ns2:card>
+		<ns2:accountNumber>4111111111111111</ns2:accountNumber>
+		<ns2:expirationMonth>12</ns2:expirationMonth>
+		<ns2:expirationYear>2020</ns2:expirationYear>
+	</ns2:card>
+
+	<ns2:ccAuthService run="true">
+	</ns2:ccAuthService>
+	<ns2:ccCaptureService run="true">
+	</ns2:ccCaptureService>
+</requestMessage>

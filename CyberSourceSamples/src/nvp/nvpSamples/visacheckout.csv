@@ -1,0 +1,5 @@
+"getVisaCheckoutDataService_run","true"
+"merchantID","your_merchant_id"
+"merchantReferenceCode","your_merchant_reference_code"
+"paymentSolution","visacheckout"
+"vc_orderID","orderId"

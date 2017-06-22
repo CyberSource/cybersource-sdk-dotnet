@@ -61,9 +61,15 @@ namespace CyberSource.Clients
         {
             var sr = new StreamReader(stream);
             var wireResponse = sr.ReadToEnd();
-           
+
+            // Fix for Xml external entity injection violation in fortify report
+            XmlReaderSettings settings = new XmlReaderSettings();
+            settings.DtdProcessing = DtdProcessing.Prohibit;
+            settings.XmlResolver = null;
+
             XmlDocument doc = new XmlDocument();
-            doc.LoadXml(wireResponse);
+            XmlReader reader = XmlReader.Create(new StringReader(wireResponse), settings);
+            doc.Load(reader);
             //We need to get rid of the security header because it is not signed by the web service.
             //The whole reason for the custom Encoder is to do this. the client rejected the unsigned header.
             //Our WCF client is set up to allow the absence of a security header but if the header exists then it must be signed.
@@ -73,7 +79,7 @@ namespace CyberSource.Clients
             {
                 n.DeleteSelf();
             }
-            XmlReader reader = XmlReader.Create(new StringReader(doc.InnerXml));
+            reader = XmlReader.Create(new StringReader(doc.InnerXml), settings);
             return Message.CreateMessage(reader, maxSizeOfHeaders, MessageVersion.Soap11);
         }
 
