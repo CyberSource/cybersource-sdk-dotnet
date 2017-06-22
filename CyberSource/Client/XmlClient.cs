@@ -472,7 +472,7 @@ namespace CyberSource.Clients
 
             SetField(requestMessageNode, ref previousSibling,
                 "clientSecurityLibraryVersion",
-                ".Net 1.4.0", nspace);
+                ".Net 1.4.1", nspace);
         }
 
         private static void SetField(
