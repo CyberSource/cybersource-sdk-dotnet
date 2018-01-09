@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="JDQYYiLlUsNG651kZdqTl/eVyr4=">
+<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="kdPSbzWNer8/DryNieC1wN4YBqA=">
   <bindingConfigurations>
     <bindingConfiguration bindingType="basicHttpBinding" name="ITransactionProcessor">
       <properties>
@@ -224,7 +224,7 @@
     <endpoint name="portXML" contract="SoapServiceReference.ITransactionProcessor" bindingType="basicHttpBinding" address="https://ics2wstest.ic3.com/commerce/1.x/transactionProcessor" bindingConfiguration="ITransactionProcessor">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>https://ics2wstest.ic3.com/commerce/1.x/transactionProcessor</serializedValue>
+          <serializedValue>https://ics2wstest.ic3.com:443/commerce/1.x/transactionProcessor</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />

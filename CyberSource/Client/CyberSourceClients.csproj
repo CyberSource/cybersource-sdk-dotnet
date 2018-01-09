@@ -137,10 +137,6 @@
     <None Include="Service References\SoapServiceReference\CyberSource.Clients.SoapServiceReference.ReplyMessage.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\SoapServiceReference\CyberSourceTransactionWS.wsdl" />
-    <None Include="Service References\SoapServiceReference\CyberSourceTransaction_1.xsd">
-      <SubType>Designer</SubType>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
@@ -185,6 +181,10 @@
     <None Include="Service References\SoapServiceReference\configuration.svcinfo" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Service References\SoapServiceReference\CyberSourceTransactionWS1.wsdl" />
+    <None Include="Service References\SoapServiceReference\CyberSourceTransaction_11.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Service References\SoapServiceReference\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
