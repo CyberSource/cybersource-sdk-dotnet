@@ -29,9 +29,13 @@ namespace CyberSource.Clients
             // load the SOAP envelope document.
             mSoapEnvelope = new XmlDocument();
 
+            // Fix for Xml external entity injection violation in fortify report
+            XmlReaderSettings settings = new XmlReaderSettings();
+            settings.DtdProcessing = DtdProcessing.Prohibit;
+            settings.XmlResolver = null;
+            XmlReader reader = XmlReader.Create(new StringReader(SOAP_ENVELOPE), settings);
 
-
-            mSoapEnvelope.LoadXml(SOAP_ENVELOPE);
+            mSoapEnvelope.Load(reader);
         }
 
         private XmlClient() { }
@@ -261,8 +265,17 @@ namespace CyberSource.Clients
             doc.DocumentElement.FirstChild.FirstChild.AppendChild(doc.ImportNode(xmlDigitalSignature, true));
 
             // Add KeyInfo Node with reference to the X509 cert
+            string keyInfoTags = "<root xmlns:ds=\"http://www.w3.org/2000/09/xmldsig#\" xmlns:wsse=\"http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd\" ><ds:KeyInfo><SecurityTokenReference xmlns=\"http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd\"><wsse:Reference URI=\"#X509Token\" ValueType=\"http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-x509-token-profile-1.0#X509v3\"/></SecurityTokenReference></ds:KeyInfo></root>";
             XmlDocument keyInfo = new XmlDocument();
-            keyInfo.LoadXml("<root xmlns:ds=\"http://www.w3.org/2000/09/xmldsig#\" xmlns:wsse=\"http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd\" ><ds:KeyInfo><SecurityTokenReference xmlns=\"http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd\"><wsse:Reference URI=\"#X509Token\" ValueType=\"http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-x509-token-profile-1.0#X509v3\"/></SecurityTokenReference></ds:KeyInfo></root>");
+
+            // Fix for Xml external entity injection violation in fortify report
+            XmlReaderSettings settings = new XmlReaderSettings();
+            settings.DtdProcessing = DtdProcessing.Prohibit;
+            settings.XmlResolver = null;
+            XmlReader reader = XmlReader.Create(new StringReader(keyInfoTags), settings);
+
+            //keyInfo.LoadXml("<root xmlns:ds=\"http://www.w3.org/2000/09/xmldsig#\" xmlns:wsse=\"http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd\" ><ds:KeyInfo><SecurityTokenReference xmlns=\"http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd\"><wsse:Reference URI=\"#X509Token\" ValueType=\"http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-x509-token-profile-1.0#X509v3\"/></SecurityTokenReference></ds:KeyInfo></root>");
+            keyInfo.Load(reader);
             doc.DocumentElement.FirstChild.FirstChild.LastChild.AppendChild(doc.ImportNode(keyInfo.FirstChild.FirstChild, true));
 
             //Add The Base64 representation of the X509 cert to BinarySecurityToken Node
@@ -281,7 +294,14 @@ namespace CyberSource.Clients
                              "<xenc:ReferenceList><xenc:DataReference URI=\"#Body\"></xenc:DataReference></xenc:ReferenceList></xenc:EncryptedKey></root>";
 
             XmlDocument encryptedDataTags = new XmlDocument();
-            encryptedDataTags.LoadXml(encData);
+
+            // Fix for Xml external entity injection violation in fortify report
+            XmlReaderSettings settings = new XmlReaderSettings();
+            settings.DtdProcessing = DtdProcessing.Prohibit;
+            settings.XmlResolver = null;
+            XmlReader reader = XmlReader.Create(new StringReader(encData), settings);
+
+            encryptedDataTags.Load(reader);
             doc.DocumentElement.FirstChild.FirstChild.PrependChild(doc.ImportNode(encryptedDataTags.FirstChild.FirstChild, true));
 
             XmlElement elementToEncrypt = doc.GetElementsByTagName(REQUEST_MESSAGE)[0] as XmlElement;
@@ -405,7 +425,13 @@ namespace CyberSource.Clients
                 XmlDocument xmlDoc = new XmlDocument();
                 xmlDoc.PreserveWhitespace = true;
                 stream = webResponse.GetResponseStream();
-                xmlDoc.Load(stream);
+
+                // Fix for Xml external entity injection violation in fortify report
+                XmlReaderSettings settings = new XmlReaderSettings();
+                settings.DtdProcessing = DtdProcessing.Prohibit;
+                settings.XmlResolver = null;
+                XmlReader reader = XmlReader.Create(stream, settings);
+                xmlDoc.Load(reader);
                 return (xmlDoc);
             }
             finally
@@ -444,7 +470,7 @@ namespace CyberSource.Clients
 
             SetField(requestMessageNode, ref previousSibling,
                 "clientSecurityLibraryVersion",
-                ".Net 1.4.0", nspace);
+                ".Net 1.4.1", nspace);
         }
 
         private static void SetField(
