@@ -1,6 +1,7 @@
 using CyberSource.Base;
 using System;
 using System.Net;
+using System.Security.Cryptography.X509Certificates;
 using System.ServiceModel;
 using System.Xml.Serialization;
 using System.ServiceModel.Channels;
@@ -358,6 +359,39 @@ namespace CyberSource.Clients
             currentBinding.Elements.Add(textBindingElement);
             currentBinding.Elements.Add(httpsTransport);
             return currentBinding;
+        }
+
+        /// <summary>
+        /// Creates a new instance of X509Certificate2
+        /// </summary>
+        /// <param name="config">
+        /// Configuration object containing the key content or file path
+        /// </param>
+        /// <returns>New instance of X509Certificate2</returns>
+        protected static X509Certificate2 GetCertificate(Configuration config)
+        {
+            var flags = X509KeyStorageFlags.MachineKeySet | X509KeyStorageFlags.Exportable | X509KeyStorageFlags.PersistKeySet;
+            return config.Key != null
+                ? new X509Certificate2(config.Key, config.EffectivePassword, flags)
+                : new X509Certificate2(config.EffectiveKeyFilePath, config.EffectivePassword, flags);
+        }
+
+        /// <summary>
+        /// Creates a certificate collection with an imported certificate
+        /// </summary>
+        /// <param name="config">
+        /// Configuration object containing the key content or file path
+        /// </param>
+        /// <returns>New instance of X509Certificate2Collection with an imported certificate</returns>
+        protected static X509Certificate2Collection GetCertificateCollection(Configuration config)
+        {
+            var collection = new X509Certificate2Collection();
+            var flags = X509KeyStorageFlags.MachineKeySet | X509KeyStorageFlags.Exportable | X509KeyStorageFlags.PersistKeySet;
+            if (config.Key != null)
+                collection.Import(config.Key, config.EffectivePassword, flags);
+            else
+                collection.Import(config.EffectiveKeyFilePath, config.EffectivePassword, flags);
+            return collection;
         }
     }
 }

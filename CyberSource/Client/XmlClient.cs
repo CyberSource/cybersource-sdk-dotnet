@@ -88,13 +88,11 @@ namespace CyberSource.Clients
                 XmlDocument doc = SoapWrap(request, nspace);
 
                 //Get the X509 cert and sign the SOAP Body    
-                string keyFilePath = Path.Combine(config.KeysDirectory, config.EffectiveKeyFilename);
 
                 X509Certificate2 cert = null;
                 X509Certificate2 cybsCert = null;
 
-                X509Certificate2Collection collection = new X509Certificate2Collection();
-                collection.Import(keyFilePath, config.EffectivePassword, X509KeyStorageFlags.MachineKeySet | X509KeyStorageFlags.Exportable | X509KeyStorageFlags.PersistKeySet);
+                X509Certificate2Collection collection = GetCertificateCollection(config);
 
                 foreach (X509Certificate2 cert1 in collection)
                 {

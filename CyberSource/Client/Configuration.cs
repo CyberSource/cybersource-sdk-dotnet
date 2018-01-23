@@ -1,4 +1,5 @@
 using System;
+using System.IO;
 
 namespace CyberSource.Clients
 {
@@ -62,6 +63,7 @@ namespace CyberSource.Clients
         private string logDirectory = null;
         private string serverURL = null;
         private string keyFilename = null;
+        private byte[] key = null;
         private string password = null;
         private string logFilename = null;
         private int logMaximumSize = -1;
@@ -159,6 +161,15 @@ namespace CyberSource.Clients
         {
             get { return serverURL; }
             set { serverURL = value; }
+        }
+
+        /// <summary>
+        /// This is optional. When set, it reads key from memory rather than from file system
+        /// </summary>
+        public byte[] Key
+        {
+            get { return key; }
+            set { key = value; }
         }
 
         /// <summary>
@@ -377,6 +388,18 @@ namespace CyberSource.Clients
                     keyFilename != null 
                         ? keyFilename 
                         : merchantID + P12_EXTENSION );
+            }
+        }
+
+        /// <summary>
+        /// Return the key file path that will take effect given
+        /// the current state of this Configuration object.
+        /// </summary>
+        internal string EffectiveKeyFilePath
+        {
+            get
+            {
+                return Path.Combine(KeysDirectory, EffectiveKeyFilename);
             }
         }
 
