@@ -16,6 +16,7 @@ namespace CyberSource.Clients
 	/// </summary>
 	public class SoapClient : BaseClient
 	{
+
         /// <summary>
         /// Namespace URI used for CyberSource-specific elements.
         /// </summary>
