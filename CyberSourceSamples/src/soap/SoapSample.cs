@@ -6,7 +6,6 @@ using CyberSource.Clients;
 using CyberSource.Clients.SoapServiceReference;
 using System.Security.Cryptography;
 using System.Threading;
-using System.Threading.Tasks;
 
 namespace CyberSource.Samples
 {
@@ -92,7 +91,7 @@ namespace CyberSource.Samples
 
             try
             {
-                ReplyMessage reply = null;
+                ReplyMessage reply;
 
                 if (runAs == RunAs.Synchronously)
                 {
@@ -158,6 +157,14 @@ namespace CyberSource.Samples
                 //The WebException class is thrown by classes descended from WebRequest and WebResponse that implement pluggable protocols for accessing the Internet.
                 SaveOrderState();
                 HandleWebException(we);
+            }
+            catch (AggregateException ae)
+            {
+                SaveOrderState();
+                foreach (var e in ae.InnerExceptions)
+                {
+                    HandleException(e);
+                }
             }
             //Any other exception!
             catch (Exception e)
