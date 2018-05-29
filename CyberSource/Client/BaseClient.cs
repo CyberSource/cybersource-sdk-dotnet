@@ -46,6 +46,7 @@ namespace CyberSource.Clients
 
 		static BaseClient()
 		{
+			ServicePointManager.SecurityProtocol = (SecurityProtocolType)3072 | (SecurityProtocolType)768;
 			SetupProxy();
 		}
 
