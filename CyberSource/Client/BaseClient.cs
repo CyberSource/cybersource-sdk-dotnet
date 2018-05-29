@@ -29,7 +29,7 @@ namespace CyberSource.Clients
         protected static string mEnvironmentInfo =
                   Environment.OSVersion.Platform +
                   Environment.OSVersion.Version.ToString() + "-CLR" +
-                  Environment.Version.ToString();
+                  Environment.Version;
 
         /// <summary>
         /// Field for merchantID used in requests.
@@ -114,36 +114,33 @@ namespace CyberSource.Clients
         /// Builds a Configuration object using settings from the
         /// appsettings section of the application/web config file.
         /// </summary>
-        /// <param name="merchantID">
+        /// <param name="merchantId">
         /// If not null, this method will get the settings specific to
         /// this merchant id.
         /// </param>
-        /// <param name="failIfNoMerchantID">
+        /// <param name="failIfNoMerchantId">
         /// If set to true, an ApplicationException will be thrown if
         /// merchantID is null and there is no merchantID in the
         /// appsettings, either.
         /// </param>
         /// <returns>the built Configuration object</returns>
-        private static Configuration InternalBuildConfiguration(
-            string merchantID, bool failIfNoMerchantID )
+        private static Configuration InternalBuildConfiguration(string merchantId, bool failIfNoMerchantId)
         {
             Configuration config = new Configuration();
             
-            if (merchantID == null)
+            if (merchantId == null)
             {
-                merchantID
-                    = AppSettings.GetSetting( null, MERCHANT_ID );
+                merchantId = AppSettings.GetSetting( null, MERCHANT_ID );
             }
-            if (merchantID != null || failIfNoMerchantID)
+            if (merchantId != null || failIfNoMerchantId)
             {
                 // if merchantID is null, the assignment below will
                 // throw an exception.
-                config.MerchantID = merchantID;
+                config.MerchantID = merchantId;
             }
 
-            string keysDirectory
-                = AppSettings.GetSetting(
-                    merchantID, Configuration.KEYS_DIRECTORY);
+            string keysDirectory = AppSettings.GetSetting(merchantId, Configuration.KEYS_DIRECTORY);
+
             if (keysDirectory != null)
             {
                 config.KeysDirectory = keysDirectory;
@@ -151,74 +148,49 @@ namespace CyberSource.Clients
             else
             {
                 // look for "keysDir" for backwards-compatibility
-                config.KeysDirectory
-                    = AppSettings.GetSetting(
-                        merchantID, Configuration.KEYS_DIR);
+                config.KeysDirectory = AppSettings.GetSetting(merchantId, Configuration.KEYS_DIR);
             }
 
-            int boolVal
-                = AppSettings.GetBoolSetting(
-                    merchantID, Configuration.SEND_TO_PRODUCTION);
+            int boolVal = AppSettings.GetBoolSetting(merchantId, Configuration.SEND_TO_PRODUCTION);
+
             if (boolVal != -1) config.SendToProduction = (boolVal == 1);
 
-            boolVal
-                = AppSettings.GetBoolSetting(
-                    merchantID, Configuration.ENABLE_LOG);
-            config.setLogProperties(
-                boolVal == 1,
-                AppSettings.GetSetting(
-                    merchantID, Configuration.LOG_DIRECTORY) );
+            boolVal = AppSettings.GetBoolSetting(merchantId, Configuration.ENABLE_LOG);
 
-            config.ServerURL
-                = AppSettings.GetSetting(
-                    merchantID, Configuration.SERVER_URL);
+            config.setLogProperties(boolVal == 1, AppSettings.GetSetting(merchantId, Configuration.LOG_DIRECTORY));
+
+            config.ServerURL = AppSettings.GetSetting(merchantId, Configuration.SERVER_URL);
+
             if (config.ServerURL == null)
             {
                 // look for "cybersourceURL" for backwards-compatibility
-                config.ServerURL
-                    = AppSettings.GetSetting(
-                        merchantID, Configuration.CYBERSOURCE_URL);
+                config.ServerURL = AppSettings.GetSetting(merchantId, Configuration.CYBERSOURCE_URL);
             }
 
             //See if akamai flag has been set or not which eventually gives effective server URL
-            boolVal
-                = AppSettings.GetBoolSetting(
-                    merchantID, Configuration.SEND_TO_AKAMAI);
+            boolVal = AppSettings.GetBoolSetting(merchantId, Configuration.SEND_TO_AKAMAI);
+
             if (boolVal != -1) config.SendToAkamai = (boolVal == 1);
 
-            config.KeyFilename
-                = AppSettings.GetSetting(
-                    merchantID, Configuration.KEY_FILENAME);
+            config.KeyFilename = AppSettings.GetSetting(merchantId, Configuration.KEY_FILENAME);
 
-            config.Password
-                = AppSettings.GetSetting(
-                    merchantID, Configuration.PASSWORD);
+            config.Password = AppSettings.GetSetting(merchantId, Configuration.PASSWORD);
 
-            config.LogFilename
-                = AppSettings.GetSetting(
-                    merchantID, Configuration.LOG_FILENAME);
+            config.LogFilename = AppSettings.GetSetting(merchantId, Configuration.LOG_FILENAME);
 
-            config.LogMaximumSize
-                = AppSettings.GetIntSetting(
-                    merchantID, Configuration.LOG_MAXIMUM_SIZE);
+            config.LogMaximumSize = AppSettings.GetIntSetting(merchantId, Configuration.LOG_MAXIMUM_SIZE);
 
-            config.Timeout
-                = AppSettings.GetIntSetting(
-                    merchantID, Configuration.TIMEOUT);
+            config.Timeout = AppSettings.GetIntSetting(merchantId, Configuration.TIMEOUT);
 
-            boolVal
-                = AppSettings.GetBoolSetting(
-                    merchantID, Configuration.DEMO);
+            boolVal = AppSettings.GetBoolSetting(merchantId, Configuration.DEMO);
+
             if (boolVal != -1) config.Demo = (boolVal == 1);
 
-            config.ConnectionLimit
-                = AppSettings.GetIntSetting(
-                    merchantID, Configuration.CONNECTION_LIMIT);
+            config.ConnectionLimit = AppSettings.GetIntSetting(merchantId, Configuration.CONNECTION_LIMIT);
 
             // Encryption enable flag
-            boolVal
-               = AppSettings.GetBoolSetting(
-                   merchantID, Configuration.USE_SIGNED_AND_ENCRYPTED);
+            boolVal = AppSettings.GetBoolSetting(merchantId, Configuration.USE_SIGNED_AND_ENCRYPTED);
+
             if (boolVal != -1) config.UseSignedAndEncrypted = (boolVal == 1);
 
             return (config);
@@ -239,14 +211,8 @@ namespace CyberSource.Clients
             Logger logger = null;
             if (config.EnableLog)
             {
-                logger
-                    = Logger.GetInstance(
-                        config.LogDirectory, config.LogFilename,
-                        config.LogMaximumSize);
-                if (logger != null)
-                {
-                    logger.LogTransactionStart(config.LogString);
-                }
+                logger = Logger.GetInstance(config.LogDirectory, config.LogFilename, config.LogMaximumSize);
+                logger?.LogTransactionStart(config.LogString);
             }
             return (logger);
         }
@@ -282,10 +248,7 @@ namespace CyberSource.Clients
             }
             catch
             {
-                if (logger != null)
-                {
-                    logger.Log(Logger.LogType.CONFIG,"Failed to get Namespace from Service Reference. This should not prevent the client from working: Type=" + type.FullName);
-                }
+                logger?.Log(Logger.LogType.CONFIG,"Failed to get Namespace from Service Reference. This should not prevent the client from working: Type=" + type.FullName);
                 return "";
             }
         }
