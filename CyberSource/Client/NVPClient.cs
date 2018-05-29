@@ -1,7 +1,6 @@
 using System;
 using System.Collections;
 using System.IO;
-using System.Net;
 using System.Security.Cryptography.X509Certificates;
 using System.ServiceModel;
 using System.ServiceModel.Channels;
@@ -9,8 +8,6 @@ using System.Text;
 using System.Threading.Tasks;
 using CyberSource.Base;
 using CyberSource.Clients.NVPServiceReference;
-
-
 
 namespace CyberSource.Clients
 {
@@ -26,9 +23,7 @@ namespace CyberSource.Clients
 
         static NVPClient()
         {
-            
             CYBS_NAMESPACE = GetXmlElementAttributeNamespace(typeof(inputNVPMessageIn));
-           
         }
 
         private NVPClient() { }
