@@ -5,13 +5,28 @@ using System.ServiceModel.Security;
 using CyberSource.Clients;
 using CyberSource.Clients.SoapServiceReference;
 using System.Security.Cryptography;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace CyberSource.Samples
 {
     class SoapSample
     {
+        enum RunAs
+        {
+            Synchronously = 1,
+            Asynchronously = 2
+        }
+
         static void Main(string[] args)
         {
+            Console.WriteLine("Do you want to run this sample Synchronously or Asycnhronously?");
+            Console.WriteLine("1: Synchronously");
+            Console.WriteLine("2: Asynchronously");
+            RunAs runAs = (RunAs)Enum.Parse(typeof(RunAs), Console.ReadLine());
+
+            Console.Clear();
+
             Console.WriteLine("Select the transaction type:\n" +
                 "1: Auth \n" +
                 "2: Auth Reversal\n" +
@@ -73,13 +88,34 @@ namespace CyberSource.Samples
 
             }
 
+            Console.WriteLine($"Running sample {runAs.ToString()}");
 
             try
             {
-                ReplyMessage reply = SoapClient.RunTransaction(request);
+                ReplyMessage reply = null;
+
+                if (runAs == RunAs.Synchronously)
+                {
+                    reply = SoapClient.RunTransaction(request);
+                }
+                else
+                {
+                    //Await this, if possible, rather than checking manually if the task has completed.. But this is just a sample
+                    var task = SoapClient.RunTransactionAsync(request);
+                    do
+                    {
+                        Console.WriteLine("Processing task...");
+                        Console.WriteLine(Environment.NewLine);
+                        Thread.Sleep(150);
+                    } while (!task.IsCompleted);
+
+                    reply = task.Result;
+                }
+
                 SaveOrderState();
                 ProcessReply(reply);
             }
+
             /*** There are many specific exceptions that could be caught here. Only a few are provided as examples. 
               This is a Windows Communication Foundation (WCF) Client and uses exceptions from the System.ServiceModel
               Namespaces. Please refer to the Microsoft documentation to better understand what these exceptions mean.
