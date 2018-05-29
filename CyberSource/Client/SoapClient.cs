@@ -4,6 +4,7 @@ using System.Net;
 using System.Security.Cryptography.X509Certificates;
 using System.ServiceModel;
 using System.ServiceModel.Channels;
+using System.Threading.Tasks;
 using CyberSource.Base;
 using CyberSource.Clients.SoapServiceReference;
 using System.Xml;
@@ -34,10 +35,9 @@ namespace CyberSource.Clients
         /// </summary>
 		/// <param name="requestMessage">RequestMessage object containing the request.</param>
 		/// <returns>ReplyMessage containing the reply.</returns>
-        public static ReplyMessage RunTransaction(
-            RequestMessage requestMessage )
+        public static ReplyMessage RunTransaction(RequestMessage requestMessage)
         {
-            return (RunTransaction(null, requestMessage));
+            return RunTransactionAsync(null, requestMessage).Result;
         }
 
         /// <summary>
@@ -46,41 +46,58 @@ namespace CyberSource.Clients
         /// <param name="config">Configuration object to use.</param>
 		/// <param name="requestMessage">RequestMessage object containing the request.</param>
 		/// <returns>ReplyMessage containing the reply.</returns>
-        public static ReplyMessage RunTransaction(
-            Configuration config, RequestMessage requestMessage)
+        public static ReplyMessage RunTransaction(Configuration config, RequestMessage requestMessage)
         {
+            return RunTransactionAsync(config, requestMessage).Result;
+        }
 
+        /// <summary>
+        /// Sends a CyberSource transaction request asynchronously.
+        /// </summary>
+        /// <param name="requestMessage">RequestMessage object containing the request.</param>
+        /// <returns>Task of ReplyMessage containing the reply.</returns>
+        public static async Task<ReplyMessage> RunTransactionAsync(RequestMessage requestMessage)
+        {
+            return await RunTransactionAsync(null, requestMessage);
+        }
+
+        /// <summary>
+        /// Sends a CyberSource transaction request asynchronously.
+        /// </summary>
+        /// <param name="config">Configuration object to use.</param>
+        /// <param name="requestMessage">RequestMessage object containing the request.</param>
+        /// <returns>Task of ReplyMessage containing the reply.</returns>
+        public static async Task<ReplyMessage> RunTransactionAsync(Configuration config, RequestMessage requestMessage)
+        {
             Logger logger = null;
             TransactionProcessorClient proc = null;
-			try
-			{
+            try
+            {
 
-                DetermineEffectiveMerchantID(ref config, requestMessage);
+                DetermineEffectiveMerchantId(ref config, requestMessage);
                 SetVersionInformation(requestMessage);
                 logger = PrepareLog(config);
                 SetConnectionLimit(config);
 
-
                 CustomBinding currentBinding = getWCFCustomBinding(config);
-
 
                 //Setup endpoint Address with dns identity
                 AddressHeaderCollection headers = new AddressHeaderCollection();
-                EndpointAddress endpointAddress = new EndpointAddress( new Uri(config.EffectiveServerURL), EndpointIdentity.CreateDnsIdentity(config.EffectivePassword), headers );
-                
+                EndpointAddress endpointAddress = new EndpointAddress(new Uri(config.EffectiveServerURL), EndpointIdentity.CreateDnsIdentity(config.EffectivePassword), headers);
+
                 //Get instance of service
-                using( proc = new TransactionProcessorClient(currentBinding, endpointAddress)){
-                
+                using (proc = new TransactionProcessorClient(currentBinding, endpointAddress))
+                {
                     //Set protection level to sign & encrypt only
                     proc.Endpoint.Contract.ProtectionLevel = System.Net.Security.ProtectionLevel.Sign;
 
                     // set the timeout
-                    TimeSpan timeOut = new TimeSpan(0, 0, 0, config.Timeout, 0);
+                    TimeSpan timeOut = TimeSpan.FromSeconds(config.Timeout);
                     currentBinding.SendTimeout = timeOut;
-              
+
                     //add certificate credentials
-                    string keyFilePath = Path.Combine(config.KeysDirectory,config.EffectiveKeyFilename);
-                    proc.ClientCredentials.ClientCertificate.Certificate = new X509Certificate2(keyFilePath,config.EffectivePassword, X509KeyStorageFlags.MachineKeySet | X509KeyStorageFlags.Exportable | X509KeyStorageFlags.PersistKeySet);
+                    string keyFilePath = Path.Combine(config.KeysDirectory, config.EffectiveKeyFilename);
+                    proc.ClientCredentials.ClientCertificate.Certificate = new X509Certificate2(keyFilePath, config.EffectivePassword, X509KeyStorageFlags.MachineKeySet | X509KeyStorageFlags.Exportable | X509KeyStorageFlags.PersistKeySet);
 
                     proc.ClientCredentials.ServiceCertificate.Authentication.CertificateValidationMode = System.ServiceModel.Security.X509CertificateValidationMode.None;
 
@@ -116,39 +133,26 @@ namespace CyberSource.Clients
                     // send request now
                     // Changes for NGT-3035
                     XmlNode req = SerializeObjectToXmlNode(requestMessage);
-                    if (logger != null)
-                    {
-                        logger.LogRequest(req, config.Demo);
-                    }                   
-                    
-                    ReplyMessage reply = proc.runTransaction(requestMessage);
+                    logger?.LogRequest(req, config.Demo);
+
+                    var reply = (await proc.runTransactionAsync(requestMessage)).replyMessage;
+
                     XmlNode rep = SerializeObjectToXmlNode(reply);
-                    if (logger != null)
-                    {
-                        logger.LogReply(rep, config.Demo);
-                    }  
-                   
+
+                    logger?.LogReply(rep, config.Demo);
+
                     return (reply);
                 }
-			}
-		    catch (Exception e)
+            }
+            catch (Exception e)
             {
-                if (logger != null)
-                {
-                    logger.LogException(e);
-                }
-                if (proc != null)
-                {
-                    proc.Abort();
-                }
+                logger?.LogException(e);
+                proc?.Abort();
                 throw;
             }
             finally
             {
-                if (proc != null)
-                {
-                    proc.Close();
-                }
+                proc?.Close();
             }
         }
 
@@ -189,10 +193,9 @@ namespace CyberSource.Clients
         }
 
      
-        private static void DetermineEffectiveMerchantID(
-            ref Configuration config, RequestMessage request)
+        private static void DetermineEffectiveMerchantId(ref Configuration config, RequestMessage request)
         {
-            string requestMerchantID = request.merchantID;
+            string requestMerchantId = request.merchantID;
 
             if (config == null)
             {
@@ -200,10 +203,10 @@ namespace CyberSource.Clients
                 // the merchantID from the request.  An exception will
                 // be thrown if requestMerchantID is null and 
                 // no merchantID is found in the config file.
-                config = BuildConfigurationForRequest(requestMerchantID);
+                config = BuildConfigurationForRequest(requestMerchantId);
             }
 
-            if (requestMerchantID == null)
+            if (requestMerchantId == null)
             {
                 // No merchantID in the request; get it from the config.
                 // NonNullMerchantID will throw an exception if

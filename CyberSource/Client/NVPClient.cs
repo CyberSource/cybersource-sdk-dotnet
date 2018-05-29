@@ -6,6 +6,7 @@ using System.Security.Cryptography.X509Certificates;
 using System.ServiceModel;
 using System.ServiceModel.Channels;
 using System.Text;
+using System.Threading.Tasks;
 using CyberSource.Base;
 using CyberSource.Clients.NVPServiceReference;
 
@@ -39,7 +40,7 @@ namespace CyberSource.Clients
         /// <returns>Hashtable containing the reply fields and their values.</returns>
         public static Hashtable RunTransaction(Hashtable request)
         {
-            return (RunTransaction(null, request));
+            return RunTransactionAsync(null, request).Result;
         }
 
         /// <summary>
@@ -48,14 +49,35 @@ namespace CyberSource.Clients
         /// <param name="config">Configuration object to use.</param>
         /// <param name="request">Hashtable containing the request fields and their values.</param>
         /// <returns>Hashtable containing the reply fields and their values.</returns>
-        public static Hashtable RunTransaction(
-            Configuration config, Hashtable request)
+        public static Hashtable RunTransaction(Configuration config, Hashtable request)
         {
-            Logger logger=null;
-            NVPTransactionProcessorClient proc=null;
+            return RunTransactionAsync(config, request).Result;
+        }
+
+
+        /// <summary>
+        /// Sends a CyberSource transaction request asynchronously.
+        /// </summary>
+        /// <param name="request">Hashtable containing the request fields and their values.</param>
+        /// <returns>Task of Hashtable containing the reply fields and their values.</returns>
+        public static async Task<Hashtable> RunTransactionAsync(Hashtable request)
+        {
+            return await RunTransactionAsync(null, request);
+        }
+
+        /// <summary>
+        /// Sends a CyberSource transaction request asynchronously.
+        /// </summary>
+        /// <param name="config">Configuration object to use.</param>
+        /// <param name="request">Hashtable containing the request fields and their values.</param>
+        /// <returns>Task of Hashtable containing the reply fields and their values.</returns>
+        public static async Task<Hashtable> RunTransactionAsync(Configuration config, Hashtable request)
+        {
+            Logger logger = null;
+            NVPTransactionProcessorClient proc = null;
             try
             {
-                DetermineEffectiveMerchantID(ref config, request);
+                DetermineEffectiveMerchantId(ref config, request);
                 SetVersionInformation(request);
                 logger = PrepareLog(config);
                 SetConnectionLimit(config);
@@ -72,7 +94,7 @@ namespace CyberSource.Clients
                 {
 
                     //Set protection level to sign
-                        proc.Endpoint.Contract.ProtectionLevel = System.Net.Security.ProtectionLevel.Sign;
+                    proc.Endpoint.Contract.ProtectionLevel = System.Net.Security.ProtectionLevel.Sign;
 
                     // set the timeout
                     TimeSpan timeOut = new TimeSpan(0, 0, 0, config.Timeout, 0);
@@ -113,52 +135,35 @@ namespace CyberSource.Clients
                         }
                     }
 
-                    if (logger != null)
-                    {
-                        logger.LogRequest(request, config.Demo);
-                    }
+                    logger?.LogRequest(request, config.Demo);
 
                     // send request now, converting the hashtable request into
                     // a string, and the string reply back into a hashtable.
-
-                    string resp = proc.runTransaction(Hash2String(request));
-
+                    var resp = (await proc.runTransactionAsync(Hash2String(request))).nvpReply;
 
                     Hashtable reply = String2Hash(resp);
 
-                    if (logger != null)
-                    {
-                        logger.LogReply(reply, config.Demo);
-                    }
+                    logger?.LogReply(reply, config.Demo);
 
                     return (reply);
                 }
             }
             catch (Exception e)
             {
-                if (logger != null)
-                {
-                    logger.LogException(e);
-                }
-                if (proc != null)
-                {
-                    proc.Abort();
-                }
+                logger?.LogException(e);
+
+                proc?.Abort();
                 throw;
             }
             finally
             {
-                if (proc != null)
-                {
-                    proc.Close();
-                }
+                proc?.Close();
             }
         }
 
-        private static void DetermineEffectiveMerchantID(
-            ref Configuration config, Hashtable request)
+        private static void DetermineEffectiveMerchantId(ref Configuration config, Hashtable request)
         {
-            string requestMerchantID = (string)request[MERCHANT_ID];
+            string requestMerchantId = (string)request[MERCHANT_ID];
 
             if (config == null)
             {
@@ -166,10 +171,10 @@ namespace CyberSource.Clients
                 // the merchantID from the request.  An exception will
                 // be thrown if requestMerchantID is null and 
                 // no merchantID is found in the config file.
-                config = BuildConfigurationForRequest(requestMerchantID);
+                config = BuildConfigurationForRequest(requestMerchantId);
             }
 
-            if (requestMerchantID == null)
+            if (requestMerchantId == null)
             {
                 // No merchantID in the request; get it from the config.
                 // NonNullMerchantID will throw an exception if

@@ -5,8 +5,6 @@ using System.ServiceModel.Security;
 using CyberSource.Clients;
 using CyberSource.Clients.SoapServiceReference;
 using System.Security.Cryptography;
-//using SoapSampleTransactions;
-
 
 namespace CyberSource.Samples
 {
@@ -14,7 +12,6 @@ namespace CyberSource.Samples
     {
         static void Main(string[] args)
         {
-
             Console.WriteLine("Select the transaction type:\n" +
                 "1: Auth \n" +
                 "2: Auth Reversal\n" +
