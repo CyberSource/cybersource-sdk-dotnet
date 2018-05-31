@@ -74,9 +74,11 @@ namespace CyberSource.Clients
 				mMessage = GetTextValue( "faultstring", String.Empty );
 
 				// requestID goes into mRequestID
-				mRequestID = GetTextValue(
+				if(nspace != null)
+				{
+					mRequestID = GetTextValue(
 								"requestID", nspace );
-
+				}
 				// faultcode goes into mCode.  If it has a prefix, look up
 				// the namespace for that prefix.
 				XmlNode faultCodeText = GetText( "faultcode", String.Empty );
