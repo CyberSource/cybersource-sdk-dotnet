@@ -222,7 +222,7 @@ namespace CyberSource.Clients
             request["clientLibrary"] = ".NET NVP";
             request["clientLibraryVersion"] = CLIENT_LIBRARY_VERSION;
             request["clientEnvironment"] = mEnvironmentInfo;
-            request["clientSecurityLibraryVersion"] =".Net 1.4.1";
+            request["clientSecurityLibraryVersion"] =".Net 1.4.2";
         }
     }
 }
