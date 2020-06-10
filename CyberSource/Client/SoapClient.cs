@@ -80,13 +80,13 @@ namespace CyberSource.Clients
               
                     //add certificate credentials
                     string keyFilePath = Path.Combine(config.KeysDirectory,config.EffectiveKeyFilename);
-                    proc.ClientCredentials.ClientCertificate.Certificate = new X509Certificate2(keyFilePath,config.EffectivePassword, X509KeyStorageFlags.MachineKeySet | X509KeyStorageFlags.Exportable | X509KeyStorageFlags.PersistKeySet);
+                    proc.ClientCredentials.ClientCertificate.Certificate = new X509Certificate2(keyFilePath,config.EffectivePassword, X509KeyStorageFlags.Exportable | X509KeyStorageFlags.PersistKeySet);
 
                     proc.ClientCredentials.ServiceCertificate.Authentication.CertificateValidationMode = System.ServiceModel.Security.X509CertificateValidationMode.None;
 
                     // Changes for SHA2 certificates support
                     X509Certificate2Collection collection = new X509Certificate2Collection();
-                    collection.Import(keyFilePath, config.EffectivePassword, X509KeyStorageFlags.MachineKeySet | X509KeyStorageFlags.Exportable | X509KeyStorageFlags.PersistKeySet);
+                    collection.Import(keyFilePath, config.EffectivePassword, X509KeyStorageFlags.Exportable | X509KeyStorageFlags.PersistKeySet);
 
                     foreach (X509Certificate2 cert1 in collection)
                     {
