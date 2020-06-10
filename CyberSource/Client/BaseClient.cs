@@ -16,7 +16,7 @@ namespace CyberSource.Clients
         /// <summary>
         /// Version of this client.
         /// </summary>
-        public const string CLIENT_LIBRARY_VERSION = "1.4.2";
+        public const string CLIENT_LIBRARY_VERSION = "1.4.3";
 
         /// <summary>
         /// Proxy object that is initialized during start-up, if needed.
