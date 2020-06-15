@@ -28,6 +28,7 @@ namespace CyberSource.Clients
         internal const string SEND_TO_AKAMAI = "sendToAkamai";
         internal const string EFFECTIVE_SERVER_URL = "effectiveServerURL";
         internal const string USE_SIGNED_AND_ENCRYPTED = "useSignAndEncrypted";
+        internal const string CERTIFICATE_CACHE_ENABLED = "certificateCacheEnabled";
 
         /// <summary>
         /// Default log file name.
@@ -70,6 +71,7 @@ namespace CyberSource.Clients
         private bool sendToAkamai = true;
         private int connectionLimit = -1;
         private bool useSignedAndEncrypted = false;
+        private bool certificateCacheEnabled = true;
 
         private bool isSendToProductionSet = false;
 
@@ -338,6 +340,10 @@ namespace CyberSource.Clients
                     buf += NVP_SEPARATOR + EFFECTIVE_SERVER_URL + NV_SEPARATOR + EffectiveServerURL;
                 }
 
+                buf += NVP_SEPARATOR + CERTIFICATE_CACHE_ENABLED + NV_SEPARATOR + certificateCacheEnabled;
+
+                buf += NVP_SEPARATOR + USE_SIGNED_AND_ENCRYPTED + NV_SEPARATOR + useSignedAndEncrypted;
+
                 return (buf);
             }
         }
@@ -413,6 +419,12 @@ namespace CyberSource.Clients
         {
             get { return useSignedAndEncrypted; }
             set { useSignedAndEncrypted = value; }
+        }
+
+        public bool CertificateCacheEnabled
+        {
+            get { return certificateCacheEnabled; }
+            set { certificateCacheEnabled = value; }
         }
     }
 }

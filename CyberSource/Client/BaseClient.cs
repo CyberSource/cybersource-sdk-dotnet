@@ -1,10 +1,12 @@
 using CyberSource.Base;
 using System;
+using System.Collections;
 using System.Net;
 using System.ServiceModel;
 using System.Xml.Serialization;
 using System.ServiceModel.Channels;
 using System.ServiceModel.Security.Tokens;
+using System.Security.Cryptography.X509Certificates;
 
 namespace CyberSource.Clients
 {
@@ -17,6 +19,7 @@ namespace CyberSource.Clients
         /// Version of this client.
         /// </summary>
         public const string CLIENT_LIBRARY_VERSION = "1.4.3";
+        public const string CYBS_SUBJECT_NAME = "CyberSource_SJC_US";
 
         /// <summary>
         /// Proxy object that is initialized during start-up, if needed.
@@ -43,8 +46,9 @@ namespace CyberSource.Clients
 
         public const string CYBERSOURCE_PUBLIC_KEY = "CyberSource_SJC_US";
         public const string X509_CLAIMTYPE = "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/x500distinguishedname";
+        protected static System.Collections.Hashtable merchantIdentities = new Hashtable();
 
-		static BaseClient()
+        static BaseClient()
 		{
 			ServicePointManager.SecurityProtocol = (SecurityProtocolType)3072 | (SecurityProtocolType)768;
 			SetupProxy();
@@ -222,6 +226,12 @@ namespace CyberSource.Clients
                    merchantID, Configuration.USE_SIGNED_AND_ENCRYPTED);
             if (boolVal != -1) config.UseSignedAndEncrypted = (boolVal == 1);
 
+            // certificate cache flag
+            boolVal
+               = AppSettings.GetBoolSetting(
+                   merchantID, Configuration.CERTIFICATE_CACHE_ENABLED);
+            if (boolVal != -1) config.CertificateCacheEnabled = (boolVal == 1);
+
             return (config);
         }
 
@@ -359,6 +369,47 @@ namespace CyberSource.Clients
             currentBinding.Elements.Add(textBindingElement);
             currentBinding.Elements.Add(httpsTransport);
             return currentBinding;
+        }
+
+        protected static X509Certificate2 GetOrFindValidMerchantCertFromStore(String merchantId, Hashtable merchantIdentities)
+        {
+            foreach (DictionaryEntry de in merchantIdentities)
+            {
+                if (de.Key.Equals(merchantId))
+                {
+                    return ((CertificateEntry)de.Value).MerchantCert;
+                }
+
+            }
+            return null;
+        }
+
+        protected static X509Certificate2 GetOrFindValidCybsCertFromStore(String merchantId, Hashtable merchantIdentities)
+        {
+            foreach (DictionaryEntry de in merchantIdentities)
+            {
+                if (de.Key.Equals(merchantId))
+                {
+                    return ((CertificateEntry)de.Value).CybsCert;
+                }
+
+            }
+            return null;
+        }
+
+        public static Boolean IsMerchantCertExpired(String merchantId, long lastModifiedTime, Hashtable merchantIdentities)
+        {
+            foreach (DictionaryEntry de in merchantIdentities)
+            {
+                if (de.Key.Equals(merchantId))
+                {
+                    if(((CertificateEntry)de.Value).LastModifiedTime != lastModifiedTime){
+                        return true;
+                    }
+                }
+
+            }
+            return false;
         }
     }
 }

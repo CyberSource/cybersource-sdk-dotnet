@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.IO;
 using System.Net;
 using System.Security.Cryptography;
@@ -89,37 +90,88 @@ namespace CyberSource.Clients
 
                 //Get the X509 cert and sign the SOAP Body    
                 string keyFilePath = Path.Combine(config.KeysDirectory, config.EffectiveKeyFilename);
-
-                X509Certificate2 cert = null;
+                X509Certificate2 merchantCert = null;
                 X509Certificate2 cybsCert = null;
-
-                X509Certificate2Collection collection = new X509Certificate2Collection();
-                collection.Import(keyFilePath, config.EffectivePassword, X509KeyStorageFlags.Exportable | X509KeyStorageFlags.PersistKeySet);
-
-                foreach (X509Certificate2 cert1 in collection)
+                DateTime dateFile = File.GetCreationTime(keyFilePath);
+                if (config.CertificateCacheEnabled) 
                 {
-                    if (cert1.Subject.Contains(config.MerchantID))
+                    if (!merchantIdentities.ContainsKey(config.MerchantID) || IsMerchantCertExpired(config.MerchantID, dateFile.ToFileTimeUtc(), merchantIdentities))
                     {
-                        cert = cert1;
-                        break;
+                        X509Certificate2Collection collection = new X509Certificate2Collection();
+                        collection.Import(keyFilePath, config.EffectivePassword, X509KeyStorageFlags.MachineKeySet | X509KeyStorageFlags.Exportable | X509KeyStorageFlags.PersistKeySet);
+
+                        X509Certificate2 newMerchantCert = null;
+                        X509Certificate2 newCybsCert = null;
+
+                        foreach (X509Certificate2 cert1 in collection)
+                        {
+                            if (cert1.Subject.Contains(config.MerchantID))
+                            {
+                                newMerchantCert = cert1;
+                            }
+
+                            if (cert1.Subject.Contains(CYBS_SUBJECT_NAME))
+                            {
+                                newCybsCert = cert1;
+                            }
+                        }
+                        if (merchantIdentities.ContainsKey(config.MerchantID))
+                        {
+                            merchantIdentities.Remove(config.MerchantID);
+                        }
+                        merchantIdentities.Add(config.MerchantID, new CertificateEntry(dateFile.ToFileTimeUtc(), newMerchantCert, newCybsCert));
+
+                    }
+                    merchantCert = GetOrFindValidMerchantCertFromStore(config.MerchantID, merchantIdentities);
+                    if (config.UseSignedAndEncrypted)
+                    {
+                        cybsCert = GetOrFindValidCybsCertFromStore(config.MerchantID, merchantIdentities);
                     }
                 }
-
-                SignDocument(cert, doc);
-
-                if (config.UseSignedAndEncrypted)
+                else
                 {
+                    X509Certificate2Collection collection = new X509Certificate2Collection();
+                    collection.Import(keyFilePath, config.EffectivePassword, X509KeyStorageFlags.MachineKeySet | X509KeyStorageFlags.Exportable | X509KeyStorageFlags.PersistKeySet);
                     foreach (X509Certificate2 cert1 in collection)
                     {
-                        //Console.WriteLine(cert1.Subject);
-                        if (cert1.Subject.Contains("CyberSource_SJC_US"))
+                        if (cert1.Subject.Contains(config.MerchantID))
                         {
-                            cybsCert = cert1;
+                            merchantCert = cert1;
                             break;
                         }
                     }
+                    if (config.UseSignedAndEncrypted)
+                    {
+                        foreach (X509Certificate2 cert1 in collection)
+                        {
+                            //Console.WriteLine(cert1.Subject);
+                            if (cert1.Subject.Contains("CyberSource_SJC_US"))
+                            {
+                                cybsCert = cert1;
+                                break;
+                            }
+                        }
+                       
+                    }
+                }
+
+                if (merchantCert == null)
+                {
+                    throw new ApplicationException(
+                "CONFIGURATION OR CODE BUG:  merchant certificate is missing, check the p12 file");
+                }
+                SignDocument(merchantCert, doc);
+
+                if (config.UseSignedAndEncrypted)
+                {
+                    if (cybsCert == null)
+                    {
+                        throw new ApplicationException(
+                    "CONFIGURATION OR CODE BUG:  cybs certificate is missing, check the p12 file");
+                    }
                     encryptDocument(cybsCert, doc);
                 }
+
                 // convert the document into an array of bytes using the
                 // encoding specified in the XML declaration line.
                 Encoding enc = GetEncoding(doc);

@@ -127,6 +127,7 @@
     <Compile Include="Settings.cs" />
     <Compile Include="SoapClient.cs" />
     <Compile Include="XmlClient.cs" />
+    <Compile Include="CertificateEntry.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
