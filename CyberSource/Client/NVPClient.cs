@@ -81,8 +81,12 @@ namespace CyberSource.Clients
                     DateTime dateFile = File.GetCreationTime(keyFilePath);
                     if (config.CertificateCacheEnabled)
                     {
-                        if (!merchantIdentities.ContainsKey(config.MerchantID) || IsMerchantCertExpired(config.MerchantID, dateFile.ToFileTimeUtc(), merchantIdentities))
+                        if (!merchantIdentities.ContainsKey(config.MerchantID) || IsMerchantCertExpired(logger, config.MerchantID, dateFile.ToFileTimeUtc(), merchantIdentities))
                         {
+                            if (logger != null)
+                            {
+                                logger.LogInfo("Loading certificate for merchantID " + config.MerchantID);
+                            }
                             X509Certificate2Collection collection = new X509Certificate2Collection();
                             collection.Import(keyFilePath, config.EffectivePassword, X509KeyStorageFlags.MachineKeySet | X509KeyStorageFlags.Exportable | X509KeyStorageFlags.PersistKeySet);
 

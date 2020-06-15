@@ -397,13 +397,17 @@ namespace CyberSource.Clients
             return null;
         }
 
-        public static Boolean IsMerchantCertExpired(String merchantId, long lastModifiedTime, Hashtable merchantIdentities)
+        public static Boolean IsMerchantCertExpired(Logger logger, String merchantId, long lastModifiedTime, Hashtable merchantIdentities)
         {
             foreach (DictionaryEntry de in merchantIdentities)
             {
                 if (de.Key.Equals(merchantId))
                 {
                     if(((CertificateEntry)de.Value).LastModifiedTime != lastModifiedTime){
+                        if(logger != null)
+                        {
+                            logger.LogInfo("certificate is expired, will be loaded again in memory for merchantID "+ merchantId);
+                        }
                         return true;
                     }
                 }
