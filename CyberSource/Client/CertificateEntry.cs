@@ -10,47 +10,8 @@ namespace CyberSource.Clients
     /// </summary>
     public class CertificateEntry
     {
-        private long lastModifiedTime;
-        private X509Certificate2 merchantCert;
-        private X509Certificate2 cybsCert;
-
-        public CertificateEntry(long lastModifiedTime, X509Certificate2 merchantCert, X509Certificate2 cybsCert)
-        {
-            this.lastModifiedTime = lastModifiedTime;
-            this.merchantCert = merchantCert;
-            this.cybsCert = cybsCert;
-        }
-
-        public X509Certificate2 MerchantCert
-        {
-            get { return merchantCert; }
-            set
-            {
-                merchantCert = value;
-             
-            }
-        }
-
-        public X509Certificate2 CybsCert
-        {
-            get { return cybsCert; }
-            set
-            {
-                cybsCert = value;
-
-            }
-        }
-
-        public long LastModifiedTime
-        {
-            get { return lastModifiedTime; }
-            set
-            {
-                lastModifiedTime = value;
-
-            }
-        }
+        public DateTime CreationTime { get; set; }
+        public X509Certificate2 MerchantCert { get; set; }
+        public X509Certificate2 CybsCert { get; set; }
     }
-
-
 }

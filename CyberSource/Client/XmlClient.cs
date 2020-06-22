@@ -95,7 +95,7 @@ namespace CyberSource.Clients
                 DateTime dateFile = File.GetCreationTime(keyFilePath);
                 if (config.CertificateCacheEnabled) 
                 {
-                    if (!merchantIdentities.ContainsKey(config.MerchantID) || IsMerchantCertExpired(logger, config.MerchantID, dateFile.ToFileTimeUtc(), merchantIdentities))
+                    if (!merchantIdentities.ContainsKey(config.MerchantID) || IsMerchantCertExpired(logger, config.MerchantID, dateFile, merchantIdentities))
                     {
                         if(logger != null)
                         {
@@ -120,12 +120,13 @@ namespace CyberSource.Clients
                                 newCybsCert = cert1;
                             }
                         }
-                        if (merchantIdentities.ContainsKey(config.MerchantID))
+                        CertificateEntry newCert = new CertificateEntry
                         {
-                            merchantIdentities.Remove(config.MerchantID);
-                        }
-                        merchantIdentities.Add(config.MerchantID, new CertificateEntry(dateFile.ToFileTimeUtc(), newMerchantCert, newCybsCert));
-
+                            CreationTime = dateFile,
+                            CybsCert = newCybsCert,
+                            MerchantCert = newMerchantCert
+                        };
+                        merchantIdentities.AddOrUpdate(config.MerchantID, newCert, (x, y) => newCert);
                     }
                     merchantCert = GetOrFindValidMerchantCertFromStore(config.MerchantID, merchantIdentities);
                     if (config.UseSignedAndEncrypted)

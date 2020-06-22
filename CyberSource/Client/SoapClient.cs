@@ -8,19 +8,18 @@ using CyberSource.Base;
 using CyberSource.Clients.SoapServiceReference;
 using System.Xml;
 
-
 namespace CyberSource.Clients
 {
-	/// <summary>
-	/// CyberSource Web Services Soap Client class.
-	/// </summary>
-	public class SoapClient : BaseClient
-	{
+    /// <summary>
+    /// CyberSource Web Services Soap Client class.
+    /// </summary>
+    public class SoapClient : BaseClient
+    {
         /// <summary>
         /// Namespace URI used for CyberSource-specific elements.
         /// </summary>
         public static readonly string CYBS_NAMESPACE;
-        
+
 
         static SoapClient()
         {
@@ -28,7 +27,7 @@ namespace CyberSource.Clients
         }
 
 
-		private SoapClient() {}
+        private SoapClient() { }
 
         /// <summary>
         /// Sends a CyberSource transaction request.
@@ -36,7 +35,7 @@ namespace CyberSource.Clients
 		/// <param name="requestMessage">RequestMessage object containing the request.</param>
 		/// <returns>ReplyMessage containing the reply.</returns>
         public static ReplyMessage RunTransaction(
-            RequestMessage requestMessage )
+            RequestMessage requestMessage)
         {
             return (RunTransaction(null, requestMessage));
         }
@@ -53,8 +52,8 @@ namespace CyberSource.Clients
 
             Logger logger = null;
             TransactionProcessorClient proc = null;
-			try
-			{
+            try
+            {
 
                 DetermineEffectiveMerchantID(ref config, requestMessage);
                 SetVersionInformation(requestMessage);
@@ -67,24 +66,24 @@ namespace CyberSource.Clients
 
                 //Setup endpoint Address with dns identity
                 AddressHeaderCollection headers = new AddressHeaderCollection();
-                EndpointAddress endpointAddress = new EndpointAddress( new Uri(config.EffectiveServerURL), EndpointIdentity.CreateDnsIdentity(config.EffectivePassword), headers );
-                
+                EndpointAddress endpointAddress = new EndpointAddress(new Uri(config.EffectiveServerURL), EndpointIdentity.CreateDnsIdentity(config.EffectivePassword), headers);
+
                 //Get instance of service
-                using( proc = new TransactionProcessorClient(currentBinding, endpointAddress))
+                using (proc = new TransactionProcessorClient(currentBinding, endpointAddress))
                 {
                     // set the timeout
                     TimeSpan timeOut = new TimeSpan(0, 0, 0, config.Timeout, 0);
                     currentBinding.SendTimeout = timeOut;
-              
+
                     //add certificate credentials
-                    string keyFilePath = Path.Combine(config.KeysDirectory,config.EffectiveKeyFilename);
+                    string keyFilePath = Path.Combine(config.KeysDirectory, config.EffectiveKeyFilename);
 
                     X509Certificate2 merchantCert = null;
                     X509Certificate2 cybsCert = null;
                     DateTime dateFile = File.GetCreationTime(keyFilePath);
-                    if (config.CertificateCacheEnabled) 
+                    if (config.CertificateCacheEnabled)
                     {
-                        if (!merchantIdentities.ContainsKey(config.MerchantID) || IsMerchantCertExpired(logger, config.MerchantID, dateFile.ToFileTimeUtc(), merchantIdentities))
+                        if (!merchantIdentities.ContainsKey(config.MerchantID) || IsMerchantCertExpired(logger, config.MerchantID, dateFile, merchantIdentities))
                         {
                             if (logger != null)
                             {
@@ -109,12 +108,13 @@ namespace CyberSource.Clients
                                     newCybsCert = cert1;
                                 }
                             }
-                            if (merchantIdentities.ContainsKey(config.MerchantID))
+                            CertificateEntry newCert = new CertificateEntry
                             {
-                                merchantIdentities.Remove(config.MerchantID);
-                            }
-                            merchantIdentities.Add(config.MerchantID, new CertificateEntry(dateFile.ToFileTimeUtc(), newMerchantCert, newCybsCert));
-
+                                CreationTime = dateFile,
+                                CybsCert = newCybsCert,
+                                MerchantCert = newMerchantCert
+                            };
+                            merchantIdentities.AddOrUpdate(config.MerchantID, newCert, (x, y) => newCert);
                         }
                         merchantCert = GetOrFindValidMerchantCertFromStore(config.MerchantID, merchantIdentities);
                         if (config.UseSignedAndEncrypted)
@@ -179,19 +179,19 @@ namespace CyberSource.Clients
                     if (logger != null)
                     {
                         logger.LogRequest(req, config.Demo);
-                    }                   
-                    
+                    }
+
                     ReplyMessage reply = proc.runTransaction(requestMessage);
                     XmlNode rep = SerializeObjectToXmlNode(reply);
                     if (logger != null)
                     {
                         logger.LogReply(rep, config.Demo);
-                    }  
-                   
+                    }
+
                     return (reply);
                 }
-			}
-		    catch (Exception e)
+            }
+            catch (Exception e)
             {
                 if (logger != null)
                 {
@@ -248,7 +248,7 @@ namespace CyberSource.Clients
             return resultNode;
         }
 
-     
+
         private static void DetermineEffectiveMerchantID(
             ref Configuration config, RequestMessage request)
         {
@@ -277,12 +277,12 @@ namespace CyberSource.Clients
         }
 
         private static void SetVersionInformation(
-			RequestMessage requestMessage )
-		{
-			requestMessage.clientLibrary = ".NET Soap";
-			requestMessage.clientLibraryVersion = CLIENT_LIBRARY_VERSION;
-			requestMessage.clientEnvironment = mEnvironmentInfo;
-			requestMessage.clientSecurityLibraryVersion =".Net 1.4.3";
-		}
-	}
+            RequestMessage requestMessage)
+        {
+            requestMessage.clientLibrary = ".NET Soap";
+            requestMessage.clientLibraryVersion = CLIENT_LIBRARY_VERSION;
+            requestMessage.clientEnvironment = mEnvironmentInfo;
+            requestMessage.clientSecurityLibraryVersion = ".Net 1.4.3";
+        }
+    }
 }

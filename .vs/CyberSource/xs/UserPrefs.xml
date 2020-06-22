@@ -1,0 +1,39 @@
+﻿<Properties StartupConfiguration="{F47D95C8-8CB6-495C-B2EB-09DAEC073355}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="CyberSource/Client/BaseClient.cs">
+    <Files>
+      <File FileName="CyberSource/Client/SoapClient.cs" Line="166" Column="22" />
+      <File FileName="CyberSource/Client/NVPClient.cs" />
+      <File FileName="CyberSource/Client/XmlClient.cs" Line="98" Column="90" />
+      <File FileName="CyberSource/Client/BaseClient.cs" Line="406" Column="28" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="CyberSource" expanded="True">
+            <Node name="BaseTest" expanded="True" />
+            <Node name="CyberSourceBase" expanded="True" />
+            <Node name="CyberSourceClients" expanded="True">
+              <Node name="WebReferences" expanded="True">
+                <Node name="WebReferenceItem" expanded="True">
+                  <Node name="Reference.svcmap" expanded="True" />
+                </Node>
+              </Node>
+              <Node name="BaseClient.cs" selected="True" />
+            </Node>
+            <Node name="MTTest" expanded="True" />
+            <Node name="NVPSample" expanded="True" />
+            <Node name="SoapSample" expanded="True" />
+            <Node name="XmlSample" expanded="True" />
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.BaseTest PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>

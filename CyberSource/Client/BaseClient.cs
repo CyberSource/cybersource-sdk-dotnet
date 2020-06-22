@@ -7,6 +7,7 @@ using System.Xml.Serialization;
 using System.ServiceModel.Channels;
 using System.ServiceModel.Security.Tokens;
 using System.Security.Cryptography.X509Certificates;
+using System.Collections.Concurrent;
 
 namespace CyberSource.Clients
 {
@@ -46,13 +47,13 @@ namespace CyberSource.Clients
 
         public const string CYBERSOURCE_PUBLIC_KEY = "CyberSource_SJC_US";
         public const string X509_CLAIMTYPE = "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/x500distinguishedname";
-        protected static System.Collections.Hashtable merchantIdentities = new Hashtable();
+        protected static ConcurrentDictionary<string, CertificateEntry> merchantIdentities = new ConcurrentDictionary<string, CertificateEntry>();
 
         static BaseClient()
-		{
-			ServicePointManager.SecurityProtocol = (SecurityProtocolType)3072 | (SecurityProtocolType)768;
-			SetupProxy();
-		}
+        {
+            ServicePointManager.SecurityProtocol = (SecurityProtocolType)3072 | (SecurityProtocolType)768;
+            SetupProxy();
+        }
 
         private static void SetupProxy()
         {
@@ -130,14 +131,14 @@ namespace CyberSource.Clients
         /// </param>
         /// <returns>the built Configuration object</returns>
         private static Configuration InternalBuildConfiguration(
-            string merchantID, bool failIfNoMerchantID )
+            string merchantID, bool failIfNoMerchantID)
         {
             Configuration config = new Configuration();
-            
+
             if (merchantID == null)
             {
                 merchantID
-                    = AppSettings.GetSetting( null, MERCHANT_ID );
+                    = AppSettings.GetSetting(null, MERCHANT_ID);
             }
             if (merchantID != null || failIfNoMerchantID)
             {
@@ -172,7 +173,7 @@ namespace CyberSource.Clients
             config.setLogProperties(
                 boolVal == 1,
                 AppSettings.GetSetting(
-                    merchantID, Configuration.LOG_DIRECTORY) );
+                    merchantID, Configuration.LOG_DIRECTORY));
 
             config.ServerURL
                 = AppSettings.GetSetting(
@@ -295,7 +296,7 @@ namespace CyberSource.Clients
             {
                 if (logger != null)
                 {
-                    logger.Log(Logger.LogType.CONFIG,"Failed to get Namespace from Service Reference. This should not prevent the client from working: Type=" + type.FullName);
+                    logger.Log(Logger.LogType.CONFIG, "Failed to get Namespace from Service Reference. This should not prevent the client from working: Type=" + type.FullName);
                 }
                 return "";
             }
@@ -371,45 +372,48 @@ namespace CyberSource.Clients
             return currentBinding;
         }
 
-        protected static X509Certificate2 GetOrFindValidMerchantCertFromStore(String merchantId, Hashtable merchantIdentities)
-        {
-            foreach (DictionaryEntry de in merchantIdentities)
-            {
-                if (de.Key.Equals(merchantId))
-                {
-                    return ((CertificateEntry)de.Value).MerchantCert;
-                }
 
-            }
-            return null;
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="merchantId"></param>
+        /// <param name="merchantIdentities"></param>
+        /// <returns></returns>
+        protected static X509Certificate2 GetOrFindValidMerchantCertFromStore(string merchantId, ConcurrentDictionary<string, CertificateEntry> merchantIdentities)
+        {
+            return merchantIdentities[merchantId] != null ? merchantIdentities[merchantId]?.MerchantCert : null;
         }
 
-        protected static X509Certificate2 GetOrFindValidCybsCertFromStore(String merchantId, Hashtable merchantIdentities)
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="merchantId"></param>
+        /// <param name="merchantIdentities"></param>
+        /// <returns></returns>
+        protected static X509Certificate2 GetOrFindValidCybsCertFromStore(string merchantId, ConcurrentDictionary<string, CertificateEntry> merchantIdentities)
         {
-            foreach (DictionaryEntry de in merchantIdentities)
-            {
-                if (de.Key.Equals(merchantId))
-                {
-                    return ((CertificateEntry)de.Value).CybsCert;
-                }
-
-            }
-            return null;
+            return merchantIdentities[merchantId] != null ? merchantIdentities[merchantId]?.CybsCert : null;
         }
 
-        public static Boolean IsMerchantCertExpired(Logger logger, String merchantId, long lastModifiedTime, Hashtable merchantIdentities)
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="merchantIdentities"></param>
+        /// <param name="logger"></param>
+        /// <param name="merchantId"></param>
+        /// <param name="creationTime"></param>
+        /// <returns></returns>
+        public static bool IsMerchantCertExpired(Logger logger, string merchantId, DateTime creationTime, ConcurrentDictionary<string, CertificateEntry> merchantIdentities)
         {
-            foreach (DictionaryEntry de in merchantIdentities)
+            if (merchantIdentities[merchantId] != null)
             {
-                if (de.Key.Equals(merchantId))
+                if (merchantIdentities[merchantId].CreationTime != creationTime)
                 {
-                    if(((CertificateEntry)de.Value).LastModifiedTime != lastModifiedTime){
-                        if(logger != null)
-                        {
-                            logger.LogInfo("certificate is expired, will be loaded again in memory for merchantID "+ merchantId);
-                        }
-                        return true;
+                    if (logger != null)
+                    {
+                        logger.LogInfo("certificate is expired, will be loaded again in memory for merchantID: " + merchantId);
                     }
+                    return true;
                 }
 
             }
