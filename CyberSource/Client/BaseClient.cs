@@ -381,7 +381,7 @@ namespace CyberSource.Clients
         /// <returns></returns>
         protected static X509Certificate2 GetOrFindValidMerchantCertFromStore(string merchantId, ConcurrentDictionary<string, CertificateEntry> merchantIdentities)
         {
-            return merchantIdentities[merchantId] != null ? merchantIdentities[merchantId]?.MerchantCert : null;
+            return merchantIdentities[merchantId] != null ? merchantIdentities[merchantId].MerchantCert : null;
         }
 
         /// <summary>
@@ -392,7 +392,7 @@ namespace CyberSource.Clients
         /// <returns></returns>
         protected static X509Certificate2 GetOrFindValidCybsCertFromStore(string merchantId, ConcurrentDictionary<string, CertificateEntry> merchantIdentities)
         {
-            return merchantIdentities[merchantId] != null ? merchantIdentities[merchantId]?.CybsCert : null;
+            return merchantIdentities[merchantId] != null ? merchantIdentities[merchantId].CybsCert : null;
         }
 
         /// <summary>
