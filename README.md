@@ -18,7 +18,7 @@ Transaction Security Keys
 Refer to our [Developer Guide](http://apps.cybersource.com/library/documentation/dev_guides/security_keys/creating_and_using_security_keys.pdf) for details on how to generate .P12 key.
 
 ## CyberSource Web Services API Version 
-NuGet 1.4.3 has v1.165 urn:schemas-cybersource-com:transaction-data-1.165
+NuGet 1.4.3 has v1.164 urn:schemas-cybersource-com:transaction-data-1.164
 
 For latest version, check this https://ics2ws.ic3.com/commerce/1.x/transactionProcessor/
 
