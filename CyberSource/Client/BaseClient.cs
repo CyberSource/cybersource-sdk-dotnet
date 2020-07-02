@@ -1,10 +1,13 @@
 using CyberSource.Base;
 using System;
+using System.Collections;
 using System.Net;
 using System.ServiceModel;
 using System.Xml.Serialization;
 using System.ServiceModel.Channels;
 using System.ServiceModel.Security.Tokens;
+using System.Security.Cryptography.X509Certificates;
+using System.Collections.Concurrent;
 
 namespace CyberSource.Clients
 {
@@ -16,7 +19,8 @@ namespace CyberSource.Clients
         /// <summary>
         /// Version of this client.
         /// </summary>
-        public const string CLIENT_LIBRARY_VERSION = "1.4.2";
+        public const string CLIENT_LIBRARY_VERSION = "1.4.3";
+        public const string CYBS_SUBJECT_NAME = "CyberSource_SJC_US";
 
         /// <summary>
         /// Proxy object that is initialized during start-up, if needed.
@@ -43,12 +47,13 @@ namespace CyberSource.Clients
 
         public const string CYBERSOURCE_PUBLIC_KEY = "CyberSource_SJC_US";
         public const string X509_CLAIMTYPE = "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/x500distinguishedname";
+        protected static ConcurrentDictionary<string, CertificateEntry> merchantIdentities = new ConcurrentDictionary<string, CertificateEntry>();
 
-		static BaseClient()
-		{
-			ServicePointManager.SecurityProtocol = (SecurityProtocolType)3072 | (SecurityProtocolType)768;
-			SetupProxy();
-		}
+        static BaseClient()
+        {
+            ServicePointManager.SecurityProtocol = (SecurityProtocolType)3072 | (SecurityProtocolType)768;
+            SetupProxy();
+        }
 
         private static void SetupProxy()
         {
@@ -126,14 +131,14 @@ namespace CyberSource.Clients
         /// </param>
         /// <returns>the built Configuration object</returns>
         private static Configuration InternalBuildConfiguration(
-            string merchantID, bool failIfNoMerchantID )
+            string merchantID, bool failIfNoMerchantID)
         {
             Configuration config = new Configuration();
-            
+
             if (merchantID == null)
             {
                 merchantID
-                    = AppSettings.GetSetting( null, MERCHANT_ID );
+                    = AppSettings.GetSetting(null, MERCHANT_ID);
             }
             if (merchantID != null || failIfNoMerchantID)
             {
@@ -168,7 +173,7 @@ namespace CyberSource.Clients
             config.setLogProperties(
                 boolVal == 1,
                 AppSettings.GetSetting(
-                    merchantID, Configuration.LOG_DIRECTORY) );
+                    merchantID, Configuration.LOG_DIRECTORY));
 
             config.ServerURL
                 = AppSettings.GetSetting(
@@ -221,6 +226,12 @@ namespace CyberSource.Clients
                = AppSettings.GetBoolSetting(
                    merchantID, Configuration.USE_SIGNED_AND_ENCRYPTED);
             if (boolVal != -1) config.UseSignedAndEncrypted = (boolVal == 1);
+
+            // certificate cache flag
+            boolVal
+               = AppSettings.GetBoolSetting(
+                   merchantID, Configuration.CERTIFICATE_CACHE_ENABLED);
+            if (boolVal != -1) config.CertificateCacheEnabled = (boolVal == 1);
 
             return (config);
         }
@@ -285,7 +296,7 @@ namespace CyberSource.Clients
             {
                 if (logger != null)
                 {
-                    logger.Log(Logger.LogType.CONFIG,"Failed to get Namespace from Service Reference. This should not prevent the client from working: Type=" + type.FullName);
+                    logger.Log(Logger.LogType.CONFIG, "Failed to get Namespace from Service Reference. This should not prevent the client from working: Type=" + type.FullName);
                 }
                 return "";
             }
@@ -359,6 +370,54 @@ namespace CyberSource.Clients
             currentBinding.Elements.Add(textBindingElement);
             currentBinding.Elements.Add(httpsTransport);
             return currentBinding;
+        }
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="merchantId"></param>
+        /// <param name="merchantIdentities"></param>
+        /// <returns></returns>
+        protected static X509Certificate2 GetOrFindValidMerchantCertFromStore(string merchantId, ConcurrentDictionary<string, CertificateEntry> merchantIdentities)
+        {
+            return merchantIdentities[merchantId] != null ? merchantIdentities[merchantId].MerchantCert : null;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="merchantId"></param>
+        /// <param name="merchantIdentities"></param>
+        /// <returns></returns>
+        protected static X509Certificate2 GetOrFindValidCybsCertFromStore(string merchantId, ConcurrentDictionary<string, CertificateEntry> merchantIdentities)
+        {
+            return merchantIdentities[merchantId] != null ? merchantIdentities[merchantId].CybsCert : null;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="merchantIdentities"></param>
+        /// <param name="logger"></param>
+        /// <param name="merchantId"></param>
+        /// <param name="creationTime"></param>
+        /// <returns></returns>
+        public static bool IsMerchantCertExpired(Logger logger, string merchantId, DateTime creationTime, ConcurrentDictionary<string, CertificateEntry> merchantIdentities)
+        {
+            if (merchantIdentities[merchantId] != null)
+            {
+                if (merchantIdentities[merchantId].CreationTime != creationTime)
+                {
+                    if (logger != null)
+                    {
+                        logger.LogInfo("certificate is expired, will be loaded again in memory for merchantID: " + merchantId);
+                    }
+                    return true;
+                }
+
+            }
+            return false;
         }
     }
 }

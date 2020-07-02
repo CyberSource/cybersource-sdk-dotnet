@@ -70,47 +70,106 @@ namespace CyberSource.Clients
                 //Get instance of service
                 using (proc = new NVPTransactionProcessorClient(currentBinding, endpointAddress))
                 {
-
-                    //Set protection level to sign
-                        proc.Endpoint.Contract.ProtectionLevel = System.Net.Security.ProtectionLevel.Sign;
-
                     // set the timeout
                     TimeSpan timeOut = new TimeSpan(0, 0, 0, config.Timeout, 0);
                     currentBinding.SendTimeout = timeOut;
 
 
                     string keyFilePath = Path.Combine(config.KeysDirectory, config.EffectiveKeyFilename);
-                    proc.ClientCredentials.ClientCertificate.Certificate = new X509Certificate2(keyFilePath, config.EffectivePassword, X509KeyStorageFlags.MachineKeySet | X509KeyStorageFlags.Exportable | X509KeyStorageFlags.PersistKeySet);
-
-                    proc.ClientCredentials.ServiceCertificate.Authentication.CertificateValidationMode = System.ServiceModel.Security.X509CertificateValidationMode.None;
-
-                    // Changes for SHA2 certificates support
-                    X509Certificate2Collection collection = new X509Certificate2Collection();
-                    collection.Import(keyFilePath, config.EffectivePassword, X509KeyStorageFlags.MachineKeySet | X509KeyStorageFlags.Exportable | X509KeyStorageFlags.PersistKeySet);
-
-                    foreach (X509Certificate2 cert1 in collection)
+                    X509Certificate2 merchantCert = null;
+                    X509Certificate2 cybsCert = null;
+                    DateTime dateFile = File.GetCreationTime(keyFilePath);
+                    if (config.CertificateCacheEnabled)
                     {
-                        if (cert1.Subject.Contains(config.MerchantID))
+                        if (!merchantIdentities.ContainsKey(config.MerchantID) || IsMerchantCertExpired(logger, config.MerchantID, dateFile, merchantIdentities))
                         {
-                            proc.ClientCredentials.ClientCertificate.Certificate = cert1;
-                            proc.ClientCredentials.ServiceCertificate.DefaultCertificate = cert1;
-                            break;
+                            if (logger != null)
+                            {
+                                logger.LogInfo("Loading certificate for merchantID " + config.MerchantID);
+                            }
+                            X509Certificate2Collection collection = new X509Certificate2Collection();
+                            collection.Import(keyFilePath, config.EffectivePassword, X509KeyStorageFlags.MachineKeySet | X509KeyStorageFlags.Exportable | X509KeyStorageFlags.PersistKeySet);
+
+                            X509Certificate2 newMerchantCert = null;
+                            X509Certificate2 newCybsCert = null;
+
+                            foreach (X509Certificate2 cert1 in collection)
+                            {
+                                if (cert1.Subject.Contains(config.MerchantID))
+                                {
+                                    newMerchantCert = cert1;
+                                }
+
+                                if (cert1.Subject.Contains(CYBS_SUBJECT_NAME))
+                                {
+                                    newCybsCert = cert1;
+                                }
+                            }
+                            CertificateEntry newCert = new CertificateEntry
+                            {
+                                CreationTime = dateFile,
+                                CybsCert = newCybsCert,
+                                MerchantCert = newMerchantCert
+                            };
+                            merchantIdentities.AddOrUpdate(config.MerchantID, newCert, (x, y) => newCert);
+                        }
+                        merchantCert = GetOrFindValidMerchantCertFromStore(config.MerchantID, merchantIdentities);
+                        if (config.UseSignedAndEncrypted)
+                        {
+                            cybsCert = GetOrFindValidCybsCertFromStore(config.MerchantID, merchantIdentities);
                         }
                     }
-
-                    if (config.UseSignedAndEncrypted)
+                    else
                     {
-                        foreach (X509Certificate2 cert2 in collection)
+                        // Changes for SHA2 certificates support
+                        X509Certificate2Collection collection = new X509Certificate2Collection();
+                        collection.Import(keyFilePath, config.EffectivePassword, X509KeyStorageFlags.MachineKeySet | X509KeyStorageFlags.Exportable | X509KeyStorageFlags.PersistKeySet);
+
+                        foreach (X509Certificate2 cert1 in collection)
                         {
-                            //Console.WriteLine(cert1.Subject);
-                            if (cert2.Subject.Contains(CYBERSOURCE_PUBLIC_KEY))
+                            if (cert1.Subject.Contains(config.MerchantID))
                             {
-                                //Set protection level to sign & encrypt only
-                                proc.Endpoint.Contract.ProtectionLevel = System.Net.Security.ProtectionLevel.EncryptAndSign;
-                                proc.ClientCredentials.ServiceCertificate.DefaultCertificate = cert2;
+                                merchantCert = cert1;
                                 break;
                             }
                         }
+
+                        if (config.UseSignedAndEncrypted)
+                        {
+                            foreach (X509Certificate2 cert2 in collection)
+                            {
+                                //Console.WriteLine(cert1.Subject);
+                                if (cert2.Subject.Contains(CYBERSOURCE_PUBLIC_KEY))
+                                {
+                                    cybsCert = cert2;
+                                    break;
+                                }
+                            }
+                        }
+                    }
+
+                    if (merchantCert == null)
+                    {
+                        throw new ApplicationException(
+                    "CONFIGURATION OR CODE BUG:  merchant certificate is missing, check the p12 file");
+                    }
+                    //Set protection level to sign
+                    proc.Endpoint.Contract.ProtectionLevel = System.Net.Security.ProtectionLevel.Sign;
+                    proc.ClientCredentials.ServiceCertificate.Authentication.CertificateValidationMode = System.ServiceModel.Security.X509CertificateValidationMode.None;
+                    proc.ClientCredentials.ClientCertificate.Certificate = merchantCert;
+                    proc.ClientCredentials.ServiceCertificate.DefaultCertificate = merchantCert;
+
+                    if (config.UseSignedAndEncrypted)
+                    {
+                        if (cybsCert == null)
+                        {
+                            throw new ApplicationException(
+                        "CONFIGURATION OR CODE BUG:  cybs certificate is missing, check the p12 file");
+                        }
+
+                        //Set protection level to sign & encrypt only
+                        proc.Endpoint.Contract.ProtectionLevel = System.Net.Security.ProtectionLevel.EncryptAndSign;
+                        proc.ClientCredentials.ServiceCertificate.DefaultCertificate = cybsCert;
                     }
 
                     if (logger != null)
@@ -222,7 +281,7 @@ namespace CyberSource.Clients
             request["clientLibrary"] = ".NET NVP";
             request["clientLibraryVersion"] = CLIENT_LIBRARY_VERSION;
             request["clientEnvironment"] = mEnvironmentInfo;
-            request["clientSecurityLibraryVersion"] =".Net 1.4.2";
+            request["clientSecurityLibraryVersion"] =".Net 1.4.3";
         }
     }
 }

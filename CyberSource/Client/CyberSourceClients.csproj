@@ -127,6 +127,7 @@
     <Compile Include="Settings.cs" />
     <Compile Include="SoapClient.cs" />
     <Compile Include="XmlClient.cs" />
+    <Compile Include="CertificateEntry.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
@@ -167,6 +168,12 @@
     <WCFMetadataStorage Include="Service References\SoapServiceReference\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Base\CyberSourceBase.csproj">
+      <Project>{6ec4a1fb-44ce-4326-92a5-88a1ecc615bd}</Project>
+      <Name>CyberSourceBase</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
     <None Include="Service References\NVPServiceReference\configuration91.svcinfo" />
   </ItemGroup>
   <ItemGroup>
@@ -189,12 +196,6 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Base\CyberSourceBase.csproj">
-      <Project>{6ec4a1fb-44ce-4326-92a5-88a1ecc615bd}</Project>
-      <Name>CyberSourceBase</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

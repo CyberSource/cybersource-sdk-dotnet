@@ -13,7 +13,7 @@ namespace CyberSource.Base
 	{
         public enum LogType
         {
-            FILESTART, TRANSTART, CONFIG, REQUEST, REPLY, FAULT, EXCEPTION
+            FILESTART, TRANSTART, CONFIG, INFO, REQUEST, REPLY, FAULT, EXCEPTION
         };
 
         private static Mutex smMutex = new Mutex(false, "CyberSource.Base.Logger");
@@ -184,7 +184,11 @@ namespace CyberSource.Base
                 e.Message + NEWLINE +
                 e.StackTrace);
         }
-        
+
+        public void LogInfo(string logString)
+        {
+            Log(LogType.INFO, logString);
+        }
 
         public void LogException(string logString)
         {
