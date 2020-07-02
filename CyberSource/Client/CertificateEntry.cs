@@ -10,7 +10,7 @@ namespace CyberSource.Clients
     /// </summary>
     public class CertificateEntry
     {
-        public DateTime CreationTime { get; set; }
+        public DateTime ModifiedTime { get; set; }
         public X509Certificate2 MerchantCert { get; set; }
         public X509Certificate2 CybsCert { get; set; }
     }
