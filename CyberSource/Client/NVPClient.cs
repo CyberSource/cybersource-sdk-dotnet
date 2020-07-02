@@ -78,7 +78,7 @@ namespace CyberSource.Clients
                     string keyFilePath = Path.Combine(config.KeysDirectory, config.EffectiveKeyFilename);
                     X509Certificate2 merchantCert = null;
                     X509Certificate2 cybsCert = null;
-                    DateTime dateFile = File.GetCreationTime(keyFilePath);
+                    DateTime dateFile = File.GetLastWriteTime(keyFilePath);
                     if (config.CertificateCacheEnabled)
                     {
                         if (!merchantIdentities.ContainsKey(config.MerchantID) || IsMerchantCertExpired(logger, config.MerchantID, dateFile, merchantIdentities))
@@ -107,7 +107,7 @@ namespace CyberSource.Clients
                             }
                             CertificateEntry newCert = new CertificateEntry
                             {
-                                CreationTime = dateFile,
+                                ModifiedTime = dateFile,
                                 CybsCert = newCybsCert,
                                 MerchantCert = newMerchantCert
                             };

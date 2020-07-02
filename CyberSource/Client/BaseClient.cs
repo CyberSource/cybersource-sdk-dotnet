@@ -403,11 +403,11 @@ namespace CyberSource.Clients
         /// <param name="merchantId"></param>
         /// <param name="creationTime"></param>
         /// <returns></returns>
-        public static bool IsMerchantCertExpired(Logger logger, string merchantId, DateTime creationTime, ConcurrentDictionary<string, CertificateEntry> merchantIdentities)
+        public static bool IsMerchantCertExpired(Logger logger, string merchantId, DateTime modifiedTime, ConcurrentDictionary<string, CertificateEntry> merchantIdentities)
         {
             if (merchantIdentities[merchantId] != null)
             {
-                if (merchantIdentities[merchantId].CreationTime != creationTime)
+                if (merchantIdentities[merchantId].ModifiedTime != modifiedTime)
                 {
                     if (logger != null)
                     {
