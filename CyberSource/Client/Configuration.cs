@@ -19,6 +19,7 @@ namespace CyberSource.Clients
         internal const string SERVER_URL = "serverURL";
         internal const string CYBERSOURCE_URL = "cybersourceURL";
         internal const string KEY_FILENAME = "keyFilename";
+        internal const string KEY_ALIAS = "keyAlias";
         internal const string PASSWORD = "password";
         internal const string LOG_FILENAME = "logFilename";
         internal const string LOG_MAXIMUM_SIZE = "logMaximumSize";
@@ -63,6 +64,7 @@ namespace CyberSource.Clients
         private string logDirectory = null;
         private string serverURL = null;
         private string keyFilename = null;
+        private string keyAlias = null;
         private string password = null;
         private string logFilename = null;
         private int logMaximumSize = -1;
@@ -173,6 +175,18 @@ namespace CyberSource.Clients
         {
             get { return keyFilename; }
             set { keyFilename = value; }
+        }
+
+        public string KeyAlias
+        {
+            get
+            {
+                return (
+                    keyAlias != null
+                        ? keyAlias
+                        : merchantID);
+            }
+            set { keyAlias = value; }
         }
 
         /// <summary>
@@ -323,6 +337,11 @@ namespace CyberSource.Clients
                 if (keyFilename != null)
                 {
                     buf += NVP_SEPARATOR + KEY_FILENAME + NV_SEPARATOR + keyFilename;
+                }
+
+                if (keyAlias != null)
+                {
+                    buf += NVP_SEPARATOR + KEY_ALIAS + NV_SEPARATOR + keyAlias;
                 }
 
                 if (timeout != -1)

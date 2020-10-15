@@ -19,7 +19,7 @@ namespace CyberSource.Clients
         /// <summary>
         /// Version of this client.
         /// </summary>
-        public const string CLIENT_LIBRARY_VERSION = "1.4.3";
+        public const string CLIENT_LIBRARY_VERSION = "1.4.4";
         public const string CYBS_SUBJECT_NAME = "CyberSource_SJC_US";
 
         /// <summary>
