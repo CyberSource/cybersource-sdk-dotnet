@@ -138,7 +138,6 @@ namespace CyberSource.Clients
                         {
                             foreach (X509Certificate2 cert2 in collection)
                             {
-                                //Console.WriteLine(cert1.Subject);
                                 if (cert2.Subject.Contains(CYBERSOURCE_PUBLIC_KEY))
                                 {
                                     cybsCert = cert2;
@@ -218,7 +217,6 @@ namespace CyberSource.Clients
             ref Configuration config, Hashtable request)
         {
             string requestMerchantID = (string)request[MERCHANT_ID];
-            Console.Write("Merchant id >>>>>>>>>>>>", requestMerchantID);
 
             if (config == null)
             {
