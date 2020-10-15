@@ -196,6 +196,10 @@ namespace CyberSource.Clients
                 = AppSettings.GetSetting(
                     merchantID, Configuration.KEY_FILENAME);
 
+            config.KeyAlias
+               = AppSettings.GetSetting(
+                   merchantID, Configuration.KEY_ALIAS);
+
             config.Password
                 = AppSettings.GetSetting(
                     merchantID, Configuration.PASSWORD);
