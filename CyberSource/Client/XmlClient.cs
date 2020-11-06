@@ -99,7 +99,7 @@ namespace CyberSource.Clients
                     {
                         if(logger != null)
                         {
-                            logger.LogInfo("Loading certificate for merchantID "+ config.KeyAlias);
+                            logger.LogInfo("Loading certificate for "+ config.KeyAlias);
                         }
 
                         X509Certificate2Collection collection = new X509Certificate2Collection();
