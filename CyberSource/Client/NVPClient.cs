@@ -81,11 +81,11 @@ namespace CyberSource.Clients
                     DateTime dateFile = File.GetLastWriteTime(keyFilePath);
                     if (config.CertificateCacheEnabled)
                     {
-                        if (!merchantIdentities.ContainsKey(config.MerchantID) || IsMerchantCertExpired(logger, config.MerchantID, dateFile, merchantIdentities))
+                        if (!merchantIdentities.ContainsKey(config.KeyAlias) || IsMerchantCertExpired(logger, config.KeyAlias, dateFile, merchantIdentities))
                         {
                             if (logger != null)
                             {
-                                logger.LogInfo("Loading certificate for merchantID " + config.MerchantID);
+                                logger.LogInfo("Loading certificate for " + config.KeyAlias);
                             }
                             X509Certificate2Collection collection = new X509Certificate2Collection();
                             collection.Import(keyFilePath, config.EffectivePassword, X509KeyStorageFlags.MachineKeySet | X509KeyStorageFlags.Exportable | X509KeyStorageFlags.PersistKeySet);
@@ -95,7 +95,7 @@ namespace CyberSource.Clients
 
                             foreach (X509Certificate2 cert1 in collection)
                             {
-                                if (cert1.Subject.Contains(config.MerchantID))
+                                if (cert1.Subject.Contains(config.KeyAlias))
                                 {
                                     newMerchantCert = cert1;
                                 }
@@ -111,12 +111,12 @@ namespace CyberSource.Clients
                                 CybsCert = newCybsCert,
                                 MerchantCert = newMerchantCert
                             };
-                            merchantIdentities.AddOrUpdate(config.MerchantID, newCert, (x, y) => newCert);
+                            merchantIdentities.AddOrUpdate(config.KeyAlias, newCert, (x, y) => newCert);
                         }
-                        merchantCert = GetOrFindValidMerchantCertFromStore(config.MerchantID, merchantIdentities);
+                        merchantCert = GetOrFindValidMerchantCertFromStore(config.KeyAlias, merchantIdentities);
                         if (config.UseSignedAndEncrypted)
                         {
-                            cybsCert = GetOrFindValidCybsCertFromStore(config.MerchantID, merchantIdentities);
+                            cybsCert = GetOrFindValidCybsCertFromStore(config.KeyAlias, merchantIdentities);
                         }
                     }
                     else
@@ -127,7 +127,7 @@ namespace CyberSource.Clients
 
                         foreach (X509Certificate2 cert1 in collection)
                         {
-                            if (cert1.Subject.Contains(config.MerchantID))
+                            if (cert1.Subject.Contains(config.KeyAlias))
                             {
                                 merchantCert = cert1;
                                 break;
@@ -138,7 +138,6 @@ namespace CyberSource.Clients
                         {
                             foreach (X509Certificate2 cert2 in collection)
                             {
-                                //Console.WriteLine(cert1.Subject);
                                 if (cert2.Subject.Contains(CYBERSOURCE_PUBLIC_KEY))
                                 {
                                     cybsCert = cert2;
@@ -281,7 +280,7 @@ namespace CyberSource.Clients
             request["clientLibrary"] = ".NET NVP";
             request["clientLibraryVersion"] = CLIENT_LIBRARY_VERSION;
             request["clientEnvironment"] = mEnvironmentInfo;
-            request["clientSecurityLibraryVersion"] =".Net 1.4.3";
+            request["clientSecurityLibraryVersion"] =".Net 1.4.4";
         }
     }
 }
