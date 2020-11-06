@@ -18,11 +18,11 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="https://ics2wstest.ic3.com/commerce/1.x/transactionProcessor/CyberSourceTransaction_1.164.wsdl" Protocol="http" SourceId="1" />
+    <MetadataSource Address="https://ics2wstest.ic3.com/commerce/1.x/transactionProcessor/CyberSourceTransaction_1.170.wsdl" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="CyberSourceTransactionWS.wsdl" MetadataType="Wsdl" ID="540923a8-b679-4097-9b9c-ff85d635ae43" SourceId="1" SourceUrl="https://ics2wstest.ic3.com/commerce/1.x/transactionProcessor/CyberSourceTransaction_1.164.wsdl" />
-    <MetadataFile FileName="CyberSourceTransaction_1.xsd" MetadataType="Schema" ID="8e82dedf-ecd6-4821-ab4a-5427b2616ce8" SourceId="1" SourceUrl="https://ics2wstest.ic3.com/commerce/1.x/transactionProcessor/CyberSourceTransaction_1.164.xsd" />
+    <MetadataFile FileName="CyberSourceTransaction_11.xsd" MetadataType="Schema" ID="7f8dcb0d-0faf-42c2-8fbd-298da4bbd790" SourceId="1" SourceUrl="https://ics2wstest.ic3.com/commerce/1.x/transactionProcessor/CyberSourceTransaction_1.170.xsd" />
+    <MetadataFile FileName="CyberSourceTransactionWS1.wsdl" MetadataType="Wsdl" ID="31f1dff9-6d76-4620-96da-1e3c58936c31" SourceId="1" SourceUrl="https://ics2wstest.ic3.com/commerce/1.x/transactionProcessor/CyberSourceTransaction_1.170.wsdl" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

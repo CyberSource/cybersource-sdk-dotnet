@@ -19,7 +19,7 @@ namespace CyberSource.Clients
         /// <summary>
         /// Version of this client.
         /// </summary>
-        public const string CLIENT_LIBRARY_VERSION = "1.4.3";
+        public const string CLIENT_LIBRARY_VERSION = "1.4.4";
         public const string CYBS_SUBJECT_NAME = "CyberSource_SJC_US";
 
         /// <summary>
@@ -195,6 +195,10 @@ namespace CyberSource.Clients
             config.KeyFilename
                 = AppSettings.GetSetting(
                     merchantID, Configuration.KEY_FILENAME);
+
+            config.KeyAlias
+               = AppSettings.GetSetting(
+                   merchantID, Configuration.KEY_ALIAS);
 
             config.Password
                 = AppSettings.GetSetting(
