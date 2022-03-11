@@ -88,7 +88,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
-    <None Include="Service References\NVPServiceReference\CyberSourceTransaction_1.xsd">
+    <None Include="Service References\NVPServiceReference\CyberSourceTransaction_11.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Service References\NVPServiceReference\NVPCyberSourceTransactionWS.wsdl" />
@@ -139,8 +139,8 @@
     <None Include="Service References\SoapServiceReference\configuration.svcinfo" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\SoapServiceReference\CyberSourceTransactionWS1.wsdl" />
-    <None Include="Service References\SoapServiceReference\CyberSourceTransaction_11.xsd">
+    <None Include="Service References\SoapServiceReference\CyberSourceTransactionWS.wsdl" />
+    <None Include="Service References\SoapServiceReference\CyberSourceTransaction_1.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Service References\SoapServiceReference\Reference.svcmap">
