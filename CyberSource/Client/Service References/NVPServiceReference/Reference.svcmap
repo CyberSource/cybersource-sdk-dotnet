@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="1817627c-df68-4911-9ef7-1449cbfb6141" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ID="1817627c-df68-4911-9ef7-1449cbfb6141" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
     <EnableDataBinding>true</EnableDataBinding>
@@ -18,11 +18,11 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="https://ics2wstest.ic3.com/commerce/1.x/transactionProcessor/CyberSourceTransaction_NVP_1.192.wsdl" Protocol="http" SourceId="1" />
+    <MetadataSource Address="https://ics2ws.ic3.com/commerce/1.x/transactionProcessor/CyberSourceTransaction_NVP_1.211.wsdl" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="CyberSourceTransaction_11.xsd" MetadataType="Schema" ID="c5736cf3-1750-4fa1-a949-1fed7579e796" SourceId="1" SourceUrl="https://ics2wstest.ic3.com/commerce/1.x/transactionProcessor/CyberSourceTransaction_1.192.xsd" />
-    <MetadataFile FileName="NVPCyberSourceTransactionWS.wsdl" MetadataType="Wsdl" ID="930ff7ed-ef25-45b6-8e08-e23b36c77ac0" SourceId="1" SourceUrl="https://ics2wstest.ic3.com/commerce/1.x/transactionProcessor/CyberSourceTransaction_NVP_1.192.wsdl" />
+    <MetadataFile FileName="NVPCyberSourceTransactionWS1.wsdl" MetadataType="Wsdl" ID="ec44f6b3-f593-4899-bd13-653f03b84ab9" SourceId="1" SourceUrl="https://ics2ws.ic3.com/commerce/1.x/transactionProcessor/CyberSourceTransaction_NVP_1.211.wsdl" />
+    <MetadataFile FileName="CyberSourceTransaction_1.xsd" MetadataType="Schema" ID="e715be78-10cb-4b8f-b963-8d3d16937e24" SourceId="1" SourceUrl="https://ics2ws.ic3.com/commerce/1.x/transactionProcessor/CyberSourceTransaction_1.211.xsd" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

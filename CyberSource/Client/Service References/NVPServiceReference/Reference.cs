@@ -27,7 +27,7 @@ namespace CyberSource.Clients.NVPServiceReference {
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class inputNVPMessageIn {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.192", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.211", Order=0)]
         public string nvpRequest;
         
         public inputNVPMessageIn() {
@@ -44,7 +44,7 @@ namespace CyberSource.Clients.NVPServiceReference {
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class outputNVPMessageOut {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.192", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.211", Order=0)]
         public string nvpReply;
         
         public outputNVPMessageOut() {
