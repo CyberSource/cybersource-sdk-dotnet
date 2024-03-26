@@ -40,7 +40,7 @@ namespace CyberSource.Samples
 			request.Add( "billTo_ipAddress", "10.7.111.111" );
 			request.Add( "card_accountNumber", "4111111111111111" );
 			request.Add( "card_expirationMonth", "12" );
-			request.Add( "card_expirationYear", "2020" );
+			request.Add( "card_expirationYear", "2030" );
 			request.Add( "purchaseTotals_currency", "USD" );
 
 			// there are two items in this sample

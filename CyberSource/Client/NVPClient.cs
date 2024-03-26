@@ -272,6 +272,8 @@ namespace CyberSource.Clients
                 }
             }
 
+            reader.Close();
+
             return (dest);
         }
 
