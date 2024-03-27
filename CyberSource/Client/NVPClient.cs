@@ -65,7 +65,7 @@ namespace CyberSource.Clients
 
                 //Setup endpoint Address with dns identity
                 AddressHeaderCollection headers = new AddressHeaderCollection();
-                EndpointAddress endpointAddress = new EndpointAddress(new Uri(config.EffectiveServerURL), EndpointIdentity.CreateDnsIdentity(config.EffectivePassword), headers);
+                EndpointAddress endpointAddress = new EndpointAddress(new Uri(config.EffectiveServerURL), EndpointIdentity.CreateDnsIdentity(config.MerchantID), headers);
 
                 //Get instance of service
                 using (proc = new NVPTransactionProcessorClient(currentBinding, endpointAddress))
@@ -271,6 +271,8 @@ namespace CyberSource.Clients
                         parts.Length == 2 ? parts[1] : null);
                 }
             }
+
+            reader.Close();
 
             return (dest);
         }
