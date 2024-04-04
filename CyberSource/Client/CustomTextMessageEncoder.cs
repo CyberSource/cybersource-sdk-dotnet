@@ -61,6 +61,7 @@ namespace CyberSource.Clients
         {
             var sr = new StreamReader(stream);
             var wireResponse = sr.ReadToEnd();
+            sr.Close();
 
             // Fix for Xml external entity injection violation in fortify report
             XmlReaderSettings settings = new XmlReaderSettings();
@@ -68,7 +69,8 @@ namespace CyberSource.Clients
             settings.XmlResolver = null;
 
             XmlDocument doc = new XmlDocument();
-            XmlReader reader = XmlReader.Create(new StringReader(wireResponse), settings);
+            StringReader stringReader = new StringReader(wireResponse);
+            XmlReader reader = XmlReader.Create(stringReader, settings);
             doc.Load(reader);
             //We need to get rid of the security header because it is not signed by the web service.
             //The whole reason for the custom Encoder is to do this. the client rejected the unsigned header.
@@ -79,8 +81,15 @@ namespace CyberSource.Clients
             {
                 n.DeleteSelf();
             }
-            reader = XmlReader.Create(new StringReader(doc.InnerXml), settings);
-            return Message.CreateMessage(reader, maxSizeOfHeaders, MessageVersion.Soap11);
+            StringReader stringReaderInnerXml = new StringReader(doc.InnerXml);
+            reader = XmlReader.Create(stringReaderInnerXml, settings);
+            Message returnMessage = Message.CreateMessage(reader, maxSizeOfHeaders, MessageVersion.Soap11);
+
+            stringReader.Close();
+            stringReaderInnerXml.Close();
+            reader.Close();
+
+            return returnMessage;
         }
 
         public override ArraySegment<byte> WriteMessage(Message message, int maxMessageSize, BufferManager bufferManager, int messageOffset)
