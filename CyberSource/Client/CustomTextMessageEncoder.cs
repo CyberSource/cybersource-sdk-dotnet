@@ -59,35 +59,43 @@ namespace CyberSource.Clients
 
         public override Message ReadMessage(Stream stream, int maxSizeOfHeaders, string contentType)
         {
-            var sr = new StreamReader(stream);
-            var wireResponse = sr.ReadToEnd();
-            sr.Close();
+            String wireResponse;
 
+            using (var sr = new StreamReader(stream))
+            {
+                wireResponse = sr.ReadToEnd();
+            }
+             
             // Fix for Xml external entity injection violation in fortify report
             XmlReaderSettings settings = new XmlReaderSettings();
             settings.DtdProcessing = DtdProcessing.Prohibit;
             settings.XmlResolver = null;
 
             XmlDocument doc = new XmlDocument();
-            StringReader stringReader = new StringReader(wireResponse);
-            XmlReader reader = XmlReader.Create(stringReader, settings);
-            doc.Load(reader);
-            //We need to get rid of the security header because it is not signed by the web service.
-            //The whole reason for the custom Encoder is to do this. the client rejected the unsigned header.
-            //Our WCF client is set up to allow the absence of a security header but if the header exists then it must be signed.
-            //Hopefully the namespace will not change. Maybe it should be put in a config.
-            XPathNavigator n = doc.CreateNavigator();
-            if (n.MoveToFollowing("Security", "http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd"))
-            {
-                n.DeleteSelf();
-            }
-            StringReader stringReaderInnerXml = new StringReader(doc.InnerXml);
-            reader = XmlReader.Create(stringReaderInnerXml, settings);
-            Message returnMessage = Message.CreateMessage(reader, maxSizeOfHeaders, MessageVersion.Soap11);
+            Message returnMessage = null;
 
-            stringReader.Close();
-            stringReaderInnerXml.Close();
-            reader.Close();
+            using (StringReader stringReader = new StringReader(wireResponse))
+            {
+                using (XmlReader reader = XmlReader.Create(stringReader, settings))
+                {
+                    doc.Load(reader);
+
+                    //We need to get rid of the security header because it is not signed by the web service.
+                    //The whole reason for the custom Encoder is to do this. the client rejected the unsigned header.
+                    //Our WCF client is set up to allow the absence of a security header but if the header exists then it must be signed.
+                    //Hopefully the namespace will not change. Maybe it should be put in a config.
+
+                    XPathNavigator n = doc.CreateNavigator();
+                    if (n.MoveToFollowing("Security", "http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd"))
+                    {
+                        n.DeleteSelf();
+                    }
+
+                    StringReader stringReaderInnerXml = new StringReader(doc.InnerXml);
+                    XmlReader reader2 = XmlReader.Create(stringReaderInnerXml, settings);
+                    returnMessage = Message.CreateMessage(reader2, maxSizeOfHeaders, MessageVersion.Soap11);
+                }
+            }
 
             return returnMessage;
         }
