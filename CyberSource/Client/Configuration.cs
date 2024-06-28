@@ -1,4 +1,5 @@
 using System;
+using System.Security;
 
 namespace CyberSource.Clients
 {
@@ -65,7 +66,7 @@ namespace CyberSource.Clients
         private string serverURL = null;
         private string keyFilename = null;
         private string keyAlias = null;
-        private string password = null;
+        private SecureString password = null;
         private string logFilename = null;
         private int logMaximumSize = -1;
         private int timeout = -1;
@@ -195,7 +196,7 @@ namespace CyberSource.Clients
         /// This is optional.  When not set, the value of MerchantID is
         /// used.
         /// </summary>
-        public string Password
+        public SecureString Password
         {
             get { return password; }
             set { password = value; }
@@ -409,12 +410,28 @@ namespace CyberSource.Clients
         /// Returns the password that will take effect given
         /// the current state of this Configuration object.
         /// </summary>
-        internal string EffectivePassword
+        internal SecureString EffectivePassword
         {
             get
             {
-                return( password != null ? password : merchantID);
+                return( password != null ? password : convertToSecureString(merchantID));
             }
+        }
+
+        private SecureString convertToSecureString(string originalString)
+        {
+            if (originalString == null)
+            {
+                return null;
+            }
+
+            var secureString = new SecureString();
+
+            foreach (char c in originalString)
+                secureString.AppendChar(c);
+
+            secureString.MakeReadOnly();
+            return secureString;
         }
 
         /// <summary>
