@@ -5,8 +5,6 @@ using System.ServiceModel.Security;
 using CyberSource.Clients;
 using CyberSource.Clients.SoapServiceReference;
 using System.Security.Cryptography;
-using System.Security;
-//using SoapSampleTransactions;
 
 
 namespace CyberSource.Samples
@@ -418,22 +416,6 @@ public class SampleTransactions
         return request;
     }
 
-    private static SecureString convertToSecureString(string originalString)
-    {
-        if (originalString == null)
-        {
-            return null;
-        }
-
-        var secureString = new SecureString();
-
-        foreach (char c in originalString)
-            secureString.AppendChar(c);
-
-        secureString.MakeReadOnly();
-        return secureString;
-    }
-
     public RequestMessage authRevRequest()
     {
         RequestMessage request = new RequestMessage();
@@ -448,7 +430,7 @@ public class SampleTransactions
 
         request.ccAuthReversalService = new CCAuthReversalService();
         request.ccAuthReversalService.run = "true";
-        request.ccAuthReversalService.authRequestID = "7195524478506344304010";
+        request.ccAuthReversalService.authRequestID = "auth-request-id";
 
         request.merchantReferenceCode = "your_merchant_reference_code";
 
