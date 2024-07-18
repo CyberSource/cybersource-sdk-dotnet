@@ -387,7 +387,7 @@ public class SampleTransactions
         billTo.state = "CA";
         billTo.postalCode = "94043";
         billTo.country = "US";
-        billTo.email = convertToSecureString("null@cybersource.com");
+        billTo.email = "null@cybersource.com";
         billTo.ipAddress = "10.7.111.111";
         request.billTo = billTo;
 
@@ -612,7 +612,7 @@ public class SampleTransactions
         billTo.state = "CA";
         billTo.postalCode = "94043";
         billTo.country = "US";
-        billTo.email = convertToSecureString("null@cybersource.com");
+        billTo.email = "null@cybersource.com";
         billTo.ipAddress = "10.7.111.111";
         request.billTo = billTo;
 
@@ -673,7 +673,7 @@ public class SampleTransactions
         billTo.state = "CA";
         billTo.postalCode = "94043";
         billTo.country = "US";
-        billTo.email = convertToSecureString("null@cybersource.com");
+        billTo.email = "null@cybersource.com";
         billTo.ipAddress = "10.7.111.111";
         request.billTo = billTo;
 
@@ -749,7 +749,7 @@ public class SampleTransactions
         billTo.state = "CA";
         billTo.postalCode = "94043";
         billTo.country = "US";
-        billTo.email = convertToSecureString("null@cybersource.com");
+        billTo.email = "null@cybersource.com";
         billTo.ipAddress = "10.7.111.111";
         request.billTo = billTo;
 
@@ -817,7 +817,7 @@ public class SampleTransactions
         billTo.state = "CA";
         billTo.postalCode = "94043";
         billTo.country = "US";
-        billTo.email = convertToSecureString("null@cybersource.com");
+        billTo.email = "null@cybersource.com";
         billTo.ipAddress = "10.7.111.111";
         request.billTo = billTo;
 
@@ -883,7 +883,7 @@ public class SampleTransactions
         billTo.state = "CA";
         billTo.postalCode = "94043";
         billTo.country = "US";
-        billTo.email = convertToSecureString("null@cybersource.com");
+        billTo.email = "null@cybersource.com";
         billTo.ipAddress = "10.7.111.111";
         request.billTo = billTo;
 

@@ -31953,7 +31953,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         
         private string phoneNumberField;
         
-        private System.Security.SecureString emailField;
+        private string emailField;
         
         private string ipAddressField;
         
@@ -32281,13 +32281,12 @@ namespace CyberSource.Clients.SoapServiceReference {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=20)]
-        public System.Security.SecureString email {
+        public string email {
             get {
                 return this.emailField;
             }
             set {
                 this.emailField = value;
-                this.emailField.MakeReadOnly();
                 this.RaisePropertyChanged("email");
             }
         }
@@ -48226,19 +48225,13 @@ namespace CyberSource.Clients.SoapServiceReference {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=9)]
-        public System.Security.SecureString password {
+        public string password {
             get {
-                return this.passwordField;
+                return ConvertToUnsecureString(this.passwordField);
             }
             set {
-				if (value == null)
-				{
-					this.passwordField = null;
-				}
-				else {
-					this.passwordField = value;
-                    this.passwordField.MakeReadOnly();
-				}
+                this.passwordField = new System.Net.NetworkCredential(string.Empty, value).SecurePassword;
+                this.passwordField.MakeReadOnly();
                 this.RaisePropertyChanged("password");
             }
         }
@@ -49017,6 +49010,25 @@ namespace CyberSource.Clients.SoapServiceReference {
             System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
             if ((propertyChanged != null)) {
                 propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+
+        public static string ConvertToUnsecureString(System.Security.SecureString secureString)
+        {
+            if (secureString == null)
+            {
+                return string.Empty;
+            }
+
+            System.IntPtr unmanagedString = System.IntPtr.Zero;
+            try
+            {
+                unmanagedString = System.Runtime.InteropServices.Marshal.SecureStringToGlobalAllocUnicode(secureString);
+                return System.Runtime.InteropServices.Marshal.PtrToStringUni(unmanagedString);
+            }
+            finally
+            {
+                System.Runtime.InteropServices.Marshal.ZeroFreeGlobalAllocUnicode(unmanagedString);
             }
         }
     }
