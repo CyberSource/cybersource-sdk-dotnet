@@ -31953,7 +31953,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         
         private string phoneNumberField;
         
-        private string emailField;
+        private System.Security.SecureString emailField;
         
         private string ipAddressField;
         
@@ -32281,12 +32281,13 @@ namespace CyberSource.Clients.SoapServiceReference {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=20)]
-        public string email {
+        public System.Security.SecureString email {
             get {
                 return this.emailField;
             }
             set {
                 this.emailField = value;
+                this.emailField.MakeReadOnly();
                 this.RaisePropertyChanged("email");
             }
         }
@@ -47985,7 +47986,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         
         private string loginIDField;
         
-        private string passwordField;
+        private System.Security.SecureString passwordField;
         
         private string merchantIDField;
         
@@ -48225,12 +48226,19 @@ namespace CyberSource.Clients.SoapServiceReference {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=9)]
-        public string password {
+        public System.Security.SecureString password {
             get {
                 return this.passwordField;
             }
             set {
-                this.passwordField = value;
+				if (value == null)
+				{
+					this.passwordField = null;
+				}
+				else {
+					this.passwordField = value;
+                    this.passwordField.MakeReadOnly();
+				}
                 this.RaisePropertyChanged("password");
             }
         }

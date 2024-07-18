@@ -5,6 +5,7 @@ using System.ServiceModel.Security;
 using CyberSource.Clients;
 using CyberSource.Clients.SoapServiceReference;
 using System.Security.Cryptography;
+using System.Security;
 //using SoapSampleTransactions;
 
 
@@ -386,7 +387,7 @@ public class SampleTransactions
         billTo.state = "CA";
         billTo.postalCode = "94043";
         billTo.country = "US";
-        billTo.email = "null@cybersource.com";
+        billTo.email = convertToSecureString("null@cybersource.com");
         billTo.ipAddress = "10.7.111.111";
         request.billTo = billTo;
 
@@ -417,6 +418,22 @@ public class SampleTransactions
         return request;
     }
 
+    private static SecureString convertToSecureString(string originalString)
+    {
+        if (originalString == null)
+        {
+            return null;
+        }
+
+        var secureString = new SecureString();
+
+        foreach (char c in originalString)
+            secureString.AppendChar(c);
+
+        secureString.MakeReadOnly();
+        return secureString;
+    }
+
     public RequestMessage authRevRequest()
     {
         RequestMessage request = new RequestMessage();
@@ -431,7 +448,7 @@ public class SampleTransactions
 
         request.ccAuthReversalService = new CCAuthReversalService();
         request.ccAuthReversalService.run = "true";
-        request.ccAuthReversalService.authRequestID = "auth-request-id";
+        request.ccAuthReversalService.authRequestID = "7195524478506344304010";
 
         request.merchantReferenceCode = "your_merchant_reference_code";
 
@@ -595,7 +612,7 @@ public class SampleTransactions
         billTo.state = "CA";
         billTo.postalCode = "94043";
         billTo.country = "US";
-        billTo.email = "null@cybersource.com";
+        billTo.email = convertToSecureString("null@cybersource.com");
         billTo.ipAddress = "10.7.111.111";
         request.billTo = billTo;
 
@@ -656,7 +673,7 @@ public class SampleTransactions
         billTo.state = "CA";
         billTo.postalCode = "94043";
         billTo.country = "US";
-        billTo.email = "null@cybersource.com";
+        billTo.email = convertToSecureString("null@cybersource.com");
         billTo.ipAddress = "10.7.111.111";
         request.billTo = billTo;
 
@@ -732,7 +749,7 @@ public class SampleTransactions
         billTo.state = "CA";
         billTo.postalCode = "94043";
         billTo.country = "US";
-        billTo.email = "null@cybersource.com";
+        billTo.email = convertToSecureString("null@cybersource.com");
         billTo.ipAddress = "10.7.111.111";
         request.billTo = billTo;
 
@@ -800,7 +817,7 @@ public class SampleTransactions
         billTo.state = "CA";
         billTo.postalCode = "94043";
         billTo.country = "US";
-        billTo.email = "null@cybersource.com";
+        billTo.email = convertToSecureString("null@cybersource.com");
         billTo.ipAddress = "10.7.111.111";
         request.billTo = billTo;
 
@@ -845,7 +862,6 @@ public class SampleTransactions
         // you would set a merchantID in each request.
 
         // this sample requests auth and capture
-
         // Credit Card Authorization
         request.ccAuthService = new CCAuthService();
         request.ccAuthService.run = "true";
@@ -867,7 +883,7 @@ public class SampleTransactions
         billTo.state = "CA";
         billTo.postalCode = "94043";
         billTo.country = "US";
-        billTo.email = "null@cybersource.com";
+        billTo.email = convertToSecureString("null@cybersource.com");
         billTo.ipAddress = "10.7.111.111";
         request.billTo = billTo;
 
