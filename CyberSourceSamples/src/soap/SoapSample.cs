@@ -5,7 +5,6 @@ using System.ServiceModel.Security;
 using CyberSource.Clients;
 using CyberSource.Clients.SoapServiceReference;
 using System.Security.Cryptography;
-//using SoapSampleTransactions;
 
 
 namespace CyberSource.Samples
@@ -845,7 +844,6 @@ public class SampleTransactions
         // you would set a merchantID in each request.
 
         // this sample requests auth and capture
-
         // Credit Card Authorization
         request.ccAuthService = new CCAuthService();
         request.ccAuthService.run = "true";

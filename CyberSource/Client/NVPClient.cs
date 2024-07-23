@@ -87,8 +87,11 @@ namespace CyberSource.Clients
                             {
                                 logger.LogInfo("Loading certificate for " + config.KeyAlias);
                             }
+
+                            X509Certificate2 userCertificate = new X509Certificate2(keyFilePath, config.EffectivePassword, X509KeyStorageFlags.MachineKeySet | X509KeyStorageFlags.Exportable | X509KeyStorageFlags.PersistKeySet);
+
                             X509Certificate2Collection collection = new X509Certificate2Collection();
-                            collection.Import(keyFilePath, config.EffectivePassword, X509KeyStorageFlags.MachineKeySet | X509KeyStorageFlags.Exportable | X509KeyStorageFlags.PersistKeySet);
+                            collection.Add(userCertificate);
 
                             X509Certificate2 newMerchantCert = null;
                             X509Certificate2 newCybsCert = null;
@@ -121,9 +124,10 @@ namespace CyberSource.Clients
                     }
                     else
                     {
-                        // Changes for SHA2 certificates support
+                        X509Certificate2 userCertificate = new X509Certificate2(keyFilePath, config.EffectivePassword, X509KeyStorageFlags.MachineKeySet | X509KeyStorageFlags.Exportable | X509KeyStorageFlags.PersistKeySet);
+
                         X509Certificate2Collection collection = new X509Certificate2Collection();
-                        collection.Import(keyFilePath, config.EffectivePassword, X509KeyStorageFlags.MachineKeySet | X509KeyStorageFlags.Exportable | X509KeyStorageFlags.PersistKeySet);
+                        collection.Add(userCertificate);
 
                         foreach (X509Certificate2 cert1 in collection)
                         {

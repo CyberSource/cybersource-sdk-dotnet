@@ -8,6 +8,7 @@ using System.ServiceModel.Channels;
 using System.ServiceModel.Security.Tokens;
 using System.Security.Cryptography.X509Certificates;
 using System.Collections.Concurrent;
+using System.Security;
 
 namespace CyberSource.Clients
 {
@@ -70,8 +71,14 @@ namespace CyberSource.Clients
                     = AppSettings.GetSetting(null, PROXY_USER);
                 if (proxyUser != null)
                 {
-                    string proxyPassword
-                        = AppSettings.GetSetting(null, PROXY_PASSWORD);
+                    SecureString proxyPassword = new SecureString();
+
+                    foreach (char c in AppSettings.GetSetting(null, PROXY_PASSWORD))
+                    {
+                        proxyPassword.AppendChar(c);
+                    }
+
+                    proxyPassword.MakeReadOnly();
 
                     NetworkCredential credential
                         = new NetworkCredential(proxyUser, proxyPassword);
@@ -79,6 +86,7 @@ namespace CyberSource.Clients
                     CredentialCache cache = new CredentialCache();
                     cache.Add(new Uri(proxyURL), BASIC_AUTH, credential);
                     mProxy.Credentials = cache;
+                    proxyPassword.Dispose();
                 }
             }
         }
@@ -201,8 +209,8 @@ namespace CyberSource.Clients
                    merchantID, Configuration.KEY_ALIAS);
 
             config.Password
-                = AppSettings.GetSetting(
-                    merchantID, Configuration.PASSWORD);
+                = convertToSecureString(AppSettings.GetSetting(
+                    merchantID, Configuration.PASSWORD));
 
             config.LogFilename
                 = AppSettings.GetSetting(
@@ -422,6 +430,22 @@ namespace CyberSource.Clients
 
             }
             return false;
+        }
+
+        private static SecureString convertToSecureString(string originalString)
+        {
+            if (originalString == null)
+            {
+                return null;
+            }
+
+            var secureString = new SecureString();
+
+            foreach (char c in originalString)
+                secureString.AppendChar(c);
+
+            secureString.MakeReadOnly();
+            return secureString;
         }
     }
 }
