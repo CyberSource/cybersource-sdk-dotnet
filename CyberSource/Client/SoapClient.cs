@@ -286,7 +286,7 @@ namespace CyberSource.Clients
             requestMessage.clientLibrary = ".NET Soap";
             requestMessage.clientLibraryVersion = CLIENT_LIBRARY_VERSION;
             requestMessage.clientEnvironment = mEnvironmentInfo;
-            requestMessage.clientSecurityLibraryVersion = ".Net 1.4.4";
+            requestMessage.clientSecurityLibraryVersion = ".Net " + CLIENT_LIBRARY_VERSION;
         }
     }
 }
