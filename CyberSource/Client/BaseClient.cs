@@ -9,6 +9,8 @@ using System.ServiceModel.Security.Tokens;
 using System.Security.Cryptography.X509Certificates;
 using System.Collections.Concurrent;
 using System.Security;
+using System.Reflection;
+using System.Linq;
 
 namespace CyberSource.Clients
 {
@@ -20,7 +22,7 @@ namespace CyberSource.Clients
         /// <summary>
         /// Version of this client.
         /// </summary>
-        public const string CLIENT_LIBRARY_VERSION = "1.4.4";
+        public static string CLIENT_LIBRARY_VERSION;
         public const string CYBS_SUBJECT_NAME = "CyberSource_SJC_US";
 
         /// <summary>
@@ -53,7 +55,17 @@ namespace CyberSource.Clients
         static BaseClient()
         {
             ServicePointManager.SecurityProtocol = (SecurityProtocolType)3072 | (SecurityProtocolType)768;
+            CLIENT_LIBRARY_VERSION = GetClientId();
             SetupProxy();
+        }
+
+        private static string GetClientId()
+        {
+            var assembly = typeof(Configuration).Assembly;
+
+            var assemblyVersion = AssemblyHelper.GetAssemblyAttribute<AssemblyFileVersionAttribute>(assembly).Version;
+
+            return assemblyVersion;
         }
 
         private static void SetupProxy()
@@ -446,6 +458,26 @@ namespace CyberSource.Clients
 
             secureString.MakeReadOnly();
             return secureString;
+        }
+    }
+
+    /// <summary>
+    /// Code to process AssemblyInfo.cs information
+    /// </summary>
+    public static class AssemblyHelper
+    {
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="ass"></param>
+        /// <returns></returns>
+        public static T GetAssemblyAttribute<T>(this Assembly ass) where T : Attribute
+        {
+            object[] attributes = ass.GetCustomAttributes(typeof(T), false);
+            if (attributes == null || attributes.Length == 0)
+                return null;
+            return attributes.OfType<T>().SingleOrDefault();
         }
     }
 }

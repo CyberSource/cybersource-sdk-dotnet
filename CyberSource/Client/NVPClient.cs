@@ -286,7 +286,7 @@ namespace CyberSource.Clients
             request["clientLibrary"] = ".NET NVP";
             request["clientLibraryVersion"] = CLIENT_LIBRARY_VERSION;
             request["clientEnvironment"] = mEnvironmentInfo;
-            request["clientSecurityLibraryVersion"] =".Net 1.4.4";
+            request["clientSecurityLibraryVersion"] = ".Net " + CLIENT_LIBRARY_VERSION;
         }
     }
 }
