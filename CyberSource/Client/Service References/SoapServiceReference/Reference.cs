@@ -22,11 +22,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class RequestMessage : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string merchantIDField;
@@ -152,6 +152,10 @@ namespace CyberSource.Clients.SoapServiceReference {
         private GiftCardVoidService giftCardVoidServiceField;
         
         private GiftCardReversalService giftCardReversalServiceField;
+        
+        private GiftCardReloadService giftCardReloadServiceField;
+        
+        private GiftCardRefundService giftCardRefundServiceField;
         
         private VerificationService verificationServiceField;
         
@@ -371,6 +375,8 @@ namespace CyberSource.Clients.SoapServiceReference {
         
         private HostedDataRetrieveService hostedDataRetrieveServiceField;
         
+        private string merchantDomainNameField;
+        
         private string merchantCategoryCodeField;
         
         private string merchantCategoryCodeDomesticField;
@@ -382,6 +388,8 @@ namespace CyberSource.Clients.SoapServiceReference {
         private string merchandiseDescriptionField;
         
         private string paymentInitiationChannelField;
+        
+        private string paymentMethod_nameField;
         
         private string extendedCreditTotalCountField;
         
@@ -445,7 +453,13 @@ namespace CyberSource.Clients.SoapServiceReference {
         
         private string subsequentAuthTransactionIDField;
         
+        private string processorTransIdField;
+        
         private string subsequentAuthStoredCredentialField;
+        
+        private string subsequentAuthCumulativeAuthAmountField;
+        
+        private string subsequentAuthCITAuthenticationDataField;
         
         private Loan loanField;
         
@@ -456,6 +470,8 @@ namespace CyberSource.Clients.SoapServiceReference {
         private string feeProgramIndicatorField;
         
         private APOrderService apOrderServiceField;
+        
+        private APExtendOrderService apExtendOrderServiceField;
         
         private APCancelService apCancelServiceField;
         
@@ -502,6 +518,46 @@ namespace CyberSource.Clients.SoapServiceReference {
         private AutoRental autoRentalField;
         
         private HealthCare[] healthCareField;
+        
+        private payByPoints payByPointsField;
+        
+        private string paymentAccountReferenceField;
+        
+        private string networkTokenCryptogramField;
+        
+        private string promotionCodeField;
+        
+        private Recurring recurringField;
+        
+        private CCCreditAuthService ccCreditAuthServiceField;
+        
+        private CCCreditAuthReversalService ccCreditAuthReversalServiceField;
+        
+        private VehicleData vehicleDataField;
+        
+        private string enablerIdField;
+        
+        private TokenProvisioningInformation tokenProvisioningInformationField;
+        
+        private Unscheduled unscheduledField;
+        
+        private string agreementIDField;
+        
+        private string transactionModeField;
+        
+        private APUpdateOrderService apUpdateOrderServiceField;
+        
+        private string processingInstructionField;
+        
+        private AuthorizationOptions authorizationOptionsField;
+        
+        private string verificationResultsPersonalIdField;
+        
+        private CaptureOptions captureOptionsField;
+        
+        private language languageField;
+        
+        private string eligibilityIndicatorField;
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=0)]
@@ -1250,6 +1306,30 @@ namespace CyberSource.Clients.SoapServiceReference {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=62)]
+        public GiftCardReloadService giftCardReloadService {
+            get {
+                return this.giftCardReloadServiceField;
+            }
+            set {
+                this.giftCardReloadServiceField = value;
+                this.RaisePropertyChanged("giftCardReloadService");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=63)]
+        public GiftCardRefundService giftCardRefundService {
+            get {
+                return this.giftCardRefundServiceField;
+            }
+            set {
+                this.giftCardRefundServiceField = value;
+                this.RaisePropertyChanged("giftCardRefundService");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=64)]
         public VerificationService verificationService {
             get {
                 return this.verificationServiceField;
@@ -1261,7 +1341,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=63)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=65)]
         public CCSaleService ccSaleService {
             get {
                 return this.ccSaleServiceField;
@@ -1273,7 +1353,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=64)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=66)]
         public CCSaleCreditService ccSaleCreditService {
             get {
                 return this.ccSaleCreditServiceField;
@@ -1285,7 +1365,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=65)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=67)]
         public CCSaleReversalService ccSaleReversalService {
             get {
                 return this.ccSaleReversalServiceField;
@@ -1297,7 +1377,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=66)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=68)]
         public CCIncrementalAuthService ccIncrementalAuthService {
             get {
                 return this.ccIncrementalAuthServiceField;
@@ -1309,7 +1389,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=67)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=69)]
         public CCCaptureService ccCaptureService {
             get {
                 return this.ccCaptureServiceField;
@@ -1321,7 +1401,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=68)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=70)]
         public CCCreditService ccCreditService {
             get {
                 return this.ccCreditServiceField;
@@ -1333,7 +1413,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=69)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=71)]
         public CCAuthReversalService ccAuthReversalService {
             get {
                 return this.ccAuthReversalServiceField;
@@ -1345,7 +1425,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=70)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=72)]
         public CCAutoAuthReversalService ccAutoAuthReversalService {
             get {
                 return this.ccAutoAuthReversalServiceField;
@@ -1357,7 +1437,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=71)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=73)]
         public CCDCCService ccDCCService {
             get {
                 return this.ccDCCServiceField;
@@ -1369,7 +1449,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=72)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=74)]
         public ServiceFeeCalculateService serviceFeeCalculateService {
             get {
                 return this.serviceFeeCalculateServiceField;
@@ -1381,7 +1461,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=73)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=75)]
         public ECDebitService ecDebitService {
             get {
                 return this.ecDebitServiceField;
@@ -1393,7 +1473,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=74)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=76)]
         public ECCreditService ecCreditService {
             get {
                 return this.ecCreditServiceField;
@@ -1405,7 +1485,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=75)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=77)]
         public ECAuthenticateService ecAuthenticateService {
             get {
                 return this.ecAuthenticateServiceField;
@@ -1417,7 +1497,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=76)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=78)]
         public PayerAuthSetupService payerAuthSetupService {
             get {
                 return this.payerAuthSetupServiceField;
@@ -1429,7 +1509,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=77)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=79)]
         public PayerAuthEnrollService payerAuthEnrollService {
             get {
                 return this.payerAuthEnrollServiceField;
@@ -1441,7 +1521,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=78)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=80)]
         public PayerAuthValidateService payerAuthValidateService {
             get {
                 return this.payerAuthValidateServiceField;
@@ -1453,7 +1533,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=79)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=81)]
         public TaxService taxService {
             get {
                 return this.taxServiceField;
@@ -1465,7 +1545,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=80)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=82)]
         public DMEService dmeService {
             get {
                 return this.dmeServiceField;
@@ -1477,7 +1557,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=81)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=83)]
         public AFSService afsService {
             get {
                 return this.afsServiceField;
@@ -1489,7 +1569,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=82)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=84)]
         public DAVService davService {
             get {
                 return this.davServiceField;
@@ -1501,7 +1581,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=83)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=85)]
         public ExportService exportService {
             get {
                 return this.exportServiceField;
@@ -1513,7 +1593,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=84)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=86)]
         public FXRatesService fxRatesService {
             get {
                 return this.fxRatesServiceField;
@@ -1525,7 +1605,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=85)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=87)]
         public BankTransferService bankTransferService {
             get {
                 return this.bankTransferServiceField;
@@ -1537,7 +1617,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=86)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=88)]
         public BankTransferRefundService bankTransferRefundService {
             get {
                 return this.bankTransferRefundServiceField;
@@ -1549,7 +1629,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=87)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=89)]
         public BankTransferRealTimeService bankTransferRealTimeService {
             get {
                 return this.bankTransferRealTimeServiceField;
@@ -1561,7 +1641,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=88)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=90)]
         public DirectDebitMandateService directDebitMandateService {
             get {
                 return this.directDebitMandateServiceField;
@@ -1573,7 +1653,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=89)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=91)]
         public DirectDebitService directDebitService {
             get {
                 return this.directDebitServiceField;
@@ -1585,7 +1665,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=90)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=92)]
         public DirectDebitRefundService directDebitRefundService {
             get {
                 return this.directDebitRefundServiceField;
@@ -1597,7 +1677,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=91)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=93)]
         public DirectDebitValidateService directDebitValidateService {
             get {
                 return this.directDebitValidateServiceField;
@@ -1609,7 +1689,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("deviceFingerprintData", Order=92)]
+        [System.Xml.Serialization.XmlElementAttribute("deviceFingerprintData", Order=94)]
         public DeviceFingerprintData[] deviceFingerprintData {
             get {
                 return this.deviceFingerprintDataField;
@@ -1621,7 +1701,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=93)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=95)]
         public PaySubscriptionCreateService paySubscriptionCreateService {
             get {
                 return this.paySubscriptionCreateServiceField;
@@ -1633,7 +1713,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=94)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=96)]
         public PaySubscriptionUpdateService paySubscriptionUpdateService {
             get {
                 return this.paySubscriptionUpdateServiceField;
@@ -1645,7 +1725,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=95)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=97)]
         public PaySubscriptionEventUpdateService paySubscriptionEventUpdateService {
             get {
                 return this.paySubscriptionEventUpdateServiceField;
@@ -1657,7 +1737,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=96)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=98)]
         public PaySubscriptionRetrieveService paySubscriptionRetrieveService {
             get {
                 return this.paySubscriptionRetrieveServiceField;
@@ -1669,7 +1749,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=97)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=99)]
         public PaySubscriptionDeleteService paySubscriptionDeleteService {
             get {
                 return this.paySubscriptionDeleteServiceField;
@@ -1681,7 +1761,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=98)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=100)]
         public PayPalPaymentService payPalPaymentService {
             get {
                 return this.payPalPaymentServiceField;
@@ -1693,7 +1773,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=99)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=101)]
         public PayPalCreditService payPalCreditService {
             get {
                 return this.payPalCreditServiceField;
@@ -1705,7 +1785,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=100)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=102)]
         public VoidService voidService {
             get {
                 return this.voidServiceField;
@@ -1717,7 +1797,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=101)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=103)]
         public BusinessRules businessRules {
             get {
                 return this.businessRulesField;
@@ -1729,7 +1809,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=102)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=104)]
         public PinlessDebitService pinlessDebitService {
             get {
                 return this.pinlessDebitServiceField;
@@ -1741,7 +1821,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=103)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=105)]
         public PinlessDebitValidateService pinlessDebitValidateService {
             get {
                 return this.pinlessDebitValidateServiceField;
@@ -1753,7 +1833,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=104)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=106)]
         public PinlessDebitReversalService pinlessDebitReversalService {
             get {
                 return this.pinlessDebitReversalServiceField;
@@ -1765,7 +1845,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=105)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=107)]
         public Batch batch {
             get {
                 return this.batchField;
@@ -1777,7 +1857,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=106)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=108)]
         public AirlineData airlineData {
             get {
                 return this.airlineDataField;
@@ -1789,7 +1869,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=107)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=109)]
         public AncillaryData ancillaryData {
             get {
                 return this.ancillaryDataField;
@@ -1801,7 +1881,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=108)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=110)]
         public LodgingData lodgingData {
             get {
                 return this.lodgingDataField;
@@ -1813,7 +1893,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=109)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=111)]
         public PayPalButtonCreateService payPalButtonCreateService {
             get {
                 return this.payPalButtonCreateServiceField;
@@ -1825,7 +1905,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=110)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=112)]
         public PayPalPreapprovedPaymentService payPalPreapprovedPaymentService {
             get {
                 return this.payPalPreapprovedPaymentServiceField;
@@ -1837,7 +1917,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=111)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=113)]
         public PayPalPreapprovedUpdateService payPalPreapprovedUpdateService {
             get {
                 return this.payPalPreapprovedUpdateServiceField;
@@ -1849,7 +1929,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=112)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=114)]
         public RiskUpdateService riskUpdateService {
             get {
                 return this.riskUpdateServiceField;
@@ -1861,7 +1941,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=113)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=115)]
         public FraudUpdateService fraudUpdateService {
             get {
                 return this.fraudUpdateServiceField;
@@ -1873,7 +1953,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=114)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=116)]
         public CaseManagementActionService caseManagementActionService {
             get {
                 return this.caseManagementActionServiceField;
@@ -1885,7 +1965,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("reserved", Order=115)]
+        [System.Xml.Serialization.XmlElementAttribute("reserved", Order=117)]
         public RequestReserved[] reserved {
             get {
                 return this.reservedField;
@@ -1897,7 +1977,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=116)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=118)]
         public string deviceFingerprintID {
             get {
                 return this.deviceFingerprintIDField;
@@ -1909,7 +1989,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=117)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=119)]
         public string deviceFingerprintRaw {
             get {
                 return this.deviceFingerprintRawField;
@@ -1921,7 +2001,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=118)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=120)]
         public string deviceFingerprintHash {
             get {
                 return this.deviceFingerprintHashField;
@@ -1933,7 +2013,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=119)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=121)]
         public PayPalRefundService payPalRefundService {
             get {
                 return this.payPalRefundServiceField;
@@ -1945,7 +2025,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=120)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=122)]
         public PayPalAuthReversalService payPalAuthReversalService {
             get {
                 return this.payPalAuthReversalServiceField;
@@ -1957,7 +2037,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=121)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=123)]
         public PayPalDoCaptureService payPalDoCaptureService {
             get {
                 return this.payPalDoCaptureServiceField;
@@ -1969,7 +2049,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=122)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=124)]
         public PayPalEcDoPaymentService payPalEcDoPaymentService {
             get {
                 return this.payPalEcDoPaymentServiceField;
@@ -1981,7 +2061,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=123)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=125)]
         public PayPalEcGetDetailsService payPalEcGetDetailsService {
             get {
                 return this.payPalEcGetDetailsServiceField;
@@ -1993,7 +2073,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=124)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=126)]
         public PayPalEcSetService payPalEcSetService {
             get {
                 return this.payPalEcSetServiceField;
@@ -2005,7 +2085,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=125)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=127)]
         public PayPalEcOrderSetupService payPalEcOrderSetupService {
             get {
                 return this.payPalEcOrderSetupServiceField;
@@ -2017,7 +2097,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=126)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=128)]
         public PayPalAuthorizationService payPalAuthorizationService {
             get {
                 return this.payPalAuthorizationServiceField;
@@ -2029,7 +2109,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=127)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=129)]
         public PayPalUpdateAgreementService payPalUpdateAgreementService {
             get {
                 return this.payPalUpdateAgreementServiceField;
@@ -2041,7 +2121,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=128)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=130)]
         public PayPalCreateAgreementService payPalCreateAgreementService {
             get {
                 return this.payPalCreateAgreementServiceField;
@@ -2053,7 +2133,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=129)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=131)]
         public PayPalDoRefTransactionService payPalDoRefTransactionService {
             get {
                 return this.payPalDoRefTransactionServiceField;
@@ -2065,7 +2145,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=130)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=132)]
         public ChinaPaymentService chinaPaymentService {
             get {
                 return this.chinaPaymentServiceField;
@@ -2077,7 +2157,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=131)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=133)]
         public ChinaRefundService chinaRefundService {
             get {
                 return this.chinaRefundServiceField;
@@ -2089,7 +2169,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=132)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=134)]
         public BoletoPaymentService boletoPaymentService {
             get {
                 return this.boletoPaymentServiceField;
@@ -2101,7 +2181,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=133)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=135)]
         public string apPaymentType {
             get {
                 return this.apPaymentTypeField;
@@ -2113,7 +2193,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=134)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=136)]
         public APInitiateService apInitiateService {
             get {
                 return this.apInitiateServiceField;
@@ -2125,7 +2205,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=135)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=137)]
         public APCheckStatusService apCheckStatusService {
             get {
                 return this.apCheckStatusServiceField;
@@ -2137,7 +2217,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=136)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=138)]
         public string ignoreCardExpiration {
             get {
                 return this.ignoreCardExpirationField;
@@ -2149,7 +2229,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=137)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=139)]
         public string reportGroup {
             get {
                 return this.reportGroupField;
@@ -2161,7 +2241,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=138)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=140)]
         public string processorID {
             get {
                 return this.processorIDField;
@@ -2173,7 +2253,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=139)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=141)]
         public string thirdPartyCertificationNumber {
             get {
                 return this.thirdPartyCertificationNumberField;
@@ -2185,7 +2265,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=140)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=142)]
         public string transactionLocalDateTime {
             get {
                 return this.transactionLocalDateTimeField;
@@ -2197,7 +2277,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=141)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=143)]
         public string solutionProviderTransactionID {
             get {
                 return this.solutionProviderTransactionIDField;
@@ -2209,7 +2289,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=142)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=144)]
         public string surchargeAmount {
             get {
                 return this.surchargeAmountField;
@@ -2221,7 +2301,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=143)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=145)]
         public string surchargeSign {
             get {
                 return this.surchargeSignField;
@@ -2233,7 +2313,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=144)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=146)]
         public string pinDataEncryptedPIN {
             get {
                 return this.pinDataEncryptedPINField;
@@ -2245,7 +2325,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=145)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=147)]
         public string pinDataKeySerialNumber {
             get {
                 return this.pinDataKeySerialNumberField;
@@ -2257,7 +2337,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(DataType="integer", Order=146)]
+        [System.Xml.Serialization.XmlElementAttribute(DataType="integer", Order=148)]
         public string pinDataPinBlockEncodingFormat {
             get {
                 return this.pinDataPinBlockEncodingFormatField;
@@ -2269,7 +2349,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=147)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=149)]
         public string cashbackAmount {
             get {
                 return this.cashbackAmountField;
@@ -2281,7 +2361,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=148)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=150)]
         public PinDebitPurchaseService pinDebitPurchaseService {
             get {
                 return this.pinDebitPurchaseServiceField;
@@ -2293,7 +2373,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=149)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=151)]
         public PinDebitCreditService pinDebitCreditService {
             get {
                 return this.pinDebitCreditServiceField;
@@ -2305,7 +2385,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=150)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=152)]
         public PinDebitReversalService pinDebitReversalService {
             get {
                 return this.pinDebitReversalServiceField;
@@ -2317,7 +2397,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=151)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=153)]
         public AP ap {
             get {
                 return this.apField;
@@ -2329,7 +2409,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=152)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=154)]
         public APAuthService apAuthService {
             get {
                 return this.apAuthServiceField;
@@ -2341,7 +2421,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=153)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=155)]
         public APAuthReversalService apAuthReversalService {
             get {
                 return this.apAuthReversalServiceField;
@@ -2353,7 +2433,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=154)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=156)]
         public APCaptureService apCaptureService {
             get {
                 return this.apCaptureServiceField;
@@ -2365,7 +2445,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=155)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=157)]
         public APOptionsService apOptionsService {
             get {
                 return this.apOptionsServiceField;
@@ -2377,7 +2457,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=156)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=158)]
         public APRefundService apRefundService {
             get {
                 return this.apRefundServiceField;
@@ -2389,7 +2469,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=157)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=159)]
         public APSaleService apSaleService {
             get {
                 return this.apSaleServiceField;
@@ -2401,7 +2481,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=158)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=160)]
         public APCheckOutDetailsService apCheckoutDetailsService {
             get {
                 return this.apCheckoutDetailsServiceField;
@@ -2413,7 +2493,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=159)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=161)]
         public APSessionsService apSessionsService {
             get {
                 return this.apSessionsServiceField;
@@ -2425,7 +2505,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=160)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=162)]
         public APUI apUI {
             get {
                 return this.apUIField;
@@ -2437,7 +2517,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=161)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=163)]
         public APTransactionDetailsService apTransactionDetailsService {
             get {
                 return this.apTransactionDetailsServiceField;
@@ -2449,7 +2529,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=162)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=164)]
         public APConfirmPurchaseService apConfirmPurchaseService {
             get {
                 return this.apConfirmPurchaseServiceField;
@@ -2461,7 +2541,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=163)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=165)]
         public PayPalGetTxnDetailsService payPalGetTxnDetailsService {
             get {
                 return this.payPalGetTxnDetailsServiceField;
@@ -2473,7 +2553,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=164)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=166)]
         public PayPalTransactionSearchService payPalTransactionSearchService {
             get {
                 return this.payPalTransactionSearchServiceField;
@@ -2485,7 +2565,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=165)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=167)]
         public CCDCCUpdateService ccDCCUpdateService {
             get {
                 return this.ccDCCUpdateServiceField;
@@ -2497,7 +2577,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=166)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=168)]
         public EmvRequest emvRequest {
             get {
                 return this.emvRequestField;
@@ -2509,7 +2589,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=167)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=169)]
         public merchant merchant {
             get {
                 return this.merchantField;
@@ -2521,7 +2601,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=168)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=170)]
         public string merchantTransactionIdentifier {
             get {
                 return this.merchantTransactionIdentifierField;
@@ -2533,7 +2613,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=169)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=171)]
         public HostedDataCreateService hostedDataCreateService {
             get {
                 return this.hostedDataCreateServiceField;
@@ -2545,7 +2625,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=170)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=172)]
         public HostedDataRetrieveService hostedDataRetrieveService {
             get {
                 return this.hostedDataRetrieveServiceField;
@@ -2557,7 +2637,19 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=171)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=173)]
+        public string merchantDomainName {
+            get {
+                return this.merchantDomainNameField;
+            }
+            set {
+                this.merchantDomainNameField = value;
+                this.RaisePropertyChanged("merchantDomainName");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=174)]
         public string merchantCategoryCode {
             get {
                 return this.merchantCategoryCodeField;
@@ -2569,7 +2661,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=172)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=175)]
         public string merchantCategoryCodeDomestic {
             get {
                 return this.merchantCategoryCodeDomesticField;
@@ -2581,7 +2673,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=173)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=176)]
         public string salesSlipNumber {
             get {
                 return this.salesSlipNumberField;
@@ -2593,7 +2685,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=174)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=177)]
         public string merchandiseCode {
             get {
                 return this.merchandiseCodeField;
@@ -2605,7 +2697,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=175)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=178)]
         public string merchandiseDescription {
             get {
                 return this.merchandiseDescriptionField;
@@ -2617,7 +2709,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=176)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=179)]
         public string paymentInitiationChannel {
             get {
                 return this.paymentInitiationChannelField;
@@ -2629,7 +2721,19 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=177)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=180)]
+        public string paymentMethod_name {
+            get {
+                return this.paymentMethod_nameField;
+            }
+            set {
+                this.paymentMethod_nameField = value;
+                this.RaisePropertyChanged("paymentMethod_name");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=181)]
         public string extendedCreditTotalCount {
             get {
                 return this.extendedCreditTotalCountField;
@@ -2641,7 +2745,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=178)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=182)]
         public string authIndicator {
             get {
                 return this.authIndicatorField;
@@ -2653,7 +2757,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=179)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=183)]
         public PaymentNetworkToken paymentNetworkToken {
             get {
                 return this.paymentNetworkTokenField;
@@ -2665,7 +2769,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=180)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=184)]
         public Recipient recipient {
             get {
                 return this.recipientField;
@@ -2677,7 +2781,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=181)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=185)]
         public Sender sender {
             get {
                 return this.senderField;
@@ -2689,7 +2793,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=182)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=186)]
         public AutoRentalData autoRentalData {
             get {
                 return this.autoRentalDataField;
@@ -2701,7 +2805,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=183)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=187)]
         public string paymentSolution {
             get {
                 return this.paymentSolutionField;
@@ -2713,7 +2817,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=184)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=188)]
         public VC vc {
             get {
                 return this.vcField;
@@ -2725,7 +2829,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=185)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=189)]
         public DecryptVisaCheckoutDataService decryptVisaCheckoutDataService {
             get {
                 return this.decryptVisaCheckoutDataServiceField;
@@ -2737,7 +2841,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=186)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=190)]
         public string taxManagementIndicator {
             get {
                 return this.taxManagementIndicatorField;
@@ -2749,7 +2853,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("promotionGroup", Order=187)]
+        [System.Xml.Serialization.XmlElementAttribute("promotionGroup", Order=191)]
         public PromotionGroup[] promotionGroup {
             get {
                 return this.promotionGroupField;
@@ -2761,7 +2865,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=188)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=192)]
         public Wallet wallet {
             get {
                 return this.walletField;
@@ -2773,7 +2877,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=189)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=193)]
         public Aft aft {
             get {
                 return this.aftField;
@@ -2785,7 +2889,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=190)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=194)]
         public string balanceInquiry {
             get {
                 return this.balanceInquiryField;
@@ -2797,7 +2901,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=191)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=195)]
         public string prenoteTransaction {
             get {
                 return this.prenoteTransactionField;
@@ -2809,7 +2913,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=192)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=196)]
         public EncryptPaymentDataService encryptPaymentDataService {
             get {
                 return this.encryptPaymentDataServiceField;
@@ -2821,7 +2925,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=193)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=197)]
         public string nationalNetDomesticData {
             get {
                 return this.nationalNetDomesticDataField;
@@ -2833,7 +2937,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=194)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=198)]
         public string subsequentAuth {
             get {
                 return this.subsequentAuthField;
@@ -2845,7 +2949,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=195)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=199)]
         public string subsequentAuthOriginalAmount {
             get {
                 return this.subsequentAuthOriginalAmountField;
@@ -2857,7 +2961,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=196)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=200)]
         public BinLookupService binLookupService {
             get {
                 return this.binLookupServiceField;
@@ -2869,7 +2973,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=197)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=201)]
         public string verificationCode {
             get {
                 return this.verificationCodeField;
@@ -2881,7 +2985,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=198)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=202)]
         public string mobileNumber {
             get {
                 return this.mobileNumberField;
@@ -2893,7 +2997,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=199)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=203)]
         public issuer issuer {
             get {
                 return this.issuerField;
@@ -2905,7 +3009,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=200)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=204)]
         public string partnerSolutionID {
             get {
                 return this.partnerSolutionIDField;
@@ -2917,7 +3021,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=201)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=205)]
         public string developerID {
             get {
                 return this.developerIDField;
@@ -2929,7 +3033,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=202)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=206)]
         public GETVisaCheckoutDataService getVisaCheckoutDataService {
             get {
                 return this.getVisaCheckoutDataServiceField;
@@ -2941,7 +3045,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=203)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=207)]
         public string customerSignatureImage {
             get {
                 return this.customerSignatureImageField;
@@ -2953,7 +3057,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=204)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=208)]
         public TransactionMetadataService transactionMetadataService {
             get {
                 return this.transactionMetadataServiceField;
@@ -2965,7 +3069,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=205)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=209)]
         public string subsequentAuthFirst {
             get {
                 return this.subsequentAuthFirstField;
@@ -2977,7 +3081,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=206)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=210)]
         public string subsequentAuthReason {
             get {
                 return this.subsequentAuthReasonField;
@@ -2989,7 +3093,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=207)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=211)]
         public string subsequentAuthTransactionID {
             get {
                 return this.subsequentAuthTransactionIDField;
@@ -3001,7 +3105,19 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=208)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=212)]
+        public string processorTransId {
+            get {
+                return this.processorTransIdField;
+            }
+            set {
+                this.processorTransIdField = value;
+                this.RaisePropertyChanged("processorTransId");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=213)]
         public string subsequentAuthStoredCredential {
             get {
                 return this.subsequentAuthStoredCredentialField;
@@ -3013,7 +3129,31 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=209)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=214)]
+        public string subsequentAuthCumulativeAuthAmount {
+            get {
+                return this.subsequentAuthCumulativeAuthAmountField;
+            }
+            set {
+                this.subsequentAuthCumulativeAuthAmountField = value;
+                this.RaisePropertyChanged("subsequentAuthCumulativeAuthAmount");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=215)]
+        public string subsequentAuthCITAuthenticationData {
+            get {
+                return this.subsequentAuthCITAuthenticationDataField;
+            }
+            set {
+                this.subsequentAuthCITAuthenticationDataField = value;
+                this.RaisePropertyChanged("subsequentAuthCITAuthenticationData");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=216)]
         public Loan loan {
             get {
                 return this.loanField;
@@ -3025,7 +3165,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=210)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=217)]
         public string eligibilityInquiry {
             get {
                 return this.eligibilityInquiryField;
@@ -3037,7 +3177,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=211)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=218)]
         public string redemptionInquiry {
             get {
                 return this.redemptionInquiryField;
@@ -3049,7 +3189,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=212)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=219)]
         public string feeProgramIndicator {
             get {
                 return this.feeProgramIndicatorField;
@@ -3061,7 +3201,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=213)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=220)]
         public APOrderService apOrderService {
             get {
                 return this.apOrderServiceField;
@@ -3073,7 +3213,19 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=214)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=221)]
+        public APExtendOrderService apExtendOrderService {
+            get {
+                return this.apExtendOrderServiceField;
+            }
+            set {
+                this.apExtendOrderServiceField = value;
+                this.RaisePropertyChanged("apExtendOrderService");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=222)]
         public APCancelService apCancelService {
             get {
                 return this.apCancelServiceField;
@@ -3085,7 +3237,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=215)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=223)]
         public APBillingAgreementService apBillingAgreementService {
             get {
                 return this.apBillingAgreementServiceField;
@@ -3097,7 +3249,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=216)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=224)]
         public string note_toPayee {
             get {
                 return this.note_toPayeeField;
@@ -3109,7 +3261,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=217)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=225)]
         public string note_toPayer {
             get {
                 return this.note_toPayerField;
@@ -3121,7 +3273,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=218)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=226)]
         public string clientMetadataID {
             get {
                 return this.clientMetadataIDField;
@@ -3133,7 +3285,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=219)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=227)]
         public string partnerSDKversion {
             get {
                 return this.partnerSDKversionField;
@@ -3145,7 +3297,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=220)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=228)]
         public string partnerOriginalTransactionID {
             get {
                 return this.partnerOriginalTransactionIDField;
@@ -3157,7 +3309,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=221)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=229)]
         public string cardTypeSelectionIndicator {
             get {
                 return this.cardTypeSelectionIndicatorField;
@@ -3169,7 +3321,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=222)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=230)]
         public APCreateMandateService apCreateMandateService {
             get {
                 return this.apCreateMandateServiceField;
@@ -3181,7 +3333,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=223)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=231)]
         public APMandateStatusService apMandateStatusService {
             get {
                 return this.apMandateStatusServiceField;
@@ -3193,7 +3345,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=224)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=232)]
         public APUpdateMandateService apUpdateMandateService {
             get {
                 return this.apUpdateMandateServiceField;
@@ -3205,7 +3357,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=225)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=233)]
         public APImportMandateService apImportMandateService {
             get {
                 return this.apImportMandateServiceField;
@@ -3217,7 +3369,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=226)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=234)]
         public APRevokeMandateService apRevokeMandateService {
             get {
                 return this.apRevokeMandateServiceField;
@@ -3229,7 +3381,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=227)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=235)]
         public string billPaymentType {
             get {
                 return this.billPaymentTypeField;
@@ -3241,7 +3393,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=228)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=236)]
         public PostdatedTransaction postdatedTransaction {
             get {
                 return this.postdatedTransactionField;
@@ -3253,7 +3405,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=229)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=237)]
         public GetMasterpassDataService getMasterpassDataService {
             get {
                 return this.getMasterpassDataServiceField;
@@ -3265,7 +3417,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=230)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=238)]
         public CCCheckStatusService ccCheckStatusService {
             get {
                 return this.ccCheckStatusServiceField;
@@ -3277,7 +3429,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=231)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=239)]
         public mPOS mPOS {
             get {
                 return this.mPOSField;
@@ -3289,7 +3441,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=232)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=240)]
         public AbortService abortService {
             get {
                 return this.abortServiceField;
@@ -3301,7 +3453,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=233)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=241)]
         public string ignoreRelaxAVS {
             get {
                 return this.ignoreRelaxAVSField;
@@ -3313,7 +3465,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=234)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=242)]
         public AgencyInformation agencyInformation {
             get {
                 return this.agencyInformationField;
@@ -3325,7 +3477,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=235)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=243)]
         public AutoRental autoRental {
             get {
                 return this.autoRentalField;
@@ -3337,7 +3489,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("healthCare", Order=236)]
+        [System.Xml.Serialization.XmlElementAttribute("healthCare", Order=244)]
         public HealthCare[] healthCare {
             get {
                 return this.healthCareField;
@@ -3345,6 +3497,246 @@ namespace CyberSource.Clients.SoapServiceReference {
             set {
                 this.healthCareField = value;
                 this.RaisePropertyChanged("healthCare");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=245)]
+        public payByPoints payByPoints {
+            get {
+                return this.payByPointsField;
+            }
+            set {
+                this.payByPointsField = value;
+                this.RaisePropertyChanged("payByPoints");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=246)]
+        public string paymentAccountReference {
+            get {
+                return this.paymentAccountReferenceField;
+            }
+            set {
+                this.paymentAccountReferenceField = value;
+                this.RaisePropertyChanged("paymentAccountReference");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=247)]
+        public string networkTokenCryptogram {
+            get {
+                return this.networkTokenCryptogramField;
+            }
+            set {
+                this.networkTokenCryptogramField = value;
+                this.RaisePropertyChanged("networkTokenCryptogram");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=248)]
+        public string promotionCode {
+            get {
+                return this.promotionCodeField;
+            }
+            set {
+                this.promotionCodeField = value;
+                this.RaisePropertyChanged("promotionCode");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=249)]
+        public Recurring recurring {
+            get {
+                return this.recurringField;
+            }
+            set {
+                this.recurringField = value;
+                this.RaisePropertyChanged("recurring");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=250)]
+        public CCCreditAuthService ccCreditAuthService {
+            get {
+                return this.ccCreditAuthServiceField;
+            }
+            set {
+                this.ccCreditAuthServiceField = value;
+                this.RaisePropertyChanged("ccCreditAuthService");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=251)]
+        public CCCreditAuthReversalService ccCreditAuthReversalService {
+            get {
+                return this.ccCreditAuthReversalServiceField;
+            }
+            set {
+                this.ccCreditAuthReversalServiceField = value;
+                this.RaisePropertyChanged("ccCreditAuthReversalService");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=252)]
+        public VehicleData vehicleData {
+            get {
+                return this.vehicleDataField;
+            }
+            set {
+                this.vehicleDataField = value;
+                this.RaisePropertyChanged("vehicleData");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=253)]
+        public string enablerId {
+            get {
+                return this.enablerIdField;
+            }
+            set {
+                this.enablerIdField = value;
+                this.RaisePropertyChanged("enablerId");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=254)]
+        public TokenProvisioningInformation tokenProvisioningInformation {
+            get {
+                return this.tokenProvisioningInformationField;
+            }
+            set {
+                this.tokenProvisioningInformationField = value;
+                this.RaisePropertyChanged("tokenProvisioningInformation");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=255)]
+        public Unscheduled unscheduled {
+            get {
+                return this.unscheduledField;
+            }
+            set {
+                this.unscheduledField = value;
+                this.RaisePropertyChanged("unscheduled");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=256)]
+        public string agreementID {
+            get {
+                return this.agreementIDField;
+            }
+            set {
+                this.agreementIDField = value;
+                this.RaisePropertyChanged("agreementID");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=257)]
+        public string transactionMode {
+            get {
+                return this.transactionModeField;
+            }
+            set {
+                this.transactionModeField = value;
+                this.RaisePropertyChanged("transactionMode");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=258)]
+        public APUpdateOrderService apUpdateOrderService {
+            get {
+                return this.apUpdateOrderServiceField;
+            }
+            set {
+                this.apUpdateOrderServiceField = value;
+                this.RaisePropertyChanged("apUpdateOrderService");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=259)]
+        public string processingInstruction {
+            get {
+                return this.processingInstructionField;
+            }
+            set {
+                this.processingInstructionField = value;
+                this.RaisePropertyChanged("processingInstruction");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=260)]
+        public AuthorizationOptions authorizationOptions {
+            get {
+                return this.authorizationOptionsField;
+            }
+            set {
+                this.authorizationOptionsField = value;
+                this.RaisePropertyChanged("authorizationOptions");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=261)]
+        public string verificationResultsPersonalId {
+            get {
+                return this.verificationResultsPersonalIdField;
+            }
+            set {
+                this.verificationResultsPersonalIdField = value;
+                this.RaisePropertyChanged("verificationResultsPersonalId");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=262)]
+        public CaptureOptions captureOptions {
+            get {
+                return this.captureOptionsField;
+            }
+            set {
+                this.captureOptionsField = value;
+                this.RaisePropertyChanged("captureOptions");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=263)]
+        public language language {
+            get {
+                return this.languageField;
+            }
+            set {
+                this.languageField = value;
+                this.RaisePropertyChanged("language");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=264)]
+        public string eligibilityIndicator {
+            get {
+                return this.eligibilityIndicatorField;
+            }
+            set {
+                this.eligibilityIndicatorField = value;
+                this.RaisePropertyChanged("eligibilityIndicator");
             }
         }
         
@@ -3359,11 +3751,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class InvoiceHeader : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string merchantDescriptorField;
@@ -3381,6 +3773,8 @@ namespace CyberSource.Clients.SoapServiceReference {
         private string merchantDescriptorPostalCodeField;
         
         private string merchantDescriptorCountryField;
+        
+        private string merchantDescriptorCountryOfOriginField;
         
         private string isGiftField;
         
@@ -3461,6 +3855,24 @@ namespace CyberSource.Clients.SoapServiceReference {
         private string clerkIDField;
         
         private string customData_1Field;
+        
+        private string invoiceNumberField;
+        
+        private string merchantDescriptorCustomerServicePhoneNumberField;
+        
+        private string merchantDescriptorPartnerIdCodeField;
+        
+        private string serviceLocalityField;
+        
+        private string serviceCountrySubdivisionCodeField;
+        
+        private string serviceCountryCodeField;
+        
+        private string servicePostalCodeField;
+        
+        private string productDescriptionField;
+        
+        private string merchantDescriptorEmailField;
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=0)]
@@ -3560,6 +3972,18 @@ namespace CyberSource.Clients.SoapServiceReference {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=8)]
+        public string merchantDescriptorCountryOfOrigin {
+            get {
+                return this.merchantDescriptorCountryOfOriginField;
+            }
+            set {
+                this.merchantDescriptorCountryOfOriginField = value;
+                this.RaisePropertyChanged("merchantDescriptorCountryOfOrigin");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=9)]
         public string isGift {
             get {
                 return this.isGiftField;
@@ -3571,7 +3995,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=9)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=10)]
         public string returnsAccepted {
             get {
                 return this.returnsAcceptedField;
@@ -3583,7 +4007,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=10)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=11)]
         public string tenderType {
             get {
                 return this.tenderTypeField;
@@ -3595,7 +4019,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=11)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=12)]
         public string merchantVATRegistrationNumber {
             get {
                 return this.merchantVATRegistrationNumberField;
@@ -3607,7 +4031,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=12)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=13)]
         public string purchaserOrderDate {
             get {
                 return this.purchaserOrderDateField;
@@ -3619,7 +4043,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=13)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=14)]
         public string purchaserVATRegistrationNumber {
             get {
                 return this.purchaserVATRegistrationNumberField;
@@ -3631,7 +4055,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=14)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=15)]
         public string vatInvoiceReferenceNumber {
             get {
                 return this.vatInvoiceReferenceNumberField;
@@ -3643,7 +4067,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=15)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=16)]
         public string summaryCommodityCode {
             get {
                 return this.summaryCommodityCodeField;
@@ -3655,7 +4079,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=16)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=17)]
         public string supplierOrderReference {
             get {
                 return this.supplierOrderReferenceField;
@@ -3667,7 +4091,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=17)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=18)]
         public string userPO {
             get {
                 return this.userPOField;
@@ -3679,7 +4103,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=18)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=19)]
         public string costCenter {
             get {
                 return this.costCenterField;
@@ -3691,7 +4115,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=19)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=20)]
         public string purchaserCode {
             get {
                 return this.purchaserCodeField;
@@ -3703,7 +4127,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=20)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=21)]
         public string taxable {
             get {
                 return this.taxableField;
@@ -3715,7 +4139,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=21)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=22)]
         public string amexDataTAA1 {
             get {
                 return this.amexDataTAA1Field;
@@ -3727,7 +4151,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=22)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=23)]
         public string amexDataTAA2 {
             get {
                 return this.amexDataTAA2Field;
@@ -3739,7 +4163,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=23)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=24)]
         public string amexDataTAA3 {
             get {
                 return this.amexDataTAA3Field;
@@ -3751,7 +4175,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=24)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=25)]
         public string amexDataTAA4 {
             get {
                 return this.amexDataTAA4Field;
@@ -3763,7 +4187,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=25)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=26)]
         public string invoiceDate {
             get {
                 return this.invoiceDateField;
@@ -3775,7 +4199,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=26)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=27)]
         public string totalTaxTypeCode {
             get {
                 return this.totalTaxTypeCodeField;
@@ -3787,7 +4211,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=27)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=28)]
         public string cardAcceptorRefNumber {
             get {
                 return this.cardAcceptorRefNumberField;
@@ -3799,7 +4223,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=28)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=29)]
         public string authorizedContactName {
             get {
                 return this.authorizedContactNameField;
@@ -3811,7 +4235,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=29)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=30)]
         public string businessApplicationID {
             get {
                 return this.businessApplicationIDField;
@@ -3823,7 +4247,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(DataType="integer", Order=30)]
+        [System.Xml.Serialization.XmlElementAttribute(DataType="integer", Order=31)]
         public string salesOrganizationID {
             get {
                 return this.salesOrganizationIDField;
@@ -3835,7 +4259,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=31)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=32)]
         public string submerchantID {
             get {
                 return this.submerchantIDField;
@@ -3847,7 +4271,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=32)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=33)]
         public string submerchantName {
             get {
                 return this.submerchantNameField;
@@ -3859,7 +4283,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=33)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=34)]
         public string submerchantStreet {
             get {
                 return this.submerchantStreetField;
@@ -3871,7 +4295,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=34)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=35)]
         public string submerchantCity {
             get {
                 return this.submerchantCityField;
@@ -3883,7 +4307,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=35)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=36)]
         public string submerchantPostalCode {
             get {
                 return this.submerchantPostalCodeField;
@@ -3895,7 +4319,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=36)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=37)]
         public string submerchantState {
             get {
                 return this.submerchantStateField;
@@ -3907,7 +4331,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=37)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=38)]
         public string submerchantCountry {
             get {
                 return this.submerchantCountryField;
@@ -3919,7 +4343,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=38)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=39)]
         public string submerchantEmail {
             get {
                 return this.submerchantEmailField;
@@ -3931,7 +4355,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=39)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=40)]
         public string submerchantTelephoneNumber {
             get {
                 return this.submerchantTelephoneNumberField;
@@ -3943,7 +4367,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=40)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=41)]
         public string submerchantRegion {
             get {
                 return this.submerchantRegionField;
@@ -3955,7 +4379,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=41)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=42)]
         public string submerchantMerchantID {
             get {
                 return this.submerchantMerchantIDField;
@@ -3967,7 +4391,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=42)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=43)]
         public string merchantDescriptorCounty {
             get {
                 return this.merchantDescriptorCountyField;
@@ -3979,7 +4403,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=43)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=44)]
         public string referenceDataCode {
             get {
                 return this.referenceDataCodeField;
@@ -3991,7 +4415,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=44)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=45)]
         public string referenceDataNumber {
             get {
                 return this.referenceDataNumberField;
@@ -4003,7 +4427,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=45)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=46)]
         public string merchantDescriptorStoreID {
             get {
                 return this.merchantDescriptorStoreIDField;
@@ -4015,7 +4439,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=46)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=47)]
         public string clerkID {
             get {
                 return this.clerkIDField;
@@ -4027,7 +4451,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=47)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=48)]
         public string customData_1 {
             get {
                 return this.customData_1Field;
@@ -4035,6 +4459,114 @@ namespace CyberSource.Clients.SoapServiceReference {
             set {
                 this.customData_1Field = value;
                 this.RaisePropertyChanged("customData_1");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=49)]
+        public string invoiceNumber {
+            get {
+                return this.invoiceNumberField;
+            }
+            set {
+                this.invoiceNumberField = value;
+                this.RaisePropertyChanged("invoiceNumber");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=50)]
+        public string merchantDescriptorCustomerServicePhoneNumber {
+            get {
+                return this.merchantDescriptorCustomerServicePhoneNumberField;
+            }
+            set {
+                this.merchantDescriptorCustomerServicePhoneNumberField = value;
+                this.RaisePropertyChanged("merchantDescriptorCustomerServicePhoneNumber");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=51)]
+        public string merchantDescriptorPartnerIdCode {
+            get {
+                return this.merchantDescriptorPartnerIdCodeField;
+            }
+            set {
+                this.merchantDescriptorPartnerIdCodeField = value;
+                this.RaisePropertyChanged("merchantDescriptorPartnerIdCode");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=52)]
+        public string serviceLocality {
+            get {
+                return this.serviceLocalityField;
+            }
+            set {
+                this.serviceLocalityField = value;
+                this.RaisePropertyChanged("serviceLocality");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=53)]
+        public string serviceCountrySubdivisionCode {
+            get {
+                return this.serviceCountrySubdivisionCodeField;
+            }
+            set {
+                this.serviceCountrySubdivisionCodeField = value;
+                this.RaisePropertyChanged("serviceCountrySubdivisionCode");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=54)]
+        public string serviceCountryCode {
+            get {
+                return this.serviceCountryCodeField;
+            }
+            set {
+                this.serviceCountryCodeField = value;
+                this.RaisePropertyChanged("serviceCountryCode");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=55)]
+        public string servicePostalCode {
+            get {
+                return this.servicePostalCodeField;
+            }
+            set {
+                this.servicePostalCodeField = value;
+                this.RaisePropertyChanged("servicePostalCode");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=56)]
+        public string productDescription {
+            get {
+                return this.productDescriptionField;
+            }
+            set {
+                this.productDescriptionField = value;
+                this.RaisePropertyChanged("productDescription");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=57)]
+        public string merchantDescriptorEmail {
+            get {
+                return this.merchantDescriptorEmailField;
+            }
+            set {
+                this.merchantDescriptorEmailField = value;
+                this.RaisePropertyChanged("merchantDescriptorEmail");
             }
         }
         
@@ -4049,11 +4581,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class ReplyReserved : object, System.ComponentModel.INotifyPropertyChanged {
         
         private System.Xml.XmlElement[] anyField;
@@ -4081,11 +4613,121 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
+    public partial class Capture : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string reasonField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string reason {
+            get {
+                return this.reasonField;
+            }
+            set {
+                this.reasonField = value;
+                this.RaisePropertyChanged("reason");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
+    public partial class EmbeddedActions : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private Capture captureField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public Capture capture {
+            get {
+                return this.captureField;
+            }
+            set {
+                this.captureField = value;
+                this.RaisePropertyChanged("capture");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
+    public partial class Customer : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string alternatePhoneNumberVerificationStatusField;
+        
+        private string alternateEmailVerificationStatusField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string alternatePhoneNumberVerificationStatus {
+            get {
+                return this.alternatePhoneNumberVerificationStatusField;
+            }
+            set {
+                this.alternatePhoneNumberVerificationStatusField = value;
+                this.RaisePropertyChanged("alternatePhoneNumberVerificationStatus");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string alternateEmailVerificationStatus {
+            get {
+                return this.alternateEmailVerificationStatusField;
+            }
+            set {
+                this.alternateEmailVerificationStatusField = value;
+                this.RaisePropertyChanged("alternateEmailVerificationStatus");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class AbortReply : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string reasonCodeField;
@@ -4141,11 +4783,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class ECAVSReply : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string reasonCodeField;
@@ -4157,12 +4799,6 @@ namespace CyberSource.Clients.SoapServiceReference {
         private string secondaryStatusCodeField;
         
         private string additionalStatusCodeField;
-        
-        private string numberOfReturnsField;
-        
-        private string lastReturnDateField;
-        
-        private string lastReturnProcessorResponseField;
         
         private string lastUpdateDateField;
         
@@ -4223,6 +4859,14 @@ namespace CyberSource.Clients.SoapServiceReference {
         private string overallMatchScoreField;
         
         private string calculatedResponseField;
+        
+        private string referenceIDField;
+        
+        private string resultCodeField;
+        
+        private string authorizationLevelField;
+        
+        private string accountTypeField;
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(DataType="integer", Order=0)]
@@ -4286,42 +4930,6 @@ namespace CyberSource.Clients.SoapServiceReference {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=5)]
-        public string numberOfReturns {
-            get {
-                return this.numberOfReturnsField;
-            }
-            set {
-                this.numberOfReturnsField = value;
-                this.RaisePropertyChanged("numberOfReturns");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=6)]
-        public string lastReturnDate {
-            get {
-                return this.lastReturnDateField;
-            }
-            set {
-                this.lastReturnDateField = value;
-                this.RaisePropertyChanged("lastReturnDate");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=7)]
-        public string lastReturnProcessorResponse {
-            get {
-                return this.lastReturnProcessorResponseField;
-            }
-            set {
-                this.lastReturnProcessorResponseField = value;
-                this.RaisePropertyChanged("lastReturnProcessorResponse");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=8)]
         public string lastUpdateDate {
             get {
                 return this.lastUpdateDateField;
@@ -4333,7 +4941,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=9)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=6)]
         public string addedOrClosedDate {
             get {
                 return this.addedOrClosedDateField;
@@ -4345,7 +4953,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=10)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=7)]
         public string previousStatusCode {
             get {
                 return this.previousStatusCodeField;
@@ -4357,7 +4965,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=11)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=8)]
         public string fcraDisputeCode {
             get {
                 return this.fcraDisputeCodeField;
@@ -4369,7 +4977,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=12)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=9)]
         public string scoredAccountProcessorResponse1 {
             get {
                 return this.scoredAccountProcessorResponse1Field;
@@ -4381,7 +4989,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=13)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=10)]
         public string scoredAccountProcessorResponse2 {
             get {
                 return this.scoredAccountProcessorResponse2Field;
@@ -4393,7 +5001,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=14)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=11)]
         public string scoredAccountProcessorResponse3 {
             get {
                 return this.scoredAccountProcessorResponse3Field;
@@ -4405,7 +5013,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=15)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=12)]
         public string scoredAccountProcessorResponse5 {
             get {
                 return this.scoredAccountProcessorResponse5Field;
@@ -4417,7 +5025,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=16)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=13)]
         public string customerDataConditionCode {
             get {
                 return this.customerDataConditionCodeField;
@@ -4429,7 +5037,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=17)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=14)]
         public string matchBillToFullName {
             get {
                 return this.matchBillToFullNameField;
@@ -4441,7 +5049,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=18)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=15)]
         public string matchBillToPrefix {
             get {
                 return this.matchBillToPrefixField;
@@ -4453,7 +5061,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=19)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=16)]
         public string matchBillToFirstName {
             get {
                 return this.matchBillToFirstNameField;
@@ -4465,7 +5073,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=20)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=17)]
         public string matchBillToMiddleName {
             get {
                 return this.matchBillToMiddleNameField;
@@ -4477,7 +5085,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=21)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=18)]
         public string matchBillToLastName {
             get {
                 return this.matchBillToLastNameField;
@@ -4489,7 +5097,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=22)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=19)]
         public string matchBillToSuffix {
             get {
                 return this.matchBillToSuffixField;
@@ -4501,7 +5109,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=23)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=20)]
         public string matchBillToCompany {
             get {
                 return this.matchBillToCompanyField;
@@ -4513,7 +5121,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=24)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=21)]
         public string matchBillToAddress {
             get {
                 return this.matchBillToAddressField;
@@ -4525,7 +5133,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=25)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=22)]
         public string matchBillToCity {
             get {
                 return this.matchBillToCityField;
@@ -4537,7 +5145,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=26)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=23)]
         public string matchBillToState {
             get {
                 return this.matchBillToStateField;
@@ -4549,7 +5157,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=27)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=24)]
         public string matchBillToPostalCode {
             get {
                 return this.matchBillToPostalCodeField;
@@ -4561,7 +5169,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=28)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=25)]
         public string matchBillToPhoneNumber {
             get {
                 return this.matchBillToPhoneNumberField;
@@ -4573,7 +5181,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=29)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=26)]
         public string matchBillToCompanyPhoneNumber {
             get {
                 return this.matchBillToCompanyPhoneNumberField;
@@ -4585,7 +5193,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=30)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=27)]
         public string matchBillToCompanyTaxID {
             get {
                 return this.matchBillToCompanyTaxIDField;
@@ -4597,7 +5205,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=31)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=28)]
         public string matchBillToSSN {
             get {
                 return this.matchBillToSSNField;
@@ -4609,7 +5217,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=32)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=29)]
         public string matchBillToDateOfBirth {
             get {
                 return this.matchBillToDateOfBirthField;
@@ -4621,7 +5229,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=33)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=30)]
         public string matchPersonalIDType {
             get {
                 return this.matchPersonalIDTypeField;
@@ -4633,7 +5241,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=34)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=31)]
         public string matchPersonalID {
             get {
                 return this.matchPersonalIDField;
@@ -4645,7 +5253,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=35)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=32)]
         public string matchPersonalIDIssuedBy {
             get {
                 return this.matchPersonalIDIssuedByField;
@@ -4657,7 +5265,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(DataType="integer", Order=36)]
+        [System.Xml.Serialization.XmlElementAttribute(DataType="integer", Order=33)]
         public string overallMatchScore {
             get {
                 return this.overallMatchScoreField;
@@ -4669,7 +5277,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=37)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=34)]
         public string calculatedResponse {
             get {
                 return this.calculatedResponseField;
@@ -4677,6 +5285,54 @@ namespace CyberSource.Clients.SoapServiceReference {
             set {
                 this.calculatedResponseField = value;
                 this.RaisePropertyChanged("calculatedResponse");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=35)]
+        public string referenceID {
+            get {
+                return this.referenceIDField;
+            }
+            set {
+                this.referenceIDField = value;
+                this.RaisePropertyChanged("referenceID");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=36)]
+        public string resultCode {
+            get {
+                return this.resultCodeField;
+            }
+            set {
+                this.resultCodeField = value;
+                this.RaisePropertyChanged("resultCode");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=37)]
+        public string authorizationLevel {
+            get {
+                return this.authorizationLevelField;
+            }
+            set {
+                this.authorizationLevelField = value;
+                this.RaisePropertyChanged("authorizationLevel");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=38)]
+        public string accountType {
+            get {
+                return this.accountTypeField;
+            }
+            set {
+                this.accountTypeField = value;
+                this.RaisePropertyChanged("accountType");
             }
         }
         
@@ -4691,11 +5347,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class CCCheckStatusReply : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string reasonCodeField;
@@ -4751,11 +5407,187 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
+    public partial class GiftCardRefundReply : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string reasonCodeField;
+        
+        private string authorizationCodeField;
+        
+        private string processorResponseField;
+        
+        private string requestDateTimeField;
+        
+        private string reconciliationIDField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(DataType="integer", Order=0)]
+        public string reasonCode {
+            get {
+                return this.reasonCodeField;
+            }
+            set {
+                this.reasonCodeField = value;
+                this.RaisePropertyChanged("reasonCode");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string authorizationCode {
+            get {
+                return this.authorizationCodeField;
+            }
+            set {
+                this.authorizationCodeField = value;
+                this.RaisePropertyChanged("authorizationCode");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public string processorResponse {
+            get {
+                return this.processorResponseField;
+            }
+            set {
+                this.processorResponseField = value;
+                this.RaisePropertyChanged("processorResponse");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public string requestDateTime {
+            get {
+                return this.requestDateTimeField;
+            }
+            set {
+                this.requestDateTimeField = value;
+                this.RaisePropertyChanged("requestDateTime");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
+        public string reconciliationID {
+            get {
+                return this.reconciliationIDField;
+            }
+            set {
+                this.reconciliationIDField = value;
+                this.RaisePropertyChanged("reconciliationID");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
+    public partial class GiftCardReloadReply : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string reasonCodeField;
+        
+        private string authorizationCodeField;
+        
+        private string processorResponseField;
+        
+        private string requestDateTimeField;
+        
+        private string reconciliationIDField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(DataType="integer", Order=0)]
+        public string reasonCode {
+            get {
+                return this.reasonCodeField;
+            }
+            set {
+                this.reasonCodeField = value;
+                this.RaisePropertyChanged("reasonCode");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string authorizationCode {
+            get {
+                return this.authorizationCodeField;
+            }
+            set {
+                this.authorizationCodeField = value;
+                this.RaisePropertyChanged("authorizationCode");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public string processorResponse {
+            get {
+                return this.processorResponseField;
+            }
+            set {
+                this.processorResponseField = value;
+                this.RaisePropertyChanged("processorResponse");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public string requestDateTime {
+            get {
+                return this.requestDateTimeField;
+            }
+            set {
+                this.requestDateTimeField = value;
+                this.RaisePropertyChanged("requestDateTime");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
+        public string reconciliationID {
+            get {
+                return this.reconciliationIDField;
+            }
+            set {
+                this.reconciliationIDField = value;
+                this.RaisePropertyChanged("reconciliationID");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class GiftCardReversalReply : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string reasonCodeField;
@@ -4839,11 +5671,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class GiftCardVoidReply : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string reasonCodeField;
@@ -4927,11 +5759,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class GiftCardRedemptionReply : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string reasonCodeField;
@@ -5015,11 +5847,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class GiftCardBalanceInquiryReply : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string reasonCodeField;
@@ -5103,11 +5935,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class GiftCardActivationReply : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string reasonCodeField;
@@ -5191,11 +6023,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class GetMasterpassDataReply : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string reasonCodeField;
@@ -5223,11 +6055,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class APRevokeMandateReply : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string reasonCodeField;
@@ -5367,11 +6199,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class APImportMandateReply : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string reasonCodeField;
@@ -5497,11 +6329,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class APUpdateMandateReply : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string reasonCodeField;
@@ -5683,11 +6515,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class APMandateStatusReply : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string reasonCodeField;
@@ -5813,11 +6645,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class APCreateMandateReply : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string reasonCodeField;
@@ -5999,11 +6831,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class Routing : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string networkTypeField;
@@ -6059,11 +6891,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class BalanceInfo : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string accountTypeField;
@@ -6161,11 +6993,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class APBillingAgreementReply : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string reasonCodeField;
@@ -6249,11 +7081,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class APCancelReply : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string reasonCodeField;
@@ -6379,11 +7211,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class APOrderReply : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string reasonCodeField;
@@ -6397,6 +7229,12 @@ namespace CyberSource.Clients.SoapServiceReference {
         private string processorResponseField;
         
         private string dateTimeField;
+        
+        private string updateDateTimeField;
+        
+        private string orderProcessorTransactionIdField;
+        
+        private string merchantURLField;
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(DataType="integer", Order=0)]
@@ -6470,6 +7308,42 @@ namespace CyberSource.Clients.SoapServiceReference {
             }
         }
         
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=6)]
+        public string updateDateTime {
+            get {
+                return this.updateDateTimeField;
+            }
+            set {
+                this.updateDateTimeField = value;
+                this.RaisePropertyChanged("updateDateTime");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=7)]
+        public string orderProcessorTransactionId {
+            get {
+                return this.orderProcessorTransactionIdField;
+            }
+            set {
+                this.orderProcessorTransactionIdField = value;
+                this.RaisePropertyChanged("orderProcessorTransactionId");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=8)]
+        public string merchantURL {
+            get {
+                return this.merchantURLField;
+            }
+            set {
+                this.merchantURLField = value;
+                this.RaisePropertyChanged("merchantURL");
+            }
+        }
+        
         public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
         
         protected void RaisePropertyChanged(string propertyName) {
@@ -6481,11 +7355,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class Network : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string octDomesticIndicatorField;
@@ -6591,11 +7465,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class Token : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string prefixField;
@@ -6665,11 +7539,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class BinLookupReply : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string reasonCodeField;
@@ -6725,11 +7599,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class GetVisaCheckoutDataReply : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string reasonCodeField;
@@ -6757,11 +7631,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class DecryptVisaCheckoutDataReply : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string reasonCodeField;
@@ -6789,11 +7663,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class VCCustomData : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string nameField;
@@ -6849,11 +7723,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class VCCardArt : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string fileNameField;
@@ -6923,11 +7797,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class VCReply : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string creationTimeStampField;
@@ -7697,11 +8571,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class HostedDataRetrieveReply : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string responseMessageField;
@@ -8037,11 +8911,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class HostedDataCreateReply : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string responseMessageField;
@@ -8111,11 +8985,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class OriginalTransaction : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string amountField;
@@ -8157,11 +9031,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class EmvReply : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string combinedTagsField;
@@ -8231,11 +9105,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class PaypalTransaction : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string transactionTimeField;
@@ -8417,11 +9291,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class PayPalTransactionSearchReply : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string reasonCodeField;
@@ -8477,11 +9351,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class PayPalGetTxnDetailsReply : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string reasonCodeField;
@@ -9083,11 +9957,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class Item : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string unitPriceField;
@@ -9359,6 +10233,26 @@ namespace CyberSource.Clients.SoapServiceReference {
         private string referenceData_7_codeField;
         
         private string shippingDestinationTypesField;
+        
+        private string shippingAddress1Field;
+        
+        private string shippingAddress2Field;
+        
+        private string shippingCityField;
+        
+        private string shippingCountryCodeField;
+        
+        private string shippingFirstNameField;
+        
+        private string shippingLastNameField;
+        
+        private string shippingMiddleNameField;
+        
+        private string shippingPhoneField;
+        
+        private string shippingPostalCodeField;
+        
+        private string shippingStateField;
         
         private string idField;
         
@@ -10983,6 +11877,126 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=135)]
+        public string shippingAddress1 {
+            get {
+                return this.shippingAddress1Field;
+            }
+            set {
+                this.shippingAddress1Field = value;
+                this.RaisePropertyChanged("shippingAddress1");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=136)]
+        public string shippingAddress2 {
+            get {
+                return this.shippingAddress2Field;
+            }
+            set {
+                this.shippingAddress2Field = value;
+                this.RaisePropertyChanged("shippingAddress2");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=137)]
+        public string shippingCity {
+            get {
+                return this.shippingCityField;
+            }
+            set {
+                this.shippingCityField = value;
+                this.RaisePropertyChanged("shippingCity");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=138)]
+        public string shippingCountryCode {
+            get {
+                return this.shippingCountryCodeField;
+            }
+            set {
+                this.shippingCountryCodeField = value;
+                this.RaisePropertyChanged("shippingCountryCode");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=139)]
+        public string shippingFirstName {
+            get {
+                return this.shippingFirstNameField;
+            }
+            set {
+                this.shippingFirstNameField = value;
+                this.RaisePropertyChanged("shippingFirstName");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=140)]
+        public string shippingLastName {
+            get {
+                return this.shippingLastNameField;
+            }
+            set {
+                this.shippingLastNameField = value;
+                this.RaisePropertyChanged("shippingLastName");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=141)]
+        public string shippingMiddleName {
+            get {
+                return this.shippingMiddleNameField;
+            }
+            set {
+                this.shippingMiddleNameField = value;
+                this.RaisePropertyChanged("shippingMiddleName");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(DataType="integer", Order=142)]
+        public string shippingPhone {
+            get {
+                return this.shippingPhoneField;
+            }
+            set {
+                this.shippingPhoneField = value;
+                this.RaisePropertyChanged("shippingPhone");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=143)]
+        public string shippingPostalCode {
+            get {
+                return this.shippingPostalCodeField;
+            }
+            set {
+                this.shippingPostalCodeField = value;
+                this.RaisePropertyChanged("shippingPostalCode");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=144)]
+        public string shippingState {
+            get {
+                return this.shippingStateField;
+            }
+            set {
+                this.shippingStateField = value;
+                this.RaisePropertyChanged("shippingState");
+            }
+        }
+        
+        /// <remarks/>
         [System.Xml.Serialization.XmlAttributeAttribute(DataType="integer")]
         public string id {
             get {
@@ -11005,11 +12019,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class PromotionGroupReply : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string discountAppliedField;
@@ -11051,11 +12065,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class APConfirmPurchaseReply : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string reasonCodeField;
@@ -11153,11 +12167,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class APTransactionDetailsReply : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string reasonCodeField;
@@ -11269,11 +12283,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class APCheckOutDetailsReply : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string reasonCodeField;
@@ -11357,11 +12371,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class APSaleReply : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string reasonCodeField;
@@ -11391,6 +12405,14 @@ namespace CyberSource.Clients.SoapServiceReference {
         private string discountAmountField;
         
         private string dateTimeField;
+        
+        private string additionalDataField;
+        
+        private string orderStatusField;
+        
+        private string orderIdField;
+        
+        private string updateDateTimeField;
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(DataType="integer", Order=0)]
@@ -11560,6 +12582,54 @@ namespace CyberSource.Clients.SoapServiceReference {
             }
         }
         
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=14)]
+        public string additionalData {
+            get {
+                return this.additionalDataField;
+            }
+            set {
+                this.additionalDataField = value;
+                this.RaisePropertyChanged("additionalData");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=15)]
+        public string orderStatus {
+            get {
+                return this.orderStatusField;
+            }
+            set {
+                this.orderStatusField = value;
+                this.RaisePropertyChanged("orderStatus");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=16)]
+        public string orderId {
+            get {
+                return this.orderIdField;
+            }
+            set {
+                this.orderIdField = value;
+                this.RaisePropertyChanged("orderId");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=17)]
+        public string updateDateTime {
+            get {
+                return this.updateDateTimeField;
+            }
+            set {
+                this.updateDateTimeField = value;
+                this.RaisePropertyChanged("updateDateTime");
+            }
+        }
+        
         public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
         
         protected void RaisePropertyChanged(string propertyName) {
@@ -11571,11 +12641,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class APRefundReply : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string reasonCodeField;
@@ -11601,6 +12671,8 @@ namespace CyberSource.Clients.SoapServiceReference {
         private string paymentStatusField;
         
         private string responseCodeField;
+        
+        private string updateDateTimeField;
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(DataType="integer", Order=0)]
@@ -11746,6 +12818,18 @@ namespace CyberSource.Clients.SoapServiceReference {
             }
         }
         
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=12)]
+        public string updateDateTime {
+            get {
+                return this.updateDateTimeField;
+            }
+            set {
+                this.updateDateTimeField = value;
+                this.RaisePropertyChanged("updateDateTime");
+            }
+        }
+        
         public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
         
         protected void RaisePropertyChanged(string propertyName) {
@@ -11757,11 +12841,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class APOptionsOption : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string idField;
@@ -11817,11 +12901,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class APOptionsReply : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string reasonCodeField;
@@ -11919,11 +13003,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class APCaptureReply : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string reasonCodeField;
@@ -12091,11 +13175,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class APAuthReversalReply : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string reasonCodeField;
@@ -12263,11 +13347,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class APSessionsReply : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string reasonCodeField;
@@ -12407,11 +13491,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class APAuthReply : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string reasonCodeField;
@@ -12439,6 +13523,16 @@ namespace CyberSource.Clients.SoapServiceReference {
         private string reconciliationIDField;
         
         private string processorTransactionIDField;
+        
+        private string orderIdField;
+        
+        private string orderStatusField;
+        
+        private string completeRedirectURLField;
+        
+        private string updateDateTimeField;
+        
+        private string expirationDateTimeField;
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(DataType="integer", Order=0)]
@@ -12596,6 +13690,66 @@ namespace CyberSource.Clients.SoapServiceReference {
             }
         }
         
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=13)]
+        public string orderId {
+            get {
+                return this.orderIdField;
+            }
+            set {
+                this.orderIdField = value;
+                this.RaisePropertyChanged("orderId");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=14)]
+        public string orderStatus {
+            get {
+                return this.orderStatusField;
+            }
+            set {
+                this.orderStatusField = value;
+                this.RaisePropertyChanged("orderStatus");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=15)]
+        public string completeRedirectURL {
+            get {
+                return this.completeRedirectURLField;
+            }
+            set {
+                this.completeRedirectURLField = value;
+                this.RaisePropertyChanged("completeRedirectURL");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=16)]
+        public string updateDateTime {
+            get {
+                return this.updateDateTimeField;
+            }
+            set {
+                this.updateDateTimeField = value;
+                this.RaisePropertyChanged("updateDateTime");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=17)]
+        public string expirationDateTime {
+            get {
+                return this.expirationDateTimeField;
+            }
+            set {
+                this.expirationDateTimeField = value;
+                this.RaisePropertyChanged("expirationDateTime");
+            }
+        }
+        
         public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
         
         protected void RaisePropertyChanged(string propertyName) {
@@ -12607,16 +13761,18 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class SellerProtection : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string eligibilityField;
         
         private string typeField;
+        
+        private string disputeCategoriesField;
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=0)]
@@ -12642,6 +13798,18 @@ namespace CyberSource.Clients.SoapServiceReference {
             }
         }
         
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public string disputeCategories {
+            get {
+                return this.disputeCategoriesField;
+            }
+            set {
+                this.disputeCategoriesField = value;
+                this.RaisePropertyChanged("disputeCategories");
+            }
+        }
+        
         public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
         
         protected void RaisePropertyChanged(string propertyName) {
@@ -12653,11 +13821,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class APReply : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string orderIDField;
@@ -13105,11 +14273,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class APCheckStatusReply : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string reasonCodeField;
@@ -13129,6 +14297,10 @@ namespace CyberSource.Clients.SoapServiceReference {
         private string processorTokenField;
         
         private string dateTimeField;
+        
+        private string updateDateTimeField;
+        
+        private string expirationDateTimeField;
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(DataType="integer", Order=0)]
@@ -13238,6 +14410,30 @@ namespace CyberSource.Clients.SoapServiceReference {
             }
         }
         
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=9)]
+        public string updateDateTime {
+            get {
+                return this.updateDateTimeField;
+            }
+            set {
+                this.updateDateTimeField = value;
+                this.RaisePropertyChanged("updateDateTime");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=10)]
+        public string expirationDateTime {
+            get {
+                return this.expirationDateTimeField;
+            }
+            set {
+                this.expirationDateTimeField = value;
+                this.RaisePropertyChanged("expirationDateTime");
+            }
+        }
+        
         public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
         
         protected void RaisePropertyChanged(string propertyName) {
@@ -13249,11 +14445,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class APInitiateReply : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string reasonCodeField;
@@ -13393,11 +14589,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class PinDebitReversalReply : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string reasonCodeField;
@@ -13409,6 +14605,8 @@ namespace CyberSource.Clients.SoapServiceReference {
         private string amountField;
         
         private string dateTimeField;
+        
+        private string reconciliationReferenceNumberField;
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(DataType="integer", Order=0)]
@@ -13470,6 +14668,18 @@ namespace CyberSource.Clients.SoapServiceReference {
             }
         }
         
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
+        public string reconciliationReferenceNumber {
+            get {
+                return this.reconciliationReferenceNumberField;
+            }
+            set {
+                this.reconciliationReferenceNumberField = value;
+                this.RaisePropertyChanged("reconciliationReferenceNumber");
+            }
+        }
+        
         public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
         
         protected void RaisePropertyChanged(string propertyName) {
@@ -13481,11 +14691,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class PinDebitCreditReply : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string reasonCodeField;
@@ -13503,6 +14713,8 @@ namespace CyberSource.Clients.SoapServiceReference {
         private string amountField;
         
         private string dateTimeField;
+        
+        private string reconciliationReferenceNumberField;
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(DataType="integer", Order=0)]
@@ -13600,6 +14812,18 @@ namespace CyberSource.Clients.SoapServiceReference {
             }
         }
         
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=8)]
+        public string reconciliationReferenceNumber {
+            get {
+                return this.reconciliationReferenceNumberField;
+            }
+            set {
+                this.reconciliationReferenceNumberField = value;
+                this.RaisePropertyChanged("reconciliationReferenceNumber");
+            }
+        }
+        
         public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
         
         protected void RaisePropertyChanged(string propertyName) {
@@ -13611,11 +14835,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class PinDebitPurchaseReply : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string reasonCodeField;
@@ -13647,6 +14871,8 @@ namespace CyberSource.Clients.SoapServiceReference {
         private string accountBalanceCurrencyField;
         
         private string accountBalanceSignField;
+        
+        private string reconciliationReferenceNumberField;
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(DataType="integer", Order=0)]
@@ -13828,6 +15054,18 @@ namespace CyberSource.Clients.SoapServiceReference {
             }
         }
         
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=15)]
+        public string reconciliationReferenceNumber {
+            get {
+                return this.reconciliationReferenceNumberField;
+            }
+            set {
+                this.reconciliationReferenceNumberField = value;
+                this.RaisePropertyChanged("reconciliationReferenceNumber");
+            }
+        }
+        
         public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
         
         protected void RaisePropertyChanged(string propertyName) {
@@ -13839,11 +15077,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class BoletoPaymentReply : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string reasonCodeField;
@@ -14011,11 +15249,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class ChinaRefundReply : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string reasonCodeField;
@@ -14085,11 +15323,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class ChinaPaymentReply : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string reasonCodeField;
@@ -14229,11 +15467,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class PayPalDoRefTransactionReply : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string reasonCodeField;
@@ -14457,11 +15695,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class PayPalCreateAgreementReply : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string reasonCodeField;
@@ -14531,11 +15769,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class PayPalUpdateAgreementReply : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string reasonCodeField;
@@ -14801,11 +16039,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class PayPalEcOrderSetupReply : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string reasonCodeField;
@@ -15057,11 +16295,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class PayPalAuthorizationReply : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string reasonCodeField;
@@ -15201,11 +16439,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class PayPalEcSetReply : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string reasonCodeField;
@@ -15303,11 +16541,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class PayPalEcGetDetailsReply : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string reasonCodeField;
@@ -15811,11 +17049,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class PayPalEcDoPaymentReply : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string reasonCodeField;
@@ -16095,11 +17333,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class PayPalDoCaptureReply : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string reasonCodeField;
@@ -16365,11 +17603,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class PayPalAuthReversalReply : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string reasonCodeField;
@@ -16439,11 +17677,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class PayPalRefundReply : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string reasonCodeField;
@@ -16555,11 +17793,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class Travel : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string actualFinalDestinationCountryField;
@@ -16909,11 +18147,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class ProfileReply : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string selectedByField;
@@ -16998,11 +18236,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class RuleResultItem : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string nameField;
@@ -17072,11 +18310,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class DecisionReply : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string casePriorityField;
@@ -17088,6 +18326,8 @@ namespace CyberSource.Clients.SoapServiceReference {
         private Field[] additionalFieldsField;
         
         private Element[] morphingElementField;
+        
+        private VelocityElement[] velocityCountsField;
         
         private Provider[] providerFieldsField;
         
@@ -17159,6 +18399,19 @@ namespace CyberSource.Clients.SoapServiceReference {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlArrayAttribute(Order=5)]
+        [System.Xml.Serialization.XmlArrayItemAttribute("element", IsNullable=false)]
+        public VelocityElement[] velocityCounts {
+            get {
+                return this.velocityCountsField;
+            }
+            set {
+                this.velocityCountsField = value;
+                this.RaisePropertyChanged("velocityCounts");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayAttribute(Order=6)]
         [System.Xml.Serialization.XmlArrayItemAttribute("provider", IsNullable=false)]
         public Provider[] providerFields {
             get {
@@ -17171,7 +18424,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=6)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=7)]
         public Travel travel {
             get {
                 return this.travelField;
@@ -17183,7 +18436,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=7)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=8)]
         public string unavailableInfoCode {
             get {
                 return this.unavailableInfoCodeField;
@@ -17205,11 +18458,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class Field : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string providerField;
@@ -17265,11 +18518,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class Element : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string infoCodeField;
@@ -17325,11 +18578,57 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
+    public partial class VelocityElement : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string infoCodeField;
+        
+        private string countField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string infoCode {
+            get {
+                return this.infoCodeField;
+            }
+            set {
+                this.infoCodeField = value;
+                this.RaisePropertyChanged("infoCode");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(DataType="integer", Order=1)]
+        public string count {
+            get {
+                return this.countField;
+            }
+            set {
+                this.countField = value;
+                this.RaisePropertyChanged("count");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class Provider : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string nameField;
@@ -17371,11 +18670,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class ProviderField : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string nameField;
@@ -17417,11 +18716,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class PauseRuleResultItem : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string ruleIDField;
@@ -17505,11 +18804,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class ProfileReplyEarly : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string nameField;
@@ -17581,11 +18880,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class DecisionEarlyReply : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string casePriorityField;
@@ -17599,6 +18898,8 @@ namespace CyberSource.Clients.SoapServiceReference {
         private string appliedOrderModificationsField;
         
         private ProfileReplyEarly activeProfileReplyField;
+        
+        private VelocityElement[] velocityCountsField;
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(DataType="integer", Order=0)]
@@ -17672,6 +18973,19 @@ namespace CyberSource.Clients.SoapServiceReference {
             }
         }
         
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayAttribute(Order=6)]
+        [System.Xml.Serialization.XmlArrayItemAttribute("element", IsNullable=false)]
+        public VelocityElement[] velocityCounts {
+            get {
+                return this.velocityCountsField;
+            }
+            set {
+                this.velocityCountsField = value;
+                this.RaisePropertyChanged("velocityCounts");
+            }
+        }
+        
         public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
         
         protected void RaisePropertyChanged(string propertyName) {
@@ -17683,11 +18997,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class CaseManagementActionReply : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string reasonCodeField;
@@ -17715,11 +19029,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class FraudUpdateReply : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string reasonCodeField;
@@ -17747,11 +19061,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class RiskUpdateReply : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string reasonCodeField;
@@ -17779,11 +19093,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class PayPalPreapprovedUpdateReply : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string reasonCodeField;
@@ -17979,11 +19293,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class PayPalPreapprovedPaymentReply : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string reasonCodeField;
@@ -18333,11 +19647,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class PayPalButtonCreateReply : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string reasonCodeField;
@@ -18435,11 +19749,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class PinlessDebitReversalReply : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string reasonCodeField;
@@ -18523,11 +19837,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class PinlessDebitValidateReply : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string reasonCodeField;
@@ -18583,11 +19897,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class PinlessDebitReply : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string reasonCodeField;
@@ -18713,11 +20027,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class VoidReply : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string reasonCodeField;
@@ -18729,6 +20043,8 @@ namespace CyberSource.Clients.SoapServiceReference {
         private string currencyField;
         
         private string reversalSubmittedField;
+        
+        private string settlementDateField;
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(DataType="integer", Order=0)]
@@ -18790,6 +20106,18 @@ namespace CyberSource.Clients.SoapServiceReference {
             }
         }
         
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
+        public string settlementDate {
+            get {
+                return this.settlementDateField;
+            }
+            set {
+                this.settlementDateField = value;
+                this.RaisePropertyChanged("settlementDate");
+            }
+        }
+        
         public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
         
         protected void RaisePropertyChanged(string propertyName) {
@@ -18801,11 +20129,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class PayPalCreditReply : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string reasonCodeField;
@@ -18889,11 +20217,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class PayPalPaymentReply : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string reasonCodeField;
@@ -18977,11 +20305,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class PaySubscriptionDeleteReply : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string reasonCodeField;
@@ -19037,11 +20365,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class PaySubscriptionRetrieveReply : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string reasonCodeField;
@@ -20063,11 +21391,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class PaySubscriptionEventUpdateReply : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string reasonCodeField;
@@ -20109,11 +21437,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class PaySubscriptionUpdateReply : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string reasonCodeField;
@@ -20239,11 +21567,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class PaySubscriptionCreateReply : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string reasonCodeField;
@@ -20341,11 +21669,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class DirectDebitRefundReply : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string reasonCodeField;
@@ -20471,11 +21799,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class DirectDebitValidateReply : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string reasonCodeField;
@@ -20587,11 +21915,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class DirectDebitReply : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string reasonCodeField;
@@ -20745,11 +22073,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class DirectDebitMandateReply : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string reasonCodeField;
@@ -20847,11 +22175,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class BankTransferRealTimeReply : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string reasonCodeField;
@@ -20977,11 +22305,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class BankTransferRefundReply : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string reasonCodeField;
@@ -21093,11 +22421,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class BankTransferReply : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string reasonCodeField;
@@ -21349,11 +22677,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class FXQuote : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string idField;
@@ -21465,11 +22793,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class FXRatesReply : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string reasonCodeField;
@@ -21511,11 +22839,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class ExportReply : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string reasonCodeField;
@@ -21571,11 +22899,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class DAVReply : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string reasonCodeField;
@@ -22065,11 +23393,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class DeviceFingerprint : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string cookiesEnabledField;
@@ -22545,11 +23873,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class AFSReply : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string reasonCodeField;
@@ -22571,6 +23899,8 @@ namespace CyberSource.Clients.SoapServiceReference {
         private string phoneInfoCodeField;
         
         private string suspiciousInfoCodeField;
+        
+        private string deviceBehaviorInfoCodeField;
         
         private string velocityInfoCodeField;
         
@@ -22726,6 +24056,18 @@ namespace CyberSource.Clients.SoapServiceReference {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=10)]
+        public string deviceBehaviorInfoCode {
+            get {
+                return this.deviceBehaviorInfoCodeField;
+            }
+            set {
+                this.deviceBehaviorInfoCodeField = value;
+                this.RaisePropertyChanged("deviceBehaviorInfoCode");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=11)]
         public string velocityInfoCode {
             get {
                 return this.velocityInfoCodeField;
@@ -22737,7 +24079,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=11)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=12)]
         public string identityInfoCode {
             get {
                 return this.identityInfoCodeField;
@@ -22749,7 +24091,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=12)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=13)]
         public string ipCountry {
             get {
                 return this.ipCountryField;
@@ -22761,7 +24103,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=13)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=14)]
         public string ipState {
             get {
                 return this.ipStateField;
@@ -22773,7 +24115,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=14)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=15)]
         public string ipCity {
             get {
                 return this.ipCityField;
@@ -22785,7 +24127,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=15)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=16)]
         public string ipRoutingMethod {
             get {
                 return this.ipRoutingMethodField;
@@ -22797,7 +24139,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=16)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=17)]
         public string ipAnonymizerStatus {
             get {
                 return this.ipAnonymizerStatusField;
@@ -22809,7 +24151,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=17)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=18)]
         public string ipCarrier {
             get {
                 return this.ipCarrierField;
@@ -22821,7 +24163,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=18)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=19)]
         public string ipOrganization {
             get {
                 return this.ipOrganizationField;
@@ -22833,7 +24175,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=19)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=20)]
         public string scoreModelUsed {
             get {
                 return this.scoreModelUsedField;
@@ -22845,7 +24187,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=20)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=21)]
         public string cardBin {
             get {
                 return this.cardBinField;
@@ -22857,7 +24199,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=21)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=22)]
         public string binCountry {
             get {
                 return this.binCountryField;
@@ -22869,7 +24211,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=22)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=23)]
         public string cardAccountType {
             get {
                 return this.cardAccountTypeField;
@@ -22881,7 +24223,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=23)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=24)]
         public string cardScheme {
             get {
                 return this.cardSchemeField;
@@ -22893,7 +24235,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=24)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=25)]
         public string cardIssuer {
             get {
                 return this.cardIssuerField;
@@ -22905,7 +24247,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=25)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=26)]
         public DeviceFingerprint deviceFingerprint {
             get {
                 return this.deviceFingerprintField;
@@ -22927,16 +24269,18 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class DMEReply : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string eventTypeField;
         
         private string eventInfoField;
+        
+        private string eventDeviceBehaviorInfoField;
         
         private string eventHotlistInfoField;
         
@@ -22986,6 +24330,18 @@ namespace CyberSource.Clients.SoapServiceReference {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public string eventDeviceBehaviorInfo {
+            get {
+                return this.eventDeviceBehaviorInfoField;
+            }
+            set {
+                this.eventDeviceBehaviorInfoField = value;
+                this.RaisePropertyChanged("eventDeviceBehaviorInfo");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
         public string eventHotlistInfo {
             get {
                 return this.eventHotlistInfoField;
@@ -22997,7 +24353,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
         public string eventPolicy {
             get {
                 return this.eventPolicyField;
@@ -23009,7 +24365,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
         public string eventVelocityInfoCode {
             get {
                 return this.eventVelocityInfoCodeField;
@@ -23021,7 +24377,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlArrayAttribute(Order=5)]
+        [System.Xml.Serialization.XmlArrayAttribute(Order=6)]
         [System.Xml.Serialization.XmlArrayItemAttribute("field", IsNullable=false)]
         public Field[] additionalFields {
             get {
@@ -23034,7 +24390,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlArrayAttribute(Order=6)]
+        [System.Xml.Serialization.XmlArrayAttribute(Order=7)]
         [System.Xml.Serialization.XmlArrayItemAttribute("element", IsNullable=false)]
         public Element[] morphingElement {
             get {
@@ -23047,7 +24403,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=7)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=8)]
         public string cardBin {
             get {
                 return this.cardBinField;
@@ -23059,7 +24415,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=8)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=9)]
         public string binCountry {
             get {
                 return this.binCountryField;
@@ -23071,7 +24427,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=9)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=10)]
         public string cardAccountType {
             get {
                 return this.cardAccountTypeField;
@@ -23083,7 +24439,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=10)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=11)]
         public string cardScheme {
             get {
                 return this.cardSchemeField;
@@ -23095,7 +24451,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=11)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=12)]
         public string cardIssuer {
             get {
                 return this.cardIssuerField;
@@ -23107,7 +24463,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlArrayAttribute(Order=12)]
+        [System.Xml.Serialization.XmlArrayAttribute(Order=13)]
         [System.Xml.Serialization.XmlArrayItemAttribute("provider", IsNullable=false)]
         public Provider[] providerFields {
             get {
@@ -23130,11 +24486,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class EncryptPaymentDataReply : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string reasonCodeField;
@@ -23176,11 +24532,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class TaxReplyItemJurisdiction : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string countryField;
@@ -23334,11 +24690,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class TaxReplyItem : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string taxableAmountField;
@@ -23506,11 +24862,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class TaxReply : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string reasonCodeField;
@@ -23804,11 +25160,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class PayerAuthValidateReply : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string reasonCodeField;
@@ -23870,6 +25226,16 @@ namespace CyberSource.Clients.SoapServiceReference {
         private string cardBinField;
         
         private string cardTypeNameField;
+        
+        private string authenticationOutageExemptionIndicatorField;
+        
+        private string acsReferenceNumberField;
+        
+        private string acsOperatorIdField;
+        
+        private string threeDSServerOperatorIdField;
+        
+        private string dsReferenceNumberField;
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(DataType="integer", Order=0)]
@@ -24172,7 +25538,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(DataType="integer", Order=25)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=25)]
         public string authenticationStatusReason {
             get {
                 return this.authenticationStatusReasonField;
@@ -24184,7 +25550,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(DataType="integer", Order=26)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=26)]
         public string challengeCancelCode {
             get {
                 return this.challengeCancelCodeField;
@@ -24231,6 +25597,66 @@ namespace CyberSource.Clients.SoapServiceReference {
             }
         }
         
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(DataType="integer", Order=30)]
+        public string authenticationOutageExemptionIndicator {
+            get {
+                return this.authenticationOutageExemptionIndicatorField;
+            }
+            set {
+                this.authenticationOutageExemptionIndicatorField = value;
+                this.RaisePropertyChanged("authenticationOutageExemptionIndicator");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=31)]
+        public string acsReferenceNumber {
+            get {
+                return this.acsReferenceNumberField;
+            }
+            set {
+                this.acsReferenceNumberField = value;
+                this.RaisePropertyChanged("acsReferenceNumber");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=32)]
+        public string acsOperatorId {
+            get {
+                return this.acsOperatorIdField;
+            }
+            set {
+                this.acsOperatorIdField = value;
+                this.RaisePropertyChanged("acsOperatorId");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=33)]
+        public string threeDSServerOperatorId {
+            get {
+                return this.threeDSServerOperatorIdField;
+            }
+            set {
+                this.threeDSServerOperatorIdField = value;
+                this.RaisePropertyChanged("threeDSServerOperatorId");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=34)]
+        public string dsReferenceNumber {
+            get {
+                return this.dsReferenceNumberField;
+            }
+            set {
+                this.dsReferenceNumberField = value;
+                this.RaisePropertyChanged("dsReferenceNumber");
+            }
+        }
+        
         public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
         
         protected void RaisePropertyChanged(string propertyName) {
@@ -24242,11 +25668,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class PayerAuthEnrollReply : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string reasonCodeField;
@@ -24346,6 +25772,30 @@ namespace CyberSource.Clients.SoapServiceReference {
         private string cardBinField;
         
         private string cardTypeNameField;
+        
+        private string transactionIndicatorField;
+        
+        private string resendCountRemainingField;
+        
+        private string acsReferenceNumberField;
+        
+        private string acsOperatorIdField;
+        
+        private string idciScoreField;
+        
+        private string idciDecisionField;
+        
+        private string idciReasonCode1Field;
+        
+        private string idciReasonCode2Field;
+        
+        private string authenticationOutageExemptionIndicatorField;
+        
+        private string exemptionDataRawField;
+        
+        private string threeDSServerOperatorIdField;
+        
+        private string dsReferenceNumberField;
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(DataType="integer", Order=0)]
@@ -24852,7 +26302,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(DataType="integer", Order=42)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=42)]
         public string authenticationStatusReason {
             get {
                 return this.authenticationStatusReasonField;
@@ -24864,7 +26314,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(DataType="integer", Order=43)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=43)]
         public string networkScore {
             get {
                 return this.networkScoreField;
@@ -24888,7 +26338,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(DataType="integer", Order=45)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=45)]
         public string challengeCancelCode {
             get {
                 return this.challengeCancelCodeField;
@@ -24935,6 +26385,150 @@ namespace CyberSource.Clients.SoapServiceReference {
             }
         }
         
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=49)]
+        public string transactionIndicator {
+            get {
+                return this.transactionIndicatorField;
+            }
+            set {
+                this.transactionIndicatorField = value;
+                this.RaisePropertyChanged("transactionIndicator");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=50)]
+        public string resendCountRemaining {
+            get {
+                return this.resendCountRemainingField;
+            }
+            set {
+                this.resendCountRemainingField = value;
+                this.RaisePropertyChanged("resendCountRemaining");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=51)]
+        public string acsReferenceNumber {
+            get {
+                return this.acsReferenceNumberField;
+            }
+            set {
+                this.acsReferenceNumberField = value;
+                this.RaisePropertyChanged("acsReferenceNumber");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=52)]
+        public string acsOperatorId {
+            get {
+                return this.acsOperatorIdField;
+            }
+            set {
+                this.acsOperatorIdField = value;
+                this.RaisePropertyChanged("acsOperatorId");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(DataType="integer", Order=53)]
+        public string idciScore {
+            get {
+                return this.idciScoreField;
+            }
+            set {
+                this.idciScoreField = value;
+                this.RaisePropertyChanged("idciScore");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=54)]
+        public string idciDecision {
+            get {
+                return this.idciDecisionField;
+            }
+            set {
+                this.idciDecisionField = value;
+                this.RaisePropertyChanged("idciDecision");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=55)]
+        public string idciReasonCode1 {
+            get {
+                return this.idciReasonCode1Field;
+            }
+            set {
+                this.idciReasonCode1Field = value;
+                this.RaisePropertyChanged("idciReasonCode1");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=56)]
+        public string idciReasonCode2 {
+            get {
+                return this.idciReasonCode2Field;
+            }
+            set {
+                this.idciReasonCode2Field = value;
+                this.RaisePropertyChanged("idciReasonCode2");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(DataType="integer", Order=57)]
+        public string authenticationOutageExemptionIndicator {
+            get {
+                return this.authenticationOutageExemptionIndicatorField;
+            }
+            set {
+                this.authenticationOutageExemptionIndicatorField = value;
+                this.RaisePropertyChanged("authenticationOutageExemptionIndicator");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=58)]
+        public string exemptionDataRaw {
+            get {
+                return this.exemptionDataRawField;
+            }
+            set {
+                this.exemptionDataRawField = value;
+                this.RaisePropertyChanged("exemptionDataRaw");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=59)]
+        public string threeDSServerOperatorId {
+            get {
+                return this.threeDSServerOperatorIdField;
+            }
+            set {
+                this.threeDSServerOperatorIdField = value;
+                this.RaisePropertyChanged("threeDSServerOperatorId");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=60)]
+        public string dsReferenceNumber {
+            get {
+                return this.dsReferenceNumberField;
+            }
+            set {
+                this.dsReferenceNumberField = value;
+                this.RaisePropertyChanged("dsReferenceNumber");
+            }
+        }
+        
         public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
         
         protected void RaisePropertyChanged(string propertyName) {
@@ -24946,11 +26540,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class PayerAuthSetupReply : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string reasonCodeField;
@@ -25020,11 +26614,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class ECAuthenticateReply : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string reasonCodeField;
@@ -25122,11 +26716,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class ECCreditReply : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string reasonCodeField;
@@ -25308,11 +26902,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class ECDebitReply : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string reasonCodeField;
@@ -25536,11 +27130,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class CCDCCUpdateReply : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string reasonCodeField;
@@ -25568,11 +27162,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class paymentCurrencyOffer : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string amountField;
@@ -25656,11 +27250,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class CCDCCReply : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string reasonCodeField;
@@ -25758,72 +27352,12 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
-    public partial class CCAutoAuthReversalReply : object, System.ComponentModel.INotifyPropertyChanged {
-        
-        private string reasonCodeField;
-        
-        private string processorResponseField;
-        
-        private string resultField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(DataType="integer", Order=0)]
-        public string reasonCode {
-            get {
-                return this.reasonCodeField;
-            }
-            set {
-                this.reasonCodeField = value;
-                this.RaisePropertyChanged("reasonCode");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
-        public string processorResponse {
-            get {
-                return this.processorResponseField;
-            }
-            set {
-                this.processorResponseField = value;
-                this.RaisePropertyChanged("processorResponse");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
-        public string result {
-            get {
-                return this.resultField;
-            }
-            set {
-                this.resultField = value;
-                this.RaisePropertyChanged("result");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
-    public partial class CCAuthReversalReply : object, System.ComponentModel.INotifyPropertyChanged {
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
+    public partial class CCCreditAuthReversalReply : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string reasonCodeField;
         
@@ -25844,6 +27378,12 @@ namespace CyberSource.Clients.SoapServiceReference {
         private string paymentCardServiceField;
         
         private string paymentCardServiceResultField;
+        
+        private string reversalRecordField;
+        
+        private string paymentNetworkTransactionIDField;
+        
+        private string reconciliationReferenceNumberField;
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(DataType="integer", Order=0)]
@@ -25965,6 +27505,42 @@ namespace CyberSource.Clients.SoapServiceReference {
             }
         }
         
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=10)]
+        public string reversalRecord {
+            get {
+                return this.reversalRecordField;
+            }
+            set {
+                this.reversalRecordField = value;
+                this.RaisePropertyChanged("reversalRecord");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=11)]
+        public string paymentNetworkTransactionID {
+            get {
+                return this.paymentNetworkTransactionIDField;
+            }
+            set {
+                this.paymentNetworkTransactionIDField = value;
+                this.RaisePropertyChanged("paymentNetworkTransactionID");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=12)]
+        public string reconciliationReferenceNumber {
+            get {
+                return this.reconciliationReferenceNumberField;
+            }
+            set {
+                this.reconciliationReferenceNumberField = value;
+                this.RaisePropertyChanged("reconciliationReferenceNumber");
+            }
+        }
+        
         public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
         
         protected void RaisePropertyChanged(string propertyName) {
@@ -25976,11 +27552,485 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
+    public partial class CCAutoAuthReversalReply : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string reasonCodeField;
+        
+        private string processorResponseField;
+        
+        private string resultField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(DataType="integer", Order=0)]
+        public string reasonCode {
+            get {
+                return this.reasonCodeField;
+            }
+            set {
+                this.reasonCodeField = value;
+                this.RaisePropertyChanged("reasonCode");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string processorResponse {
+            get {
+                return this.processorResponseField;
+            }
+            set {
+                this.processorResponseField = value;
+                this.RaisePropertyChanged("processorResponse");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public string result {
+            get {
+                return this.resultField;
+            }
+            set {
+                this.resultField = value;
+                this.RaisePropertyChanged("result");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
+    public partial class CCAuthReversalReply : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string reasonCodeField;
+        
+        private string amountField;
+        
+        private string authorizationCodeField;
+        
+        private string processorResponseField;
+        
+        private string requestDateTimeField;
+        
+        private string forwardCodeField;
+        
+        private string reconciliationIDField;
+        
+        private string processorTransactionIDField;
+        
+        private string paymentCardServiceField;
+        
+        private string paymentCardServiceResultField;
+        
+        private string reversalRecordField;
+        
+        private string paymentNetworkTransactionIDField;
+        
+        private string settlementDateField;
+        
+        private string paymentTypeIndicatorField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(DataType="integer", Order=0)]
+        public string reasonCode {
+            get {
+                return this.reasonCodeField;
+            }
+            set {
+                this.reasonCodeField = value;
+                this.RaisePropertyChanged("reasonCode");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string amount {
+            get {
+                return this.amountField;
+            }
+            set {
+                this.amountField = value;
+                this.RaisePropertyChanged("amount");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public string authorizationCode {
+            get {
+                return this.authorizationCodeField;
+            }
+            set {
+                this.authorizationCodeField = value;
+                this.RaisePropertyChanged("authorizationCode");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public string processorResponse {
+            get {
+                return this.processorResponseField;
+            }
+            set {
+                this.processorResponseField = value;
+                this.RaisePropertyChanged("processorResponse");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
+        public string requestDateTime {
+            get {
+                return this.requestDateTimeField;
+            }
+            set {
+                this.requestDateTimeField = value;
+                this.RaisePropertyChanged("requestDateTime");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
+        public string forwardCode {
+            get {
+                return this.forwardCodeField;
+            }
+            set {
+                this.forwardCodeField = value;
+                this.RaisePropertyChanged("forwardCode");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=6)]
+        public string reconciliationID {
+            get {
+                return this.reconciliationIDField;
+            }
+            set {
+                this.reconciliationIDField = value;
+                this.RaisePropertyChanged("reconciliationID");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=7)]
+        public string processorTransactionID {
+            get {
+                return this.processorTransactionIDField;
+            }
+            set {
+                this.processorTransactionIDField = value;
+                this.RaisePropertyChanged("processorTransactionID");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=8)]
+        public string paymentCardService {
+            get {
+                return this.paymentCardServiceField;
+            }
+            set {
+                this.paymentCardServiceField = value;
+                this.RaisePropertyChanged("paymentCardService");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=9)]
+        public string paymentCardServiceResult {
+            get {
+                return this.paymentCardServiceResultField;
+            }
+            set {
+                this.paymentCardServiceResultField = value;
+                this.RaisePropertyChanged("paymentCardServiceResult");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=10)]
+        public string reversalRecord {
+            get {
+                return this.reversalRecordField;
+            }
+            set {
+                this.reversalRecordField = value;
+                this.RaisePropertyChanged("reversalRecord");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=11)]
+        public string paymentNetworkTransactionID {
+            get {
+                return this.paymentNetworkTransactionIDField;
+            }
+            set {
+                this.paymentNetworkTransactionIDField = value;
+                this.RaisePropertyChanged("paymentNetworkTransactionID");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=12)]
+        public string settlementDate {
+            get {
+                return this.settlementDateField;
+            }
+            set {
+                this.settlementDateField = value;
+                this.RaisePropertyChanged("settlementDate");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=13)]
+        public string paymentTypeIndicator {
+            get {
+                return this.paymentTypeIndicatorField;
+            }
+            set {
+                this.paymentTypeIndicatorField = value;
+                this.RaisePropertyChanged("paymentTypeIndicator");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
+    public partial class CCCreditAuthReply : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string reasonCodeField;
+        
+        private string authorizationCodeField;
+        
+        private string paymentNetworkTransactionIdField;
+        
+        private string processorResponseField;
+        
+        private string amountField;
+        
+        private string requestDateTimeField;
+        
+        private string reconciliationIDField;
+        
+        private string purchasingLevel3EnabledField;
+        
+        private string enhancedDataEnabledField;
+        
+        private string forwardCodeField;
+        
+        private string ownerMerchantIDField;
+        
+        private string reconciliationReferenceNumberField;
+        
+        private string paymentNetworkTransactionInformationField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(DataType="integer", Order=0)]
+        public string reasonCode {
+            get {
+                return this.reasonCodeField;
+            }
+            set {
+                this.reasonCodeField = value;
+                this.RaisePropertyChanged("reasonCode");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string authorizationCode {
+            get {
+                return this.authorizationCodeField;
+            }
+            set {
+                this.authorizationCodeField = value;
+                this.RaisePropertyChanged("authorizationCode");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public string paymentNetworkTransactionId {
+            get {
+                return this.paymentNetworkTransactionIdField;
+            }
+            set {
+                this.paymentNetworkTransactionIdField = value;
+                this.RaisePropertyChanged("paymentNetworkTransactionId");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public string processorResponse {
+            get {
+                return this.processorResponseField;
+            }
+            set {
+                this.processorResponseField = value;
+                this.RaisePropertyChanged("processorResponse");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
+        public string amount {
+            get {
+                return this.amountField;
+            }
+            set {
+                this.amountField = value;
+                this.RaisePropertyChanged("amount");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
+        public string requestDateTime {
+            get {
+                return this.requestDateTimeField;
+            }
+            set {
+                this.requestDateTimeField = value;
+                this.RaisePropertyChanged("requestDateTime");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=6)]
+        public string reconciliationID {
+            get {
+                return this.reconciliationIDField;
+            }
+            set {
+                this.reconciliationIDField = value;
+                this.RaisePropertyChanged("reconciliationID");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=7)]
+        public string purchasingLevel3Enabled {
+            get {
+                return this.purchasingLevel3EnabledField;
+            }
+            set {
+                this.purchasingLevel3EnabledField = value;
+                this.RaisePropertyChanged("purchasingLevel3Enabled");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=8)]
+        public string enhancedDataEnabled {
+            get {
+                return this.enhancedDataEnabledField;
+            }
+            set {
+                this.enhancedDataEnabledField = value;
+                this.RaisePropertyChanged("enhancedDataEnabled");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=9)]
+        public string forwardCode {
+            get {
+                return this.forwardCodeField;
+            }
+            set {
+                this.forwardCodeField = value;
+                this.RaisePropertyChanged("forwardCode");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=10)]
+        public string ownerMerchantID {
+            get {
+                return this.ownerMerchantIDField;
+            }
+            set {
+                this.ownerMerchantIDField = value;
+                this.RaisePropertyChanged("ownerMerchantID");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=11)]
+        public string reconciliationReferenceNumber {
+            get {
+                return this.reconciliationReferenceNumberField;
+            }
+            set {
+                this.reconciliationReferenceNumberField = value;
+                this.RaisePropertyChanged("reconciliationReferenceNumber");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=12)]
+        public string paymentNetworkTransactionInformation {
+            get {
+                return this.paymentNetworkTransactionInformationField;
+            }
+            set {
+                this.paymentNetworkTransactionInformationField = value;
+                this.RaisePropertyChanged("paymentNetworkTransactionInformation");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class CCCreditReply : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string reasonCodeField;
@@ -26008,6 +28058,10 @@ namespace CyberSource.Clients.SoapServiceReference {
         private string processorResponseField;
         
         private string paymentNetworkTransactionIDField;
+        
+        private string settlementDateField;
+        
+        private string paymentNetworkTransactionInformationField;
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(DataType="integer", Order=0)]
@@ -26165,6 +28219,30 @@ namespace CyberSource.Clients.SoapServiceReference {
             }
         }
         
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=13)]
+        public string settlementDate {
+            get {
+                return this.settlementDateField;
+            }
+            set {
+                this.settlementDateField = value;
+                this.RaisePropertyChanged("settlementDate");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=14)]
+        public string paymentNetworkTransactionInformation {
+            get {
+                return this.paymentNetworkTransactionInformationField;
+            }
+            set {
+                this.paymentNetworkTransactionInformationField = value;
+                this.RaisePropertyChanged("paymentNetworkTransactionInformation");
+            }
+        }
+        
         public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
         
         protected void RaisePropertyChanged(string propertyName) {
@@ -26176,11 +28254,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class CCCaptureReply : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string reasonCodeField;
@@ -26206,6 +28284,10 @@ namespace CyberSource.Clients.SoapServiceReference {
         private string enhancedDataEnabledField;
         
         private string reconciliationReferenceNumberField;
+        
+        private string settlementDateField;
+        
+        private string paymentNetworkTransactionIDField;
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(DataType="integer", Order=0)]
@@ -26351,6 +28433,30 @@ namespace CyberSource.Clients.SoapServiceReference {
             }
         }
         
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=12)]
+        public string settlementDate {
+            get {
+                return this.settlementDateField;
+            }
+            set {
+                this.settlementDateField = value;
+                this.RaisePropertyChanged("settlementDate");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=13)]
+        public string paymentNetworkTransactionID {
+            get {
+                return this.paymentNetworkTransactionIDField;
+            }
+            set {
+                this.paymentNetworkTransactionIDField = value;
+                this.RaisePropertyChanged("paymentNetworkTransactionID");
+            }
+        }
+        
         public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
         
         protected void RaisePropertyChanged(string propertyName) {
@@ -26362,11 +28468,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class FundingTotals : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string currencyField;
@@ -26408,11 +28514,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class ServiceFeeCalculateReply : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string reasonCodeField;
@@ -26468,11 +28574,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class CCIncrementalAuthReply : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string reasonCodeField;
@@ -26490,6 +28596,8 @@ namespace CyberSource.Clients.SoapServiceReference {
         private string paymentNetworkTransactionIDField;
         
         private string cardCategoryField;
+        
+        private merchant merchantField;
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(DataType="integer", Order=0)]
@@ -26587,6 +28695,18 @@ namespace CyberSource.Clients.SoapServiceReference {
             }
         }
         
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=8)]
+        public merchant merchant {
+            get {
+                return this.merchantField;
+            }
+            set {
+                this.merchantField = value;
+                this.RaisePropertyChanged("merchant");
+            }
+        }
+        
         public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
         
         protected void RaisePropertyChanged(string propertyName) {
@@ -26598,11 +28718,113 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
+    public partial class merchant : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string acquirerBINField;
+        
+        private string cardAcceptorIDField;
+        
+        private string visaMerchantIDField;
+        
+        private string acquirerCountryField;
+        
+        private string transactionReferenceNumberField;
+        
+        private string riskPredictionField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string acquirerBIN {
+            get {
+                return this.acquirerBINField;
+            }
+            set {
+                this.acquirerBINField = value;
+                this.RaisePropertyChanged("acquirerBIN");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string cardAcceptorID {
+            get {
+                return this.cardAcceptorIDField;
+            }
+            set {
+                this.cardAcceptorIDField = value;
+                this.RaisePropertyChanged("cardAcceptorID");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public string visaMerchantID {
+            get {
+                return this.visaMerchantIDField;
+            }
+            set {
+                this.visaMerchantIDField = value;
+                this.RaisePropertyChanged("visaMerchantID");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public string acquirerCountry {
+            get {
+                return this.acquirerCountryField;
+            }
+            set {
+                this.acquirerCountryField = value;
+                this.RaisePropertyChanged("acquirerCountry");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
+        public string transactionReferenceNumber {
+            get {
+                return this.transactionReferenceNumberField;
+            }
+            set {
+                this.transactionReferenceNumberField = value;
+                this.RaisePropertyChanged("transactionReferenceNumber");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
+        public string riskPrediction {
+            get {
+                return this.riskPredictionField;
+            }
+            set {
+                this.riskPredictionField = value;
+                this.RaisePropertyChanged("riskPrediction");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class CCSaleReversalReply : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string reasonCodeField;
@@ -26700,11 +28922,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class CCSaleCreditReply : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string reasonCodeField;
@@ -26816,11 +29038,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class CCSaleReply : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string reasonCodeField;
@@ -27128,11 +29350,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class VerificationReply : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string reasonCodeField;
@@ -27216,11 +29438,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class OCTReply : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string reasonCodeField;
@@ -27233,6 +29455,8 @@ namespace CyberSource.Clients.SoapServiceReference {
         
         private string approvalCodeField;
         
+        private string serviceProcessingTypeField;
+        
         private string amountField;
         
         private string paymentNetworkTransactionIDField;
@@ -27244,6 +29468,8 @@ namespace CyberSource.Clients.SoapServiceReference {
         private string processorResponseSourceField;
         
         private string reconciliationIdTypeField;
+        
+        private benefit benefitField;
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(DataType="integer", Order=0)]
@@ -27307,6 +29533,18 @@ namespace CyberSource.Clients.SoapServiceReference {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=5)]
+        public string serviceProcessingType {
+            get {
+                return this.serviceProcessingTypeField;
+            }
+            set {
+                this.serviceProcessingTypeField = value;
+                this.RaisePropertyChanged("serviceProcessingType");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=6)]
         public string amount {
             get {
                 return this.amountField;
@@ -27318,7 +29556,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=6)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=7)]
         public string paymentNetworkTransactionID {
             get {
                 return this.paymentNetworkTransactionIDField;
@@ -27330,7 +29568,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=7)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=8)]
         public string prepaidBalanceCurrency {
             get {
                 return this.prepaidBalanceCurrencyField;
@@ -27342,7 +29580,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=8)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=9)]
         public string prepaidBalanceAmount {
             get {
                 return this.prepaidBalanceAmountField;
@@ -27354,7 +29592,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=9)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=10)]
         public string processorResponseSource {
             get {
                 return this.processorResponseSourceField;
@@ -27366,7 +29604,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=10)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=11)]
         public string reconciliationIdType {
             get {
                 return this.reconciliationIdTypeField;
@@ -27374,6 +29612,18 @@ namespace CyberSource.Clients.SoapServiceReference {
             set {
                 this.reconciliationIdTypeField = value;
                 this.RaisePropertyChanged("reconciliationIdType");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=12)]
+        public benefit benefit {
+            get {
+                return this.benefitField;
+            }
+            set {
+                this.benefitField = value;
+                this.RaisePropertyChanged("benefit");
             }
         }
         
@@ -27388,11 +29638,227 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
+    public partial class benefit : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string typeField;
+        
+        private string amountField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string type {
+            get {
+                return this.typeField;
+            }
+            set {
+                this.typeField = value;
+                this.RaisePropertyChanged("type");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string amount {
+            get {
+                return this.amountField;
+            }
+            set {
+                this.amountField = value;
+                this.RaisePropertyChanged("amount");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
+    public partial class accountHolder : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string typeField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string type {
+            get {
+                return this.typeField;
+            }
+            set {
+                this.typeField = value;
+                this.RaisePropertyChanged("type");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
+    public partial class authenticationData : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string qualityIndicatorField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string qualityIndicator {
+            get {
+                return this.qualityIndicatorField;
+            }
+            set {
+                this.qualityIndicatorField = value;
+                this.RaisePropertyChanged("qualityIndicator");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
+    public partial class AdditionalToken : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string responseInformationField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string responseInformation {
+            get {
+                return this.responseInformationField;
+            }
+            set {
+                this.responseInformationField = value;
+                this.RaisePropertyChanged("responseInformation");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
+    public partial class PaymentInsightsInformation : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string responseInsightsCategoryField;
+        
+        private string responseInsightsCategoryCodeField;
+        
+        private string processorRawNameField;
+        
+        private string orchestration_infoCodesField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string responseInsightsCategory {
+            get {
+                return this.responseInsightsCategoryField;
+            }
+            set {
+                this.responseInsightsCategoryField = value;
+                this.RaisePropertyChanged("responseInsightsCategory");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string responseInsightsCategoryCode {
+            get {
+                return this.responseInsightsCategoryCodeField;
+            }
+            set {
+                this.responseInsightsCategoryCodeField = value;
+                this.RaisePropertyChanged("responseInsightsCategoryCode");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public string processorRawName {
+            get {
+                return this.processorRawNameField;
+            }
+            set {
+                this.processorRawNameField = value;
+                this.RaisePropertyChanged("processorRawName");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public string orchestration_infoCodes {
+            get {
+                return this.orchestration_infoCodesField;
+            }
+            set {
+                this.orchestration_infoCodesField = value;
+                this.RaisePropertyChanged("orchestration_infoCodes");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class CCAuthReply : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string reasonCodeField;
@@ -27529,6 +29995,8 @@ namespace CyberSource.Clients.SoapServiceReference {
         
         private string processorTransactionIDField;
         
+        private string transSequenceNumberField;
+        
         private string providerReasonCodeField;
         
         private string providerReasonDescriptionField;
@@ -27558,6 +30026,44 @@ namespace CyberSource.Clients.SoapServiceReference {
         private string partialPANandIBANField;
         
         private string issuerPINrequestField;
+        
+        private PaymentInsightsInformation paymentInsightsInformationField;
+        
+        private string nameMatchField;
+        
+        private string evFirstNameRawField;
+        
+        private string evFirstNameField;
+        
+        private string evMiddleNameRawField;
+        
+        private string evMiddleField;
+        
+        private string evLastNameRawField;
+        
+        private string evLastNameField;
+        
+        private string settlementDateField;
+        
+        private AdditionalToken additionalTokenField;
+        
+        private string paymentTypeIndicatorField;
+        
+        private string paymentNetworkTransactionInformationField;
+        
+        private authenticationData authenticationDataField;
+        
+        private accountHolder accountHolderField;
+        
+        private string eligibilityIndicatorField;
+        
+        private string transactionTypeField;
+        
+        private serviceProcessing serviceProcessingField;
+        
+        private benefit benefitField;
+        
+        private merchant merchantField;
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(DataType="integer", Order=0)]
@@ -28365,6 +30871,18 @@ namespace CyberSource.Clients.SoapServiceReference {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=67)]
+        public string transSequenceNumber {
+            get {
+                return this.transSequenceNumberField;
+            }
+            set {
+                this.transSequenceNumberField = value;
+                this.RaisePropertyChanged("transSequenceNumber");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=68)]
         public string providerReasonCode {
             get {
                 return this.providerReasonCodeField;
@@ -28376,7 +30894,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=68)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=69)]
         public string providerReasonDescription {
             get {
                 return this.providerReasonDescriptionField;
@@ -28388,7 +30906,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=69)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=70)]
         public string providerPassThroughData {
             get {
                 return this.providerPassThroughDataField;
@@ -28400,7 +30918,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=70)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=71)]
         public string providerCVNResponseCode {
             get {
                 return this.providerCVNResponseCodeField;
@@ -28412,7 +30930,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=71)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=72)]
         public string providerAVSResponseCode {
             get {
                 return this.providerAVSResponseCodeField;
@@ -28424,7 +30942,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=72)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=73)]
         public string providerAcquirerBankCode {
             get {
                 return this.providerAcquirerBankCodeField;
@@ -28436,7 +30954,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=73)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=74)]
         public string paymentCardService {
             get {
                 return this.paymentCardServiceField;
@@ -28448,7 +30966,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=74)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=75)]
         public string paymentCardServiceResult {
             get {
                 return this.paymentCardServiceResultField;
@@ -28460,7 +30978,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=75)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=76)]
         public string transactionQualification {
             get {
                 return this.transactionQualificationField;
@@ -28472,7 +30990,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=76)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=77)]
         public string transactionIntegrity {
             get {
                 return this.transactionIntegrityField;
@@ -28484,7 +31002,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=77)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=78)]
         public string emsTransactionRiskScore {
             get {
                 return this.emsTransactionRiskScoreField;
@@ -28496,7 +31014,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=78)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=79)]
         public string reconciliationReferenceNumber {
             get {
                 return this.reconciliationReferenceNumberField;
@@ -28508,7 +31026,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=79)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=80)]
         public string cardReferenceData {
             get {
                 return this.cardReferenceDataField;
@@ -28520,7 +31038,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=80)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=81)]
         public string partialPANandIBAN {
             get {
                 return this.partialPANandIBANField;
@@ -28532,7 +31050,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=81)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=82)]
         public string issuerPINrequest {
             get {
                 return this.issuerPINrequestField;
@@ -28540,6 +31058,234 @@ namespace CyberSource.Clients.SoapServiceReference {
             set {
                 this.issuerPINrequestField = value;
                 this.RaisePropertyChanged("issuerPINrequest");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=83)]
+        public PaymentInsightsInformation paymentInsightsInformation {
+            get {
+                return this.paymentInsightsInformationField;
+            }
+            set {
+                this.paymentInsightsInformationField = value;
+                this.RaisePropertyChanged("paymentInsightsInformation");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=84)]
+        public string nameMatch {
+            get {
+                return this.nameMatchField;
+            }
+            set {
+                this.nameMatchField = value;
+                this.RaisePropertyChanged("nameMatch");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=85)]
+        public string evFirstNameRaw {
+            get {
+                return this.evFirstNameRawField;
+            }
+            set {
+                this.evFirstNameRawField = value;
+                this.RaisePropertyChanged("evFirstNameRaw");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=86)]
+        public string evFirstName {
+            get {
+                return this.evFirstNameField;
+            }
+            set {
+                this.evFirstNameField = value;
+                this.RaisePropertyChanged("evFirstName");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=87)]
+        public string evMiddleNameRaw {
+            get {
+                return this.evMiddleNameRawField;
+            }
+            set {
+                this.evMiddleNameRawField = value;
+                this.RaisePropertyChanged("evMiddleNameRaw");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=88)]
+        public string evMiddle {
+            get {
+                return this.evMiddleField;
+            }
+            set {
+                this.evMiddleField = value;
+                this.RaisePropertyChanged("evMiddle");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=89)]
+        public string evLastNameRaw {
+            get {
+                return this.evLastNameRawField;
+            }
+            set {
+                this.evLastNameRawField = value;
+                this.RaisePropertyChanged("evLastNameRaw");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=90)]
+        public string evLastName {
+            get {
+                return this.evLastNameField;
+            }
+            set {
+                this.evLastNameField = value;
+                this.RaisePropertyChanged("evLastName");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=91)]
+        public string settlementDate {
+            get {
+                return this.settlementDateField;
+            }
+            set {
+                this.settlementDateField = value;
+                this.RaisePropertyChanged("settlementDate");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=92)]
+        public AdditionalToken additionalToken {
+            get {
+                return this.additionalTokenField;
+            }
+            set {
+                this.additionalTokenField = value;
+                this.RaisePropertyChanged("additionalToken");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=93)]
+        public string paymentTypeIndicator {
+            get {
+                return this.paymentTypeIndicatorField;
+            }
+            set {
+                this.paymentTypeIndicatorField = value;
+                this.RaisePropertyChanged("paymentTypeIndicator");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=94)]
+        public string paymentNetworkTransactionInformation {
+            get {
+                return this.paymentNetworkTransactionInformationField;
+            }
+            set {
+                this.paymentNetworkTransactionInformationField = value;
+                this.RaisePropertyChanged("paymentNetworkTransactionInformation");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=95)]
+        public authenticationData authenticationData {
+            get {
+                return this.authenticationDataField;
+            }
+            set {
+                this.authenticationDataField = value;
+                this.RaisePropertyChanged("authenticationData");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=96)]
+        public accountHolder accountHolder {
+            get {
+                return this.accountHolderField;
+            }
+            set {
+                this.accountHolderField = value;
+                this.RaisePropertyChanged("accountHolder");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=97)]
+        public string eligibilityIndicator {
+            get {
+                return this.eligibilityIndicatorField;
+            }
+            set {
+                this.eligibilityIndicatorField = value;
+                this.RaisePropertyChanged("eligibilityIndicator");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=98)]
+        public string transactionType {
+            get {
+                return this.transactionTypeField;
+            }
+            set {
+                this.transactionTypeField = value;
+                this.RaisePropertyChanged("transactionType");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=99)]
+        public serviceProcessing serviceProcessing {
+            get {
+                return this.serviceProcessingField;
+            }
+            set {
+                this.serviceProcessingField = value;
+                this.RaisePropertyChanged("serviceProcessing");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=100)]
+        public benefit benefit {
+            get {
+                return this.benefitField;
+            }
+            set {
+                this.benefitField = value;
+                this.RaisePropertyChanged("benefit");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=101)]
+        public merchant merchant {
+            get {
+                return this.merchantField;
+            }
+            set {
+                this.merchantField = value;
+                this.RaisePropertyChanged("merchant");
             }
         }
         
@@ -28554,11 +31300,43 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
+    public partial class serviceProcessing : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string serviceTypeField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string serviceType {
+            get {
+                return this.serviceTypeField;
+            }
+            set {
+                this.serviceTypeField = value;
+                this.RaisePropertyChanged("serviceType");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class DeniedPartiesMatch : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string listField;
@@ -28628,11 +31406,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class ReplyMessage : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string merchantReferenceCodeField;
@@ -28673,9 +31451,13 @@ namespace CyberSource.Clients.SoapServiceReference {
         
         private CCCreditReply ccCreditReplyField;
         
+        private CCCreditAuthReply ccCreditAuthReplyField;
+        
         private CCAuthReversalReply ccAuthReversalReplyField;
         
         private CCAutoAuthReversalReply ccAutoAuthReversalReplyField;
+        
+        private CCCreditAuthReversalReply ccCreditAuthReversalReplyField;
         
         private CCDCCReply ccDCCReplyField;
         
@@ -28879,6 +31661,8 @@ namespace CyberSource.Clients.SoapServiceReference {
         
         private string paymentAccountReferenceField;
         
+        private string paymentSolutionField;
+        
         private string authIndicatorField;
         
         private UCAF ucafField;
@@ -28906,6 +31690,8 @@ namespace CyberSource.Clients.SoapServiceReference {
         private string issuerMessageActionField;
         
         private string customerIDField;
+        
+        private string partnerOriginalTransactionIDField;
         
         private Routing routingField;
         
@@ -28941,11 +31727,31 @@ namespace CyberSource.Clients.SoapServiceReference {
         
         private GiftCardReversalReply giftCardReversalReplyField;
         
+        private GiftCardReloadReply giftCardReloadReplyField;
+        
+        private GiftCardRefundReply giftCardRefundReplyField;
+        
         private CCCheckStatusReply ccCheckStatusReplyField;
         
         private ECAVSReply ecAVSReplyField;
         
         private AbortReply abortReplyField;
+        
+        private payByPoints payByPointsField;
+        
+        private Customer customerField;
+        
+        private string saveIdField;
+        
+        private AuthorizationOptions authorizationOptionsField;
+        
+        private APCaptureService apCaptureServiceField;
+        
+        private string finalCaptureField;
+        
+        private string disbursementModeField;
+        
+        private EmbeddedActions embeddedActionsField;
         
         private ReplyReserved reservedField;
         
@@ -29179,6 +31985,18 @@ namespace CyberSource.Clients.SoapServiceReference {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=19)]
+        public CCCreditAuthReply ccCreditAuthReply {
+            get {
+                return this.ccCreditAuthReplyField;
+            }
+            set {
+                this.ccCreditAuthReplyField = value;
+                this.RaisePropertyChanged("ccCreditAuthReply");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=20)]
         public CCAuthReversalReply ccAuthReversalReply {
             get {
                 return this.ccAuthReversalReplyField;
@@ -29190,7 +32008,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=20)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=21)]
         public CCAutoAuthReversalReply ccAutoAuthReversalReply {
             get {
                 return this.ccAutoAuthReversalReplyField;
@@ -29202,7 +32020,19 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=21)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=22)]
+        public CCCreditAuthReversalReply ccCreditAuthReversalReply {
+            get {
+                return this.ccCreditAuthReversalReplyField;
+            }
+            set {
+                this.ccCreditAuthReversalReplyField = value;
+                this.RaisePropertyChanged("ccCreditAuthReversalReply");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=23)]
         public CCDCCReply ccDCCReply {
             get {
                 return this.ccDCCReplyField;
@@ -29214,7 +32044,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=22)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=24)]
         public CCDCCUpdateReply ccDCCUpdateReply {
             get {
                 return this.ccDCCUpdateReplyField;
@@ -29226,7 +32056,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=23)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=25)]
         public ECDebitReply ecDebitReply {
             get {
                 return this.ecDebitReplyField;
@@ -29238,7 +32068,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=24)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=26)]
         public ECCreditReply ecCreditReply {
             get {
                 return this.ecCreditReplyField;
@@ -29250,7 +32080,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=25)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=27)]
         public ECAuthenticateReply ecAuthenticateReply {
             get {
                 return this.ecAuthenticateReplyField;
@@ -29262,7 +32092,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=26)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=28)]
         public PayerAuthSetupReply payerAuthSetupReply {
             get {
                 return this.payerAuthSetupReplyField;
@@ -29274,7 +32104,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=27)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=29)]
         public PayerAuthEnrollReply payerAuthEnrollReply {
             get {
                 return this.payerAuthEnrollReplyField;
@@ -29286,7 +32116,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=28)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=30)]
         public PayerAuthValidateReply payerAuthValidateReply {
             get {
                 return this.payerAuthValidateReplyField;
@@ -29298,7 +32128,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=29)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=31)]
         public TaxReply taxReply {
             get {
                 return this.taxReplyField;
@@ -29310,7 +32140,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=30)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=32)]
         public EncryptedPayment encryptedPayment {
             get {
                 return this.encryptedPaymentField;
@@ -29322,7 +32152,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=31)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=33)]
         public EncryptPaymentDataReply encryptPaymentDataReply {
             get {
                 return this.encryptPaymentDataReplyField;
@@ -29334,7 +32164,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=32)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=34)]
         public DMEReply dmeReply {
             get {
                 return this.dmeReplyField;
@@ -29346,7 +32176,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=33)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=35)]
         public AFSReply afsReply {
             get {
                 return this.afsReplyField;
@@ -29358,7 +32188,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=34)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=36)]
         public DAVReply davReply {
             get {
                 return this.davReplyField;
@@ -29370,7 +32200,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=35)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=37)]
         public ExportReply exportReply {
             get {
                 return this.exportReplyField;
@@ -29382,7 +32212,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=36)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=38)]
         public FXRatesReply fxRatesReply {
             get {
                 return this.fxRatesReplyField;
@@ -29394,7 +32224,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=37)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=39)]
         public BankTransferReply bankTransferReply {
             get {
                 return this.bankTransferReplyField;
@@ -29406,7 +32236,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=38)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=40)]
         public BankTransferRefundReply bankTransferRefundReply {
             get {
                 return this.bankTransferRefundReplyField;
@@ -29418,7 +32248,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=39)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=41)]
         public BankTransferRealTimeReply bankTransferRealTimeReply {
             get {
                 return this.bankTransferRealTimeReplyField;
@@ -29430,7 +32260,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=40)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=42)]
         public DirectDebitMandateReply directDebitMandateReply {
             get {
                 return this.directDebitMandateReplyField;
@@ -29442,7 +32272,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=41)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=43)]
         public DirectDebitReply directDebitReply {
             get {
                 return this.directDebitReplyField;
@@ -29454,7 +32284,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=42)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=44)]
         public DirectDebitValidateReply directDebitValidateReply {
             get {
                 return this.directDebitValidateReplyField;
@@ -29466,7 +32296,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=43)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=45)]
         public DirectDebitRefundReply directDebitRefundReply {
             get {
                 return this.directDebitRefundReplyField;
@@ -29478,7 +32308,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=44)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=46)]
         public PaySubscriptionCreateReply paySubscriptionCreateReply {
             get {
                 return this.paySubscriptionCreateReplyField;
@@ -29490,7 +32320,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=45)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=47)]
         public PaySubscriptionUpdateReply paySubscriptionUpdateReply {
             get {
                 return this.paySubscriptionUpdateReplyField;
@@ -29502,7 +32332,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=46)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=48)]
         public PaySubscriptionEventUpdateReply paySubscriptionEventUpdateReply {
             get {
                 return this.paySubscriptionEventUpdateReplyField;
@@ -29514,7 +32344,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=47)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=49)]
         public PaySubscriptionRetrieveReply paySubscriptionRetrieveReply {
             get {
                 return this.paySubscriptionRetrieveReplyField;
@@ -29526,7 +32356,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=48)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=50)]
         public PaySubscriptionDeleteReply paySubscriptionDeleteReply {
             get {
                 return this.paySubscriptionDeleteReplyField;
@@ -29538,7 +32368,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=49)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=51)]
         public PayPalPaymentReply payPalPaymentReply {
             get {
                 return this.payPalPaymentReplyField;
@@ -29550,7 +32380,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=50)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=52)]
         public PayPalCreditReply payPalCreditReply {
             get {
                 return this.payPalCreditReplyField;
@@ -29562,7 +32392,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=51)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=53)]
         public VoidReply voidReply {
             get {
                 return this.voidReplyField;
@@ -29574,7 +32404,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=52)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=54)]
         public PinlessDebitReply pinlessDebitReply {
             get {
                 return this.pinlessDebitReplyField;
@@ -29586,7 +32416,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=53)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=55)]
         public PinlessDebitValidateReply pinlessDebitValidateReply {
             get {
                 return this.pinlessDebitValidateReplyField;
@@ -29598,7 +32428,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=54)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=56)]
         public PinlessDebitReversalReply pinlessDebitReversalReply {
             get {
                 return this.pinlessDebitReversalReplyField;
@@ -29610,7 +32440,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=55)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=57)]
         public PayPalButtonCreateReply payPalButtonCreateReply {
             get {
                 return this.payPalButtonCreateReplyField;
@@ -29622,7 +32452,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=56)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=58)]
         public PayPalPreapprovedPaymentReply payPalPreapprovedPaymentReply {
             get {
                 return this.payPalPreapprovedPaymentReplyField;
@@ -29634,7 +32464,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=57)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=59)]
         public PayPalPreapprovedUpdateReply payPalPreapprovedUpdateReply {
             get {
                 return this.payPalPreapprovedUpdateReplyField;
@@ -29646,7 +32476,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=58)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=60)]
         public RiskUpdateReply riskUpdateReply {
             get {
                 return this.riskUpdateReplyField;
@@ -29658,7 +32488,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=59)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=61)]
         public FraudUpdateReply fraudUpdateReply {
             get {
                 return this.fraudUpdateReplyField;
@@ -29670,7 +32500,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=60)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=62)]
         public CaseManagementActionReply caseManagementActionReply {
             get {
                 return this.caseManagementActionReplyField;
@@ -29682,7 +32512,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=61)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=63)]
         public DecisionEarlyReply decisionEarlyReply {
             get {
                 return this.decisionEarlyReplyField;
@@ -29694,7 +32524,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=62)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=64)]
         public DecisionReply decisionReply {
             get {
                 return this.decisionReplyField;
@@ -29706,7 +32536,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=63)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=65)]
         public PayPalRefundReply payPalRefundReply {
             get {
                 return this.payPalRefundReplyField;
@@ -29718,7 +32548,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=64)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=66)]
         public PayPalAuthReversalReply payPalAuthReversalReply {
             get {
                 return this.payPalAuthReversalReplyField;
@@ -29730,7 +32560,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=65)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=67)]
         public PayPalDoCaptureReply payPalDoCaptureReply {
             get {
                 return this.payPalDoCaptureReplyField;
@@ -29742,7 +32572,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=66)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=68)]
         public PayPalEcDoPaymentReply payPalEcDoPaymentReply {
             get {
                 return this.payPalEcDoPaymentReplyField;
@@ -29754,7 +32584,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=67)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=69)]
         public PayPalEcGetDetailsReply payPalEcGetDetailsReply {
             get {
                 return this.payPalEcGetDetailsReplyField;
@@ -29766,7 +32596,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=68)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=70)]
         public PayPalEcSetReply payPalEcSetReply {
             get {
                 return this.payPalEcSetReplyField;
@@ -29778,7 +32608,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=69)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=71)]
         public PayPalAuthorizationReply payPalAuthorizationReply {
             get {
                 return this.payPalAuthorizationReplyField;
@@ -29790,7 +32620,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=70)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=72)]
         public PayPalEcOrderSetupReply payPalEcOrderSetupReply {
             get {
                 return this.payPalEcOrderSetupReplyField;
@@ -29802,7 +32632,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=71)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=73)]
         public PayPalUpdateAgreementReply payPalUpdateAgreementReply {
             get {
                 return this.payPalUpdateAgreementReplyField;
@@ -29814,7 +32644,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=72)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=74)]
         public PayPalCreateAgreementReply payPalCreateAgreementReply {
             get {
                 return this.payPalCreateAgreementReplyField;
@@ -29826,7 +32656,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=73)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=75)]
         public PayPalDoRefTransactionReply payPalDoRefTransactionReply {
             get {
                 return this.payPalDoRefTransactionReplyField;
@@ -29838,7 +32668,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=74)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=76)]
         public ChinaPaymentReply chinaPaymentReply {
             get {
                 return this.chinaPaymentReplyField;
@@ -29850,7 +32680,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=75)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=77)]
         public ChinaRefundReply chinaRefundReply {
             get {
                 return this.chinaRefundReplyField;
@@ -29862,7 +32692,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=76)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=78)]
         public BoletoPaymentReply boletoPaymentReply {
             get {
                 return this.boletoPaymentReplyField;
@@ -29874,7 +32704,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=77)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=79)]
         public PinDebitPurchaseReply pinDebitPurchaseReply {
             get {
                 return this.pinDebitPurchaseReplyField;
@@ -29886,7 +32716,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=78)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=80)]
         public PinDebitCreditReply pinDebitCreditReply {
             get {
                 return this.pinDebitCreditReplyField;
@@ -29898,7 +32728,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=79)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=81)]
         public PinDebitReversalReply pinDebitReversalReply {
             get {
                 return this.pinDebitReversalReplyField;
@@ -29910,7 +32740,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=80)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=82)]
         public APInitiateReply apInitiateReply {
             get {
                 return this.apInitiateReplyField;
@@ -29922,7 +32752,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=81)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=83)]
         public APCheckStatusReply apCheckStatusReply {
             get {
                 return this.apCheckStatusReplyField;
@@ -29934,7 +32764,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=82)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=84)]
         public string receiptNumber {
             get {
                 return this.receiptNumberField;
@@ -29946,7 +32776,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=83)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=85)]
         public string additionalData {
             get {
                 return this.additionalDataField;
@@ -29958,7 +32788,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=84)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=86)]
         public string solutionProviderTransactionID {
             get {
                 return this.solutionProviderTransactionIDField;
@@ -29970,7 +32800,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=85)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=87)]
         public APReply apReply {
             get {
                 return this.apReplyField;
@@ -29982,7 +32812,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=86)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=88)]
         public ShipTo shipTo {
             get {
                 return this.shipToField;
@@ -29994,7 +32824,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=87)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=89)]
         public BillTo billTo {
             get {
                 return this.billToField;
@@ -30006,7 +32836,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=88)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=90)]
         public APAuthReply apAuthReply {
             get {
                 return this.apAuthReplyField;
@@ -30018,7 +32848,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=89)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=91)]
         public APSessionsReply apSessionsReply {
             get {
                 return this.apSessionsReplyField;
@@ -30030,7 +32860,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=90)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=92)]
         public APAuthReversalReply apAuthReversalReply {
             get {
                 return this.apAuthReversalReplyField;
@@ -30042,7 +32872,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=91)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=93)]
         public APCaptureReply apCaptureReply {
             get {
                 return this.apCaptureReplyField;
@@ -30054,7 +32884,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=92)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=94)]
         public APOptionsReply apOptionsReply {
             get {
                 return this.apOptionsReplyField;
@@ -30066,7 +32896,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=93)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=95)]
         public APRefundReply apRefundReply {
             get {
                 return this.apRefundReplyField;
@@ -30078,7 +32908,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=94)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=96)]
         public APSaleReply apSaleReply {
             get {
                 return this.apSaleReplyField;
@@ -30090,7 +32920,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=95)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=97)]
         public APCheckOutDetailsReply apCheckoutDetailsReply {
             get {
                 return this.apCheckoutDetailsReplyField;
@@ -30102,7 +32932,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=96)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=98)]
         public APTransactionDetailsReply apTransactionDetailsReply {
             get {
                 return this.apTransactionDetailsReplyField;
@@ -30114,7 +32944,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=97)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=99)]
         public APConfirmPurchaseReply apConfirmPurchaseReply {
             get {
                 return this.apConfirmPurchaseReplyField;
@@ -30126,7 +32956,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=98)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=100)]
         public Promotion promotion {
             get {
                 return this.promotionField;
@@ -30138,7 +32968,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("promotionGroup", Order=99)]
+        [System.Xml.Serialization.XmlElementAttribute("promotionGroup", Order=101)]
         public PromotionGroupReply[] promotionGroup {
             get {
                 return this.promotionGroupField;
@@ -30150,7 +32980,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=100)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=102)]
         public PayPalGetTxnDetailsReply payPalGetTxnDetailsReply {
             get {
                 return this.payPalGetTxnDetailsReplyField;
@@ -30162,7 +32992,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=101)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=103)]
         public PayPalTransactionSearchReply payPalTransactionSearchReply {
             get {
                 return this.payPalTransactionSearchReplyField;
@@ -30174,7 +33004,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=102)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=104)]
         public EmvReply emvReply {
             get {
                 return this.emvReplyField;
@@ -30186,7 +33016,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=103)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=105)]
         public OriginalTransaction originalTransaction {
             get {
                 return this.originalTransactionField;
@@ -30198,7 +33028,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=104)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=106)]
         public HostedDataCreateReply hostedDataCreateReply {
             get {
                 return this.hostedDataCreateReplyField;
@@ -30210,7 +33040,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=105)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=107)]
         public HostedDataRetrieveReply hostedDataRetrieveReply {
             get {
                 return this.hostedDataRetrieveReplyField;
@@ -30222,7 +33052,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=106)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=108)]
         public string salesSlipNumber {
             get {
                 return this.salesSlipNumberField;
@@ -30234,7 +33064,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=107)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=109)]
         public string additionalProcessorResponse {
             get {
                 return this.additionalProcessorResponseField;
@@ -30246,7 +33076,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=108)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=110)]
         public JPO jpo {
             get {
                 return this.jpoField;
@@ -30258,7 +33088,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=109)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=111)]
         public Card card {
             get {
                 return this.cardField;
@@ -30270,7 +33100,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=110)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=112)]
         public PaymentNetworkToken paymentNetworkToken {
             get {
                 return this.paymentNetworkTokenField;
@@ -30282,7 +33112,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=111)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=113)]
         public VCReply vcReply {
             get {
                 return this.vcReplyField;
@@ -30294,7 +33124,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=112)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=114)]
         public DecryptVisaCheckoutDataReply decryptVisaCheckoutDataReply {
             get {
                 return this.decryptVisaCheckoutDataReplyField;
@@ -30306,7 +33136,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=113)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=115)]
         public GetVisaCheckoutDataReply getVisaCheckoutDataReply {
             get {
                 return this.getVisaCheckoutDataReplyField;
@@ -30318,7 +33148,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=114)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=116)]
         public BinLookupReply binLookupReply {
             get {
                 return this.binLookupReplyField;
@@ -30330,7 +33160,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=115)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=117)]
         public string issuerMessage {
             get {
                 return this.issuerMessageField;
@@ -30342,7 +33172,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=116)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=118)]
         public Token token {
             get {
                 return this.tokenField;
@@ -30354,7 +33184,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=117)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=119)]
         public issuer issuer {
             get {
                 return this.issuerField;
@@ -30366,7 +33196,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=118)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=120)]
         public Recipient recipient {
             get {
                 return this.recipientField;
@@ -30378,7 +33208,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=119)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=121)]
         public string feeProgramIndicator {
             get {
                 return this.feeProgramIndicatorField;
@@ -30390,7 +33220,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=120)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=122)]
         public Installment installment {
             get {
                 return this.installmentField;
@@ -30402,7 +33232,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=121)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=123)]
         public string paymentAccountReference {
             get {
                 return this.paymentAccountReferenceField;
@@ -30414,7 +33244,19 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=122)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=124)]
+        public string paymentSolution {
+            get {
+                return this.paymentSolutionField;
+            }
+            set {
+                this.paymentSolutionField = value;
+                this.RaisePropertyChanged("paymentSolution");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=125)]
         public string authIndicator {
             get {
                 return this.authIndicatorField;
@@ -30426,7 +33268,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=123)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=126)]
         public UCAF ucaf {
             get {
                 return this.ucafField;
@@ -30438,7 +33280,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("network", Order=124)]
+        [System.Xml.Serialization.XmlElementAttribute("network", Order=127)]
         public Network[] network {
             get {
                 return this.networkField;
@@ -30450,7 +33292,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=125)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=128)]
         public InvoiceHeader invoiceHeader {
             get {
                 return this.invoiceHeaderField;
@@ -30462,7 +33304,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=126)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=129)]
         public APOrderReply apOrderReply {
             get {
                 return this.apOrderReplyField;
@@ -30474,7 +33316,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=127)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=130)]
         public APCancelReply apCancelReply {
             get {
                 return this.apCancelReplyField;
@@ -30486,7 +33328,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=128)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=131)]
         public APBillingAgreementReply apBillingAgreementReply {
             get {
                 return this.apBillingAgreementReplyField;
@@ -30498,7 +33340,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=129)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=132)]
         public string customerVerificationStatus {
             get {
                 return this.customerVerificationStatusField;
@@ -30510,7 +33352,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=130)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=133)]
         public PersonalID personalID {
             get {
                 return this.personalIDField;
@@ -30522,7 +33364,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=131)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=134)]
         public string acquirerMerchantNumber {
             get {
                 return this.acquirerMerchantNumberField;
@@ -30534,7 +33376,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=132)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=135)]
         public Pos pos {
             get {
                 return this.posField;
@@ -30546,7 +33388,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("balanceInfo", Order=133)]
+        [System.Xml.Serialization.XmlElementAttribute("balanceInfo", Order=136)]
         public BalanceInfo[] balanceInfo {
             get {
                 return this.balanceInfoField;
@@ -30558,7 +33400,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=134)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=137)]
         public string issuerMessageAction {
             get {
                 return this.issuerMessageActionField;
@@ -30570,7 +33412,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=135)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=138)]
         public string customerID {
             get {
                 return this.customerIDField;
@@ -30582,7 +33424,19 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=136)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=139)]
+        public string partnerOriginalTransactionID {
+            get {
+                return this.partnerOriginalTransactionIDField;
+            }
+            set {
+                this.partnerOriginalTransactionIDField = value;
+                this.RaisePropertyChanged("partnerOriginalTransactionID");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=140)]
         public Routing routing {
             get {
                 return this.routingField;
@@ -30594,7 +33448,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=137)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=141)]
         public string transactionLocalDateTime {
             get {
                 return this.transactionLocalDateTimeField;
@@ -30606,7 +33460,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=138)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=142)]
         public APCreateMandateReply apCreateMandateReply {
             get {
                 return this.apCreateMandateReplyField;
@@ -30618,7 +33472,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=139)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=143)]
         public APMandateStatusReply apMandateStatusReply {
             get {
                 return this.apMandateStatusReplyField;
@@ -30630,7 +33484,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=140)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=144)]
         public APUpdateMandateReply apUpdateMandateReply {
             get {
                 return this.apUpdateMandateReplyField;
@@ -30642,7 +33496,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=141)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=145)]
         public APImportMandateReply apImportMandateReply {
             get {
                 return this.apImportMandateReplyField;
@@ -30654,7 +33508,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=142)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=146)]
         public APRevokeMandateReply apRevokeMandateReply {
             get {
                 return this.apRevokeMandateReplyField;
@@ -30666,7 +33520,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=143)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=147)]
         public GetMasterpassDataReply getMasterpassDataReply {
             get {
                 return this.getMasterpassDataReplyField;
@@ -30678,7 +33532,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=144)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=148)]
         public string paymentNetworkMerchantID {
             get {
                 return this.paymentNetworkMerchantIDField;
@@ -30690,7 +33544,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=145)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=149)]
         public Wallet wallet {
             get {
                 return this.walletField;
@@ -30702,7 +33556,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=146)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=150)]
         public string cashbackAmount {
             get {
                 return this.cashbackAmountField;
@@ -30714,7 +33568,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=147)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=151)]
         public GiftCard giftCard {
             get {
                 return this.giftCardField;
@@ -30726,7 +33580,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=148)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=152)]
         public GiftCardActivationReply giftCardActivationReply {
             get {
                 return this.giftCardActivationReplyField;
@@ -30738,7 +33592,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=149)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=153)]
         public GiftCardBalanceInquiryReply giftCardBalanceInquiryReply {
             get {
                 return this.giftCardBalanceInquiryReplyField;
@@ -30750,7 +33604,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=150)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=154)]
         public GiftCardRedemptionReply giftCardRedemptionReply {
             get {
                 return this.giftCardRedemptionReplyField;
@@ -30762,7 +33616,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=151)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=155)]
         public GiftCardVoidReply giftCardVoidReply {
             get {
                 return this.giftCardVoidReplyField;
@@ -30774,7 +33628,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=152)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=156)]
         public GiftCardReversalReply giftCardReversalReply {
             get {
                 return this.giftCardReversalReplyField;
@@ -30786,7 +33640,31 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=153)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=157)]
+        public GiftCardReloadReply giftCardReloadReply {
+            get {
+                return this.giftCardReloadReplyField;
+            }
+            set {
+                this.giftCardReloadReplyField = value;
+                this.RaisePropertyChanged("giftCardReloadReply");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=158)]
+        public GiftCardRefundReply giftCardRefundReply {
+            get {
+                return this.giftCardRefundReplyField;
+            }
+            set {
+                this.giftCardRefundReplyField = value;
+                this.RaisePropertyChanged("giftCardRefundReply");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=159)]
         public CCCheckStatusReply ccCheckStatusReply {
             get {
                 return this.ccCheckStatusReplyField;
@@ -30798,7 +33676,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=154)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=160)]
         public ECAVSReply ecAVSReply {
             get {
                 return this.ecAVSReplyField;
@@ -30810,7 +33688,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=155)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=161)]
         public AbortReply abortReply {
             get {
                 return this.abortReplyField;
@@ -30822,7 +33700,103 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=156)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=162)]
+        public payByPoints payByPoints {
+            get {
+                return this.payByPointsField;
+            }
+            set {
+                this.payByPointsField = value;
+                this.RaisePropertyChanged("payByPoints");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=163)]
+        public Customer customer {
+            get {
+                return this.customerField;
+            }
+            set {
+                this.customerField = value;
+                this.RaisePropertyChanged("customer");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=164)]
+        public string saveId {
+            get {
+                return this.saveIdField;
+            }
+            set {
+                this.saveIdField = value;
+                this.RaisePropertyChanged("saveId");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=165)]
+        public AuthorizationOptions authorizationOptions {
+            get {
+                return this.authorizationOptionsField;
+            }
+            set {
+                this.authorizationOptionsField = value;
+                this.RaisePropertyChanged("authorizationOptions");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=166)]
+        public APCaptureService apCaptureService {
+            get {
+                return this.apCaptureServiceField;
+            }
+            set {
+                this.apCaptureServiceField = value;
+                this.RaisePropertyChanged("apCaptureService");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=167)]
+        public string finalCapture {
+            get {
+                return this.finalCaptureField;
+            }
+            set {
+                this.finalCaptureField = value;
+                this.RaisePropertyChanged("finalCapture");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=168)]
+        public string disbursementMode {
+            get {
+                return this.disbursementModeField;
+            }
+            set {
+                this.disbursementModeField = value;
+                this.RaisePropertyChanged("disbursementMode");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=169)]
+        public EmbeddedActions embeddedActions {
+            get {
+                return this.embeddedActionsField;
+            }
+            set {
+                this.embeddedActionsField = value;
+                this.RaisePropertyChanged("embeddedActions");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=170)]
         public ReplyReserved reserved {
             get {
                 return this.reservedField;
@@ -30844,11 +33818,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class PurchaseTotals : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string currencyField;
@@ -30920,6 +33894,12 @@ namespace CyberSource.Clients.SoapServiceReference {
         private string giftWrapAmountField;
         
         private string insuranceAmountField;
+        
+        private string invoiceAmountField;
+        
+        private string totalAmountBeforeBenefitsField;
+        
+        private string anticipatedAmountField;
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=0)]
@@ -31341,6 +34321,42 @@ namespace CyberSource.Clients.SoapServiceReference {
             }
         }
         
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=35)]
+        public string invoiceAmount {
+            get {
+                return this.invoiceAmountField;
+            }
+            set {
+                this.invoiceAmountField = value;
+                this.RaisePropertyChanged("invoiceAmount");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=36)]
+        public string totalAmountBeforeBenefits {
+            get {
+                return this.totalAmountBeforeBenefitsField;
+            }
+            set {
+                this.totalAmountBeforeBenefitsField = value;
+                this.RaisePropertyChanged("totalAmountBeforeBenefits");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=37)]
+        public string anticipatedAmount {
+            get {
+                return this.anticipatedAmountField;
+            }
+            set {
+                this.anticipatedAmountField = value;
+                this.RaisePropertyChanged("anticipatedAmount");
+            }
+        }
+        
         public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
         
         protected void RaisePropertyChanged(string propertyName) {
@@ -31352,11 +34368,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class EncryptedPayment : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string descriptorField;
@@ -31468,11 +34484,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class ShipTo : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string titleField;
@@ -31534,6 +34550,8 @@ namespace CyberSource.Clients.SoapServiceReference {
         private string defaultField;
         
         private string destinationTypesField;
+        
+        private string methodField;
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=0)]
@@ -31895,6 +34913,18 @@ namespace CyberSource.Clients.SoapServiceReference {
             }
         }
         
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=30)]
+        public string method {
+            get {
+                return this.methodField;
+            }
+            set {
+                this.methodField = value;
+                this.RaisePropertyChanged("method");
+            }
+        }
+        
         public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
         
         protected void RaisePropertyChanged(string propertyName) {
@@ -31906,11 +34936,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class BillTo : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string titleField;
@@ -32038,6 +35068,14 @@ namespace CyberSource.Clients.SoapServiceReference {
         private string httpBrowserScreenWidthField;
         
         private string httpBrowserTimeDifferenceField;
+        
+        private string alternatePhoneNumberField;
+        
+        private string alternateEmailField;
+        
+        private string phoneTypeField;
+        
+        private string userNameField;
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=0)]
@@ -32795,6 +35833,54 @@ namespace CyberSource.Clients.SoapServiceReference {
             }
         }
         
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=63)]
+        public string alternatePhoneNumber {
+            get {
+                return this.alternatePhoneNumberField;
+            }
+            set {
+                this.alternatePhoneNumberField = value;
+                this.RaisePropertyChanged("alternatePhoneNumber");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=64)]
+        public string alternateEmail {
+            get {
+                return this.alternateEmailField;
+            }
+            set {
+                this.alternateEmailField = value;
+                this.RaisePropertyChanged("alternateEmail");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=65)]
+        public string phoneType {
+            get {
+                return this.phoneTypeField;
+            }
+            set {
+                this.phoneTypeField = value;
+                this.RaisePropertyChanged("phoneType");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=66)]
+        public string userName {
+            get {
+                return this.userNameField;
+            }
+            set {
+                this.userNameField = value;
+                this.RaisePropertyChanged("userName");
+            }
+        }
+        
         public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
         
         protected void RaisePropertyChanged(string propertyName) {
@@ -32806,11 +35892,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class Promotion : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string discountedAmountField;
@@ -32922,11 +36008,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class JPO : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string paymentMethodField;
@@ -32950,6 +36036,14 @@ namespace CyberSource.Clients.SoapServiceReference {
         private string businessNameJapaneseField;
         
         private string businessNameKatakanaField;
+        
+        private string bonusMonthField;
+        
+        private string secondBonusMonthField;
+        
+        private string secondBonusAmountField;
+        
+        private string preapprovalTypeField;
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(DataType="integer", Order=0)]
@@ -33083,6 +36177,54 @@ namespace CyberSource.Clients.SoapServiceReference {
             }
         }
         
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=11)]
+        public string bonusMonth {
+            get {
+                return this.bonusMonthField;
+            }
+            set {
+                this.bonusMonthField = value;
+                this.RaisePropertyChanged("bonusMonth");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=12)]
+        public string secondBonusMonth {
+            get {
+                return this.secondBonusMonthField;
+            }
+            set {
+                this.secondBonusMonthField = value;
+                this.RaisePropertyChanged("secondBonusMonth");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=13)]
+        public string secondBonusAmount {
+            get {
+                return this.secondBonusAmountField;
+            }
+            set {
+                this.secondBonusAmountField = value;
+                this.RaisePropertyChanged("secondBonusAmount");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=14)]
+        public string preapprovalType {
+            get {
+                return this.preapprovalTypeField;
+            }
+            set {
+                this.preapprovalTypeField = value;
+                this.RaisePropertyChanged("preapprovalType");
+            }
+        }
+        
         public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
         
         protected void RaisePropertyChanged(string propertyName) {
@@ -33094,11 +36236,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class Card : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string fullNameField;
@@ -33190,6 +36332,12 @@ namespace CyberSource.Clients.SoapServiceReference {
         private string comboCardTypeField;
         
         private string prepaidIndicatorField;
+        
+        private string passPhraseField;
+        
+        private string personalDataField;
+        
+        private string hashedAccountNumberField;
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=0)]
@@ -33731,6 +36879,42 @@ namespace CyberSource.Clients.SoapServiceReference {
             }
         }
         
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=45)]
+        public string passPhrase {
+            get {
+                return this.passPhraseField;
+            }
+            set {
+                this.passPhraseField = value;
+                this.RaisePropertyChanged("passPhrase");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=46)]
+        public string personalData {
+            get {
+                return this.personalDataField;
+            }
+            set {
+                this.personalDataField = value;
+                this.RaisePropertyChanged("personalData");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=47)]
+        public string hashedAccountNumber {
+            get {
+                return this.hashedAccountNumberField;
+            }
+            set {
+                this.hashedAccountNumberField = value;
+                this.RaisePropertyChanged("hashedAccountNumber");
+            }
+        }
+        
         public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
         
         protected void RaisePropertyChanged(string propertyName) {
@@ -33742,11 +36926,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class Brands : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string nameField;
@@ -33800,11 +36984,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class PaymentNetworkToken : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string requestorIDField;
@@ -33812,6 +36996,8 @@ namespace CyberSource.Clients.SoapServiceReference {
         private string transactionTypeField;
         
         private string assuranceLevelField;
+        
+        private string assuranceMethodField;
         
         private string accountStatusField;
         
@@ -33857,6 +37043,18 @@ namespace CyberSource.Clients.SoapServiceReference {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public string assuranceMethod {
+            get {
+                return this.assuranceMethodField;
+            }
+            set {
+                this.assuranceMethodField = value;
+                this.RaisePropertyChanged("assuranceMethod");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
         public string accountStatus {
             get {
                 return this.accountStatusField;
@@ -33868,7 +37066,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
         public string originalCardCategory {
             get {
                 return this.originalCardCategoryField;
@@ -33880,7 +37078,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=6)]
         public string deviceTechType {
             get {
                 return this.deviceTechTypeField;
@@ -33902,11 +37100,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class issuer : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string additionalDataField;
@@ -33924,6 +37122,16 @@ namespace CyberSource.Clients.SoapServiceReference {
         private string riskAnalysisExemptionResultField;
         
         private string trustedMerchantExemptionResultField;
+        
+        private string lowValueExemptionResultField;
+        
+        private string secureCorporatePaymentResultField;
+        
+        private string transactionRiskAnalysisExemptionResultField;
+        
+        private string messageField;
+        
+        private string clearingDataField;
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=0)]
@@ -34021,6 +37229,66 @@ namespace CyberSource.Clients.SoapServiceReference {
             }
         }
         
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=8)]
+        public string lowValueExemptionResult {
+            get {
+                return this.lowValueExemptionResultField;
+            }
+            set {
+                this.lowValueExemptionResultField = value;
+                this.RaisePropertyChanged("lowValueExemptionResult");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=9)]
+        public string secureCorporatePaymentResult {
+            get {
+                return this.secureCorporatePaymentResultField;
+            }
+            set {
+                this.secureCorporatePaymentResultField = value;
+                this.RaisePropertyChanged("secureCorporatePaymentResult");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=10)]
+        public string transactionRiskAnalysisExemptionResult {
+            get {
+                return this.transactionRiskAnalysisExemptionResultField;
+            }
+            set {
+                this.transactionRiskAnalysisExemptionResultField = value;
+                this.RaisePropertyChanged("transactionRiskAnalysisExemptionResult");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=11)]
+        public string message {
+            get {
+                return this.messageField;
+            }
+            set {
+                this.messageField = value;
+                this.RaisePropertyChanged("message");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=12)]
+        public string clearingData {
+            get {
+                return this.clearingDataField;
+            }
+            set {
+                this.clearingDataField = value;
+                this.RaisePropertyChanged("clearingData");
+            }
+        }
+        
         public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
         
         protected void RaisePropertyChanged(string propertyName) {
@@ -34032,11 +37300,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class Recipient : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string dateOfBirthField;
@@ -34044,6 +37312,8 @@ namespace CyberSource.Clients.SoapServiceReference {
         private string postalCodeField;
         
         private string accountIDField;
+        
+        private string accountTypeField;
         
         private string lastNameField;
         
@@ -34057,6 +37327,8 @@ namespace CyberSource.Clients.SoapServiceReference {
         
         private string firstNameField;
         
+        private string middleNameField;
+        
         private string middleInitialField;
         
         private string addressField;
@@ -34068,6 +37340,22 @@ namespace CyberSource.Clients.SoapServiceReference {
         private string countryField;
         
         private string phoneNumberField;
+        
+        private string buildingNumberField;
+        
+        private string address2Field;
+        
+        private string streetNameField;
+        
+        private string aliasNameField;
+        
+        private string nationalityField;
+        
+        private string countryOfBirthField;
+        
+        private string occupationField;
+        
+        private string emailField;
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=0)]
@@ -34107,6 +37395,18 @@ namespace CyberSource.Clients.SoapServiceReference {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public string accountType {
+            get {
+                return this.accountTypeField;
+            }
+            set {
+                this.accountTypeField = value;
+                this.RaisePropertyChanged("accountType");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
         public string lastName {
             get {
                 return this.lastNameField;
@@ -34118,7 +37418,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
         public string name {
             get {
                 return this.nameField;
@@ -34130,7 +37430,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=6)]
         public string billingAmount {
             get {
                 return this.billingAmountField;
@@ -34142,7 +37442,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=6)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=7)]
         public string billingCurrency {
             get {
                 return this.billingCurrencyField;
@@ -34154,7 +37454,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=7)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=8)]
         public string billingConversionRate {
             get {
                 return this.billingConversionRateField;
@@ -34166,7 +37466,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=8)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=9)]
         public string firstName {
             get {
                 return this.firstNameField;
@@ -34178,7 +37478,19 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=9)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=10)]
+        public string middleName {
+            get {
+                return this.middleNameField;
+            }
+            set {
+                this.middleNameField = value;
+                this.RaisePropertyChanged("middleName");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=11)]
         public string middleInitial {
             get {
                 return this.middleInitialField;
@@ -34190,7 +37502,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=10)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=12)]
         public string address {
             get {
                 return this.addressField;
@@ -34202,7 +37514,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=11)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=13)]
         public string city {
             get {
                 return this.cityField;
@@ -34214,7 +37526,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=12)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=14)]
         public string state {
             get {
                 return this.stateField;
@@ -34226,7 +37538,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=13)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=15)]
         public string country {
             get {
                 return this.countryField;
@@ -34238,7 +37550,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=14)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=16)]
         public string phoneNumber {
             get {
                 return this.phoneNumberField;
@@ -34246,6 +37558,102 @@ namespace CyberSource.Clients.SoapServiceReference {
             set {
                 this.phoneNumberField = value;
                 this.RaisePropertyChanged("phoneNumber");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=17)]
+        public string buildingNumber {
+            get {
+                return this.buildingNumberField;
+            }
+            set {
+                this.buildingNumberField = value;
+                this.RaisePropertyChanged("buildingNumber");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=18)]
+        public string address2 {
+            get {
+                return this.address2Field;
+            }
+            set {
+                this.address2Field = value;
+                this.RaisePropertyChanged("address2");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=19)]
+        public string streetName {
+            get {
+                return this.streetNameField;
+            }
+            set {
+                this.streetNameField = value;
+                this.RaisePropertyChanged("streetName");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=20)]
+        public string aliasName {
+            get {
+                return this.aliasNameField;
+            }
+            set {
+                this.aliasNameField = value;
+                this.RaisePropertyChanged("aliasName");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=21)]
+        public string nationality {
+            get {
+                return this.nationalityField;
+            }
+            set {
+                this.nationalityField = value;
+                this.RaisePropertyChanged("nationality");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=22)]
+        public string countryOfBirth {
+            get {
+                return this.countryOfBirthField;
+            }
+            set {
+                this.countryOfBirthField = value;
+                this.RaisePropertyChanged("countryOfBirth");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=23)]
+        public string occupation {
+            get {
+                return this.occupationField;
+            }
+            set {
+                this.occupationField = value;
+                this.RaisePropertyChanged("occupation");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=24)]
+        public string email {
+            get {
+                return this.emailField;
+            }
+            set {
+                this.emailField = value;
+                this.RaisePropertyChanged("email");
             }
         }
         
@@ -34260,11 +37668,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class Installment : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string sequenceField;
@@ -34326,6 +37734,14 @@ namespace CyberSource.Clients.SoapServiceReference {
         private string gracePeriodDurationField;
         
         private string gracePeriodDurationTypeField;
+        
+        private string planIDField;
+        
+        private string interestAmountField;
+        
+        private string identifierField;
+        
+        private string validationIndicatorField;
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=0)]
@@ -34687,6 +38103,54 @@ namespace CyberSource.Clients.SoapServiceReference {
             }
         }
         
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=30)]
+        public string planID {
+            get {
+                return this.planIDField;
+            }
+            set {
+                this.planIDField = value;
+                this.RaisePropertyChanged("planID");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=31)]
+        public string interestAmount {
+            get {
+                return this.interestAmountField;
+            }
+            set {
+                this.interestAmountField = value;
+                this.RaisePropertyChanged("interestAmount");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=32)]
+        public string identifier {
+            get {
+                return this.identifierField;
+            }
+            set {
+                this.identifierField = value;
+                this.RaisePropertyChanged("identifier");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=33)]
+        public string validationIndicator {
+            get {
+                return this.validationIndicatorField;
+            }
+            set {
+                this.validationIndicatorField = value;
+                this.RaisePropertyChanged("validationIndicator");
+            }
+        }
+        
         public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
         
         protected void RaisePropertyChanged(string propertyName) {
@@ -34698,11 +38162,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class UCAF : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string authenticationDataField;
@@ -34758,11 +38222,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class PersonalID : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string numberField;
@@ -34860,11 +38324,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class Pos : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string entryModeField;
@@ -34940,6 +38404,10 @@ namespace CyberSource.Clients.SoapServiceReference {
         private string endlessAisleTransactionIndicatorField;
         
         private string terminalModelField;
+        
+        private string terminalMakeField;
+        
+        private string pinEntrySolutionField;
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=0)]
@@ -35385,6 +38853,30 @@ namespace CyberSource.Clients.SoapServiceReference {
             }
         }
         
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=37)]
+        public string terminalMake {
+            get {
+                return this.terminalMakeField;
+            }
+            set {
+                this.terminalMakeField = value;
+                this.RaisePropertyChanged("terminalMake");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=38)]
+        public string pinEntrySolution {
+            get {
+                return this.pinEntrySolutionField;
+            }
+            set {
+                this.pinEntrySolutionField = value;
+                this.RaisePropertyChanged("pinEntrySolution");
+            }
+        }
+        
         public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
         
         protected void RaisePropertyChanged(string propertyName) {
@@ -35396,11 +38888,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class Wallet : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string typeField;
@@ -35450,6 +38942,8 @@ namespace CyberSource.Clients.SoapServiceReference {
         private string errorCodeField;
         
         private string errorDescriptionField;
+        
+        private string pinURLField;
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=0)]
@@ -35739,6 +39233,18 @@ namespace CyberSource.Clients.SoapServiceReference {
             }
         }
         
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=24)]
+        public string pinURL {
+            get {
+                return this.pinURLField;
+            }
+            set {
+                this.pinURLField = value;
+                this.RaisePropertyChanged("pinURL");
+            }
+        }
+        
         public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
         
         protected void RaisePropertyChanged(string propertyName) {
@@ -35750,11 +39256,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class GiftCard : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string originalRequestIDField;
@@ -35767,17 +39273,9 @@ namespace CyberSource.Clients.SoapServiceReference {
         
         private string groupIDField;
         
-        private string securityValueField;
-        
         private string transactionPostingDateField;
         
-        private string additionalAccountNumberField;
-        
-        private string promoCodeField;
-        
         private string balanceCurrencyField;
-        
-        private string extendedAccountNumberField;
         
         private string previousBalanceField;
         
@@ -35798,6 +39296,16 @@ namespace CyberSource.Clients.SoapServiceReference {
         private string bonusAmountField;
         
         private string discountAmountField;
+        
+        private string extendedAccountNumberField;
+        
+        private string additionalAccountNumberField;
+        
+        private string physicalCardField;
+        
+        private string returnExtendedAccountNumberField;
+        
+        private string promoCodeField;
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=0)]
@@ -35861,18 +39369,6 @@ namespace CyberSource.Clients.SoapServiceReference {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=5)]
-        public string securityValue {
-            get {
-                return this.securityValueField;
-            }
-            set {
-                this.securityValueField = value;
-                this.RaisePropertyChanged("securityValue");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=6)]
         public string transactionPostingDate {
             get {
                 return this.transactionPostingDateField;
@@ -35884,31 +39380,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=7)]
-        public string additionalAccountNumber {
-            get {
-                return this.additionalAccountNumberField;
-            }
-            set {
-                this.additionalAccountNumberField = value;
-                this.RaisePropertyChanged("additionalAccountNumber");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=8)]
-        public string promoCode {
-            get {
-                return this.promoCodeField;
-            }
-            set {
-                this.promoCodeField = value;
-                this.RaisePropertyChanged("promoCode");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=9)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=6)]
         public string balanceCurrency {
             get {
                 return this.balanceCurrencyField;
@@ -35920,19 +39392,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=10)]
-        public string extendedAccountNumber {
-            get {
-                return this.extendedAccountNumberField;
-            }
-            set {
-                this.extendedAccountNumberField = value;
-                this.RaisePropertyChanged("extendedAccountNumber");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=11)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=7)]
         public string previousBalance {
             get {
                 return this.previousBalanceField;
@@ -35944,7 +39404,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=12)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=8)]
         public string currentBalance {
             get {
                 return this.currentBalanceField;
@@ -35956,7 +39416,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=13)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=9)]
         public string baseCurrencyPreviousBalance {
             get {
                 return this.baseCurrencyPreviousBalanceField;
@@ -35968,7 +39428,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=14)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=10)]
         public string baseCurrencyCurrentBalance {
             get {
                 return this.baseCurrencyCurrentBalanceField;
@@ -35980,7 +39440,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=15)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=11)]
         public string baseCurrencyCashbackAmount {
             get {
                 return this.baseCurrencyCashbackAmountField;
@@ -35992,7 +39452,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=16)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=12)]
         public string baseCurrency {
             get {
                 return this.baseCurrencyField;
@@ -36004,7 +39464,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=17)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=13)]
         public string expirationDate {
             get {
                 return this.expirationDateField;
@@ -36016,7 +39476,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=18)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=14)]
         public string exchangeRate {
             get {
                 return this.exchangeRateField;
@@ -36028,7 +39488,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=19)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=15)]
         public string bonusAmount {
             get {
                 return this.bonusAmountField;
@@ -36040,7 +39500,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=20)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=16)]
         public string discountAmount {
             get {
                 return this.discountAmountField;
@@ -36048,6 +39508,66 @@ namespace CyberSource.Clients.SoapServiceReference {
             set {
                 this.discountAmountField = value;
                 this.RaisePropertyChanged("discountAmount");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=17)]
+        public string extendedAccountNumber {
+            get {
+                return this.extendedAccountNumberField;
+            }
+            set {
+                this.extendedAccountNumberField = value;
+                this.RaisePropertyChanged("extendedAccountNumber");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=18)]
+        public string additionalAccountNumber {
+            get {
+                return this.additionalAccountNumberField;
+            }
+            set {
+                this.additionalAccountNumberField = value;
+                this.RaisePropertyChanged("additionalAccountNumber");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=19)]
+        public string physicalCard {
+            get {
+                return this.physicalCardField;
+            }
+            set {
+                this.physicalCardField = value;
+                this.RaisePropertyChanged("physicalCard");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=20)]
+        public string returnExtendedAccountNumber {
+            get {
+                return this.returnExtendedAccountNumberField;
+            }
+            set {
+                this.returnExtendedAccountNumberField = value;
+                this.RaisePropertyChanged("returnExtendedAccountNumber");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=21)]
+        public string promoCode {
+            get {
+                return this.promoCodeField;
+            }
+            set {
+                this.promoCodeField = value;
+                this.RaisePropertyChanged("promoCode");
             }
         }
         
@@ -36062,11 +39582,937 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
+    public partial class payByPoints : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string indicatorField;
+        
+        private string pointsBeforeRedemptionField;
+        
+        private string pointsValueBeforeRedemptionField;
+        
+        private string pointsRedeemedField;
+        
+        private string pointsValueRedeemedField;
+        
+        private string pointsAfterRedemptionField;
+        
+        private string pointsValueAfterRedemptionField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string indicator {
+            get {
+                return this.indicatorField;
+            }
+            set {
+                this.indicatorField = value;
+                this.RaisePropertyChanged("indicator");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string pointsBeforeRedemption {
+            get {
+                return this.pointsBeforeRedemptionField;
+            }
+            set {
+                this.pointsBeforeRedemptionField = value;
+                this.RaisePropertyChanged("pointsBeforeRedemption");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public string pointsValueBeforeRedemption {
+            get {
+                return this.pointsValueBeforeRedemptionField;
+            }
+            set {
+                this.pointsValueBeforeRedemptionField = value;
+                this.RaisePropertyChanged("pointsValueBeforeRedemption");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public string pointsRedeemed {
+            get {
+                return this.pointsRedeemedField;
+            }
+            set {
+                this.pointsRedeemedField = value;
+                this.RaisePropertyChanged("pointsRedeemed");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
+        public string pointsValueRedeemed {
+            get {
+                return this.pointsValueRedeemedField;
+            }
+            set {
+                this.pointsValueRedeemedField = value;
+                this.RaisePropertyChanged("pointsValueRedeemed");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
+        public string pointsAfterRedemption {
+            get {
+                return this.pointsAfterRedemptionField;
+            }
+            set {
+                this.pointsAfterRedemptionField = value;
+                this.RaisePropertyChanged("pointsAfterRedemption");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=6)]
+        public string pointsValueAfterRedemption {
+            get {
+                return this.pointsValueAfterRedemptionField;
+            }
+            set {
+                this.pointsValueAfterRedemptionField = value;
+                this.RaisePropertyChanged("pointsValueAfterRedemption");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
+    public partial class AuthorizationOptions : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string authTypeField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string authType {
+            get {
+                return this.authTypeField;
+            }
+            set {
+                this.authTypeField = value;
+                this.RaisePropertyChanged("authType");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
+    public partial class APCaptureService : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string authRequestIDField;
+        
+        private string reconciliationIDField;
+        
+        private string isFinalField;
+        
+        private string runField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string authRequestID {
+            get {
+                return this.authRequestIDField;
+            }
+            set {
+                this.authRequestIDField = value;
+                this.RaisePropertyChanged("authRequestID");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string reconciliationID {
+            get {
+                return this.reconciliationIDField;
+            }
+            set {
+                this.reconciliationIDField = value;
+                this.RaisePropertyChanged("reconciliationID");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public string isFinal {
+            get {
+                return this.isFinalField;
+            }
+            set {
+                this.isFinalField = value;
+                this.RaisePropertyChanged("isFinal");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string run {
+            get {
+                return this.runField;
+            }
+            set {
+                this.runField = value;
+                this.RaisePropertyChanged("run");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
+    public partial class CaptureOptions : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string notesField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string notes {
+            get {
+                return this.notesField;
+            }
+            set {
+                this.notesField = value;
+                this.RaisePropertyChanged("notes");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
+    public partial class APUpdateOrderService : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string orderRequestIDField;
+        
+        private string runField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string orderRequestID {
+            get {
+                return this.orderRequestIDField;
+            }
+            set {
+                this.orderRequestIDField = value;
+                this.RaisePropertyChanged("orderRequestID");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string run {
+            get {
+                return this.runField;
+            }
+            set {
+                this.runField = value;
+                this.RaisePropertyChanged("run");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
+    public partial class Unscheduled : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string typeField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string type {
+            get {
+                return this.typeField;
+            }
+            set {
+                this.typeField = value;
+                this.RaisePropertyChanged("type");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
+    public partial class TokenProvisioningInformation : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private bool consumerConsentObtainedField;
+        
+        private bool consumerConsentObtainedFieldSpecified;
+        
+        private bool multiFactorAuthenticatedField;
+        
+        private bool multiFactorAuthenticatedFieldSpecified;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public bool consumerConsentObtained {
+            get {
+                return this.consumerConsentObtainedField;
+            }
+            set {
+                this.consumerConsentObtainedField = value;
+                this.RaisePropertyChanged("consumerConsentObtained");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool consumerConsentObtainedSpecified {
+            get {
+                return this.consumerConsentObtainedFieldSpecified;
+            }
+            set {
+                this.consumerConsentObtainedFieldSpecified = value;
+                this.RaisePropertyChanged("consumerConsentObtainedSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public bool multiFactorAuthenticated {
+            get {
+                return this.multiFactorAuthenticatedField;
+            }
+            set {
+                this.multiFactorAuthenticatedField = value;
+                this.RaisePropertyChanged("multiFactorAuthenticated");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool multiFactorAuthenticatedSpecified {
+            get {
+                return this.multiFactorAuthenticatedFieldSpecified;
+            }
+            set {
+                this.multiFactorAuthenticatedFieldSpecified = value;
+                this.RaisePropertyChanged("multiFactorAuthenticatedSpecified");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
+    public partial class VehicleData : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string connectorTypeField;
+        
+        private string chargingReasonCodeField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(DataType="integer", Order=0)]
+        public string connectorType {
+            get {
+                return this.connectorTypeField;
+            }
+            set {
+                this.connectorTypeField = value;
+                this.RaisePropertyChanged("connectorType");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(DataType="integer", Order=1)]
+        public string chargingReasonCode {
+            get {
+                return this.chargingReasonCodeField;
+            }
+            set {
+                this.chargingReasonCodeField = value;
+                this.RaisePropertyChanged("chargingReasonCode");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
+    public partial class CCCreditAuthReversalService : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string creditAuthRequestIDField;
+        
+        private string requestTokenField;
+        
+        private string reversalReasonField;
+        
+        private string returnReversalRecordField;
+        
+        private string runField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string creditAuthRequestID {
+            get {
+                return this.creditAuthRequestIDField;
+            }
+            set {
+                this.creditAuthRequestIDField = value;
+                this.RaisePropertyChanged("creditAuthRequestID");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string requestToken {
+            get {
+                return this.requestTokenField;
+            }
+            set {
+                this.requestTokenField = value;
+                this.RaisePropertyChanged("requestToken");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public string reversalReason {
+            get {
+                return this.reversalReasonField;
+            }
+            set {
+                this.reversalReasonField = value;
+                this.RaisePropertyChanged("reversalReason");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public string returnReversalRecord {
+            get {
+                return this.returnReversalRecordField;
+            }
+            set {
+                this.returnReversalRecordField = value;
+                this.RaisePropertyChanged("returnReversalRecord");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string run {
+            get {
+                return this.runField;
+            }
+            set {
+                this.runField = value;
+                this.RaisePropertyChanged("run");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
+    public partial class CCCreditAuthService : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string captureRequestIDField;
+        
+        private string reconciliationIDField;
+        
+        private string purchasingLevelField;
+        
+        private string industryDatatypeField;
+        
+        private string commerceIndicatorField;
+        
+        private string authCodeField;
+        
+        private string captureRequestTokenField;
+        
+        private string merchantReceiptNumberField;
+        
+        private string checksumKeyField;
+        
+        private string aggregatorIDField;
+        
+        private string aggregatorNameField;
+        
+        private string durationField;
+        
+        private string refundReasonField;
+        
+        private string overridePaymentMethodField;
+        
+        private string overridePaymentDetailsField;
+        
+        private string networkPartnerIdField;
+        
+        private string paymentNetworkTransactionInformationField;
+        
+        private string runField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string captureRequestID {
+            get {
+                return this.captureRequestIDField;
+            }
+            set {
+                this.captureRequestIDField = value;
+                this.RaisePropertyChanged("captureRequestID");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string reconciliationID {
+            get {
+                return this.reconciliationIDField;
+            }
+            set {
+                this.reconciliationIDField = value;
+                this.RaisePropertyChanged("reconciliationID");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public string purchasingLevel {
+            get {
+                return this.purchasingLevelField;
+            }
+            set {
+                this.purchasingLevelField = value;
+                this.RaisePropertyChanged("purchasingLevel");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public string industryDatatype {
+            get {
+                return this.industryDatatypeField;
+            }
+            set {
+                this.industryDatatypeField = value;
+                this.RaisePropertyChanged("industryDatatype");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
+        public string commerceIndicator {
+            get {
+                return this.commerceIndicatorField;
+            }
+            set {
+                this.commerceIndicatorField = value;
+                this.RaisePropertyChanged("commerceIndicator");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
+        public string authCode {
+            get {
+                return this.authCodeField;
+            }
+            set {
+                this.authCodeField = value;
+                this.RaisePropertyChanged("authCode");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=6)]
+        public string captureRequestToken {
+            get {
+                return this.captureRequestTokenField;
+            }
+            set {
+                this.captureRequestTokenField = value;
+                this.RaisePropertyChanged("captureRequestToken");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=7)]
+        public string merchantReceiptNumber {
+            get {
+                return this.merchantReceiptNumberField;
+            }
+            set {
+                this.merchantReceiptNumberField = value;
+                this.RaisePropertyChanged("merchantReceiptNumber");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=8)]
+        public string checksumKey {
+            get {
+                return this.checksumKeyField;
+            }
+            set {
+                this.checksumKeyField = value;
+                this.RaisePropertyChanged("checksumKey");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=9)]
+        public string aggregatorID {
+            get {
+                return this.aggregatorIDField;
+            }
+            set {
+                this.aggregatorIDField = value;
+                this.RaisePropertyChanged("aggregatorID");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=10)]
+        public string aggregatorName {
+            get {
+                return this.aggregatorNameField;
+            }
+            set {
+                this.aggregatorNameField = value;
+                this.RaisePropertyChanged("aggregatorName");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(DataType="integer", Order=11)]
+        public string duration {
+            get {
+                return this.durationField;
+            }
+            set {
+                this.durationField = value;
+                this.RaisePropertyChanged("duration");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=12)]
+        public string refundReason {
+            get {
+                return this.refundReasonField;
+            }
+            set {
+                this.refundReasonField = value;
+                this.RaisePropertyChanged("refundReason");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=13)]
+        public string overridePaymentMethod {
+            get {
+                return this.overridePaymentMethodField;
+            }
+            set {
+                this.overridePaymentMethodField = value;
+                this.RaisePropertyChanged("overridePaymentMethod");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=14)]
+        public string overridePaymentDetails {
+            get {
+                return this.overridePaymentDetailsField;
+            }
+            set {
+                this.overridePaymentDetailsField = value;
+                this.RaisePropertyChanged("overridePaymentDetails");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=15)]
+        public string networkPartnerId {
+            get {
+                return this.networkPartnerIdField;
+            }
+            set {
+                this.networkPartnerIdField = value;
+                this.RaisePropertyChanged("networkPartnerId");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=16)]
+        public string paymentNetworkTransactionInformation {
+            get {
+                return this.paymentNetworkTransactionInformationField;
+            }
+            set {
+                this.paymentNetworkTransactionInformationField = value;
+                this.RaisePropertyChanged("paymentNetworkTransactionInformation");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string run {
+            get {
+                return this.runField;
+            }
+            set {
+                this.runField = value;
+                this.RaisePropertyChanged("run");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
+    public partial class Recurring : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string typeField;
+        
+        private string validationIndicatorField;
+        
+        private string[] maximumAmountField;
+        
+        private string[] referenceNumberField;
+        
+        private string[] occurrenceField;
+        
+        private string[] numberOfPaymentsField;
+        
+        private string amountTypeField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string type {
+            get {
+                return this.typeField;
+            }
+            set {
+                this.typeField = value;
+                this.RaisePropertyChanged("type");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string validationIndicator {
+            get {
+                return this.validationIndicatorField;
+            }
+            set {
+                this.validationIndicatorField = value;
+                this.RaisePropertyChanged("validationIndicator");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("maximumAmount", Order=2)]
+        public string[] maximumAmount {
+            get {
+                return this.maximumAmountField;
+            }
+            set {
+                this.maximumAmountField = value;
+                this.RaisePropertyChanged("maximumAmount");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("referenceNumber", Order=3)]
+        public string[] referenceNumber {
+            get {
+                return this.referenceNumberField;
+            }
+            set {
+                this.referenceNumberField = value;
+                this.RaisePropertyChanged("referenceNumber");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("occurrence", Order=4)]
+        public string[] occurrence {
+            get {
+                return this.occurrenceField;
+            }
+            set {
+                this.occurrenceField = value;
+                this.RaisePropertyChanged("occurrence");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("numberOfPayments", Order=5)]
+        public string[] numberOfPayments {
+            get {
+                return this.numberOfPaymentsField;
+            }
+            set {
+                this.numberOfPaymentsField = value;
+                this.RaisePropertyChanged("numberOfPayments");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=6)]
+        public string amountType {
+            get {
+                return this.amountTypeField;
+            }
+            set {
+                this.amountTypeField = value;
+                this.RaisePropertyChanged("amountType");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class HealthCare : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string amountTypeField;
@@ -36122,11 +40568,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class AutoRental : object, System.ComponentModel.INotifyPropertyChanged {
         
         private Promotion promotionField;
@@ -36154,11 +40600,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class AgencyInformation : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string codeField;
@@ -36200,11 +40646,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class AbortService : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string authRequestIDField;
@@ -36288,11 +40734,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class mPOS : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string deviceTypeField;
@@ -36320,11 +40766,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class CCCheckStatusService : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string authRequestIDField;
@@ -36366,11 +40812,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class GetMasterpassDataService : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string runField;
@@ -36398,11 +40844,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class PostdatedTransaction : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string guaranteeIndicatorField;
@@ -36458,11 +40904,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class APRevokeMandateService : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string runField;
@@ -36490,14 +40936,16 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class APImportMandateService : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string dateSignedField;
+        
+        private string setupDDInstructionField;
         
         private string runField;
         
@@ -36510,6 +40958,18 @@ namespace CyberSource.Clients.SoapServiceReference {
             set {
                 this.dateSignedField = value;
                 this.RaisePropertyChanged("dateSigned");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string setupDDInstruction {
+            get {
+                return this.setupDDInstructionField;
+            }
+            set {
+                this.setupDDInstructionField = value;
+                this.RaisePropertyChanged("setupDDInstruction");
             }
         }
         
@@ -36536,11 +40996,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class APUpdateMandateService : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string esignField;
@@ -36624,11 +41084,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class APMandateStatusService : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string runField;
@@ -36656,11 +41116,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class APCreateMandateService : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string saleRequestIDField;
@@ -36744,11 +41204,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class APBillingAgreementService : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string sessionsRequestIDField;
@@ -36790,11 +41250,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class APCancelService : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string reconciliationIDField;
@@ -36864,26 +41324,26 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
-    public partial class APOrderService : object, System.ComponentModel.INotifyPropertyChanged {
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
+    public partial class APExtendOrderService : object, System.ComponentModel.INotifyPropertyChanged {
         
-        private string sessionsRequestIDField;
+        private string orderRequestIDField;
         
         private string runField;
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public string sessionsRequestID {
+        public string orderRequestID {
             get {
-                return this.sessionsRequestIDField;
+                return this.orderRequestIDField;
             }
             set {
-                this.sessionsRequestIDField = value;
-                this.RaisePropertyChanged("sessionsRequestID");
+                this.orderRequestIDField = value;
+                this.RaisePropertyChanged("orderRequestID");
             }
         }
         
@@ -36910,11 +41370,85 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
+    public partial class APOrderService : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string sessionsRequestIDField;
+        
+        private string successURLField;
+        
+        private string cancelURLField;
+        
+        private string runField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string sessionsRequestID {
+            get {
+                return this.sessionsRequestIDField;
+            }
+            set {
+                this.sessionsRequestIDField = value;
+                this.RaisePropertyChanged("sessionsRequestID");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string successURL {
+            get {
+                return this.successURLField;
+            }
+            set {
+                this.successURLField = value;
+                this.RaisePropertyChanged("successURL");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public string cancelURL {
+            get {
+                return this.cancelURLField;
+            }
+            set {
+                this.cancelURLField = value;
+                this.RaisePropertyChanged("cancelURL");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string run {
+            get {
+                return this.runField;
+            }
+            set {
+                this.runField = value;
+                this.RaisePropertyChanged("run");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class Loan : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string assetTypeField;
@@ -36956,11 +41490,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class TransactionMetadataService : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string authRequestIDField;
@@ -37002,11 +41536,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class GETVisaCheckoutDataService : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string runField;
@@ -37034,11 +41568,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class BinLookupService : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string modeField;
@@ -37108,11 +41642,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class EncryptPaymentDataService : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string runField;
@@ -37140,11 +41674,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class Aft : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string indicatorField;
@@ -37200,11 +41734,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class PromotionGroup : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string subtotalAmountField;
@@ -37274,11 +41808,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class DecryptVisaCheckoutDataService : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string runField;
@@ -37306,11 +41840,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class VC : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string orderIDField;
@@ -37338,11 +41872,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class AutoRentalData : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string adjustmentCostField;
@@ -38196,11 +42730,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class Sender : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string referenceNumberField;
@@ -38225,11 +42759,21 @@ namespace CyberSource.Clients.SoapServiceReference {
         
         private string firstNameField;
         
+        private string middleNameField;
+        
         private string middleInitialField;
         
         private string lastNameField;
         
         private string phoneNumberField;
+        
+        private string personalIDTypeField;
+        
+        private string typeField;
+        
+        private string identificationNumberField;
+        
+        private string aliasNameField;
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=0)]
@@ -38365,6 +42909,18 @@ namespace CyberSource.Clients.SoapServiceReference {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=11)]
+        public string middleName {
+            get {
+                return this.middleNameField;
+            }
+            set {
+                this.middleNameField = value;
+                this.RaisePropertyChanged("middleName");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=12)]
         public string middleInitial {
             get {
                 return this.middleInitialField;
@@ -38376,7 +42932,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=12)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=13)]
         public string lastName {
             get {
                 return this.lastNameField;
@@ -38388,7 +42944,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=13)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=14)]
         public string phoneNumber {
             get {
                 return this.phoneNumberField;
@@ -38396,6 +42952,54 @@ namespace CyberSource.Clients.SoapServiceReference {
             set {
                 this.phoneNumberField = value;
                 this.RaisePropertyChanged("phoneNumber");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=15)]
+        public string personalIDType {
+            get {
+                return this.personalIDTypeField;
+            }
+            set {
+                this.personalIDTypeField = value;
+                this.RaisePropertyChanged("personalIDType");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=16)]
+        public string type {
+            get {
+                return this.typeField;
+            }
+            set {
+                this.typeField = value;
+                this.RaisePropertyChanged("type");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=17)]
+        public string identificationNumber {
+            get {
+                return this.identificationNumberField;
+            }
+            set {
+                this.identificationNumberField = value;
+                this.RaisePropertyChanged("identificationNumber");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=18)]
+        public string aliasName {
+            get {
+                return this.aliasNameField;
+            }
+            set {
+                this.aliasNameField = value;
+                this.RaisePropertyChanged("aliasName");
             }
         }
         
@@ -38410,11 +43014,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class HostedDataRetrieveService : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string profileIDField;
@@ -38470,11 +43074,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class HostedDataCreateService : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string profileIDField;
@@ -38530,71 +43134,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
-    public partial class merchant : object, System.ComponentModel.INotifyPropertyChanged {
-        
-        private string acquirerBINField;
-        
-        private string cardAcceptorIDField;
-        
-        private string visaMerchantIDField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public string acquirerBIN {
-            get {
-                return this.acquirerBINField;
-            }
-            set {
-                this.acquirerBINField = value;
-                this.RaisePropertyChanged("acquirerBIN");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
-        public string cardAcceptorID {
-            get {
-                return this.cardAcceptorIDField;
-            }
-            set {
-                this.cardAcceptorIDField = value;
-                this.RaisePropertyChanged("cardAcceptorID");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
-        public string visaMerchantID {
-            get {
-                return this.visaMerchantIDField;
-            }
-            set {
-                this.visaMerchantIDField = value;
-                this.RaisePropertyChanged("visaMerchantID");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class EmvRequest : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string combinedTagsField;
@@ -38692,11 +43236,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class CCDCCUpdateService : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string reasonField;
@@ -38794,11 +43338,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class PayPalTransactionSearchService : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string startDateField;
@@ -39022,11 +43566,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class PayPalGetTxnDetailsService : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string transactionIDField;
@@ -39068,11 +43612,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class APConfirmPurchaseService : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string runField;
@@ -39100,11 +43644,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class APTransactionDetailsService : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string transactionDetailsRequestIDField;
@@ -39146,11 +43690,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class APUI : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string colorBorderField;
@@ -39318,11 +43862,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class APSessionsService : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string cancelURLField;
@@ -39340,6 +43884,10 @@ namespace CyberSource.Clients.SoapServiceReference {
         private string sessionsTypeField;
         
         private string sessionsRequestIDField;
+        
+        private string paymentMethod_nameField;
+        
+        private string paymentFlowModeField;
         
         private string runField;
         
@@ -39440,6 +43988,30 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=8)]
+        public string paymentMethod_name {
+            get {
+                return this.paymentMethod_nameField;
+            }
+            set {
+                this.paymentMethod_nameField = value;
+                this.RaisePropertyChanged("paymentMethod_name");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=9)]
+        public string paymentFlowMode {
+            get {
+                return this.paymentFlowModeField;
+            }
+            set {
+                this.paymentFlowModeField = value;
+                this.RaisePropertyChanged("paymentFlowMode");
+            }
+        }
+        
+        /// <remarks/>
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public string run {
             get {
@@ -39462,11 +44034,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class APCheckOutDetailsService : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string runField;
@@ -39494,11 +44066,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class APSaleService : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string cancelURLField;
@@ -39694,11 +44266,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class APRefundService : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string captureRequestIDField;
@@ -39852,11 +44424,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class APOptionsService : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string limitField;
@@ -39912,85 +44484,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
-    public partial class APCaptureService : object, System.ComponentModel.INotifyPropertyChanged {
-        
-        private string authRequestIDField;
-        
-        private string reconciliationIDField;
-        
-        private string isFinalField;
-        
-        private string runField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public string authRequestID {
-            get {
-                return this.authRequestIDField;
-            }
-            set {
-                this.authRequestIDField = value;
-                this.RaisePropertyChanged("authRequestID");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
-        public string reconciliationID {
-            get {
-                return this.reconciliationIDField;
-            }
-            set {
-                this.reconciliationIDField = value;
-                this.RaisePropertyChanged("reconciliationID");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
-        public string isFinal {
-            get {
-                return this.isFinalField;
-            }
-            set {
-                this.isFinalField = value;
-                this.RaisePropertyChanged("isFinal");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string run {
-            get {
-                return this.runField;
-            }
-            set {
-                this.runField = value;
-                this.RaisePropertyChanged("run");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class APAuthReversalService : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string authRequestIDField;
@@ -40046,11 +44544,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class APAuthService : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string cancelURLField;
@@ -40176,11 +44674,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class APDevice : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string idField;
@@ -40236,11 +44734,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class AP : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string orderIDField;
@@ -40290,6 +44788,8 @@ namespace CyberSource.Clients.SoapServiceReference {
         private string fundingSourceField;
         
         private string shippingAddressImmutableField;
+        
+        private string appUrlField;
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=0)]
@@ -40579,6 +45079,18 @@ namespace CyberSource.Clients.SoapServiceReference {
             }
         }
         
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=24)]
+        public string appUrl {
+            get {
+                return this.appUrlField;
+            }
+            set {
+                this.appUrlField = value;
+                this.RaisePropertyChanged("appUrl");
+            }
+        }
+        
         public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
         
         protected void RaisePropertyChanged(string propertyName) {
@@ -40590,11 +45102,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class PinDebitReversalService : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string pinDebitRequestIDField;
@@ -40636,11 +45148,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class PinDebitCreditService : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string networkOrderField;
@@ -40766,11 +45278,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class PinDebitPurchaseService : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string networkOrderField;
@@ -40938,11 +45450,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class APCheckStatusService : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string apInitiateRequestIDField;
@@ -41026,11 +45538,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class APInitiateService : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string returnURLField;
@@ -41240,11 +45752,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class BoletoPaymentService : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string instructionField;
@@ -41314,11 +45826,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class ChinaRefundService : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string chinaPaymentRequestIDField;
@@ -41388,11 +45900,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class ChinaPaymentService : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string paymentModeField;
@@ -41504,11 +46016,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class PayPalDoRefTransactionService : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string paypalBillingAgreementIdField;
@@ -41662,11 +46174,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class PayPalCreateAgreementService : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string paypalTokenField;
@@ -41736,11 +46248,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class PayPalUpdateAgreementService : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string paypalBillingAgreementIdField;
@@ -41824,11 +46336,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class PayPalAuthorizationService : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string paypalOrderIdField;
@@ -41940,11 +46452,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class PayPalEcOrderSetupService : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string paypalTokenField;
@@ -42084,11 +46596,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class PayPalEcSetService : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string paypalReturnField;
@@ -42466,11 +46978,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class PayPalEcGetDetailsService : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string paypalTokenField;
@@ -42540,11 +47052,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class PayPalEcDoPaymentService : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string paypalTokenField;
@@ -42684,11 +47196,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class PayPalDoCaptureService : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string paypalAuthorizationIdField;
@@ -42814,11 +47326,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class PayPalAuthReversalService : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string paypalAuthorizationIdField;
@@ -42944,11 +47456,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class PayPalRefundService : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string paypalDoCaptureRequestIDField;
@@ -43032,11 +47544,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class RequestReserved : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string nameField;
@@ -43078,11 +47590,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class CaseManagementActionService : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string actionCodeField;
@@ -43152,11 +47664,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class FraudUpdateService : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string actionCodeField;
@@ -43310,11 +47822,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class Address : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string street1Field;
@@ -43412,11 +47924,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class RiskUpdateService : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string actionCodeField;
@@ -43550,7 +48062,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=9)]
+        [System.Xml.Serialization.XmlElementAttribute(DataType="integer", Order=9)]
         public string deviceFingerprintProxyIPAddress {
             get {
                 return this.deviceFingerprintProxyIPAddressField;
@@ -43584,11 +48096,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class PayPalPreapprovedUpdateService : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string mpIDField;
@@ -43644,11 +48156,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class PayPalPreapprovedPaymentService : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string mpIDField;
@@ -43704,11 +48216,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class PayPalButtonCreateService : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string buttonTypeField;
@@ -43764,11 +48276,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class LodgingData : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string checkInDateField;
@@ -44482,11 +48994,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class Service : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string categoryCodeField;
@@ -44542,11 +49054,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class AncillaryData : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string ticketNumberField;
@@ -44630,11 +49142,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class Leg : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string carrierCodeField;
@@ -44942,11 +49454,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class Passenger : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string firstNameField;
@@ -45002,11 +49514,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class AirlineData : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string agentCodeField;
@@ -45678,11 +50190,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class Batch : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string batchIDField;
@@ -45724,11 +50236,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class PinlessDebitReversalService : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string pinlessDebitRequestIDField;
@@ -45798,11 +50310,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class PinlessDebitValidateService : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string runField;
@@ -45830,11 +50342,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class PinlessDebitService : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string reconciliationIDField;
@@ -45890,11 +50402,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class BusinessRules : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string ignoreAVSResultField;
@@ -46006,11 +50518,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class VoidService : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string voidRequestIDField;
@@ -46080,11 +50592,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class PayPalCreditService : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string payPalPaymentRequestIDField;
@@ -46154,11 +50666,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class PayPalPaymentService : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string cancelURLField;
@@ -46228,11 +50740,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class PaySubscriptionDeleteService : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string runField;
@@ -46260,11 +50772,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class PaySubscriptionRetrieveService : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string runField;
@@ -46292,11 +50804,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class PaySubscriptionEventUpdateService : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string actionField;
@@ -46338,11 +50850,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class PaySubscriptionUpdateService : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string runField;
@@ -46370,11 +50882,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class PaySubscriptionCreateService : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string paymentRequestIDField;
@@ -46444,11 +50956,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class DeviceFingerprintData : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string dataField;
@@ -46504,11 +51016,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class DirectDebitValidateService : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string directDebitValidateTextField;
@@ -46550,11 +51062,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class DirectDebitRefundService : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string directDebitRequestIDField;
@@ -46680,11 +51192,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class DirectDebitService : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string dateCollectField;
@@ -46866,11 +51378,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class DirectDebitMandateService : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string mandateDescriptorField;
@@ -46926,11 +51438,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class BankTransferRealTimeService : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string bankTransferRealTimeTypeField;
@@ -46972,11 +51484,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class BankTransferRefundService : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string bankTransferRequestIDField;
@@ -47088,11 +51600,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class BankTransferService : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string runField;
@@ -47120,11 +51632,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class FXRatesService : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string runField;
@@ -47152,11 +51664,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class ExportService : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string addressOperatorField;
@@ -47254,11 +51766,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class DAVService : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string runField;
@@ -47286,11 +51798,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class AFSService : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string avsCodeField;
@@ -47374,11 +51886,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class DMEService : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string eventTypeField;
@@ -47434,11 +51946,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class TaxService : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string nexusField;
@@ -47886,11 +52398,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class PayerAuthValidateService : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string signedPAResField;
@@ -47898,6 +52410,12 @@ namespace CyberSource.Clients.SoapServiceReference {
         private string authenticationTransactionIDField;
         
         private string responseAccessTokenField;
+        
+        private string otpTokenField;
+        
+        private bool credentialEncryptedField;
+        
+        private bool credentialEncryptedFieldSpecified;
         
         private string runField;
         
@@ -47938,6 +52456,42 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public string otpToken {
+            get {
+                return this.otpTokenField;
+            }
+            set {
+                this.otpTokenField = value;
+                this.RaisePropertyChanged("otpToken");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
+        public bool credentialEncrypted {
+            get {
+                return this.credentialEncryptedField;
+            }
+            set {
+                this.credentialEncryptedField = value;
+                this.RaisePropertyChanged("credentialEncrypted");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool credentialEncryptedSpecified {
+            get {
+                return this.credentialEncryptedFieldSpecified;
+            }
+            set {
+                this.credentialEncryptedFieldSpecified = value;
+                this.RaisePropertyChanged("credentialEncryptedSpecified");
+            }
+        }
+        
+        /// <remarks/>
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public string run {
             get {
@@ -47960,11 +52514,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class PayerAuthEnrollService : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string httpAcceptField;
@@ -47985,7 +52539,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         
         private string loginIDField;
         
-        private System.Security.SecureString passwordField;
+        private string passwordField;
         
         private string merchantIDField;
         
@@ -48113,6 +52667,16 @@ namespace CyberSource.Clients.SoapServiceReference {
         
         private string secureCorporatePaymentIndicatorField;
         
+        private string resendCountField;
+        
+        private string workPhoneField;
+        
+        private bool scoreRequestField;
+        
+        private bool scoreRequestFieldSpecified;
+        
+        private string transactionFlowIndicatorField;
+        
         private string runField;
         
         /// <remarks/>
@@ -48227,11 +52791,10 @@ namespace CyberSource.Clients.SoapServiceReference {
         [System.Xml.Serialization.XmlElementAttribute(Order=9)]
         public string password {
             get {
-                return ConvertToUnsecureString(this.passwordField);
+                return this.passwordField;
             }
             set {
-                this.passwordField = new System.Net.NetworkCredential(string.Empty, value).SecurePassword;
-                this.passwordField.MakeReadOnly();
+                this.passwordField = value;
                 this.RaisePropertyChanged("password");
             }
         }
@@ -48993,6 +53556,66 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=73)]
+        public string resendCount {
+            get {
+                return this.resendCountField;
+            }
+            set {
+                this.resendCountField = value;
+                this.RaisePropertyChanged("resendCount");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=74)]
+        public string workPhone {
+            get {
+                return this.workPhoneField;
+            }
+            set {
+                this.workPhoneField = value;
+                this.RaisePropertyChanged("workPhone");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=75)]
+        public bool scoreRequest {
+            get {
+                return this.scoreRequestField;
+            }
+            set {
+                this.scoreRequestField = value;
+                this.RaisePropertyChanged("scoreRequest");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool scoreRequestSpecified {
+            get {
+                return this.scoreRequestFieldSpecified;
+            }
+            set {
+                this.scoreRequestFieldSpecified = value;
+                this.RaisePropertyChanged("scoreRequestSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=76)]
+        public string transactionFlowIndicator {
+            get {
+                return this.transactionFlowIndicatorField;
+            }
+            set {
+                this.transactionFlowIndicatorField = value;
+                this.RaisePropertyChanged("transactionFlowIndicator");
+            }
+        }
+        
+        /// <remarks/>
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public string run {
             get {
@@ -49012,33 +53635,14 @@ namespace CyberSource.Clients.SoapServiceReference {
                 propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
             }
         }
-
-        public static string ConvertToUnsecureString(System.Security.SecureString secureString)
-        {
-            if (secureString == null)
-            {
-                return string.Empty;
-            }
-
-            System.IntPtr unmanagedString = System.IntPtr.Zero;
-            try
-            {
-                unmanagedString = System.Runtime.InteropServices.Marshal.SecureStringToGlobalAllocUnicode(secureString);
-                return System.Runtime.InteropServices.Marshal.PtrToStringUni(unmanagedString);
-            }
-            finally
-            {
-                System.Runtime.InteropServices.Marshal.ZeroFreeGlobalAllocUnicode(unmanagedString);
-            }
-        }
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class PayerAuthSetupService : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string runField;
@@ -49066,11 +53670,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class ECAuthenticateService : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string referenceNumberField;
@@ -49112,11 +53716,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class ECCreditService : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string referenceNumberField;
@@ -49256,11 +53860,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class ECDebitService : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string paymentModeField;
@@ -49414,11 +54018,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class ServiceFeeCalculateService : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string runField;
@@ -49446,11 +54050,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class CCDCCService : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string runField;
@@ -49478,11 +54082,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class CCAutoAuthReversalService : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string authPaymentServiceDataField;
@@ -49650,11 +54254,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class CCAuthReversalService : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string authRequestIDField;
@@ -49662,6 +54266,8 @@ namespace CyberSource.Clients.SoapServiceReference {
         private string authRequestTokenField;
         
         private string reversalReasonField;
+        
+        private string returnReversalRecordField;
         
         private string runField;
         
@@ -49702,6 +54308,18 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public string returnReversalRecord {
+            get {
+                return this.returnReversalRecordField;
+            }
+            set {
+                this.returnReversalRecordField = value;
+                this.RaisePropertyChanged("returnReversalRecord");
+            }
+        }
+        
+        /// <remarks/>
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public string run {
             get {
@@ -49724,11 +54342,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class CCCreditService : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string captureRequestIDField;
@@ -49772,6 +54390,10 @@ namespace CyberSource.Clients.SoapServiceReference {
         private string overridePaymentMethodField;
         
         private string overridePaymentDetailsField;
+        
+        private string networkPartnerIdField;
+        
+        private string paymentNetworkTransactionInformationField;
         
         private string runField;
         
@@ -50028,6 +54650,30 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=21)]
+        public string networkPartnerId {
+            get {
+                return this.networkPartnerIdField;
+            }
+            set {
+                this.networkPartnerIdField = value;
+                this.RaisePropertyChanged("networkPartnerId");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=22)]
+        public string paymentNetworkTransactionInformation {
+            get {
+                return this.paymentNetworkTransactionInformationField;
+            }
+            set {
+                this.paymentNetworkTransactionInformationField = value;
+                this.RaisePropertyChanged("paymentNetworkTransactionInformation");
+            }
+        }
+        
+        /// <remarks/>
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public string run {
             get {
@@ -50050,11 +54696,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class CCCaptureService : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string authTypeField;
@@ -50362,11 +55008,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class CCIncrementalAuthService : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string authRequestIDField;
@@ -50422,11 +55068,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class CCSaleReversalService : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string saleRequestIDField;
@@ -50468,11 +55114,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class CCSaleCreditService : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string overridePaymentMethodField;
@@ -50570,11 +55216,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class CCSaleService : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string overridePaymentMethodField;
@@ -50868,11 +55514,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class VerificationService : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string reconciliationIDField;
@@ -50914,11 +55560,131 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
+    public partial class GiftCardRefundService : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string reconciliationIDField;
+        
+        private string commerceIndicatorField;
+        
+        private string runField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string reconciliationID {
+            get {
+                return this.reconciliationIDField;
+            }
+            set {
+                this.reconciliationIDField = value;
+                this.RaisePropertyChanged("reconciliationID");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string commerceIndicator {
+            get {
+                return this.commerceIndicatorField;
+            }
+            set {
+                this.commerceIndicatorField = value;
+                this.RaisePropertyChanged("commerceIndicator");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string run {
+            get {
+                return this.runField;
+            }
+            set {
+                this.runField = value;
+                this.RaisePropertyChanged("run");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
+    public partial class GiftCardReloadService : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string reconciliationIDField;
+        
+        private string commerceIndicatorField;
+        
+        private string runField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string reconciliationID {
+            get {
+                return this.reconciliationIDField;
+            }
+            set {
+                this.reconciliationIDField = value;
+                this.RaisePropertyChanged("reconciliationID");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string commerceIndicator {
+            get {
+                return this.commerceIndicatorField;
+            }
+            set {
+                this.commerceIndicatorField = value;
+                this.RaisePropertyChanged("commerceIndicator");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string run {
+            get {
+                return this.runField;
+            }
+            set {
+                this.runField = value;
+                this.RaisePropertyChanged("run");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class GiftCardReversalService : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string runField;
@@ -50946,11 +55712,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class GiftCardVoidService : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string runField;
@@ -50978,11 +55744,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class GiftCardRedemptionService : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string reconciliationIDField;
@@ -51038,11 +55804,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class GiftCardBalanceInquiryService : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string reconciliationIDField;
@@ -51098,11 +55864,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class GiftCardActivationService : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string reconciliationIDField;
@@ -51158,11 +55924,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class ECAVSService : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string runField;
@@ -51190,11 +55956,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class OCTService : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string commerceIndicatorField;
@@ -51204,6 +55970,38 @@ namespace CyberSource.Clients.SoapServiceReference {
         private string networkOrderField;
         
         private string overridePaymentMethodField;
+        
+        private string aggregatorIDField;
+        
+        private string[] octPurposeOfPaymentField;
+        
+        private string[] transactionReasonField;
+        
+        private string serviceProviderNameField;
+        
+        private string initiatorTypeField;
+        
+        private string cryptocurrencyPurchaseField;
+        
+        private string aggregatorNameField;
+        
+        private string[] invoiceNumberField;
+        
+        private string deferredDateTimeField;
+        
+        private string aggregatorStreetAddressField;
+        
+        private string aggregatorCityField;
+        
+        private string aggregatorStateField;
+        
+        private string aggregatorPostalcodeField;
+        
+        private string aggregatorCountryField;
+        
+        private benefit benefitField;
+        
+        private language languageField;
         
         private string runField;
         
@@ -51256,6 +56054,198 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
+        public string aggregatorID {
+            get {
+                return this.aggregatorIDField;
+            }
+            set {
+                this.aggregatorIDField = value;
+                this.RaisePropertyChanged("aggregatorID");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("octPurposeOfPayment", Order=5)]
+        public string[] octPurposeOfPayment {
+            get {
+                return this.octPurposeOfPaymentField;
+            }
+            set {
+                this.octPurposeOfPaymentField = value;
+                this.RaisePropertyChanged("octPurposeOfPayment");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("transactionReason", Order=6)]
+        public string[] transactionReason {
+            get {
+                return this.transactionReasonField;
+            }
+            set {
+                this.transactionReasonField = value;
+                this.RaisePropertyChanged("transactionReason");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=7)]
+        public string serviceProviderName {
+            get {
+                return this.serviceProviderNameField;
+            }
+            set {
+                this.serviceProviderNameField = value;
+                this.RaisePropertyChanged("serviceProviderName");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=8)]
+        public string initiatorType {
+            get {
+                return this.initiatorTypeField;
+            }
+            set {
+                this.initiatorTypeField = value;
+                this.RaisePropertyChanged("initiatorType");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=9)]
+        public string cryptocurrencyPurchase {
+            get {
+                return this.cryptocurrencyPurchaseField;
+            }
+            set {
+                this.cryptocurrencyPurchaseField = value;
+                this.RaisePropertyChanged("cryptocurrencyPurchase");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=10)]
+        public string aggregatorName {
+            get {
+                return this.aggregatorNameField;
+            }
+            set {
+                this.aggregatorNameField = value;
+                this.RaisePropertyChanged("aggregatorName");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("invoiceNumber", Order=11)]
+        public string[] invoiceNumber {
+            get {
+                return this.invoiceNumberField;
+            }
+            set {
+                this.invoiceNumberField = value;
+                this.RaisePropertyChanged("invoiceNumber");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=12)]
+        public string deferredDateTime {
+            get {
+                return this.deferredDateTimeField;
+            }
+            set {
+                this.deferredDateTimeField = value;
+                this.RaisePropertyChanged("deferredDateTime");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=13)]
+        public string aggregatorStreetAddress {
+            get {
+                return this.aggregatorStreetAddressField;
+            }
+            set {
+                this.aggregatorStreetAddressField = value;
+                this.RaisePropertyChanged("aggregatorStreetAddress");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=14)]
+        public string aggregatorCity {
+            get {
+                return this.aggregatorCityField;
+            }
+            set {
+                this.aggregatorCityField = value;
+                this.RaisePropertyChanged("aggregatorCity");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=15)]
+        public string aggregatorState {
+            get {
+                return this.aggregatorStateField;
+            }
+            set {
+                this.aggregatorStateField = value;
+                this.RaisePropertyChanged("aggregatorState");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=16)]
+        public string aggregatorPostalcode {
+            get {
+                return this.aggregatorPostalcodeField;
+            }
+            set {
+                this.aggregatorPostalcodeField = value;
+                this.RaisePropertyChanged("aggregatorPostalcode");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=17)]
+        public string aggregatorCountry {
+            get {
+                return this.aggregatorCountryField;
+            }
+            set {
+                this.aggregatorCountryField = value;
+                this.RaisePropertyChanged("aggregatorCountry");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=18)]
+        public benefit benefit {
+            get {
+                return this.benefitField;
+            }
+            set {
+                this.benefitField = value;
+                this.RaisePropertyChanged("benefit");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=19)]
+        public language language {
+            get {
+                return this.languageField;
+            }
+            set {
+                this.languageField = value;
+                this.RaisePropertyChanged("language");
+            }
+        }
+        
+        /// <remarks/>
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public string run {
             get {
@@ -51278,11 +56268,43 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
+    public partial class language : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string codeField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string code {
+            get {
+                return this.codeField;
+            }
+            set {
+                this.codeField = value;
+                this.RaisePropertyChanged("code");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class CCAuthService : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string cavvField;
@@ -51294,6 +56316,10 @@ namespace CyberSource.Clients.SoapServiceReference {
         private string paSpecificationVersionField;
         
         private string directoryServerTransactionIDField;
+        
+        private string threeDSServerTransactionIDField;
+        
+        private string acsServerTransactionIDField;
         
         private string commerceIndicatorField;
         
@@ -51395,6 +56421,68 @@ namespace CyberSource.Clients.SoapServiceReference {
         
         private string paAuthenticationDateField;
         
+        private string authenticationOutageExemptionIndicatorField;
+        
+        private string verificationResultsPassportNumberField;
+        
+        private string verificationResultsPersonalIdField;
+        
+        private string verificationResultsDriversLicenseNoField;
+        
+        private string verificationResultsBuyerRegistrationField;
+        
+        private string delegatedAuthenticationResultField;
+        
+        private string[] paymentNetworkTransactionInformationField;
+        
+        private string[] transactionReasonField;
+        
+        private string panReturnIndicatorField;
+        
+        private string cashAdvanceIndicatorField;
+        
+        private string splitPaymentTransactionField;
+        
+        private string cardVerificationIndicatorField;
+        
+        private string exemptionDataRawField;
+        
+        private string transactionFlowIndicatorField;
+        
+        private string networkPartnerIdField;
+        
+        private string acquirerMerchantIdField;
+        
+        private string merchantVerificationValueField;
+        
+        private string extendAuthIndicatorField;
+        
+        private string acsReferenceNumberField;
+        
+        private string dsReferenceNumberField;
+        
+        private string initiatorTypeField;
+        
+        private string purposeOfPaymentField;
+        
+        private string aggregatorStreetAddressField;
+        
+        private string aggregatorCityField;
+        
+        private string aggregatorStateField;
+        
+        private string aggregatorPostalcodeField;
+        
+        private string aggregatorCountryField;
+        
+        private string eligibilityIndicatorField;
+        
+        private serviceProcessing serviceProcessingField;
+        
+        private benefit benefitField;
+        
+        private language languageField;
+        
         private string runField;
         
         /// <remarks/>
@@ -51459,6 +56547,30 @@ namespace CyberSource.Clients.SoapServiceReference {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=5)]
+        public string threeDSServerTransactionID {
+            get {
+                return this.threeDSServerTransactionIDField;
+            }
+            set {
+                this.threeDSServerTransactionIDField = value;
+                this.RaisePropertyChanged("threeDSServerTransactionID");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=6)]
+        public string acsServerTransactionID {
+            get {
+                return this.acsServerTransactionIDField;
+            }
+            set {
+                this.acsServerTransactionIDField = value;
+                this.RaisePropertyChanged("acsServerTransactionID");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=7)]
         public string commerceIndicator {
             get {
                 return this.commerceIndicatorField;
@@ -51470,7 +56582,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=6)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=8)]
         public string eciRaw {
             get {
                 return this.eciRawField;
@@ -51482,7 +56594,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=7)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=9)]
         public string xid {
             get {
                 return this.xidField;
@@ -51494,7 +56606,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=8)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=10)]
         public string reconciliationID {
             get {
                 return this.reconciliationIDField;
@@ -51506,7 +56618,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=9)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=11)]
         public string avsLevel {
             get {
                 return this.avsLevelField;
@@ -51518,7 +56630,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=10)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=12)]
         public string fxQuoteID {
             get {
                 return this.fxQuoteIDField;
@@ -51530,7 +56642,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=11)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=13)]
         public string returnAuthRecord {
             get {
                 return this.returnAuthRecordField;
@@ -51542,7 +56654,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=12)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=14)]
         public string authType {
             get {
                 return this.authTypeField;
@@ -51554,7 +56666,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=13)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=15)]
         public string verbalAuthCode {
             get {
                 return this.verbalAuthCodeField;
@@ -51566,7 +56678,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=14)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=16)]
         public string billPayment {
             get {
                 return this.billPaymentField;
@@ -51578,7 +56690,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=15)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=17)]
         public string authenticationXID {
             get {
                 return this.authenticationXIDField;
@@ -51590,7 +56702,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=16)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=18)]
         public string authorizationXID {
             get {
                 return this.authorizationXIDField;
@@ -51602,7 +56714,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=17)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=19)]
         public string industryDatatype {
             get {
                 return this.industryDatatypeField;
@@ -51614,7 +56726,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=18)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=20)]
         public string traceNumber {
             get {
                 return this.traceNumberField;
@@ -51626,7 +56738,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=19)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=21)]
         public string checksumKey {
             get {
                 return this.checksumKeyField;
@@ -51638,7 +56750,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=20)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=22)]
         public string aggregatorID {
             get {
                 return this.aggregatorIDField;
@@ -51650,7 +56762,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=21)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=23)]
         public string aggregatorName {
             get {
                 return this.aggregatorNameField;
@@ -51662,7 +56774,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=22)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=24)]
         public string splitTenderIndicator {
             get {
                 return this.splitTenderIndicatorField;
@@ -51674,7 +56786,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=23)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=25)]
         public string veresEnrolled {
             get {
                 return this.veresEnrolledField;
@@ -51686,7 +56798,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=24)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=26)]
         public string paresStatus {
             get {
                 return this.paresStatusField;
@@ -51698,7 +56810,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=25)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=27)]
         public string partialAuthIndicator {
             get {
                 return this.partialAuthIndicatorField;
@@ -51710,7 +56822,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=26)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=28)]
         public string captureDate {
             get {
                 return this.captureDateField;
@@ -51722,7 +56834,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=27)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=29)]
         public string firstRecurringPayment {
             get {
                 return this.firstRecurringPaymentField;
@@ -51734,7 +56846,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(DataType="integer", Order=28)]
+        [System.Xml.Serialization.XmlElementAttribute(DataType="integer", Order=30)]
         public string duration {
             get {
                 return this.durationField;
@@ -51746,7 +56858,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=29)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=31)]
         public string overridePaymentMethod {
             get {
                 return this.overridePaymentMethodField;
@@ -51758,7 +56870,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=30)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=32)]
         public string mobileRemotePaymentType {
             get {
                 return this.mobileRemotePaymentTypeField;
@@ -51770,7 +56882,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=31)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=33)]
         public string cardholderVerificationMethod {
             get {
                 return this.cardholderVerificationMethodField;
@@ -51782,7 +56894,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=32)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=34)]
         public string dccRequestID {
             get {
                 return this.dccRequestIDField;
@@ -51794,7 +56906,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=33)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=35)]
         public string overridePaymentDetails {
             get {
                 return this.overridePaymentDetailsField;
@@ -51806,7 +56918,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=34)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=36)]
         public string cardholderAuthenticationMethod {
             get {
                 return this.cardholderAuthenticationMethodField;
@@ -51818,7 +56930,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=35)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=37)]
         public string leastCostRouting {
             get {
                 return this.leastCostRoutingField;
@@ -51830,7 +56942,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=36)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=38)]
         public string verificationType {
             get {
                 return this.verificationTypeField;
@@ -51842,7 +56954,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=37)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=39)]
         public string cryptocurrencyPurchase {
             get {
                 return this.cryptocurrencyPurchaseField;
@@ -51854,7 +56966,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=38)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=40)]
         public string lowValueExemptionIndicator {
             get {
                 return this.lowValueExemptionIndicatorField;
@@ -51866,7 +56978,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=39)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=41)]
         public string riskAnalysisExemptionIndicator {
             get {
                 return this.riskAnalysisExemptionIndicatorField;
@@ -51878,7 +56990,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=40)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=42)]
         public string trustedMerchantExemptionIndicator {
             get {
                 return this.trustedMerchantExemptionIndicatorField;
@@ -51890,7 +57002,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=41)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=43)]
         public string secureCorporatePaymentIndicator {
             get {
                 return this.secureCorporatePaymentIndicatorField;
@@ -51902,7 +57014,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=42)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=44)]
         public string deferredAuthIndicator {
             get {
                 return this.deferredAuthIndicatorField;
@@ -51914,7 +57026,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=43)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=45)]
         public string aggregatedAuthIndicator {
             get {
                 return this.aggregatedAuthIndicatorField;
@@ -51926,7 +57038,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=44)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=46)]
         public string debtRecoveryIndicator {
             get {
                 return this.debtRecoveryIndicatorField;
@@ -51938,7 +57050,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=45)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=47)]
         public string delegatedAuthenticationExemptionIndicator {
             get {
                 return this.delegatedAuthenticationExemptionIndicatorField;
@@ -51950,7 +57062,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=46)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=48)]
         public string transitTransactionType {
             get {
                 return this.transitTransactionTypeField;
@@ -51962,7 +57074,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=47)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=49)]
         public string transportationMode {
             get {
                 return this.transportationModeField;
@@ -51974,7 +57086,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=48)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=50)]
         public string totaloffersCount {
             get {
                 return this.totaloffersCountField;
@@ -51986,7 +57098,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=49)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=51)]
         public string effectiveAuthenticationType {
             get {
                 return this.effectiveAuthenticationTypeField;
@@ -51998,7 +57110,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=50)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=52)]
         public string paChallengeCode {
             get {
                 return this.paChallengeCodeField;
@@ -52010,7 +57122,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=51)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=53)]
         public string paresStatusReason {
             get {
                 return this.paresStatusReasonField;
@@ -52022,7 +57134,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=52)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=54)]
         public string challengeCancelCode {
             get {
                 return this.challengeCancelCodeField;
@@ -52034,7 +57146,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=53)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=55)]
         public string paNetworkScore {
             get {
                 return this.paNetworkScoreField;
@@ -52046,7 +57158,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=54)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=56)]
         public string paAuthenticationDate {
             get {
                 return this.paAuthenticationDateField;
@@ -52054,6 +57166,378 @@ namespace CyberSource.Clients.SoapServiceReference {
             set {
                 this.paAuthenticationDateField = value;
                 this.RaisePropertyChanged("paAuthenticationDate");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=57)]
+        public string authenticationOutageExemptionIndicator {
+            get {
+                return this.authenticationOutageExemptionIndicatorField;
+            }
+            set {
+                this.authenticationOutageExemptionIndicatorField = value;
+                this.RaisePropertyChanged("authenticationOutageExemptionIndicator");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=58)]
+        public string verificationResultsPassportNumber {
+            get {
+                return this.verificationResultsPassportNumberField;
+            }
+            set {
+                this.verificationResultsPassportNumberField = value;
+                this.RaisePropertyChanged("verificationResultsPassportNumber");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=59)]
+        public string verificationResultsPersonalId {
+            get {
+                return this.verificationResultsPersonalIdField;
+            }
+            set {
+                this.verificationResultsPersonalIdField = value;
+                this.RaisePropertyChanged("verificationResultsPersonalId");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=60)]
+        public string verificationResultsDriversLicenseNo {
+            get {
+                return this.verificationResultsDriversLicenseNoField;
+            }
+            set {
+                this.verificationResultsDriversLicenseNoField = value;
+                this.RaisePropertyChanged("verificationResultsDriversLicenseNo");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=61)]
+        public string verificationResultsBuyerRegistration {
+            get {
+                return this.verificationResultsBuyerRegistrationField;
+            }
+            set {
+                this.verificationResultsBuyerRegistrationField = value;
+                this.RaisePropertyChanged("verificationResultsBuyerRegistration");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=62)]
+        public string delegatedAuthenticationResult {
+            get {
+                return this.delegatedAuthenticationResultField;
+            }
+            set {
+                this.delegatedAuthenticationResultField = value;
+                this.RaisePropertyChanged("delegatedAuthenticationResult");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("paymentNetworkTransactionInformation", Order=63)]
+        public string[] paymentNetworkTransactionInformation {
+            get {
+                return this.paymentNetworkTransactionInformationField;
+            }
+            set {
+                this.paymentNetworkTransactionInformationField = value;
+                this.RaisePropertyChanged("paymentNetworkTransactionInformation");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("transactionReason", Order=64)]
+        public string[] transactionReason {
+            get {
+                return this.transactionReasonField;
+            }
+            set {
+                this.transactionReasonField = value;
+                this.RaisePropertyChanged("transactionReason");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=65)]
+        public string panReturnIndicator {
+            get {
+                return this.panReturnIndicatorField;
+            }
+            set {
+                this.panReturnIndicatorField = value;
+                this.RaisePropertyChanged("panReturnIndicator");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=66)]
+        public string cashAdvanceIndicator {
+            get {
+                return this.cashAdvanceIndicatorField;
+            }
+            set {
+                this.cashAdvanceIndicatorField = value;
+                this.RaisePropertyChanged("cashAdvanceIndicator");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=67)]
+        public string splitPaymentTransaction {
+            get {
+                return this.splitPaymentTransactionField;
+            }
+            set {
+                this.splitPaymentTransactionField = value;
+                this.RaisePropertyChanged("splitPaymentTransaction");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=68)]
+        public string cardVerificationIndicator {
+            get {
+                return this.cardVerificationIndicatorField;
+            }
+            set {
+                this.cardVerificationIndicatorField = value;
+                this.RaisePropertyChanged("cardVerificationIndicator");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=69)]
+        public string exemptionDataRaw {
+            get {
+                return this.exemptionDataRawField;
+            }
+            set {
+                this.exemptionDataRawField = value;
+                this.RaisePropertyChanged("exemptionDataRaw");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=70)]
+        public string transactionFlowIndicator {
+            get {
+                return this.transactionFlowIndicatorField;
+            }
+            set {
+                this.transactionFlowIndicatorField = value;
+                this.RaisePropertyChanged("transactionFlowIndicator");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=71)]
+        public string networkPartnerId {
+            get {
+                return this.networkPartnerIdField;
+            }
+            set {
+                this.networkPartnerIdField = value;
+                this.RaisePropertyChanged("networkPartnerId");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=72)]
+        public string acquirerMerchantId {
+            get {
+                return this.acquirerMerchantIdField;
+            }
+            set {
+                this.acquirerMerchantIdField = value;
+                this.RaisePropertyChanged("acquirerMerchantId");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=73)]
+        public string merchantVerificationValue {
+            get {
+                return this.merchantVerificationValueField;
+            }
+            set {
+                this.merchantVerificationValueField = value;
+                this.RaisePropertyChanged("merchantVerificationValue");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=74)]
+        public string extendAuthIndicator {
+            get {
+                return this.extendAuthIndicatorField;
+            }
+            set {
+                this.extendAuthIndicatorField = value;
+                this.RaisePropertyChanged("extendAuthIndicator");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=75)]
+        public string acsReferenceNumber {
+            get {
+                return this.acsReferenceNumberField;
+            }
+            set {
+                this.acsReferenceNumberField = value;
+                this.RaisePropertyChanged("acsReferenceNumber");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=76)]
+        public string dsReferenceNumber {
+            get {
+                return this.dsReferenceNumberField;
+            }
+            set {
+                this.dsReferenceNumberField = value;
+                this.RaisePropertyChanged("dsReferenceNumber");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=77)]
+        public string initiatorType {
+            get {
+                return this.initiatorTypeField;
+            }
+            set {
+                this.initiatorTypeField = value;
+                this.RaisePropertyChanged("initiatorType");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=78)]
+        public string purposeOfPayment {
+            get {
+                return this.purposeOfPaymentField;
+            }
+            set {
+                this.purposeOfPaymentField = value;
+                this.RaisePropertyChanged("purposeOfPayment");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=79)]
+        public string aggregatorStreetAddress {
+            get {
+                return this.aggregatorStreetAddressField;
+            }
+            set {
+                this.aggregatorStreetAddressField = value;
+                this.RaisePropertyChanged("aggregatorStreetAddress");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=80)]
+        public string aggregatorCity {
+            get {
+                return this.aggregatorCityField;
+            }
+            set {
+                this.aggregatorCityField = value;
+                this.RaisePropertyChanged("aggregatorCity");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=81)]
+        public string aggregatorState {
+            get {
+                return this.aggregatorStateField;
+            }
+            set {
+                this.aggregatorStateField = value;
+                this.RaisePropertyChanged("aggregatorState");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=82)]
+        public string aggregatorPostalcode {
+            get {
+                return this.aggregatorPostalcodeField;
+            }
+            set {
+                this.aggregatorPostalcodeField = value;
+                this.RaisePropertyChanged("aggregatorPostalcode");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=83)]
+        public string aggregatorCountry {
+            get {
+                return this.aggregatorCountryField;
+            }
+            set {
+                this.aggregatorCountryField = value;
+                this.RaisePropertyChanged("aggregatorCountry");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=84)]
+        public string eligibilityIndicator {
+            get {
+                return this.eligibilityIndicatorField;
+            }
+            set {
+                this.eligibilityIndicatorField = value;
+                this.RaisePropertyChanged("eligibilityIndicator");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=85)]
+        public serviceProcessing serviceProcessing {
+            get {
+                return this.serviceProcessingField;
+            }
+            set {
+                this.serviceProcessingField = value;
+                this.RaisePropertyChanged("serviceProcessing");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=86)]
+        public benefit benefit {
+            get {
+                return this.benefitField;
+            }
+            set {
+                this.benefitField = value;
+                this.RaisePropertyChanged("benefit");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=87)]
+        public language language {
+            get {
+                return this.languageField;
+            }
+            set {
+                this.languageField = value;
+                this.RaisePropertyChanged("language");
             }
         }
         
@@ -52080,11 +57564,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class ServiceFee : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string merchantDescriptorField;
@@ -52140,11 +57624,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class MerchantSecureData : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string field1Field;
@@ -52214,11 +57698,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class AuxiliaryField : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string idField;
@@ -52260,11 +57744,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class MDDField : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string idField;
@@ -52306,11 +57790,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class MerchantDefinedData : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string field1Field;
@@ -52618,11 +58102,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class PayPal : object, System.ComponentModel.INotifyPropertyChanged {
         
         private System.Xml.XmlElement[] anyField;
@@ -52650,11 +58134,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class OtherTax : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string vatTaxAmountField;
@@ -52676,6 +58160,8 @@ namespace CyberSource.Clients.SoapServiceReference {
         private string nationalTaxAmountField;
         
         private string nationalTaxIndicatorField;
+        
+        private string greenTaxAmountField;
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=0)]
@@ -52797,6 +58283,18 @@ namespace CyberSource.Clients.SoapServiceReference {
             }
         }
         
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=10)]
+        public string greenTaxAmount {
+            get {
+                return this.greenTaxAmountField;
+            }
+            set {
+                this.greenTaxAmountField = value;
+                this.RaisePropertyChanged("greenTaxAmount");
+            }
+        }
+        
         public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
         
         protected void RaisePropertyChanged(string propertyName) {
@@ -52808,11 +58306,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class DecisionManagerTravelLeg : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string originField;
@@ -52882,11 +58380,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class DecisionManagerTravelData : object, System.ComponentModel.INotifyPropertyChanged {
         
         private DecisionManagerTravelLeg[] legField;
@@ -52970,11 +58468,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class Authentication : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string outOfScopeField;
@@ -53016,11 +58514,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class DecisionManager : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string enabledField;
@@ -53104,14 +58602,16 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class TokenSource : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string transientTokenField;
+        
+        private string networkTokenOptionField;
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=0)]
@@ -53122,6 +58622,18 @@ namespace CyberSource.Clients.SoapServiceReference {
             set {
                 this.transientTokenField = value;
                 this.RaisePropertyChanged("transientToken");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string networkTokenOption {
+            get {
+                return this.networkTokenOptionField;
+            }
+            set {
+                this.networkTokenOptionField = value;
+                this.RaisePropertyChanged("networkTokenOption");
             }
         }
         
@@ -53136,11 +58648,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class PaySubscriptionEvent : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string amountField;
@@ -53196,11 +58708,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class RecurringSubscriptionInfo : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string subscriptionIDField;
@@ -53212,6 +58724,8 @@ namespace CyberSource.Clients.SoapServiceReference {
         private string numberOfPaymentsField;
         
         private string numberOfPaymentsToAddField;
+        
+        private string sequenceNumberField;
         
         private string automaticRenewField;
         
@@ -53288,7 +58802,19 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
+        [System.Xml.Serialization.XmlElementAttribute(DataType="integer", Order=5)]
+        public string sequenceNumber {
+            get {
+                return this.sequenceNumberField;
+            }
+            set {
+                this.sequenceNumberField = value;
+                this.RaisePropertyChanged("sequenceNumber");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=6)]
         public string automaticRenew {
             get {
                 return this.automaticRenewField;
@@ -53300,7 +58826,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=6)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=7)]
         public string frequency {
             get {
                 return this.frequencyField;
@@ -53312,7 +58838,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=7)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=8)]
         public string startDate {
             get {
                 return this.startDateField;
@@ -53324,7 +58850,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=8)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=9)]
         public string endDate {
             get {
                 return this.endDateField;
@@ -53336,7 +58862,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=9)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=10)]
         public string approvalRequired {
             get {
                 return this.approvalRequiredField;
@@ -53348,7 +58874,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=10)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=11)]
         public PaySubscriptionEvent @event {
             get {
                 return this.eventField;
@@ -53360,7 +58886,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=11)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=12)]
         public string billPayment {
             get {
                 return this.billPaymentField;
@@ -53382,11 +58908,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class Subscription : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string titleField;
@@ -53428,11 +58954,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class BankInfo : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string bankCodeField;
@@ -53572,11 +59098,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class FundTransfer : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string accountNumberField;
@@ -53646,11 +59172,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class GECC : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string saleTypeField;
@@ -53748,11 +59274,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class BML : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string customerBillingAddressChangeField;
@@ -54970,11 +60496,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class Check : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string fullNameField;
@@ -55001,11 +60527,13 @@ namespace CyberSource.Clients.SoapServiceReference {
         
         private string terminalStateField;
         
-        private string customerPresentField;
-        
         private string checkTransactionCodeField;
         
         private string disableAccountValidationField;
+        
+        private string transactionReasonField;
+        
+        private string validationTypeField;
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=0)]
@@ -55153,18 +60681,6 @@ namespace CyberSource.Clients.SoapServiceReference {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=12)]
-        public string customerPresent {
-            get {
-                return this.customerPresentField;
-            }
-            set {
-                this.customerPresentField = value;
-                this.RaisePropertyChanged("customerPresent");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=13)]
         public string checkTransactionCode {
             get {
                 return this.checkTransactionCodeField;
@@ -55176,7 +60692,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=14)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=13)]
         public string disableAccountValidation {
             get {
                 return this.disableAccountValidationField;
@@ -55184,6 +60700,30 @@ namespace CyberSource.Clients.SoapServiceReference {
             set {
                 this.disableAccountValidationField = value;
                 this.RaisePropertyChanged("disableAccountValidation");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=14)]
+        public string transactionReason {
+            get {
+                return this.transactionReasonField;
+            }
+            set {
+                this.transactionReasonField = value;
+                this.RaisePropertyChanged("transactionReason");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=15)]
+        public string validationType {
+            get {
+                return this.validationTypeField;
+            }
+            set {
+                this.validationTypeField = value;
+                this.RaisePropertyChanged("validationType");
             }
         }
         
@@ -55198,11 +60738,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class Category : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string affiliateField;
@@ -55258,11 +60798,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class Pin : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string entryCapabilityField;
@@ -55290,11 +60830,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class DCC : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string dccIndicatorField;
@@ -55336,11 +60876,11 @@ namespace CyberSource.Clients.SoapServiceReference {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223")]
     public partial class ShipFrom : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string titleField;
@@ -55597,7 +61137,7 @@ namespace CyberSource.Clients.SoapServiceReference {
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class inputMessageIn {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223", Order=0)]
         public CyberSource.Clients.SoapServiceReference.RequestMessage requestMessage;
         
         public inputMessageIn() {
@@ -55614,7 +61154,7 @@ namespace CyberSource.Clients.SoapServiceReference {
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class outputMessageOut {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.170", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="urn:schemas-cybersource-com:transaction-data-1.223", Order=0)]
         public CyberSource.Clients.SoapServiceReference.ReplyMessage replyMessage;
         
         public outputMessageOut() {

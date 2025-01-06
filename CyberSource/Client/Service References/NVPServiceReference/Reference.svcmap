@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="3b2a61c3-ec32-4c36-9112-3beae81d4648" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ID="3b2a61c3-ec32-4c36-9112-3beae81d4648" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
     <EnableDataBinding>true</EnableDataBinding>
@@ -18,11 +18,11 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="https://ics2wstest.ic3.com/commerce/1.x/transactionProcessor/CyberSourceTransaction_NVP_1.170.wsdl" Protocol="http" SourceId="1" />
+    <MetadataSource Address="https://ics2wstest.ic3.com/commerce/1.x/transactionProcessor/CyberSourceTransaction_NVP_1.224.wsdl" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="CyberSourceTransaction_11.xsd" MetadataType="Schema" ID="1ce55d4b-0c46-4aee-a8fe-7f086aa331b1" SourceId="1" SourceUrl="https://ics2wstest.ic3.com/commerce/1.x/transactionProcessor/CyberSourceTransaction_1.170.xsd" />
-    <MetadataFile FileName="NVPCyberSourceTransactionWS1.wsdl" MetadataType="Wsdl" ID="eec1cdb5-bd91-4eea-aa68-6dc4b2685d64" SourceId="1" SourceUrl="https://ics2wstest.ic3.com/commerce/1.x/transactionProcessor/CyberSourceTransaction_NVP_1.170.wsdl" />
+    <MetadataFile FileName="CyberSourceTransaction_11.xsd" MetadataType="Schema" ID="f0482875-d29d-4e04-b489-f8d46c603d07" SourceId="1" SourceUrl="https://ics2wstest.ic3.com/commerce/1.x/transactionProcessor/CyberSourceTransaction_1.224.xsd" />
+    <MetadataFile FileName="NVPCyberSourceTransactionWS1.wsdl" MetadataType="Wsdl" ID="ec7f198a-ce35-47f7-8784-98766fc28ef2" SourceId="1" SourceUrl="https://ics2wstest.ic3.com/commerce/1.x/transactionProcessor/CyberSourceTransaction_NVP_1.224.wsdl" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
