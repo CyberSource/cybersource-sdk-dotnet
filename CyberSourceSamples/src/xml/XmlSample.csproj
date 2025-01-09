@@ -168,6 +168,24 @@
       <Name>CyberSourceClients</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="xmlSamples\androidPayAuth.xml" />
+    <None Include="xmlSamples\applePayAuth.xml" />
+    <None Include="xmlSamples\auth.xml" />
+    <None Include="xmlSamples\authReversal.xml" />
+    <None Include="xmlSamples\capture.xml" />
+    <None Include="xmlSamples\credit.xml" />
+    <None Include="xmlSamples\emvauth.xml" />
+    <None Include="xmlSamples\level2capture.xml" />
+    <None Include="xmlSamples\paymentNetowrkTokenization.xml" />
+    <None Include="xmlSamples\refund.xml" />
+    <None Include="xmlSamples\sale.xml" />
+    <ContentWithTargetPath Include="xmlSamples\sample.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>sample.xml</TargetPath>
+    </ContentWithTargetPath>
+    <None Include="xmlSamples\visacheckout.xml" />
+  </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PreBuildEvent>

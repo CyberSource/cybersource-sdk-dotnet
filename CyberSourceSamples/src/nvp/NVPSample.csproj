@@ -143,6 +143,17 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="NVPSample.cs" />
+    <None Include="nvpSamples\androidPayAuth.csv" />
+    <None Include="nvpSamples\applePayAuth.csv" />
+    <None Include="nvpSamples\auth.csv" />
+    <None Include="nvpSamples\authrev.csv" />
+    <None Include="nvpSamples\capture.csv" />
+    <None Include="nvpSamples\credit.csv" />
+    <None Include="nvpSamples\emvauth.csv" />
+    <None Include="nvpSamples\level2capture.csv" />
+    <None Include="nvpSamples\paymentNetworkTokenization.csv" />
+    <None Include="nvpSamples\sale.csv" />
+    <None Include="nvpSamples\visacheckout.csv" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
