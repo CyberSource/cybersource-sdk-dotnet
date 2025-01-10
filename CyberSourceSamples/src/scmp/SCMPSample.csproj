@@ -129,8 +129,9 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="CyberSource">
-      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\CyberSource Corporation\CyberSource .NET Client 5.1.0\CyberSource.dll</HintPath>
+    <Reference Include="CyberSource, Version=5.1.0.0, Culture=neutral, PublicKeyToken=7091342136fdb0df, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Dependencies\CyberSource.dll</HintPath>
     </Reference>
     <Reference Include="System">
       <Name>System</Name>
@@ -180,6 +181,12 @@
       <Name>CyberSourceClients</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Dependencies\CyberSource.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PreBuildEvent>

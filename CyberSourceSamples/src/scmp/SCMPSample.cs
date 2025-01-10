@@ -49,7 +49,7 @@ namespace CyberSource.Samples
 
                 Hashtable reply = Util.processRequest(request);
 
-                PrintHashTable(reply, "SCMP Client Response");
+                PrintHashTable(reply, "SCMP Client Response \n");
 
                 //SaveOrderState();
                 //ProcessReply(reply);

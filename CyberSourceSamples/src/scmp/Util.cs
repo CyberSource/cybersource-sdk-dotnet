@@ -927,7 +927,7 @@ namespace Client.Samples
             }
             catch (Exception e) {
                 Console.WriteLine("Error processing Simple Order request" + e.Message);
-                return null;
+                throw e;
             }
             return nvpHashTable;
 
