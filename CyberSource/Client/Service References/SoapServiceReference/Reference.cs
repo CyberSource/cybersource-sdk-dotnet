@@ -36333,7 +36333,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         
         private string prepaidIndicatorField;
         
-        private string passPhraseField;
+        private System.Security.SecureString passPhraseField;
         
         private string personalDataField;
         
@@ -36883,10 +36883,11 @@ namespace CyberSource.Clients.SoapServiceReference {
         [System.Xml.Serialization.XmlElementAttribute(Order=45)]
         public string passPhrase {
             get {
-                return this.passPhraseField;
+                return ConvertToUnsecureString(this.passPhraseField);
             }
             set {
-                this.passPhraseField = value;
+                this.passPhraseField = new System.Net.NetworkCredential(string.Empty, value).SecurePassword;
+                this.passPhraseField.MakeReadOnly();
                 this.RaisePropertyChanged("passPhrase");
             }
         }
@@ -36921,6 +36922,25 @@ namespace CyberSource.Clients.SoapServiceReference {
             System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
             if ((propertyChanged != null)) {
                 propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+
+        public static string ConvertToUnsecureString(System.Security.SecureString secureString)
+        {
+            if (secureString == null)
+            {
+                return string.Empty;
+            }
+
+            System.IntPtr unmanagedString = System.IntPtr.Zero;
+            try
+            {
+                unmanagedString = System.Runtime.InteropServices.Marshal.SecureStringToGlobalAllocUnicode(secureString);
+                return System.Runtime.InteropServices.Marshal.PtrToStringUni(unmanagedString);
+            }
+            finally
+            {
+                System.Runtime.InteropServices.Marshal.ZeroFreeGlobalAllocUnicode(unmanagedString);
             }
         }
     }
@@ -52539,7 +52559,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         
         private string loginIDField;
         
-        private string passwordField;
+        private System.Security.SecureString passwordField;
         
         private string merchantIDField;
         
@@ -52791,10 +52811,11 @@ namespace CyberSource.Clients.SoapServiceReference {
         [System.Xml.Serialization.XmlElementAttribute(Order=9)]
         public string password {
             get {
-                return this.passwordField;
+                return ConvertToUnsecureString(this.passwordField);
             }
             set {
-                this.passwordField = value;
+                this.passwordField = new System.Net.NetworkCredential(string.Empty, value).SecurePassword;
+                this.passwordField.MakeReadOnly();
                 this.RaisePropertyChanged("password");
             }
         }
@@ -53633,6 +53654,25 @@ namespace CyberSource.Clients.SoapServiceReference {
             System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
             if ((propertyChanged != null)) {
                 propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+
+        public static string ConvertToUnsecureString(System.Security.SecureString secureString)
+        {
+            if (secureString == null)
+            {
+                return string.Empty;
+            }
+
+            System.IntPtr unmanagedString = System.IntPtr.Zero;
+            try
+            {
+                unmanagedString = System.Runtime.InteropServices.Marshal.SecureStringToGlobalAllocUnicode(secureString);
+                return System.Runtime.InteropServices.Marshal.PtrToStringUni(unmanagedString);
+            }
+            finally
+            {
+                System.Runtime.InteropServices.Marshal.ZeroFreeGlobalAllocUnicode(unmanagedString);
             }
         }
     }
