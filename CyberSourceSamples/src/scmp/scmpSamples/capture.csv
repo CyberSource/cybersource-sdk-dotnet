@@ -1,0 +1,7 @@
+"merchantID","your_merchant_id"
+"merchantReferenceCode","your_merchant_reference_code"
+"item_0_unitPrice","12.34"
+"item_1_unitPrice","56.78"
+"purchaseTotals_currency","USD"
+"ccCaptureService_run",true"
+"ccCaptureService_authRequestID","4803123601076369401011"
