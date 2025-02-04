@@ -311,8 +311,7 @@ namespace CyberSource.Clients
             SignedXml signedXML = new SignedXml(doc);
             signedXML.AddReference(reference);
 
-            RSACryptoServiceProvider rsaKey = (RSACryptoServiceProvider)cert.PrivateKey;
-            signedXML.SigningKey = rsaKey;
+            signedXML.SigningKey = cert.GetRSAPrivateKey();
             signedXML.SignedInfo.CanonicalizationMethod = SignedXml.XmlDsigExcC14NTransformUrl;
 
             XmlDsigExcC14NTransform canMethod = (XmlDsigExcC14NTransform)signedXML.SignedInfo.CanonicalizationMethodObject;

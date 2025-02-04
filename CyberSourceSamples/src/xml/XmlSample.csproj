@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="12.0">
   <PropertyGroup>
     <ProjectType>Local</ProjectType>
     <ProductVersion>8.0.50727</ProductVersion>
@@ -26,7 +26,7 @@
     </FileUpgradeFlags>
     <UpgradeBackupLocation>
     </UpgradeBackupLocation>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <OldToolsVersion>2.0</OldToolsVersion>
     <IsWebBootstrapper>true</IsWebBootstrapper>
     <TargetFrameworkProfile />
@@ -66,6 +66,7 @@
     <ErrorReport>prompt</ErrorReport>
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
     <PlatformTarget>AnyCPU</PlatformTarget>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <OutputPath>..\..\bin\</OutputPath>
@@ -87,6 +88,7 @@
     <DebugType>none</DebugType>
     <ErrorReport>prompt</ErrorReport>
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
     <DebugSymbols>true</DebugSymbols>
@@ -105,6 +107,7 @@
     <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
     <CodeAnalysisRuleDirectories>;C:\Program Files\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
     <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
     <OutputPath>..\..\bin\</OutputPath>
@@ -120,6 +123,7 @@
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
     <CodeAnalysisRuleSetDirectories>;C:\Program Files\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
     <CodeAnalysisRuleDirectories>;C:\Program Files\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System">
@@ -163,6 +167,24 @@
       <Project>{e8400f49-3b8c-4b9f-b7a4-10a7960065e3}</Project>
       <Name>CyberSourceClients</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="xmlSamples\androidPayAuth.xml" />
+    <None Include="xmlSamples\applePayAuth.xml" />
+    <None Include="xmlSamples\auth.xml" />
+    <None Include="xmlSamples\authReversal.xml" />
+    <None Include="xmlSamples\capture.xml" />
+    <None Include="xmlSamples\credit.xml" />
+    <None Include="xmlSamples\emvauth.xml" />
+    <None Include="xmlSamples\level2capture.xml" />
+    <None Include="xmlSamples\paymentNetowrkTokenization.xml" />
+    <None Include="xmlSamples\refund.xml" />
+    <None Include="xmlSamples\sale.xml" />
+    <ContentWithTargetPath Include="xmlSamples\sample.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>sample.xml</TargetPath>
+    </ContentWithTargetPath>
+    <None Include="xmlSamples\visacheckout.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
