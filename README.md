@@ -29,7 +29,7 @@ For latest version, check this https://ics2ws.ic3.com/commerce/1.x/transactionPr
 - Build/Rebuild the Solution.
 
 ## Running the Samples
-- Copy `samples.xml` from `cybersource-sdk-dotnet` directory to `cybersource-sdk-dotnet\CyberSourceSamples\bin`
+- Copy `sample.xml` from `cybersource-sdk-dotnet` directory to `cybersource-sdk-dotnet\CyberSourceSamples\bin`
 - Update following properties in XmlSample.exe.config (remember to update app.config to keep these values when rebuilding).
   - cybs.merchantID
   - cybs.keysDirectory
