@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using System.Collections.Generic;
 using System.Text;
 
 namespace CyberSource.Base
@@ -20,6 +21,10 @@ namespace CyberSource.Base
         private const char UNDERSCORE = '_';
 
         private static Hashtable safeTable;
+        private static readonly Dictionary<string, HashSet<string>> safeFieldSets
+            = new Dictionary<string, HashSet<string>>();
+        private static readonly object safeFieldSetsLock = new object();
+        private static readonly char[] FIELD_SEPARATORS = new[] { ' ', '\t', '\r', '\n' };
 
         static SafeFields()
         {
@@ -235,8 +240,28 @@ namespace CyberSource.Base
             // if none, then this field is definitely not safe
             if (list == null) return( false );
 
-            // return whether or not this child is on the list
-            return( list.Contains( child ) );
+            // return whether or not this child is on the list,
+            // using a whole-word lookup against a HashSet so that
+            // a field name is not matched as a substring of another
+            // (e.g. "bin" must not match "cardBin").
+            HashSet<string> set = GetFieldSet(parent, list);
+            return (set.Contains(child));
+        }
+
+        private static HashSet<string> GetFieldSet(string parent, string list)
+        {
+            HashSet<string> set;
+            lock (safeFieldSetsLock)
+            {
+                if (!safeFieldSets.TryGetValue(parent, out set))
+                {
+                    set = new HashSet<string>(
+                        list.Split(FIELD_SEPARATORS, StringSplitOptions.RemoveEmptyEntries),
+                        StringComparer.Ordinal);
+                    safeFieldSets[parent] = set;
+                }
+            }
+            return set;
         }
 
         // removes indices, e.g. item_0_unitPrice becomes item_unitPrice.

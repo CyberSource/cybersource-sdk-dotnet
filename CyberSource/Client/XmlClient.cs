@@ -107,7 +107,7 @@ namespace CyberSource.Clients
                         }
 
                         X509Certificate2Collection collection = new X509Certificate2Collection();
-                        collection.Import(keyFilePath, new NetworkCredential(string.Empty, config.EffectivePassword).Password, X509KeyStorageFlags.MachineKeySet | X509KeyStorageFlags.Exportable | X509KeyStorageFlags.PersistKeySet);
+                        collection.Import(keyFilePath, new NetworkCredential(string.Empty, config.EffectivePassword).Password, X509KeyStorageFlags.MachineKeySet);
 
                         X509Certificate2 newMerchantCert = null;
                         X509Certificate2 newCybsCert = null;
@@ -141,7 +141,7 @@ namespace CyberSource.Clients
                 else
                 {
                     X509Certificate2Collection collection = new X509Certificate2Collection();
-                    collection.Import(keyFilePath, new NetworkCredential(string.Empty, config.EffectivePassword).Password, X509KeyStorageFlags.MachineKeySet | X509KeyStorageFlags.Exportable | X509KeyStorageFlags.PersistKeySet);
+                    collection.Import(keyFilePath, new NetworkCredential(string.Empty, config.EffectivePassword).Password, X509KeyStorageFlags.MachineKeySet);
 
                     foreach (X509Certificate2 cert1 in collection)
                     {

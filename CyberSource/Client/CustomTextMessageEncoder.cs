@@ -59,45 +59,17 @@ namespace CyberSource.Clients
 
         public override Message ReadMessage(Stream stream, int maxSizeOfHeaders, string contentType)
         {
-            String wireResponse;
-
-            using (var sr = new StreamReader(stream))
-            {
-                wireResponse = sr.ReadToEnd();
-            }
-             
             // Fix for Xml external entity injection violation in fortify report
             XmlReaderSettings settings = new XmlReaderSettings();
             settings.DtdProcessing = DtdProcessing.Prohibit;
             settings.XmlResolver = null;
 
-            XmlDocument doc = new XmlDocument();
-            Message returnMessage = null;
-
-            using (StringReader stringReader = new StringReader(wireResponse))
-            {
-                using (XmlReader reader = XmlReader.Create(stringReader, settings))
-                {
-                    doc.Load(reader);
-
-                    //We need to get rid of the security header because it is not signed by the web service.
-                    //The whole reason for the custom Encoder is to do this. the client rejected the unsigned header.
-                    //Our WCF client is set up to allow the absence of a security header but if the header exists then it must be signed.
-                    //Hopefully the namespace will not change. Maybe it should be put in a config.
-
-                    XPathNavigator n = doc.CreateNavigator();
-                    if (n.MoveToFollowing("Security", "http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd"))
-                    {
-                        n.DeleteSelf();
-                    }
-
-                    StringReader stringReaderInnerXml = new StringReader(doc.InnerXml);
-                    XmlReader reader2 = XmlReader.Create(stringReaderInnerXml, settings);
-                    returnMessage = Message.CreateMessage(reader2, maxSizeOfHeaders, MessageVersion.Soap11);
-                }
-            }
-
-            return returnMessage;
+            // Preserve the WS-Security header on the response so that WCF
+            // can properly validate the message-level signature.  The
+            // server certificate is validated via the IdentityVerifier
+            // configured on the binding (see BaseClient.getWCFCustomBinding).
+            XmlReader reader = XmlReader.Create(stream, settings);
+            return Message.CreateMessage(reader, maxSizeOfHeaders, MessageVersion.Soap11);
         }
 
         public override ArraySegment<byte> WriteMessage(Message message, int maxMessageSize, BufferManager bufferManager, int messageOffset)
