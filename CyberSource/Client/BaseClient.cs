@@ -358,12 +358,18 @@ namespace CyberSource.Clients
             AsymmetricSecurityBindingElement asec = (AsymmetricSecurityBindingElement)SecurityBindingElement.CreateMutualCertificateDuplexBindingElement(MessageSecurityVersion.WSSecurity10WSTrustFebruary2005WSSecureConversationFebruary2005WSSecurityPolicy11BasicSecurityProfile10);
             asec.SetKeyDerivation(false);
             asec.IncludeTimestamp = false;
-            asec.EnableUnsecuredResponse = true;
+            asec.EnableUnsecuredResponse = false;
             asec.SecurityHeaderLayout = SecurityHeaderLayout.Lax;
+
+            // Validate the server certificate on the signed response via a
+            // custom IdentityVerifier that checks the X.509 subject against
+            // the expected CyberSource public key.  This must be configured
+            // for both signed and signed+encrypted bindings so that the
+            // WS-Security signature on the response is properly verified.
+            asec.LocalClientSettings.IdentityVerifier = new CustomeIdentityVerifier();
 
             if (config.UseSignedAndEncrypted)
             {
-                asec.LocalClientSettings.IdentityVerifier = new CustomeIdentityVerifier();
                 asec.RecipientTokenParameters = new System.ServiceModel.Security.Tokens.X509SecurityTokenParameters { InclusionMode = SecurityTokenInclusionMode.Once };
                 asec.MessageProtectionOrder = System.ServiceModel.Security.MessageProtectionOrder.SignBeforeEncrypt;
                 asec.EndpointSupportingTokenParameters.SignedEncrypted.Add(new System.ServiceModel.Security.Tokens.X509SecurityTokenParameters());

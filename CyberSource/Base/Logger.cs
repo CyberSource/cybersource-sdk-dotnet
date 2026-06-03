@@ -413,6 +413,8 @@ namespace CyberSource.Base
         }
 
         private const string TRACK_DATA = "trackData";
+        private const string ACCOUNT_NUMBER = "accountNumber";
+        private const string CARD_NUMBER = "cardNumber";
         private const char MASK_CHAR = 'x';
         public static string MaskedValue(string key, string val)
         {
@@ -421,28 +423,29 @@ namespace CyberSource.Base
             int len = val.Length;
             if (len == 0) return (String.Empty);
 
-            if (key.Contains(TRACK_DATA) ||
-                len >= 1 && len <= 9)
+            // PCI DSS: for Primary Account Numbers (PAN), only the
+            // first 6 and last 4 digits may be displayed.  For all
+            // other sensitive values (including track data, CVV,
+            // PIN, expiration, etc.), the value must be fully masked.
+            if (key != null &&
+                (key.Contains(ACCOUNT_NUMBER) || key.Contains(CARD_NUMBER)) &&
+                !key.Contains(TRACK_DATA))
             {
-                // mask everything
-                return( new String( MASK_CHAR, val.Length ) );
+                if (len <= 10)
+                {
+                    // not enough digits to safely reveal first 6/last 4
+                    return (new String(MASK_CHAR, len));
+                }
+
+                // mask everything but the first 6 and last 4
+                return (
+                    val.Substring(0, 6) +
+                    (new String(MASK_CHAR, len - 10)) +
+                    val.Substring(len - 4));
             }
 
-            if (len >= 10 && len <= 15)
-            {
-                // mask everything but the first and last two
-                return( 
-                    val.Substring(0, 2) +
-                    (new String(MASK_CHAR, len - 4)) +
-                    val.Substring(len - 2));              
-            }
-
-            // for strings that have 16 chars or more,
-            // mask everything but the first and last four
-            return (
-                val.Substring(0, 4) +
-                (new String(MASK_CHAR, len - 8)) +
-                val.Substring(len - 4));
+            // fully mask all other sensitive values
+            return (new String(MASK_CHAR, len));
         }
     }   // Logger class
 } // namespace
