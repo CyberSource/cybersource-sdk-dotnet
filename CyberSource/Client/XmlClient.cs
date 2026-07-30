@@ -17,7 +17,7 @@ namespace CyberSource.Clients
     /// </summary>
     public class XmlClient : BaseClient
     {
-        private const string SOAP_ENVELOPE = "<SOAP-ENV:Envelope xmlns:SOAP-ENV=\"http://schemas.xmlsoap.org/soap/envelope/\"><SOAP-ENV:Header><wsse:Security xmlns:wsse=\"http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd\" SOAP-ENV:mustUnderstand=\"1\"></wsse:Security><wsse:BinarySecurityToken xmlns:wsse=\"http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd\" xmlns:wsu=\"http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd\" EncodingType=\"http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-soap-message-security-1.0#Base64Binary\" ValueType=\"http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-x509-token-profile-1.0#X509v3\" wsu:Id=\"X509Token\"></wsse:BinarySecurityToken></SOAP-ENV:Header><SOAP-ENV:Body xmlns:SOAP-ENV=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:wsu=\"http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd\" wsu:Id=\"MsgBody\" Id=\"MsgBody\"></SOAP-ENV:Body></SOAP-ENV:Envelope>";
+        private const string SOAP_ENVELOPE = "<SOAP-ENV:Envelope xmlns:SOAP-ENV=\"http://schemas.xmlsoap.org/soap/envelope/\"><SOAP-ENV:Header><wsse:Security xmlns:wsse=\"http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd\" SOAP-ENV:mustUnderstand=\"1\"><wsse:BinarySecurityToken xmlns:wsse=\"http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd\" xmlns:wsu=\"http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd\" EncodingType=\"http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-soap-message-security-1.0#Base64Binary\" ValueType=\"http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-x509-token-profile-1.0#X509v3\" wsu:Id=\"X509Token\"></wsse:BinarySecurityToken></wsse:Security></SOAP-ENV:Header><SOAP-ENV:Body xmlns:SOAP-ENV=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:wsu=\"http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd\" wsu:Id=\"MsgBody\" Id=\"MsgBody\"></SOAP-ENV:Body></SOAP-ENV:Envelope>";
 
         private const string REQUEST_MESSAGE = "requestMessage";
         private const string REPLY_MESSAGE = "replyMessage";
@@ -124,6 +124,19 @@ namespace CyberSource.Clients
                                 newCybsCert = cert1;
                             }
                         }
+
+                        // Mono's X509Certificate2Collection.Import only loads the first cert with a
+                        // matching private key from a PKCS12 file, so additional certs such as the
+                        // CyberSource encryption cert are not loaded. Fall back to a PEM file.
+                        if (newCybsCert == null && Type.GetType("Mono.Runtime") != null)
+                        {
+                            string cybsPemPath = Path.Combine(config.KeysDirectory, CYBS_SUBJECT_NAME + ".pem");
+                            if (File.Exists(cybsPemPath))
+                            {
+                                newCybsCert = new X509Certificate2(cybsPemPath);
+                            }
+                        }
+
                         CertificateEntry newCert = new CertificateEntry
                         {
                             ModifiedTime = dateFile,
@@ -162,7 +175,18 @@ namespace CyberSource.Clients
                                 break;
                             }
                         }
-                       
+
+                        // Mono's X509Certificate2Collection.Import only loads the first cert with a
+                        // matching private key from a PKCS12 file, so additional certs such as the
+                        // CyberSource encryption cert are not loaded. Fall back to a PEM file.
+                        if (cybsCert == null && Type.GetType("Mono.Runtime") != null)
+                        {
+                            string cybsPemPath = Path.Combine(config.KeysDirectory, CYBS_SUBJECT_NAME + ".pem");
+                            if (File.Exists(cybsPemPath))
+                            {
+                                cybsCert = new X509Certificate2(cybsPemPath);
+                            }
+                        }
                     }
                 }
 
@@ -345,7 +369,7 @@ namespace CyberSource.Clients
 
             //Add The Base64 representation of the X509 cert to BinarySecurityToken Node
             //X509SecurityToken token = new X509SecurityToken(cert);
-            doc.DocumentElement.FirstChild.LastChild.InnerText = Convert.ToBase64String(cert.Export(X509ContentType.Cert), Base64FormattingOptions.None);
+            doc.DocumentElement.FirstChild.FirstChild.FirstChild.InnerText = Convert.ToBase64String(cert.Export(X509ContentType.Cert), Base64FormattingOptions.None);
             stringReader.Close();
             reader.Close();
         }
