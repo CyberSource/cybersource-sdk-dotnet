@@ -258,21 +258,20 @@ namespace CyberSource.Clients
             char[] EQUAL_SIGN = { '=' };
 
             Hashtable dest = new Hashtable();
-            StringReader reader = new StringReader(src);
-
-            string line;
-            while ((line = reader.ReadLine()) != null)
+            using (StringReader reader = new StringReader(src))
             {
-                string[] parts = line.Split(EQUAL_SIGN, 2);
-                if (parts.Length > 0)
+                string line;
+                while ((line = reader.ReadLine()) != null)
                 {
-                    dest.Add(
-                        parts[0],
-                        parts.Length == 2 ? parts[1] : null);
+                    string[] parts = line.Split(EQUAL_SIGN, 2);
+                    if (parts.Length > 0)
+                    {
+                        dest.Add(
+                            parts[0],
+                            parts.Length == 2 ? parts[1] : null);
+                    }
                 }
             }
-
-            reader.Close();
 
             return (dest);
         }

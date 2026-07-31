@@ -34,13 +34,11 @@ namespace CyberSource.Clients
             XmlReaderSettings settings = new XmlReaderSettings();
             settings.DtdProcessing = DtdProcessing.Prohibit;
             settings.XmlResolver = null;
-            StringReader stringReader = new StringReader(SOAP_ENVELOPE);
-            XmlReader reader = XmlReader.Create(stringReader, settings);
-
-            mSoapEnvelope.Load(reader);
-
-            stringReader.Close();
-            reader.Close();
+            using (StringReader stringReader = new StringReader(SOAP_ENVELOPE))
+            using (XmlReader reader = XmlReader.Create(stringReader, settings))
+            {
+                mSoapEnvelope.Load(reader);
+            }
         }
 
         private XmlClient() { }
@@ -323,7 +321,7 @@ namespace CyberSource.Clients
 
         private static void SignDocument(X509Certificate2 cert, XmlDocument doc)
         {
-            
+
             //Create reference to #MsgBody which is the ID of the SOAP Body (only signing the Body)
             Reference reference = new Reference("#MsgBody");
 
@@ -360,18 +358,17 @@ namespace CyberSource.Clients
             XmlReaderSettings settings = new XmlReaderSettings();
             settings.DtdProcessing = DtdProcessing.Prohibit;
             settings.XmlResolver = null;
-            StringReader stringReader = new StringReader(keyInfoTags);
-            XmlReader reader = XmlReader.Create(stringReader, settings);
+            using (StringReader stringReader = new StringReader(keyInfoTags))
+            using (XmlReader reader = XmlReader.Create(stringReader, settings))
+            {
+                //keyInfo.LoadXml("<root xmlns:ds=\"http://www.w3.org/2000/09/xmldsig#\" xmlns:wsse=\"http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd\" ><ds:KeyInfo><SecurityTokenReference xmlns=\"http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd\"><wsse:Reference URI=\"#X509Token\" ValueType=\"http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-x509-token-profile-1.0#X509v3\"/></SecurityTokenReference></ds:KeyInfo></root>");
+                keyInfo.Load(reader);
+                doc.DocumentElement.FirstChild.FirstChild.LastChild.AppendChild(doc.ImportNode(keyInfo.FirstChild.FirstChild, true));
 
-            //keyInfo.LoadXml("<root xmlns:ds=\"http://www.w3.org/2000/09/xmldsig#\" xmlns:wsse=\"http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd\" ><ds:KeyInfo><SecurityTokenReference xmlns=\"http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd\"><wsse:Reference URI=\"#X509Token\" ValueType=\"http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-x509-token-profile-1.0#X509v3\"/></SecurityTokenReference></ds:KeyInfo></root>");
-            keyInfo.Load(reader);
-            doc.DocumentElement.FirstChild.FirstChild.LastChild.AppendChild(doc.ImportNode(keyInfo.FirstChild.FirstChild, true));
-
-            //Add The Base64 representation of the X509 cert to BinarySecurityToken Node
-            //X509SecurityToken token = new X509SecurityToken(cert);
-            doc.DocumentElement.FirstChild.FirstChild.FirstChild.InnerText = Convert.ToBase64String(cert.Export(X509ContentType.Cert), Base64FormattingOptions.None);
-            stringReader.Close();
-            reader.Close();
+                //Add The Base64 representation of the X509 cert to BinarySecurityToken Node
+                //X509SecurityToken token = new X509SecurityToken(cert);
+                doc.DocumentElement.FirstChild.FirstChild.FirstChild.InnerText = Convert.ToBase64String(cert.Export(X509ContentType.Cert), Base64FormattingOptions.None);
+            }
         }
 
         private static void encryptDocument(X509Certificate2 cert, XmlDocument doc)
@@ -389,42 +386,41 @@ namespace CyberSource.Clients
             XmlReaderSettings settings = new XmlReaderSettings();
             settings.DtdProcessing = DtdProcessing.Prohibit;
             settings.XmlResolver = null;
-            StringReader stringReader = new StringReader(encData);
-            XmlReader reader = XmlReader.Create(stringReader, settings);
+            using (StringReader stringReader = new StringReader(encData))
+            using (XmlReader reader = XmlReader.Create(stringReader, settings))
+            {
+                encryptedDataTags.Load(reader);
+                doc.DocumentElement.FirstChild.FirstChild.PrependChild(doc.ImportNode(encryptedDataTags.FirstChild.FirstChild, true));
 
-            encryptedDataTags.Load(reader);
-            doc.DocumentElement.FirstChild.FirstChild.PrependChild(doc.ImportNode(encryptedDataTags.FirstChild.FirstChild, true));
+                XmlElement elementToEncrypt = doc.GetElementsByTagName(REQUEST_MESSAGE)[0] as XmlElement;
+                EncryptedXml eXml = new EncryptedXml();
 
-            XmlElement elementToEncrypt = doc.GetElementsByTagName(REQUEST_MESSAGE)[0] as XmlElement;
-            EncryptedXml eXml = new EncryptedXml();
+                // Encrypt the element.
+                EncryptedData edElement = eXml.Encrypt(elementToEncrypt, cert);
+                EncryptedXml.ReplaceElement(elementToEncrypt, edElement, false);
 
-            // Encrypt the element.
-            EncryptedData edElement = eXml.Encrypt(elementToEncrypt, cert);
-            EncryptedXml.ReplaceElement(elementToEncrypt, edElement, false);
+                // Extract cybs certificate and put it in keyidentifier tag
+                XmlNodeList serverCert = doc.GetElementsByTagName("X509Certificate");
+                doc.GetElementsByTagName("wsse:KeyIdentifier")[0].InnerText = serverCert[0].InnerText;
 
-            // Extract cybs certificate and put it in keyidentifier tag
-            XmlNodeList serverCert = doc.GetElementsByTagName("X509Certificate");
-            doc.GetElementsByTagName("wsse:KeyIdentifier")[0].InnerText = serverCert[0].InnerText;
+                // Extract ciphervalues
+                XmlNodeList tempkey = doc.GetElementsByTagName("CipherValue");
+                string encryptedPayload = tempkey[1].InnerText;
 
-            // Extract ciphervalues
-            XmlNodeList tempkey = doc.GetElementsByTagName("CipherValue");
-            string encryptedPayload = tempkey[1].InnerText;
+                // Put temporary encrypted key in ciphervalue tag inside keyinfo
+                doc.GetElementsByTagName("xenc:CipherValue")[0].InnerText = tempkey[0].InnerText;
 
-            // Put temporary encrypted key in ciphervalue tag inside keyinfo
-            doc.GetElementsByTagName("xenc:CipherValue")[0].InnerText = tempkey[0].InnerText;
+                string encryptedSoapBody = "<xenc:EncryptedData xmlns:xenc=\"http://www.w3.org/2001/04/xmlenc#\" Id=\"Body\" Type=\"http://www.w3.org/2001/04/xmlenc#Content\">" +
+                                           "<xenc:EncryptionMethod Algorithm=\"http://www.w3.org/2001/04/xmlenc#aes256-cbc\">" +
+                                           "</xenc:EncryptionMethod><ds:KeyInfo xmlns:ds=\"http://www.w3.org/2000/09/xmldsig#\">" +
+                                           "<wsse:SecurityTokenReference xmlns:wsse=\"http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd\">" +
+                                           "<wsse:Reference URI=\"#Cert\"></wsse:Reference></wsse:SecurityTokenReference></ds:KeyInfo><xenc:CipherData><xenc:CipherValue>" +
+                                           "</xenc:CipherValue></xenc:CipherData></xenc:EncryptedData>";
 
-            string encryptedSoapBody = "<xenc:EncryptedData xmlns:xenc=\"http://www.w3.org/2001/04/xmlenc#\" Id=\"Body\" Type=\"http://www.w3.org/2001/04/xmlenc#Content\">"+
-                                       "<xenc:EncryptionMethod Algorithm=\"http://www.w3.org/2001/04/xmlenc#aes256-cbc\">" +
-                                       "</xenc:EncryptionMethod><ds:KeyInfo xmlns:ds=\"http://www.w3.org/2000/09/xmldsig#\">" +
-                                       "<wsse:SecurityTokenReference xmlns:wsse=\"http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd\">" +
-                                       "<wsse:Reference URI=\"#Cert\"></wsse:Reference></wsse:SecurityTokenReference></ds:KeyInfo><xenc:CipherData><xenc:CipherValue>" +
-                                       "</xenc:CipherValue></xenc:CipherData></xenc:EncryptedData>";
-
-            // Put encypted body inside ciphervalue tag
-            doc.GetElementsByTagName("SOAP-ENV:Body")[0].InnerXml = encryptedSoapBody;
-            doc.GetElementsByTagName("xenc:CipherValue")[1].InnerText = encryptedPayload;
-            stringReader.Close();
-            reader.Close();
+                // Put encypted body inside ciphervalue tag
+                doc.GetElementsByTagName("SOAP-ENV:Body")[0].InnerXml = encryptedSoapBody;
+                doc.GetElementsByTagName("xenc:CipherValue")[1].InnerText = encryptedPayload;
+            }
         }
 
         /// <summary>
@@ -523,9 +519,10 @@ namespace CyberSource.Clients
                 XmlReaderSettings settings = new XmlReaderSettings();
                 settings.DtdProcessing = DtdProcessing.Prohibit;
                 settings.XmlResolver = null;
-                XmlReader reader = XmlReader.Create(stream, settings);
-                xmlDoc.Load(reader);
-                reader.Close();
+                using (XmlReader reader = XmlReader.Create(stream, settings))
+                {
+                    xmlDoc.Load(reader);
+                }
                 return (xmlDoc);
             }
             finally
