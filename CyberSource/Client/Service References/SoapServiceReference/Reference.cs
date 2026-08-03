@@ -35361,7 +35361,7 @@ namespace CyberSource.Clients.SoapServiceReference {
             }
             set {
                 this.customerPasswordField = new System.Net.NetworkCredential(string.Empty, value).SecurePassword;
-                this.passPhraseField.MakeReadOnly();
+                this.customerPasswordField.MakeReadOnly();
                 this.RaisePropertyChanged("customerPassword");
             }
         }
@@ -35888,6 +35888,25 @@ namespace CyberSource.Clients.SoapServiceReference {
             System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
             if ((propertyChanged != null)) {
                 propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+
+        public static string ConvertToUnsecureString(System.Security.SecureString secureString)
+        {
+            if (secureString == null)
+            {
+                return string.Empty;
+            }
+
+            System.IntPtr unmanagedString = System.IntPtr.Zero;
+            try
+            {
+                unmanagedString = System.Runtime.InteropServices.Marshal.SecureStringToGlobalAllocUnicode(secureString);
+                return System.Runtime.InteropServices.Marshal.PtrToStringUni(unmanagedString);
+            }
+            finally
+            {
+                System.Runtime.InteropServices.Marshal.ZeroFreeGlobalAllocUnicode(unmanagedString);
             }
         }
     }
@@ -59550,7 +59569,7 @@ namespace CyberSource.Clients.SoapServiceReference {
             }
             set {
                 this.customerPasswordChangeField = new System.Net.NetworkCredential(string.Empty, value).SecurePassword;
-                this.passPhraseField.MakeReadOnly();
+                this.customerPasswordChangeField.MakeReadOnly();
                 this.RaisePropertyChanged("customerPasswordChange");
             }
         }
@@ -60533,6 +60552,25 @@ namespace CyberSource.Clients.SoapServiceReference {
             System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
             if ((propertyChanged != null)) {
                 propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+
+        public static string ConvertToUnsecureString(System.Security.SecureString secureString)
+        {
+            if (secureString == null)
+            {
+                return string.Empty;
+            }
+
+            System.IntPtr unmanagedString = System.IntPtr.Zero;
+            try
+            {
+                unmanagedString = System.Runtime.InteropServices.Marshal.SecureStringToGlobalAllocUnicode(secureString);
+                return System.Runtime.InteropServices.Marshal.PtrToStringUni(unmanagedString);
+            }
+            finally
+            {
+                System.Runtime.InteropServices.Marshal.ZeroFreeGlobalAllocUnicode(unmanagedString);
             }
         }
     }
