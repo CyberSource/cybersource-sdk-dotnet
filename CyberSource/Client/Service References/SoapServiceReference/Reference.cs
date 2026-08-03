@@ -34989,7 +34989,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         
         private string customerUserNameField;
         
-        private string customerPasswordField;
+        private System.Security.SecureString customerPasswordField;
         
         private string ipNetworkAddressField;
         
@@ -35357,10 +35357,11 @@ namespace CyberSource.Clients.SoapServiceReference {
         [System.Xml.Serialization.XmlElementAttribute(Order=23)]
         public string customerPassword {
             get {
-                return this.customerPasswordField;
+                return ConvertToUnsecureString(this.customerPasswordField);
             }
             set {
-                this.customerPasswordField = value;
+                this.customerPasswordField = new System.Net.NetworkCredential(string.Empty, value).SecurePassword;
+                this.passPhraseField.MakeReadOnly();
                 this.RaisePropertyChanged("customerPassword");
             }
         }
@@ -59329,7 +59330,7 @@ namespace CyberSource.Clients.SoapServiceReference {
         
         private string customerHasSavingsAccountField;
         
-        private string customerPasswordChangeField;
+        private System.Security.SecureString customerPasswordChangeField;
         
         private string customerPhoneChangeField;
         
@@ -59545,10 +59546,11 @@ namespace CyberSource.Clients.SoapServiceReference {
         [System.Xml.Serialization.XmlElementAttribute(Order=4)]
         public string customerPasswordChange {
             get {
-                return this.customerPasswordChangeField;
+                return ConvertToUnsecureString(this.customerPasswordChangeField);
             }
             set {
-                this.customerPasswordChangeField = value;
+                this.customerPasswordChangeField = new System.Net.NetworkCredential(string.Empty, value).SecurePassword;
+                this.passPhraseField.MakeReadOnly();
                 this.RaisePropertyChanged("customerPasswordChange");
             }
         }
