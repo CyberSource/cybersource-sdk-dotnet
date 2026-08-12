@@ -74,14 +74,18 @@ namespace CyberSource.Clients
 
         public override ArraySegment<byte> WriteMessage(Message message, int maxMessageSize, BufferManager bufferManager, int messageOffset)
         {
-            MemoryStream stream = new MemoryStream();
-            XmlWriter writer = XmlWriter.Create(stream, this.writerSettings);
-            message.WriteMessage(writer);
-            writer.Close();
+            byte[] messageBytes;
+            int messageLength;
+            using (MemoryStream stream = new MemoryStream())
+            {
+                using (XmlWriter writer = XmlWriter.Create(stream, this.writerSettings))
+                {
+                    message.WriteMessage(writer);
+                }
 
-            byte[] messageBytes = stream.GetBuffer();
-            int messageLength = (int)stream.Position;
-            stream.Close();
+                messageBytes = stream.GetBuffer();
+                messageLength = (int)stream.Position;
+            }
 
             int totalLength = messageLength + messageOffset;
             byte[] totalBytes = bufferManager.TakeBuffer(totalLength);
@@ -93,9 +97,10 @@ namespace CyberSource.Clients
 
         public override void WriteMessage(Message message, Stream stream)
         {
-            XmlWriter writer = XmlWriter.Create(stream, this.writerSettings);
-            message.WriteMessage(writer);
-            writer.Close();
+            using (XmlWriter writer = XmlWriter.Create(stream, this.writerSettings))
+            {
+                message.WriteMessage(writer);
+            }
         }
     }
 }

@@ -2,8 +2,8 @@
 <package >
   <metadata>
     <id>CyberSource</id>
-    <version>1.4.10</version>
-	<title>CyberSource Corporation</title>
+    <version>1.4.11</version>
+    <title>CyberSource Corporation</title>
     <authors>CyberSource Corporation</authors>
     <owners>CyberSource Corporation</owners>
     <licenseUrl>https://github.com/CyberSource/cybersource-sdk-dotnet/blob/master/LICENSE</licenseUrl>
@@ -16,8 +16,8 @@
   </metadata>
       <files>
         <file src="CyberSource\bin\CyberSource.Clients.dll" target="lib\CyberSource.Clients.dll" />
-		<file src="CyberSource\bin\CyberSource.Clients.dll.config" target="lib\CyberSource.Clients.dll.config" />
-		<file src="CyberSource\bin\CyberSource.Base.dll" target="lib\CyberSource.Base.dll" />
-		<file src="CyberSource\bin\CyberSource.Clients.xml" target="lib\CyberSource.Clients.xml" />
+        <file src="CyberSource\bin\CyberSource.Clients.dll.config" target="lib\CyberSource.Clients.dll.config" />
+        <file src="CyberSource\bin\CyberSource.Base.dll" target="lib\CyberSource.Base.dll" />
+        <file src="CyberSource\bin\CyberSource.Clients.xml" target="lib\CyberSource.Clients.xml" />
     </files>
 </package>
