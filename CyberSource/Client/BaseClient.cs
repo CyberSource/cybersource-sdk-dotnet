@@ -361,15 +361,14 @@ namespace CyberSource.Clients
             asec.EnableUnsecuredResponse = false;
             asec.SecurityHeaderLayout = SecurityHeaderLayout.Lax;
 
-            // Validate the server certificate on the signed response via a
-            // custom IdentityVerifier that checks the X.509 subject against
-            // the expected CyberSource public key.  This must be configured
-            // for both signed and signed+encrypted bindings so that the
-            // WS-Security signature on the response is properly verified.
-            asec.LocalClientSettings.IdentityVerifier = new CustomeIdentityVerifier();
-
             if (config.UseSignedAndEncrypted)
             {
+                // Validate the server certificate on the signed response via a
+                // custom IdentityVerifier that checks the X.509 subject against
+                // the expected CyberSource public key. CheckAccess only matches
+                // the signed+encrypted cert chain, so it must not run for
+                // sign-only mode (TLINTCM-2869).
+                asec.LocalClientSettings.IdentityVerifier = new CustomeIdentityVerifier();
                 asec.RecipientTokenParameters = new System.ServiceModel.Security.Tokens.X509SecurityTokenParameters { InclusionMode = SecurityTokenInclusionMode.Once };
                 asec.MessageProtectionOrder = System.ServiceModel.Security.MessageProtectionOrder.SignBeforeEncrypt;
                 asec.EndpointSupportingTokenParameters.SignedEncrypted.Add(new System.ServiceModel.Security.Tokens.X509SecurityTokenParameters());

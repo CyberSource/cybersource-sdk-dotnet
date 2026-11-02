@@ -185,3 +185,6 @@ UpgradeLog*.htm
 FakesAssemblies/
 
 app-local.config
+
+*.dll
+*.exe
